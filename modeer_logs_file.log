@@ -1,1 +1,36 @@
 2026-03-08 00:40:49,326 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 00:46:01,905 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 00:51:26,375 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 00:58:54,504 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 20:04:52,845 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 20:11:29,946 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 20:12:03,862 | WARNING | invoice_form.py:595 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-08 20:13:30,152 | WARNING | invoice_form.py:595 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-08 20:15:23,839 | WARNING | invoice_form.py:595 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-08 20:18:00,764 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 20:34:44,666 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 20:35:23,602 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 22:24:31,708 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 22:25:57,904 | ERROR | database_manager.py:35 | Database error:database is locked
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer-V1\ui_logic\database_manager.py", line 33, in db_connection
+    yield con
+  File "E:\Workspace\Modeer-V1\ui_logic\database_manager.py", line 63, in store
+    connection.commit()
+sqlite3.OperationalError: database is locked
+2026-03-08 22:26:19,340 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 22:26:37,894 | ERROR | database_manager.py:35 | Database error:database is locked
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer-V1\ui_logic\database_manager.py", line 33, in db_connection
+    yield con
+  File "E:\Workspace\Modeer-V1\ui_logic\database_manager.py", line 63, in store
+    connection.commit()
+sqlite3.OperationalError: database is locked
+2026-03-08 22:27:11,608 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 22:28:27,562 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 22:28:59,873 | WARNING | invoice_form.py:595 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-08 22:36:21,493 | WARNING | invoice_form.py:595 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-08 22:53:25,070 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 22:54:00,303 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 23:01:20,233 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-08 23:03:17,855 | INFO | database_manager.py:1342 | Database tables created successfully.

@@ -61,17 +61,13 @@ class Ui_Form(object):
         self.add_item_btn.setObjectName("add_item_btn")
         self.horizontalLayout.addWidget(self.add_item_btn)
         self.verticalLayout.addLayout(self.horizontalLayout)
-
-
-        # Add a table.
         self.items_table = QtWidgets.QTableWidget(parent=Form)
         self.items_table.setStyleSheet("background-color:white;")
         self.items_table.setObjectName("items_table")
+        self.items_table.setColumnCount(0)
+        self.items_table.setRowCount(0)
+        self.items_table.horizontalHeader().setStretchLastSection(True)
         self.verticalLayout.addWidget(self.items_table)
-        #---
-
-
-
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.label_2 = QtWidgets.QLabel(parent=Form)
@@ -133,6 +129,23 @@ class Ui_Form(object):
         self.clear_btn.setFlat(True)
         self.clear_btn.setObjectName("clear_btn")
         self.horizontalLayout_4.addWidget(self.clear_btn)
+        self.refund_btn = QtWidgets.QPushButton(parent=Form)
+        self.refund_btn.setMinimumSize(QtCore.QSize(0, 60))
+        self.refund_btn.setMaximumSize(QtCore.QSize(150, 60))
+        self.refund_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.refund_btn.setStyleSheet("\n"
+"QPushButton:hover{\n"
+"    background-color:#3f5482;\n"
+"    border: 1px solid #3f5482;\n"
+"}")
+        self.refund_btn.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("../../icons/refund.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.refund_btn.setIcon(icon3)
+        self.refund_btn.setIconSize(QtCore.QSize(50, 50))
+        self.refund_btn.setFlat(True)
+        self.refund_btn.setObjectName("refund_btn")
+        self.horizontalLayout_4.addWidget(self.refund_btn)
         self.cancel_btn = QtWidgets.QPushButton(parent=Form)
         self.cancel_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.cancel_btn.setMaximumSize(QtCore.QSize(150, 60))
@@ -143,9 +156,9 @@ class Ui_Form(object):
 "    border: 1px solid #3f5482;\n"
 "}")
         self.cancel_btn.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../icons/cancel.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.cancel_btn.setIcon(icon3)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("../icons/cancel.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.cancel_btn.setIcon(icon4)
         self.cancel_btn.setIconSize(QtCore.QSize(50, 50))
         self.cancel_btn.setFlat(True)
         self.cancel_btn.setObjectName("cancel_btn")

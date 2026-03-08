@@ -66,6 +66,7 @@ class InvoiceForm(Form):
         # set icons
         self.set_icon("add_item_btn","add.svg")
         self.set_icon("clear_btn","refresh.svg")
+        self.set_icon("refund_btn","refund.svg")
 
         # Invoice table details
         self.table = invoice_type

@@ -42,9 +42,11 @@ class AnalysisForm(Form):
         incomes_table.verticalHeader().setDefaultSectionSize(45)
 
         sales_income = self.get_sales_income(s_date)
+        print(sales_income)
         services_income= self.get_services_income(s_date)
         customers_payments = self.get_customers_payments(s_date)
         income = float(sales_income) + float(services_income)  + float(customers_payments)
+
         sales_capital = self.get_sales_capital(s_date)
         sales_profit = sales_income - sales_capital
         profits = sales_profit + services_income
