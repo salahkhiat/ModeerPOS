@@ -776,7 +776,7 @@ class DatabaseManager(SharedFunctions):
             result = cursor.fetchone()
             return result is not None
 
-    def get_sales_income(self,s_date:str="today") -> float:
+    def get_sales_cash(self,s_date:str="today") -> float:
         """
         Calculate total sales income based on conditional rules.
 
@@ -799,8 +799,9 @@ class DatabaseManager(SharedFunctions):
             query = """
                 SELECT SUM(
                     CASE
-                        WHEN customer_id = 1 AND deposit = 0 THEN total
-                        WHEN customer_id = 1 AND deposit > 0 THEN deposit
+                        -- WHEN customer_id = 1 AND deposit = 0 THEN total
+                        -- WHEN customer_id = 1 AND deposit > 0 THEN deposit
+                        WHEN customer_id = 1 THEN total
                         ELSE deposit
                     END
                 )
@@ -815,9 +816,9 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_services_income(self,s_date:str="today") -> float:
+    def get_services_cash(self, s_date:str="today") -> float:
         """
-        Calculate total services income based on conditional rules.
+        Calculate total services cash based on conditional rules.
 
         """
         with self.db_connection() as connection: 
@@ -955,7 +956,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_customers_payments(self,s_date:str="today") -> float:
+    def get_customers_cash(self,s_date:str="today") -> float:
         """
         Calculate total customer_payments  based on conditional rules.
 
@@ -965,12 +966,13 @@ class DatabaseManager(SharedFunctions):
             created = self.current_date() # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
-            
-
             query = """
-                SELECT SUM(amount)
-                FROM customers_payments
-                WHERE created LIKE ?
+                SELECT 
+                    SUM(amount)
+                FROM 
+                    customers_payments
+                WHERE 
+                    created LIKE ?
             """
             cursor.execute(query,(f"{created}%",))
             result = cursor.fetchone()
@@ -990,9 +992,12 @@ class DatabaseManager(SharedFunctions):
             
 
             query = """
-                SELECT SUM(amount)
-                FROM employees_withdrawals
-                WHERE created LIKE ?
+                SELECT 
+                    SUM(amount)
+                FROM 
+                    employees_withdrawals
+                WHERE 
+                    created LIKE ?
             """
             cursor.execute(query,(f"{created}%",))
             result = cursor.fetchone()

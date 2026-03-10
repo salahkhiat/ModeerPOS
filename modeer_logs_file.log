@@ -34,3 +34,26 @@ sqlite3.OperationalError: database is locked
 2026-03-08 22:54:00,303 | INFO | database_manager.py:1342 | Database tables created successfully.
 2026-03-08 23:01:20,233 | INFO | database_manager.py:1342 | Database tables created successfully.
 2026-03-08 23:03:17,855 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:12:24,158 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:15:13,566 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:22:09,040 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:24:08,077 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:34:56,230 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:35:59,414 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:36:25,028 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:36:46,055 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:43:39,333 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-09 20:45:08,200 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-10 20:10:53,532 | INFO | database_manager.py:1342 | Database tables created successfully.
+2026-03-10 20:15:51,843 | INFO | database_manager.py:1343 | Database tables created successfully.
+2026-03-10 20:16:40,307 | WARNING | invoice_form.py:682 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-10 20:16:40,338 | WARNING | invoice_form.py:682 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-10 20:25:03,703 | INFO | database_manager.py:1343 | Database tables created successfully.
+2026-03-10 20:35:17,311 | INFO | database_manager.py:1344 | Database tables created successfully.
+2026-03-10 20:40:15,099 | INFO | database_manager.py:1344 | Database tables created successfully.
+2026-03-10 20:43:55,235 | INFO | database_manager.py:1344 | Database tables created successfully.
+2026-03-10 23:55:29,342 | INFO | database_manager.py:1344 | Database tables created successfully.
+2026-03-10 23:59:37,584 | INFO | database_manager.py:1344 | Database tables created successfully.
+2026-03-11 00:07:13,404 | INFO | database_manager.py:1347 | Database tables created successfully.
+2026-03-11 00:07:56,098 | INFO | database_manager.py:1347 | Database tables created successfully.
+2026-03-11 00:11:19,245 | INFO | database_manager.py:1347 | Database tables created successfully.

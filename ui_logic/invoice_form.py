@@ -12,7 +12,8 @@ from PyQt6.QtWidgets import (
     QTableWidget,  
     QStyledItemDelegate, 
     QSpinBox,
-    QLineEdit
+    QLineEdit,
+    QMessageBox
 )
 from PyQt6.QtGui import QFont 
 from PyQt6.QtCore import pyqtSignal , QTimer
@@ -20,7 +21,7 @@ from PyQt6.QtCore import pyqtSignal , QTimer
 from .error_form import ErrorForm
 from uis.error_msg import Ui_Dialog as ErrorFormUi
 
-
+import logging
 from typing import Dict , Any 
 
 # just for coloring logs messages
@@ -117,7 +118,6 @@ class InvoiceForm(Form):
                     items_table.setColumnWidth(col, 200)
 
 
-
         elif invoice_type == "customers": 
             items_table.setColumnCount(4)
 
@@ -154,6 +154,7 @@ class InvoiceForm(Form):
         # Connect buttons
         self.add_item_btn_clicked()
         self.save_btn_clicked()
+        self.refund_btn_clicked()
 
         # put users customers/suppliers into a Combo
         self.put_users_on_combo()
@@ -392,7 +393,9 @@ class InvoiceForm(Form):
         if table.rowCount() > 0:
             self.ui.save_btn.setEnabled(True)
             self.ui.save_btn.setStyleSheet("background-color:none;")
-            self.ui.save_btn.setStyleSheet("QPushButton:hover{background-color:#3f5482;border: 1px solid #3f5482}")
+            self.ui.save_btn.setStyleSheet(
+                "QPushButton:hover{background-color:#3f5482;border: 1px solid #3f5482}"
+            )
    
 
     def save_invoice_in_db(self):
@@ -416,7 +419,14 @@ class InvoiceForm(Form):
             products_list[row] = row_data
 
         table_name = "products"
-        columns = ["name","purchase_price","sale_price","quantity","barcode","invoice_id"]
+        columns = [
+            "name",
+            "purchase_price",
+            "sale_price",
+            "quantity",
+            "barcode",
+            "invoice_id"
+        ]
 
         # Calculates an invoice total.
         invoice_total = 0 
@@ -485,7 +495,23 @@ class InvoiceForm(Form):
                         continue
                     else:
                         invoice_barcode = generated_barcode
-                        invoice_id = self.store("sale_invoices",["customer_id","invoice_number","total","deposit","created_at"],(self.user_id,invoice_barcode,str(invoice_total),invoice_deposit,created),True)
+                        invoice_id = self.store(
+                            "sale_invoices",
+                            [
+                                "customer_id",
+                                "invoice_number",
+                                "total",
+                                "deposit"
+                                ,"created_at"
+                            ],
+                            (
+                                self.user_id,invoice_barcode,
+                                str(invoice_total),
+                                invoice_deposit,
+                                created
+                            ),
+                            True
+                        )
                         break
         
 
@@ -500,18 +526,44 @@ class InvoiceForm(Form):
             
                 # unpacking product info
                 name, purchase_price, sale_price, quantity, barcode = product_info.values()
-                data = (name, purchase_price, sale_price, quantity, barcode,str(invoice_id))
+                data = (
+                    name, 
+                    purchase_price, 
+                    sale_price, 
+                    quantity, 
+                    barcode,
+                    str(invoice_id)
+                )
 
                 # p_h means purchases_history
                 p_h_table = "purchases_history"
-                p_h_columns = ["invoice_id","product_id","product_name","barcode","quantity","purchase_price","sale_price"]
+                p_h_columns = [
+                    "invoice_id",
+                    "product_id",
+                    "product_name",
+                    "barcode",
+                    "quantity",
+                    "purchase_price",
+                    "sale_price"
+                ]
                 
-
                 # If a product is already existing in a database.
                 if self.is_in_table("products","barcode",barcode):
 
-                    updated_columns = ["name", "purchase_price", "sale_price", "quantity","invoice_id"]
-                    updated_data = (name, purchase_price, sale_price, quantity,str(invoice_id))
+                    updated_columns = [
+                        "name", 
+                        "purchase_price", 
+                        "sale_price", 
+                        "quantity",
+                        "invoice_id"
+                    ]
+                    updated_data = (
+                        name, 
+                        purchase_price, 
+                        sale_price, 
+                        quantity,
+                        str(invoice_id)
+                    )
 
                     # If product info updated successfully
                     if self.update_info("products",updated_columns,updated_data,"barcode = ?",(barcode,)):
@@ -522,10 +574,18 @@ class InvoiceForm(Form):
                             log.error(f"[red]product:{name} with {barcode} barcode is not existing in a database.[/red]")
                             return 
                         else:
-                            p_h_data = (invoice_id,updated_product_id,name,barcode,quantity,purchase_price,sale_price)
+                            p_h_data = (
+                                invoice_id,
+                                updated_product_id,
+                                name,
+                                barcode,
+                                quantity,
+                                purchase_price,
+                                sale_price
+                            )
                             # If product info was not inserted into a purchases_history table
                             if self.store(p_h_table,p_h_columns,p_h_data) is not True:
-                                log.error(f"[red]Product:{name} with {barcode} barcode was not inserted in purchases_table. [/red]")
+                                logging.error(f"[red]Product:{name} with {barcode} barcode was not inserted in purchases_table. [/red]")
                                 return
 
                     else:
@@ -535,7 +595,15 @@ class InvoiceForm(Form):
                 # If a product is not existing in a database.
                 else:
                     product_id = self.store(table_name,columns,data,True)
-                    p_h_data = (invoice_id,product_id,name,barcode,quantity,purchase_price,sale_price)
+                    p_h_data = (
+                        invoice_id,
+                        product_id,
+                        name,
+                        barcode,
+                        quantity,
+                        purchase_price,
+                        sale_price
+                    )
         
                     if product_id is False:
                         log.error(f"[red]Product:{name} with {barcode} was not inserted into products table.[/red]")
@@ -562,23 +630,33 @@ class InvoiceForm(Form):
 
                 # s_h means sales_history
                 s_h_table = "sales_history"
-                s_h_columns = ["invoice_id","product_id","product_name","barcode","quantity","purchase_price","sale_price"]
+                s_h_columns = [
+                    "invoice_id",
+                    "product_id",
+                    "product_name",
+                    "barcode",
+                    "quantity",
+                    "purchase_price",
+                    "sale_price"
+                ]
                 
-
                 # If a product is existing in a database.
                 if self.is_in_table("products","barcode",barcode):
 
-
-                    item_info = self.get_item_info("products",("id","quantity","purchase_price"),"barcode",barcode)
+                    item_info = self.get_item_info(
+                        "products",
+                        ("id","quantity","purchase_price"),
+                        "barcode",
+                        barcode
+                    )
                     product_id = int(item_info["id"])
                     stock = int(item_info["quantity"])
                     purchase_price = float(item_info["purchase_price"])
 
-
                     # Check if is there enough quantity in stock
                     the_quantity = int(quantity)
                     if the_quantity > stock:
-                        log.error("[red] You don't have enough quantity in stock [/red]")
+                        logging.error("[red] You don't have enough quantity in stock [/red]")
                         return 
                     
                     elif the_quantity <= stock:
@@ -587,7 +665,15 @@ class InvoiceForm(Form):
                         self.update_info("products",["quantity"],(new_sock,),"barcode=?",(barcode,))
                  
 
-                    s_h_data = (invoice_id,product_id,name,barcode,quantity,purchase_price,sale_price)
+                    s_h_data = (
+                        invoice_id,
+                        product_id,
+                        name,
+                        barcode,
+                        quantity,
+                        purchase_price,
+                        sale_price
+                    )
 
                     if self.store(s_h_table,s_h_columns,s_h_data) is False:
                             log.error(f"[red]Product:{name} with barcode {barcode}  has not sold  [/red]")
@@ -600,6 +686,15 @@ class InvoiceForm(Form):
             
     def save_btn_clicked(self):
         self.ui.save_btn.clicked.connect(self.save_invoice_in_db) 
+
+    def refund_btn_clicked(self):
+        self.ui.refund_btn.clicked.connect(self.refund_now)
+
+    def refund_now(self):
+        QMessageBox.information(None,"success", "Refund button is working")
+        # QMessageBox.critical(None,"error or critical", "Refund button is working")
+        # QMessageBox.warning(None,"warning", "Refund button is working")
+        print("refund button works")
         
     def select_item_barcode(self, row: int):
         """ SET SELECTED PRODUCT BARCODE OF SELECTED ITEMS_TABLE ROW"""
@@ -610,6 +705,8 @@ class InvoiceForm(Form):
             for i in range(table.columnCount())
         ]
         self.selected_product_barcode = values[3]
+    
+
         
 
 
