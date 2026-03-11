@@ -1093,6 +1093,35 @@ class DatabaseManager(SharedFunctions):
             
             return result[0] if result and result[0] is not None else 0.0
         
+    def get_units_sold_count(self, customer_id: int, product_id: int) -> int:
+        """ 
+        Returns total units sold of a specific customer and product during the current month
+        """
+
+        with self.db_connection() as connection:
+            cursor = connection.cursor()
+            created = self.current_date()[:7]
+            query = f"""
+                    SELECT 
+                        COALESCE(sum(sh.quantity), 0) AS total_sold
+                    FROM
+                        sales_history sh
+                    JOIN
+                        sale_invoices inv
+                    ON  
+                        sh.invoice_id = inv.id
+                    WHERE
+                        inv.customer_id = ?
+                    AND
+                        sh.product_id = ? 
+                    AND
+                        inv.created_at LIKE ?
+
+            """
+            fltr = (customer_id, product_id, f"{created}%")
+            
+            return cursor.execute(query,fltr).fetchone()[0]
+        
     def prepare_database(self) :
         """
         Create a database and its tables if they not exists.

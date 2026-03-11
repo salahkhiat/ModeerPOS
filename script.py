@@ -25,9 +25,26 @@ def db_connection():
 def connection():
     with db_connection() as con:
         cursor = con.cursor()
-        query = "SELECT namef FROM customers"
-        result = cursor.execute(query)
-        return(result.fetchall())
+        query = f"""
+                SELECT 
+                    COALESCE(sum(sh.quantity), 0) AS total_sold
+                FROM
+                    sales_history sh
+                JOIN
+                    sale_invoices inv
+                ON  
+                    sh.invoice_id = inv.id
+                WHERE
+                    inv.customer_id = ?
+                AND
+                    sh.product_id = ? 
+                AND
+                    inv.created_at LIKE ?
+
+        """
+        fltr = (2, 3, "1447-09%")
+        
+        return cursor.execute(query,fltr).fetchone()[0]
     
 print(connection())
 

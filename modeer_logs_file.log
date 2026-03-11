@@ -57,3 +57,16 @@ sqlite3.OperationalError: database is locked
 2026-03-11 00:07:13,404 | INFO | database_manager.py:1347 | Database tables created successfully.
 2026-03-11 00:07:56,098 | INFO | database_manager.py:1347 | Database tables created successfully.
 2026-03-11 00:11:19,245 | INFO | database_manager.py:1347 | Database tables created successfully.
+2026-03-12 00:08:12,788 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:10:05,817 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:14:10,644 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:30:16,791 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:47:18,012 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:48:24,920 | WARNING | invoice_form.py:715 | [green]Product:infinix hot 8 with barcode 4244  has sold successfully  [/green]
+2026-03-12 00:49:48,667 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:50:07,485 | WARNING | invoice_form.py:716 | [green]Product:REDMI 9A with barcode 5963  has sold successfully  [/green]
+2026-03-12 00:53:01,267 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:53:17,109 | WARNING | invoice_form.py:698 | [green]Product:samsung s25 ultra with barcode 7469  has sold successfully  [/green]
+2026-03-12 00:53:36,506 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 00:53:53,324 | WARNING | invoice_form.py:698 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-12 00:53:53,356 | WARNING | invoice_form.py:698 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]

@@ -143,7 +143,7 @@ class InvoiceForm(Form):
                 else:
                     self.ui.items_table.setColumnWidth(col, 200)
         else:
-            log.error(f"{invoice_type} invoice_type is unknown")
+            logging.error(f"{invoice_type} invoice_type is unknown")
 
 
         # Set  buttons
@@ -199,6 +199,8 @@ class InvoiceForm(Form):
                 amount_field.setEnabled(True)
         
     def refresh_invoice(self):
+        """ Remove the invoice rows """
+
         # clear table 
         table : QTableWidget = self.ui.items_table
         table.setRowCount(0)
@@ -364,8 +366,7 @@ class InvoiceForm(Form):
         item.setFont(font)
         return item
     
-
-    def add_item_to_table(self,item_data:Dict[Any,Any]):
+    def add_item_to_table(self, item_data: Dict[Any, Any]):
         table = self.ui.items_table
         row = table.rowCount()
         
@@ -386,30 +387,25 @@ class InvoiceForm(Form):
         
         self.enable_save_btn()
 
-        
     def enable_save_btn(self):
         table = self.ui.items_table
-        # enable save btn
         if table.rowCount() > 0:
             self.ui.save_btn.setEnabled(True)
             self.ui.save_btn.setStyleSheet("background-color:none;")
             self.ui.save_btn.setStyleSheet(
                 "QPushButton:hover{background-color:#3f5482;border: 1px solid #3f5482}"
             )
-   
-
-    def save_invoice_in_db(self):
-        # create an invoice
-        invoice_id = None
-        invoice_barcode = None 
-        invoice_deposit = "0" if self.ui.amount.text() == "" else self.ui.amount.text()
-        created = self.current_date()
-        
-        table : QTableWidget = self.ui.items_table
+    
+    def get_products_list(self) -> dict:
+        """ reading products data from QTableWidget and put them into products_list dictionary """
         products_list = {}
-        # reading products data from QTableWidget and put them into products_list dictionary
+
+        # invoice table
+        table: QTableWidget = self.ui.items_table
+        
         for row in range(table.rowCount()):
             row_data = {}
+
             for col in range(table.columnCount()):
                 cell_item = table.item(row, col)
                 if cell_item is not None:
@@ -418,6 +414,18 @@ class InvoiceForm(Form):
                     row_data[col] = None
             products_list[row] = row_data
 
+        return products_list
+   
+    def save_invoice_in_db(self):
+
+        # create an invoice
+        invoice_id = None
+        invoice_barcode = None 
+        invoice_deposit = "0" if self.ui.amount.text() == "" else self.ui.amount.text()
+        created = self.current_date()
+        products_list = self.get_products_list()
+
+        # products table in database
         table_name = "products"
         columns = [
             "name",
@@ -432,20 +440,26 @@ class InvoiceForm(Form):
         invoice_total = 0 
         for _ , product_info in products_list.items():
             if self.invoice_type == "suppliers":
-                invoice_total += int(product_info[1]) * int(product_info[3]) # purchase_price * quantity
+                # purchase_price * quantity
+                invoice_total += int(product_info[1]) * int(product_info[3]) 
+
+            # sale_price * quantity
             elif self.invoice_type == "customers":
-                invoice_total += float(product_info[1]) * float(product_info[2]) # sale_price * quantity
+                invoice_total += float(product_info[1]) * float(product_info[2]) 
 
         # Generates an invoice.
         if self.user_id is None:
-            log.error("[red]Sorry, You need to add suppliers first.[/red]")
+            logging.error("Sorry, You need to add suppliers first.")
             self.show_err_msg("لا يوجد أي مورد مسجل بعد")
+
         else:
             # Generates and Sets an invoice barcode if it does not exist.
             while True:
                 generated_barcode = str(self.generate_reference())
+                
+                # suppliers part
                 if self.invoice_type == "suppliers":
-                    if self.is_in_table("purchase_invoices","invoice_number",generated_barcode):
+                    if self.is_in_table("purchase_invoices", "invoice_number", generated_barcode):
                         continue
                     else:
                         invoice_barcode = generated_barcode
@@ -489,9 +503,10 @@ class InvoiceForm(Form):
                             )
                         )
                         break
-
+                
+                # customers part
                 elif self.invoice_type == "customers":
-                    if self.is_in_table("sale_invoices","invoice_number",generated_barcode):
+                    if self.is_in_table("sale_invoices", "invoice_number" ,generated_barcode):
                         continue
                     else:
                         invoice_barcode = generated_barcode
@@ -501,11 +516,12 @@ class InvoiceForm(Form):
                                 "customer_id",
                                 "invoice_number",
                                 "total",
-                                "deposit"
-                                ,"created_at"
+                                "deposit",
+                                "created_at"
                             ],
                             (
-                                self.user_id,invoice_barcode,
+                                self.user_id,
+                                invoice_barcode,
                                 str(invoice_total),
                                 invoice_deposit,
                                 created
@@ -691,7 +707,8 @@ class InvoiceForm(Form):
         self.ui.refund_btn.clicked.connect(self.refund_now)
 
     def refund_now(self):
-        QMessageBox.information(None,"success", "Refund button is working")
+        QMessageBox.information(None,"success", f"USER_ID:{self.user_id}")
+        # QMessageBox.information(None,"success", "Refund button is working")
         # QMessageBox.critical(None,"error or critical", "Refund button is working")
         # QMessageBox.warning(None,"warning", "Refund button is working")
         print("refund button works")
