@@ -432,6 +432,24 @@ class InvoiceForm(Form):
                 invoice_total += float(product_info[1]) * float(product_info[2]) 
         
         return invoice_total
+    
+    def insert_purchase_invoice(self, data: tuple) -> int:
+        """ Insert a new purchase invoice then return its ID."""
+
+        invoice_id = self.store(
+                "purchase_invoices",
+                [
+                    "supplier_id",
+                    "invoice_number",
+                    "total",
+                    "deposit",
+                    "created_at"
+                ],
+                data,
+                True
+        )
+        return invoice_id
+
    
     def save_invoice_in_db(self):
 
@@ -444,14 +462,7 @@ class InvoiceForm(Form):
 
         # products table in database
         table_name = "products"
-        columns = [
-            "name",
-            "purchase_price",
-            "sale_price",
-            "quantity",
-            "barcode",
-            "invoice_id"
-        ]
+        columns = ["name", "purchase_price", "sale_price", "quantity", "barcode", "invoice_id"]
 
         # Calculates an invoice total.
         invoice_total = self.calculate_invoice_total()
@@ -472,25 +483,18 @@ class InvoiceForm(Form):
                         continue
                     else:
                         invoice_barcode = generated_barcode
-                        invoice_id = self.store(
-                            "purchase_invoices",
-                            [
-                                "supplier_id",
-                                "invoice_number",
-                                "total",
-                                "deposit",
-                                "created_at"
-                            ],
-                            (
-                                self.user_id,
-                                invoice_barcode,
-                                str(invoice_total),
-                                invoice_deposit,
-                                created
-                            ),
-                            True
+
+                        # insert an invoice into a database. 
+                        # specifically into purchase_invoices table.
+                        inv_data = (
+                            self.user_id, 
+                            invoice_barcode, 
+                            str(invoice_total), 
+                            invoice_deposit,
+                            created
                         )
-                        
+                        invoice_id = self.insert_purchase_invoice(inv_data)
+
                         # record a deposit
                         self.store(
                             "suppliers_transactions",

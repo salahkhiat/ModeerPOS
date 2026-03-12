@@ -78,3 +78,14 @@ sqlite3.OperationalError: database is locked
 2026-03-12 20:08:21,664 | INFO | database_manager.py:1376 | Database tables created successfully.
 2026-03-12 20:08:46,186 | INFO | database_manager.py:1376 | Database tables created successfully.
 2026-03-12 20:09:16,960 | WARNING | invoice_form.py:707 | [green]Product:tecno spart go 2023 with barcode 2132  has sold successfully  [/green]
+2026-03-12 20:31:01,827 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:31:32,087 | WARNING | invoice_form.py:736 | [green]Product:XOIMI POCO X3 NFC with barcode 1474  has sold successfully  [/green]
+2026-03-12 20:32:27,676 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:33:02,161 | ERROR | database_manager.py:35 | Database error:4 values for 5 columns
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer-V1\ui_logic\database_manager.py", line 33, in db_connection
+    yield con
+  File "E:\Workspace\Modeer-V1\ui_logic\database_manager.py", line 62, in store
+    cursor.execute(query,data)
+sqlite3.OperationalError: 4 values for 5 columns
+2026-03-12 20:34:04,928 | INFO | database_manager.py:1376 | Database tables created successfully.
