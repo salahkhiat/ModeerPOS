@@ -415,6 +415,23 @@ class InvoiceForm(Form):
             products_list[row] = row_data
 
         return products_list
+    
+    def calculate_invoice_total(self) -> float:
+        """ Sums an invoice units prices sum(price * quantity)"""
+
+        invoice_total = 0 
+        products_list = self.get_products_list()
+
+        for _ , product_info in products_list.items():
+            if self.invoice_type == "suppliers":
+                # purchase_price * quantity
+                invoice_total += int(product_info[1]) * int(product_info[3]) 
+
+            # sale_price * quantity
+            elif self.invoice_type == "customers":
+                invoice_total += float(product_info[1]) * float(product_info[2]) 
+        
+        return invoice_total
    
     def save_invoice_in_db(self):
 
@@ -437,15 +454,7 @@ class InvoiceForm(Form):
         ]
 
         # Calculates an invoice total.
-        invoice_total = 0 
-        for _ , product_info in products_list.items():
-            if self.invoice_type == "suppliers":
-                # purchase_price * quantity
-                invoice_total += int(product_info[1]) * int(product_info[3]) 
-
-            # sale_price * quantity
-            elif self.invoice_type == "customers":
-                invoice_total += float(product_info[1]) * float(product_info[2]) 
+        invoice_total = self.calculate_invoice_total()
 
         # Generates an invoice.
         if self.user_id is None:

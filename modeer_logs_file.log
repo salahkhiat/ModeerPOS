@@ -70,3 +70,11 @@ sqlite3.OperationalError: database is locked
 2026-03-12 00:53:36,506 | INFO | database_manager.py:1376 | Database tables created successfully.
 2026-03-12 00:53:53,324 | WARNING | invoice_form.py:698 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
 2026-03-12 00:53:53,356 | WARNING | invoice_form.py:698 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-12 20:00:25,193 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:01:19,857 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:01:58,002 | WARNING | invoice_form.py:718 | [green]Product:honor 8x with barcode 2920  has sold successfully  [/green]
+2026-03-12 20:01:58,022 | WARNING | invoice_form.py:718 | [green]Product:infinix hot 8 with barcode 4244  has sold successfully  [/green]
+2026-03-12 20:02:09,903 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:08:21,664 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:08:46,186 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:09:16,960 | WARNING | invoice_form.py:707 | [green]Product:tecno spart go 2023 with barcode 2132  has sold successfully  [/green]
