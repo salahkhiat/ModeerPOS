@@ -1093,7 +1093,7 @@ class DatabaseManager(SharedFunctions):
             
             return result[0] if result and result[0] is not None else 0.0
         
-    def get_units_sold_count(self, customer_id: int, product_id: int) -> int:
+    def get_units_sold_count(self, customer_id: int, product_barcode: int) -> int:
         """ 
         Returns total units sold of a specific customer and product during the current month
         """
@@ -1113,14 +1113,14 @@ class DatabaseManager(SharedFunctions):
                     WHERE
                         inv.customer_id = ?
                     AND
-                        sh.product_id = ? 
+                        sh.barcode = ? 
                     AND
                         inv.created_at LIKE ?
 
             """
-            fltr = (customer_id, product_id, f"{created}%")
+            args = (customer_id, product_barcode, f"{created}%")
             
-            return cursor.execute(query,fltr).fetchone()[0]
+            return cursor.execute(query, args).fetchone()[0]
         
     def prepare_database(self) :
         """

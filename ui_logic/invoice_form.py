@@ -434,7 +434,9 @@ class InvoiceForm(Form):
         return invoice_total
     
     def insert_purchase_invoice(self, data: tuple) -> int:
-        """ Insert a new purchase invoice then return its ID."""
+        """ Insert a new purchase invoice then return its ID.
+            example data = (supplier_id, invoice_number, total, deposit, created_at)
+        """
 
         invoice_id = self.store(
                 "purchase_invoices",
@@ -450,7 +452,6 @@ class InvoiceForm(Form):
         )
         return invoice_id
 
-   
     def save_invoice_in_db(self):
 
         # create an invoice
@@ -720,11 +721,28 @@ class InvoiceForm(Form):
         self.ui.refund_btn.clicked.connect(self.refund_now)
 
     def refund_now(self):
-        QMessageBox.information(None,"success", f"USER_ID:{self.user_id}")
         # QMessageBox.information(None,"success", "Refund button is working")
         # QMessageBox.critical(None,"error or critical", "Refund button is working")
         # QMessageBox.warning(None,"warning", "Refund button is working")
-        print("refund button works")
+        
+        for item in self.get_products_list().values():
+            units_sold = self.get_units_sold_count(self.user_id,item[3])
+            returned_units = int(item[2])
+            if returned_units > units_sold:
+                msg_title = "مشكل كمية"
+                msg_content = "عدد الوحدات أكبر من ما تم شرائه أو تجاوزة المدة المسموح بها : شهر"
+                QMessageBox.warning(None, msg_title, msg_content)
+            else:
+                # generate an invoice number 
+                """
+                 move an invoice number generator in a separated function
+                  
+                """
+
+                # create a new invoice in sale_invoices
+                inv_id = self.insert_purchase_invoice()
+                QMessageBox.information(None, "نجح", "تمت المهمة")
+
         
     def select_item_barcode(self, row: int):
         """ SET SELECTED PRODUCT BARCODE OF SELECTED ITEMS_TABLE ROW"""

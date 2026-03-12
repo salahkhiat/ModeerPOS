@@ -89,3 +89,12 @@ Traceback (most recent call last):
     cursor.execute(query,data)
 sqlite3.OperationalError: 4 values for 5 columns
 2026-03-12 20:34:04,928 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 20:41:30,767 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 23:23:52,050 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 23:29:38,067 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 23:34:20,860 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 23:34:58,995 | WARNING | invoice_form.py:710 | [green]Product:infinix hot 8 with barcode 4244  has sold successfully  [/green]
+2026-03-12 23:35:51,369 | WARNING | invoice_form.py:710 | [green]Product:infinix hot 8 with barcode 4244  has sold successfully  [/green]
+2026-03-12 23:35:51,405 | WARNING | invoice_form.py:710 | [green]Product:XOIMI POCO X3 NFC with barcode 1474  has sold successfully  [/green]
+2026-03-12 23:47:07,145 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-12 23:47:55,730 | INFO | database_manager.py:1376 | Database tables created successfully.
