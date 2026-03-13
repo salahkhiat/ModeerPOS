@@ -451,6 +451,16 @@ class InvoiceForm(Form):
                 True
         )
         return invoice_id
+    
+    def generate_unique_barcode(self, table, barcode_column):
+        """ Generate a barcode that doesn't exists in database yet."""
+
+        while True:
+            barcode = self.generate_reference()
+            if self.is_in_table(table, barcode_column, barcode):
+                continue
+            else:
+                return barcode
 
     def save_invoice_in_db(self):
 
@@ -468,83 +478,70 @@ class InvoiceForm(Form):
         # Calculates an invoice total.
         invoice_total = self.calculate_invoice_total()
 
-        # Generates an invoice.
+        # If there are no suppliers yet.
         if self.user_id is None:
-            logging.error("Sorry, You need to add suppliers first.")
+            logging.warning("Sorry, You need to add suppliers first.")
             self.show_err_msg("لا يوجد أي مورد مسجل بعد")
-
         else:
-            # Generates and Sets an invoice barcode if it does not exist.
-            while True:
-                generated_barcode = str(self.generate_reference())
+
+            # Purchases part - suppliers.
+            if self.invoice_type == "suppliers":
+                invoice_barcode = self.generate_unique_barcode("purchase_invoices", "invoice_number")
+
+                # insert an invoice into a database, in purchase_invoices table.
+                inv_data = (
+                    self.user_id, 
+                    invoice_barcode, 
+                    str(invoice_total), 
+                    invoice_deposit,
+                    created
+                )
+                invoice_id = self.insert_purchase_invoice(inv_data)
+
+                # Insert a deposit into suppliers_transactions.
+                self.store(
+                    "suppliers_transactions",
+                    [
+                        "supplier_id",
+                        "invoice_id",
+                        "note",
+                        "amount",
+                        "type",
+                        "created"
+                    ],
+                    (
+                        self.user_id,
+                        invoice_id,
+                        f"INV:{invoice_barcode}",
+                        str(invoice_total),
+                        "deposit",
+                        created
+                    )
+                )
+                    
+            # Sales part - customers.
+            elif self.invoice_type == "customers":
                 
-                # suppliers part
-                if self.invoice_type == "suppliers":
-                    if self.is_in_table("purchase_invoices", "invoice_number", generated_barcode):
-                        continue
-                    else:
-                        invoice_barcode = generated_barcode
+                invoice_barcode = self.generate_unique_barcode("sale_invoices", "invoice_number")
 
-                        # insert an invoice into a database. 
-                        # specifically into purchase_invoices table.
-                        inv_data = (
-                            self.user_id, 
-                            invoice_barcode, 
-                            str(invoice_total), 
-                            invoice_deposit,
-                            created
-                        )
-                        invoice_id = self.insert_purchase_invoice(inv_data)
-
-                        # record a deposit
-                        self.store(
-                            "suppliers_transactions",
-                            [
-                                "supplier_id",
-                                "invoice_id",
-                                "note",
-                                "amount",
-                                "type",
-                                "created"
-                            ],
-                            (
-                                self.user_id,
-                                invoice_id,
-                                f"INV:"+invoice_barcode,
-                                str(invoice_total),
-                                "deposit",
-                                created
-                            )
-                        )
-                        break
-                
-                # customers part
-                elif self.invoice_type == "customers":
-                    if self.is_in_table("sale_invoices", "invoice_number" ,generated_barcode):
-                        continue
-                    else:
-                        invoice_barcode = generated_barcode
-                        invoice_id = self.store(
-                            "sale_invoices",
-                            [
-                                "customer_id",
-                                "invoice_number",
-                                "total",
-                                "deposit",
-                                "created_at"
-                            ],
-                            (
-                                self.user_id,
-                                invoice_barcode,
-                                str(invoice_total),
-                                invoice_deposit,
-                                created
-                            ),
-                            True
-                        )
-                        break
-        
-
+                invoice_id = self.store(
+                    "sale_invoices",
+                    [
+                        "customer_id",
+                        "invoice_number",
+                        "total",
+                        "deposit",
+                        "created_at"
+                    ],
+                    (
+                        self.user_id,
+                        invoice_barcode,
+                        str(invoice_total),
+                        invoice_deposit,
+                        created
+                    ),
+                    True
+                )
         
             """ 
                     if an invoice type is for suppliers

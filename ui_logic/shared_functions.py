@@ -122,8 +122,8 @@ class SharedFunctions:
      return {value:key for key, value in dictionary.items()}
     
     def generate_reference(self) -> int:
-        """Return a random number between 1 to 10000"""
-        return random.randint(1,10000)
+        """Return a random number between 1 to 1000000"""
+        return random.randint(1,1000000)
     
  
     def is_in_table_widget(self,table: QTableWidget, target, column_index: int) -> bool:

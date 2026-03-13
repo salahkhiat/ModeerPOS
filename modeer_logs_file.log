@@ -98,3 +98,12 @@ sqlite3.OperationalError: 4 values for 5 columns
 2026-03-12 23:35:51,405 | WARNING | invoice_form.py:710 | [green]Product:XOIMI POCO X3 NFC with barcode 1474  has sold successfully  [/green]
 2026-03-12 23:47:07,145 | INFO | database_manager.py:1376 | Database tables created successfully.
 2026-03-12 23:47:55,730 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 00:00:50,840 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 14:53:28,230 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 14:53:57,149 | WARNING | invoice_form.py:784 | [green]Product:honor 8x with barcode 2920  has sold successfully  [/green]
+2026-03-13 14:57:36,338 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 15:03:27,349 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 15:04:26,120 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 15:04:34,888 | WARNING | invoice_form.py:784 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-13 15:06:26,583 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-13 15:07:06,226 | WARNING | invoice_form.py:709 | [green]Product:Nokia 1100 original with barcode 525881  has sold successfully  [/green]
