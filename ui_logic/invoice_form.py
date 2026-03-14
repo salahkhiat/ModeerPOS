@@ -433,15 +433,24 @@ class InvoiceForm(Form):
         
         return invoice_total
     
-    def insert_purchase_invoice(self, data: tuple) -> int:
-        """ Insert a new purchase invoice then return its ID.
-            example data = (supplier_id, invoice_number, total, deposit, created_at)
+    def insert_new_invoice(self, user_type:str, data: tuple) -> int:
+        """ Insert a new (purchase or sale) invoice then return its ID.
+            example data = (user_id, invoice_number, total, deposit, created_at)
         """
+        table, id_field = None, None 
+
+        if user_type == "suppliers":
+            table = "purchase_invoices"
+            id_field = "supplier_id"
+
+        elif user_type == "customers":
+            table = "sale_invoices"
+            id_field = "customer_id"
 
         invoice_id = self.store(
-                "purchase_invoices",
+                table,
                 [
-                    "supplier_id",
+                    id_field,
                     "invoice_number",
                     "total",
                     "deposit",
@@ -496,7 +505,7 @@ class InvoiceForm(Form):
                     invoice_deposit,
                     created
                 )
-                invoice_id = self.insert_purchase_invoice(inv_data)
+                invoice_id = self.insert_new_invoice("suppliers", inv_data)
 
                 # Insert a deposit into suppliers_transactions.
                 self.store(
@@ -717,28 +726,112 @@ class InvoiceForm(Form):
     def refund_btn_clicked(self):
         self.ui.refund_btn.clicked.connect(self.refund_now)
 
+    def insert_customer_refund_invoice(self) -> int:
+        """ Insert a new customer's refund invoice into sale_invoices, then returns its ID """
+
+        # generate an invoice number - barcode
+        invoice_barcode = self.generate_unique_barcode("sale_invoices", "invoice_number")
+
+        total, deposit = 0, 0
+        data = (
+            self.user_id,
+            invoice_barcode,
+            total,
+            deposit,
+            self.current_date()
+        )
+        # create a new invoice in sale_invoices, then return it.
+        return self.insert_new_invoice("customers", data)
+
+
     def refund_now(self):
         # QMessageBox.information(None,"success", "Refund button is working")
-        # QMessageBox.critical(None,"error or critical", "Refund button is working")
-        # QMessageBox.warning(None,"warning", "Refund button is working")
-        
-        for item in self.get_products_list().values():
-            units_sold = self.get_units_sold_count(self.user_id,item[3])
-            returned_units = int(item[2])
-            if returned_units > units_sold:
-                msg_title = "مشكل كمية"
-                msg_content = "عدد الوحدات أكبر من ما تم شرائه أو تجاوزة المدة المسموح بها : شهر"
-                QMessageBox.warning(None, msg_title, msg_content)
-            else:
-                # generate an invoice number 
-                """
-                 move an invoice number generator in a separated function
-                  
-                """
 
-                # create a new invoice in sale_invoices
-                inv_id = self.insert_purchase_invoice()
-                QMessageBox.information(None, "نجح", "تمت المهمة")
+        if len(self.get_products_list()) == 0:
+            self.show_err_msg("أضف السلعة المراد إرجاعها للجدول أولا")
+            return
+        elif len(self.get_products_list()) > 1:
+            self.show_err_msg("لا يمكن إرجاع أكثر من سلعة في المرة الواحدة")
+            return
+        elif len(self.get_products_list()) == 1:
+
+            # 1- Get the first product as dict.
+            # 2- Get there values as tuple.
+            # 3- unpack it as name, price, quantity as returned_units, barcode.
+            name, p_price, p_returned_units, barcode = tuple(self.get_products_list()[0].values())
+            returned_units = int(p_returned_units)
+            price = float(p_price)
+            units_sold = self.get_units_sold_count(self.user_id, barcode)
+          
+            # Returned units greater than units sold - incorrect.
+            if returned_units > units_sold:
+                msg_content = "عدد الوحدات أكبر من ما تم شرائه أو تجاوزة المدة المسموح بها : شهر"
+                self.show_err_msg(msg_content)
+
+            # Returned units number is correct.
+            else:
+                # 1- Insert a new invoice in sale_invoices.
+                invoice_id = self.insert_customer_refund_invoice()
+                
+                # 2- Insert a new record into sales_history field.
+                prodcut_info = self.get_item_info(
+                    "products",
+                    ("id", "name", "quantity", "purchase_price"),
+                    "barcode",
+                    barcode
+                )
+                
+                total_returned = -returned_units * price
+                print(f"returned_units:{returned_units} type is: {type(returned_units)}")
+                print(f"price: {price} type is: {type(price)}")
+                print(f"total:{total_returned}")
+                self.store(
+                    "sales_history",
+                    [
+                        "invoice_id",
+                        "product_id",
+                        "product_name",
+                        "barcode",
+                        "quantity",
+                        "purchase_price",
+                        "sale_price"
+                    ],
+                    (
+                        invoice_id,
+                        prodcut_info["id"],
+                        prodcut_info["name"],
+                        barcode,
+                        (-returned_units),
+                        prodcut_info["purchase_price"],
+                        price
+                    )
+
+                )
+
+                # 3- Update the total in the invoice we created in step 1.
+                
+                invoice_updated = self.update_info(
+                    "sale_invoices",
+                    ["total"], 
+                    (f"{(total_returned)}",),
+                    "id=?",
+                    (invoice_id,)
+                )
+                
+                # 4- Update the quantity in the products table.
+                product_updated = self.update_info(
+                    "products",
+                    ["quantity"],
+                    (f"{(int(prodcut_info['quantity']) + returned_units)}",),
+                    "id=?",
+                    (prodcut_info["id"],)
+                )
+
+                # show a message
+                if invoice_updated and product_updated:
+                    QMessageBox.information(None, "نجح", "تمت عملية الإرجاع بنجاح")
+                else:
+                    QMessageBox.warning(None, "فشل", "فشلت عملية الإرجاع")
 
         
     def select_item_barcode(self, row: int):

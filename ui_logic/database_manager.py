@@ -79,7 +79,14 @@ class DatabaseManager(SharedFunctions):
             else: 
                 return False
 
-    def update_info(self, table_name: str, columns: list[str], data: tuple, where_clause: str, where_args: tuple = ()) -> bool:
+    def update_info(
+        self, 
+        table_name: str, 
+        columns: list[str], 
+        data: tuple, 
+        where_clause: str, 
+        where_args: tuple = ()
+    ) -> bool:
         """
         Update data in a database table.
 

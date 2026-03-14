@@ -46,7 +46,9 @@ def connection():
         
         return cursor.execute(query,fltr).fetchone()[0]
     
-print(connection())
+a = 15
+b = (-a)
+print(b)
 
 
 
