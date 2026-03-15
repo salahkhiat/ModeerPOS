@@ -74,8 +74,10 @@ class SharedValidators(DatabaseManager):
                 self.set_err_msg(field_name,"الحقل جاهز")
             return True 
          
-    # Check if the field is a telephone
+    
     def is_tel(self, field_name:str) -> bool:
+        """ Returns True if a tel is valid, False otherwise."""
+
         field = getattr(self.ui,field_name).text()
         
         if len(field) < 10 and len(field) > 0:
@@ -95,32 +97,41 @@ class SharedValidators(DatabaseManager):
                 self.set_err_msg(field_name," الهاتف يجب أن يبدأ بـ 05, 06, 07")
                 return False
             
-    def is_tel_ready(self, tel_field:str) -> bool :
-        """
-        is a telephone number ready to save?
+    def is_tel_ready(self, tel_field: str, user_id=None, user_type=None) -> bool :
+        """ Returns True if the tel is ready to save, False otherwise. """
 
-        :param tel_field: a QLineEdit field name as a string.
-        :type tel_field: str
-        :return: True if a number is ready to save, and False otherwise.
-        :rtype: bool
+        table = None
+        if user_id is not None and user_type is not None:
+            table = user_type
 
-        :example:
-            >>> obj.is_tel_ready("QLineEdit_name")
-            True
-        """
-        combo_index = self.get_current_combo_index('account_type')
-        account_types = ["customers", "suppliers", "employees"]
-        table = account_types[combo_index]
+        else:
+            combo_index = self.get_current_combo_index('account_type')
+            account_types = ["customers", "suppliers", "employees"]
+            table = account_types[combo_index]
         
-        tel= getattr(self.ui,tel_field).text()
+        tel = getattr(self.ui, tel_field).text()
         if  self.is_tel(tel_field) == True and len(tel) == 0:
             return True
+        
         elif self.is_tel(tel_field) == True and len(tel) == 10:
-            if self.tel_exists(table,tel):
-                self.set_err_msg(tel_field,"هذا الرقم موجود مسبقا")
-                return False
+            
+            # Edit Mode.
+            if user_id is not None:
+                if self.tel_exists(table, tel, user_id):
+                    self.set_err_msg(tel_field, "الرقم مربوط بحساب آخر")
+                    return False
+                else:
+                    return True
+                
+            # Insert Mode.
             else:
-                return True
+                if self.tel_exists(table, tel):
+                    self.set_err_msg(tel_field, "هذا الرقم موجود مسبقا")
+                    return False
+                else:
+                    return True
+            
+            
     
     def is_amount(self, field_name:str) -> bool:
 
@@ -194,9 +205,13 @@ class SharedValidators(DatabaseManager):
         for field in fields:
             field.clear()
     
-    def update_validation_response(self,field_name: str, validating_fun: str) -> None:        
+    def update_validation_response(self, field_name: str, validating_fun: str, user_id=None, table=None) -> None:        
         validating = getattr(self, validating_fun)
-        response = validating(field_name)
+        response = None 
+        if user_id is not None and table is not None:
+            response = validating(field_name, user_id, table)
+        else:
+            response = validating(field_name)
         setattr(self, "is_valid_" + field_name, response) 
 
     def is_purchase_price(self, field_name:str) -> bool:

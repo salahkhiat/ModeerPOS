@@ -752,28 +752,28 @@ class DatabaseManager(SharedFunctions):
                 
             return result
 
-    def tel_exists(self,table: str, tel: str) -> bool:
+    def tel_exists(self,table: str, tel: str, user_id=None ) -> bool:
         """
-        Check if a telephone number exists in a specific table.
-
-        :param table: Name of the table to search in.
-        :type table: str
-        :param tel: The telephone number to search for.
-        :type tel: str
-        :return: True if the telephone number exists, False otherwise.
-        :rtype: bool
-
+        Return True if a tel  exists in the provided table, False otherwise.
         :example:
             >>> obj.tel_exists("contacts", "1234567890")
             True
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            query = f"SELECT 1 FROM {table} WHERE tel = ? LIMIT 1"
+            query = f"SELECT 1 FROM {table} WHERE tel = ?"
+            
+            args = [tel, ]
+            if user_id is not None:
+                query += f" AND id != ?"
+                args.append(user_id)
+            
+            query += " LIMIT 1"
 
-            cursor.execute(query, (tel,))
-            result = cursor.fetchone()
-            return result is not None
+            cursor.execute(query, args)
+            
+
+            return cursor.fetchone() is not None
 
     def is_belonged_to_other(self, current_id:str, current_barcode:str):
         with self.db_connection() as connection: 

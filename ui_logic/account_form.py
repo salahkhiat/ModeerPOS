@@ -25,10 +25,27 @@ class AccountForm(Form):
 
         # Validate fields.
         self.ui.name.textChanged.connect(lambda:self.update_validation_response("name","is_empty"))
-        self.ui.tel.textChanged.connect(lambda:self.update_validation_response("tel","is_tel_ready"))
+
+        if self.editable:
+            self.ui.tel.textChanged.connect(
+                lambda:self.update_validation_response("tel", "is_tel_ready", user_item_id, user_type)
+            )
+
+        else:
+            self.ui.tel.textChanged.connect(
+                lambda:self.update_validation_response("tel", "is_tel_ready")
+            )
 
         # Re-validate the telephone number again when the user changes the account type.
-        self.ui.account_type.activated.connect(lambda:self.update_validation_response("tel","is_tel_ready"))
+        if self.editable:
+            self.ui.account_type.activated.connect(
+                lambda:self.update_validation_response("tel", "is_tel_ready", user_item_id, user_type)
+            )
+
+        else:
+            self.ui.account_type.activated.connect(
+                lambda:self.update_validation_response("tel", "is_tel_ready")
+            )
 
         # Buttons connection
         self.save_btn_clicked()
@@ -36,9 +53,7 @@ class AccountForm(Form):
 
     # save account form inputs
     def save_account_form(self) -> None:
-        """
-        Save an account form data in the database.
-        """ 
+        """ Insert a new account into the database. """ 
         name = self.ui.name
         tel = self.ui.tel
         table = None 
@@ -47,6 +62,7 @@ class AccountForm(Form):
             combo_index = self.get_current_combo_index('account_type')
             account_types = ["customers", "suppliers", "employees"]
             table = account_types[combo_index]
+
         else:
             table = self.user_type
 

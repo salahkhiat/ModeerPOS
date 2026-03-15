@@ -164,3 +164,11 @@ sqlite3.OperationalError: cannot INSERT into generated column "total"
 2026-03-15 20:45:16,773 | INFO | database_manager.py:1383 | Database tables created successfully.
 2026-03-15 20:46:24,428 | INFO | database_manager.py:1383 | Database tables created successfully.
 2026-03-15 20:46:34,316 | WARNING | invoice_form.py:696 | [green]Product:Nokia 1100 original with barcode 525881  has sold successfully  [/green]
+2026-03-15 23:34:37,988 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-16 00:21:51,056 | INFO | database_manager.py:1382 | Database tables created successfully.
+2026-03-16 00:30:08,751 | INFO | database_manager.py:1382 | Database tables created successfully.
+2026-03-16 00:32:06,021 | INFO | database_manager.py:1382 | Database tables created successfully.
+2026-03-16 00:34:58,815 | INFO | database_manager.py:1382 | Database tables created successfully.
+2026-03-16 00:36:55,147 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-16 00:52:02,196 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-16 00:53:19,544 | INFO | database_manager.py:1383 | Database tables created successfully.

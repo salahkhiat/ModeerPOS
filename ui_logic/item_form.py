@@ -3,7 +3,7 @@ from .base_form import Form
 from PyQt6.QtCore import pyqtSignal
 from typing import List
 from PyQt6.QtWidgets import QWidget
-
+import logging
 class ItemForm(Form):
     item_added = pyqtSignal(dict)
     item_updated = pyqtSignal(bool)
@@ -154,7 +154,7 @@ class ItemForm(Form):
         validated_fields, item_details = self.validating_fields()
 
         if validated_fields != 5:
-            print("A product info has entered is invalid.")
+            logging.warning("A product info has entered is invalid.")
 
         else:
             # this condition block is only for saving product information option.
