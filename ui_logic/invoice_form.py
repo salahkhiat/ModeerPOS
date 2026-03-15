@@ -24,28 +24,6 @@ from uis.error_msg import Ui_Dialog as ErrorFormUi
 import logging
 from typing import Dict , Any 
 
-# just for coloring logs messages
-from rich.console import Console
-from rich.logging import RichHandler
-import logging
-
-# Setup logging with RichHandler
-console = Console()
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(message)s",
-    datefmt="[%X]",
-    handlers=[RichHandler(console=console, markup=True)]
-)
-
-log = logging.getLogger("rich")
-# # Green message (e.g. success)
-# log.info("[green]✔ Operation successful[/green]")
-
-# # Red message (e.g. error)
-# log.error("[red]✖ Operation failed[/red]")
-# ----- just to
-
 # this short class for make tables cells accept onley numbers.
 class OnlyDigitsInCell(QStyledItemDelegate):
     def createEditor(self, parent, option, index):
@@ -607,7 +585,7 @@ class InvoiceForm(Form):
 
                         # If a product barcode is not existing in a database.
                         if updated_product_id is None:
-                            log.error(f"[red]product:{name} with {barcode} barcode is not existing in a database.[/red]")
+                            logging.error(f"[red]product:{name} with {barcode} barcode is not existing in a database.[/red]")
                             return 
                         else:
                             p_h_data = (
@@ -625,7 +603,7 @@ class InvoiceForm(Form):
                                 return
 
                     else:
-                        log.error(f"[red]Product:{name} with {barcode} was not updated. [/red]")
+                        logging.error(f"[red]Product:{name} with {barcode} was not updated. [/red]")
                         return
 
                 # If a product is not existing in a database.
@@ -642,11 +620,11 @@ class InvoiceForm(Form):
                     )
         
                     if product_id is False:
-                        log.error(f"[red]Product:{name} with {barcode} was not inserted into products table.[/red]")
+                        logging.error(f"[red]Product:{name} with {barcode} was not inserted into products table.[/red]")
                         return
                     else:
                         if self.store(p_h_table,p_h_columns,p_h_data) is False:
-                            log.error(f"[red]Product:{name} with barcode {barcode} was not inserted into purchases_history [/red]")
+                            logging.error(f"[red]Product:{name} with barcode {barcode} was not inserted into purchases_history [/red]")
                             return          
                         
             """ 
@@ -712,10 +690,10 @@ class InvoiceForm(Form):
                     )
 
                     if self.store(s_h_table,s_h_columns,s_h_data) is False:
-                            log.error(f"[red]Product:{name} with barcode {barcode}  has not sold  [/red]")
+                            logging.error(f"[red]Product:{name} with barcode {barcode}  has not sold  [/red]")
                             return 
                     else:
-                            log.warning(f"[green]Product:{name} with barcode {barcode}  has sold successfully  [/green]")
+                            logging.warning(f"[green]Product:{name} with barcode {barcode}  has sold successfully  [/green]")
                             
         self.play_success_sound()  
         self.invoice_saved.emit(True)           
@@ -765,7 +743,7 @@ class InvoiceForm(Form):
           
             # Returned units greater than units sold - incorrect.
             if returned_units > units_sold:
-                msg_content = "عدد الوحدات أكبر من ما تم شرائه أو تجاوزة المدة المسموح بها : شهر"
+                msg_content = " الوحدات أكبر من ما تم شرائه أو تجاوزة المدة المسموحة : شهر"
                 self.show_err_msg(msg_content)
 
             # Returned units number is correct.
@@ -782,9 +760,6 @@ class InvoiceForm(Form):
                 )
                 
                 total_returned = -returned_units * price
-                print(f"returned_units:{returned_units} type is: {type(returned_units)}")
-                print(f"price: {price} type is: {type(price)}")
-                print(f"total:{total_returned}")
                 self.store(
                     "sales_history",
                     [
@@ -830,6 +805,11 @@ class InvoiceForm(Form):
                 # show a message
                 if invoice_updated and product_updated:
                     QMessageBox.information(None, "نجح", "تمت عملية الإرجاع بنجاح")
+                    self.play_success_sound()  
+                    # we used invoice_saved here to send True.
+                    # so we can close the invoice tab in main_screen.
+                    self.invoice_saved.emit(True) 
+                    
                 else:
                     QMessageBox.warning(None, "فشل", "فشلت عملية الإرجاع")
 

@@ -151,3 +151,16 @@ sqlite3.OperationalError: cannot INSERT into generated column "total"
 2026-03-15 00:40:55,210 | INFO | database_manager.py:1376 | Database tables created successfully.
 2026-03-15 00:42:38,331 | INFO | database_manager.py:1376 | Database tables created successfully.
 2026-03-15 00:44:14,316 | INFO | database_manager.py:1376 | Database tables created successfully.
+2026-03-15 20:00:19,763 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:02:26,057 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:04:09,960 | WARNING | invoice_form.py:718 | [green]Product:honor 8x with barcode 2920  has sold successfully  [/green]
+2026-03-15 20:11:06,168 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:11:26,148 | WARNING | invoice_form.py:718 | [green]Product:Nokia 105 original with barcode 9139  has sold successfully  [/green]
+2026-03-15 20:18:45,218 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:35:07,531 | WARNING | invoice_form.py:718 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-15 20:38:32,785 | WARNING | invoice_form.py:718 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-15 20:41:44,736 | WARNING | invoice_form.py:718 | [green]Product:samsung b310 with barcode 1751  has sold successfully  [/green]
+2026-03-15 20:43:48,470 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:45:16,773 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:46:24,428 | INFO | database_manager.py:1383 | Database tables created successfully.
+2026-03-15 20:46:34,316 | WARNING | invoice_form.py:696 | [green]Product:Nokia 1100 original with barcode 525881  has sold successfully  [/green]
