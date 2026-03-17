@@ -1,5 +1,5 @@
 {
     "hijri_date": true,
-    "database_path": "E:/",
+    "database_path": ".",
     "database_name": "shop_data.db"
 }
