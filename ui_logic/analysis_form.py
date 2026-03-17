@@ -73,7 +73,7 @@ class AnalysisForm(Form):
         incomes_table.insertRow(row)
         services_cash_label = "الخدمات"
         incomes_table.setItem(row, 0, self.make_item(services_cash_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{cash:.2f}", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{services_cash:.2f}", read_only=True))
 
         incomes_table.insertRow(row)
         sales_cash_label = "المبيعات"
@@ -126,7 +126,7 @@ class AnalysisForm(Form):
 
         suppliers_new_debts = suppliers_debts - suppliers_deposits
 
-        outcome = expenses + suppliers_deposits + purchases_deposits + employees_withdrawals 
+        outcome = expenses + suppliers_deposits + employees_withdrawals 
 
         expenses_table.insertRow(row)
         total_ex_label = "الخرج الإجمالي"

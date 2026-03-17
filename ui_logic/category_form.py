@@ -15,8 +15,10 @@ class CategoryForm(Form):
         self.ui.title.setText("نوع الخدمة")
 
         # for updating propuses
-        if category_id:
+        if category_id is not None:
             self.category_id = category_id
+        else:
+            self.category_id = None
 
         # Default validation values
         self.is_valid_name = False
@@ -47,7 +49,8 @@ class CategoryForm(Form):
             if self.is_max(table,"name"):
                 self.ui.name_err.setText("تجاوزت العدد المسموح به من العناصر")
             else:
-                if not self.category_id:
+
+                if self.category_id is None:
                     self.category_saved.emit(self.store(table,columns,data)) # emit the signal
                 else:
                     self.category_saved.emit( 

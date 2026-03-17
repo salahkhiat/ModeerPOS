@@ -12,6 +12,16 @@ logging.basicConfig(
     format='%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d | %(message)s'
 )
 
+# --- Global exception hook ---
+def excepthook(exc_type, exc_value, exc_traceback):
+    if issubclass(exc_type, KeyboardInterrupt):
+        sys.__excepthook__(exc_type, exc_value, exc_traceback)
+        return
+    logging.critical("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
+
+sys.excepthook = excepthook
+# --- 
+
 def main():
     app = QApplication(sys.argv)
 
@@ -27,8 +37,6 @@ def main():
 
     sys.exit(app.exec())
 
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception:
-        logging.exception("Application crashed")
+if __name__ == "__main__": 
+    main()
+
