@@ -15,6 +15,7 @@ class ChooseItemForm(Form):
 
     def __init__(self,base_form):
         super().__init__(base_form)
+        
         self.setWindowTitle("إختر السلعة")
         # set icons
         self.set_icon("add_btn","add_item.svg")
@@ -81,13 +82,10 @@ class ChooseItemForm(Form):
         header_font = QFont()
         header_font.setPointSize(14)
         header_font.setBold(True)
-
-        # Create and set items with the font
-        for col, value in enumerate([name, barcode, sale_price]):
-            item = QTableWidgetItem(str(value))
-            item.setFont(header_font)
         
-            table.setItem(row_position, col, item)
+        # Create and set items with the font
+        for col, value in enumerate([name, barcode, sale_price]):        
+            table.setItem(row_position, col, self.make_item(value, font_size=14, read_only=True))
 
     def put_data_into_table(self, prefix:str, column:str):
         self.ui.items_table.setRowCount(0)

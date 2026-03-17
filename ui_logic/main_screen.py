@@ -1,6 +1,3 @@
-from PyQt6.QtCore import Qt, QTimer
-
-
 from .base_form import MainForm
 
 from uis.database_ui import Ui_Form as DatabaseUi 
@@ -33,9 +30,6 @@ from .service_form import ServiceForm
 from uis.invoice import Ui_Form as InvoiceUi 
 from .invoice_form import InvoiceForm
 
-from uis.choose_product import Ui_Form as ChooseProductUi 
-from .choose_product_form import ChooseProductForm
-
 # We used 'category' UI for requested products form because it has the same required properties.
 from uis.category import Ui_Form as RequestedProductUi
 from .requested_product_form import RequestedProductForm
@@ -48,7 +42,7 @@ from .editable_items_form import EditableItemsForm
 
 from PyQt6.QtWidgets import QTableWidget, QHeaderView, QSplashScreen
 from PyQt6.QtGui import QPixmap
-
+from PyQt6.QtCore import Qt, QTimer
 from typing import Dict, List
 
 import logging

@@ -21,9 +21,9 @@ from PyQt6.QtCore import pyqtSignal , QTimer
 from .error_form import ErrorForm
 from uis.error_msg import Ui_Dialog as ErrorFormUi
 
-
 from typing import Dict , Any 
 import logging
+
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
@@ -35,13 +35,11 @@ class OnlyDigitsInCell(QStyledItemDelegate):
         spin.setMaximum(999999)
         return spin
     
-
 class InvoiceForm(Form):
     invoice_saved = pyqtSignal(bool)
 
     def __init__(self,base_form, invoice_type:str):
         super().__init__(base_form)
-
         # set invoice type
         self.invoice_type = invoice_type
 
@@ -148,9 +146,11 @@ class InvoiceForm(Form):
         # accept only numbers in amount field.
         self.accept_numbers_only(self.ui.amount)
 
-    def validating_qt_cell(self):
-        self.ui.items_table.setItemDelegateForColumn(2, OnlyDigitsInCell())
+
+    def validating_qt_cell(self, col_index:int):
+        self.ui.items_table.setItemDelegateForColumn(col_index, OnlyDigitsInCell())
         self.ui.items_table.itemChanged.connect(self.get_cell_content)
+    
 
     def put_users_on_combo(self):
         combo = self.ui.users
@@ -212,9 +212,9 @@ class InvoiceForm(Form):
         columns = ("name", "sale_price", "quantity", "barcode")
         keyword = "barcode"
         target = barcode
-        product_info : dict = self.get_item_info(table, columns, keyword, target)
+        product_info: dict = self.get_item_info(table, columns, keyword, target)
         row = [ value for value in product_info.values()]
-        row[2]=1
+        row[2] = 1
         qtable : QTableWidget = self.ui.items_table
         self.add_list_in_qtable(qtable, row)
 
@@ -222,7 +222,7 @@ class InvoiceForm(Form):
         sale_price = int(product_info["sale_price"])
         self.invoice_total += sale_price
         self.ui.total.display(self.invoice_total)
-        self.validating_qt_cell()
+        self.validating_qt_cell(2)
         self.enable_save_btn()
         
     def show_err_msg(self,msg:str):
@@ -300,18 +300,23 @@ class InvoiceForm(Form):
                 cell.setText(real_price)
 
             elif len(sale_price) > 0:
-                if float(sale_price) == 0:
-                    self.show_err_msg("الصفر قيمة غير مقبلوة")
+                if not cell.text().isdigit():
                     cell.setText(real_price)
-                    self.play_failure_sound()
-
-                elif float(sale_price) > 900000:
-                    self.show_err_msg("السعر الأقصى المسموح به هو 90 مليون دج")
-                    cell.setText(real_price)
-                    self.play_failure_sound()
-                
-                else:
                     self.calculates_invoice_total()
+                else:
+                    if float(sale_price) == 0:
+                        self.show_err_msg("الصفر قيمة غير مقبلوة")
+                        cell.setText(real_price)
+                        self.play_failure_sound()
+
+                    elif float(sale_price) > 1000000:
+                        self.show_err_msg("السعر الأقصى المسموح به هو 100000 دج")
+                        cell.setText(real_price)
+                        self.play_failure_sound()
+                    
+                    else:
+                        self.calculates_invoice_total()
+        
                 
     def calculates_invoice_total(self):
         qtable: QTableWidget = self.ui.items_table
@@ -339,13 +344,13 @@ class InvoiceForm(Form):
     def add_item_btn_clicked(self):
         self.ui.add_item_btn.clicked.connect( lambda: self.show_item_form())
 
-    def make_item(self,text, font_size=18, bold=True):
-        item = QTableWidgetItem(text)
-        font = QFont()
-        font.setPointSize(font_size)
-        font.setBold(bold)
-        item.setFont(font)
-        return item
+    # def make_item(self,text, font_size=18, bold=True):
+    #     item = QTableWidgetItem(text)
+    #     font = QFont()
+    #     font.setPointSize(font_size)
+    #     font.setBold(bold)
+    #     item.setFont(font)
+    #     return item
     
     def add_item_to_table(self, item_data: Dict[Any, Any]):
         table = self.ui.items_table
@@ -358,13 +363,13 @@ class InvoiceForm(Form):
         self.invoice_total += self.calculate_total(p_price, qt)
         self.ui.total.display(self.invoice_total)
         
-        table.setItem(row, 0, self.make_item(item_data['name']))
+        table.setItem(row, 0, self.make_item(item_data['name'], read_only=True))
         if self.invoice_type == "suppliers":
             table.setItem(row, 1, self.make_item(item_data['purchase_price']))
         table.setItem(row, 2, self.make_item(item_data['sale_price']))
         
         table.setItem(row, 3, self.make_item(item_data['quantity']))
-        table.setItem(row, 4, self.make_item(item_data['ref']))
+        table.setItem(row, 4, self.make_item(item_data['ref'], read_only=True))
         
         self.enable_save_btn()
 

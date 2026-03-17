@@ -216,17 +216,18 @@ class SharedFunctions:
         # Add new row at the end
         current_row = table.rowCount()
         table.insertRow(current_row)
-
-        # --- Custom font for the new row ---
-        custom_font = QFont()
-        custom_font.setPointSize(16)
-        custom_font.setBold(True)
+        
+        name_col_index = 0
+        barcode_col_index = 3
 
         # Fill the new row with data
         for col, value in enumerate(data):
-            item = QTableWidgetItem(str(value))
-            item.setFont(custom_font)
-            table.setItem(current_row, col, item)
+            
+            if col == name_col_index or col == barcode_col_index:
+
+                table.setItem(current_row, col, self.make_item(value, font_size=16, read_only=True))
+            else:
+                table.setItem(current_row, col, self.make_item(value, font_size=16))
 
         table.blockSignals(False)
 
