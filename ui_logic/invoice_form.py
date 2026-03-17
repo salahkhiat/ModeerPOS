@@ -21,8 +21,11 @@ from PyQt6.QtCore import pyqtSignal , QTimer
 from .error_form import ErrorForm
 from uis.error_msg import Ui_Dialog as ErrorFormUi
 
-import logging
+
 from typing import Dict , Any 
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 # this short class for make tables cells accept onley numbers.
 class OnlyDigitsInCell(QStyledItemDelegate):

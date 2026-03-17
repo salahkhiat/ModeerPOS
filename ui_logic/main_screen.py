@@ -51,18 +51,14 @@ from PyQt6.QtGui import QPixmap
 
 from typing import Dict, List
 
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class MainScreen(MainForm):
    
     def __init__(self,base_form):
         super().__init__(base_form)
-        
-        # Test started part ------
-        
-        
-
-        
-        # ------------------------
         
         # preapare Database 
         self.prepare_database()

@@ -1,15 +1,18 @@
 from PyQt6 import QtGui
-from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
-    QComboBox, QTableWidget, QTableWidgetItem, QAbstractItemView
+    QComboBox,
+    QTableWidget, 
+    QTableWidgetItem, 
+    QAbstractItemView
 )
 
 from PyQt6.QtGui import QFont, QColor
 from hijri_converter import Gregorian
 from datetime import datetime
 from typing import Dict, Any, List
-import json, os, sys, random, winsound
-
+import json, os, sys, random, winsound, logging
+logger = logging.getLogger(__name__)
 
 class SharedFunctions:
     def set_icon(self, btn_name, icon_name):
@@ -22,9 +25,16 @@ class SharedFunctions:
     def resource_path(self, relative_path):
         try:
             base_path = sys._MEIPASS
+            logger.debug("Running from PyInstaller bundle. Base path: %s", base_path)
+
         except AttributeError:
             base_path = os.path.abspath(".")
-        return os.path.join(base_path, relative_path)
+            logger.debug("Running in development mode. Base path: %s", base_path)
+
+        full_path = os.path.join(base_path, relative_path)
+        logger.debug("Resolved resource path: %s", full_path)
+
+        return  full_path
     
     # get settings as dict 
     def get_settings(self) -> dict:
@@ -34,16 +44,28 @@ class SharedFunctions:
     def get_current_combo_index(self,combo_name:str) -> int:
         return getattr(self.ui, combo_name).currentIndex()
 
-    # get current date in Hijri or Gregorian. Hijri is the default.
     def current_date(self) -> str:
-        hijri_date =self.get_settings()["hijri_date"]
-        year = datetime.now().year
-        month = datetime.now().month
-        day = datetime.now().day
-        if hijri_date == True:
-            return  str(Gregorian(year, month, day).to_hijri())
-        else:
-            return  str(Gregorian(year, month, day))
+        try:
+            hijri_date = self.get_settings().get("hijri_date", False)
+
+            now = datetime.now()
+            year, month, day = now.year, now.month, now.day
+
+            if hijri_date:
+                hijri = Gregorian(year, month, day).to_hijri()
+                date_str = f"{hijri}"
+                logger.debug("Returning Hijri date: %s", date_str)
+                return date_str
+            else:
+                gregorian = Gregorian(year, month, day)
+                date_str = f"{gregorian}"
+                logger.debug("Returning Gregorian date: %s", date_str)
+                return date_str
+
+        except Exception as e:
+            logger.error("Failed to get current date: %s", e, exc_info=True)
+            # fallback: return Gregorian date string to avoid crashing
+            return str(datetime.now().date())
     
     # check if settings.json file is exsits returns True, otherwise return False
     def is_settings_file_exists(self) -> bool:
@@ -52,8 +74,8 @@ class SharedFunctions:
             if entry.is_file() and entry.name == "settings.json":
                 exists =  True
                 break 
-
         return exists
+    
     # settings.json file path 
     def get_settings_json_path(self):
         return os.path.join(os.getcwd(), "settings.json")
@@ -102,9 +124,6 @@ class SharedFunctions:
             combo.addItem("-")
             
         combo.addItems(items)
-
-    
-
         
     def reverse_dict(self, dictionary:Dict[Any,Any]) -> Dict[Any,Any]:
      """
@@ -185,13 +204,6 @@ class SharedFunctions:
 
         :param table: QTableWidget instance
         :param data: list of values to insert
-        """
-
-
-        """
-
-            We blocked the table signals.
-        
         """
 
         table.blockSignals(True)

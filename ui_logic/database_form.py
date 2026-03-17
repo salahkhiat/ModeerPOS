@@ -4,6 +4,9 @@ import json
 import os 
 from .base_form import Form
 
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class DatabaseForm(Form):
     def __init__(self,base_form):

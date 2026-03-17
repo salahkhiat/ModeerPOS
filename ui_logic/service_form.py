@@ -2,6 +2,9 @@ from .base_form import Form
 from .category_form import CategoryForm
 from uis.category import Ui_Form as CategoryUi
 
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class ServiceForm(Form):
     def __init__(self,base_form):
@@ -118,9 +121,6 @@ class ServiceForm(Form):
                 
                 self.update_validation_response("note","is_empty")
     
-            
-
-        
     def save_btn_clicked(self):
         self.ui.save_btn.clicked.connect(self.save_service_form)
 

@@ -1,5 +1,8 @@
 from .base_form import Form
-from PyQt6.QtCore import pyqtSignal 
+
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class ChooseProductForm(Form):
 

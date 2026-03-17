@@ -5,6 +5,10 @@ from .shared_functions import SharedFunctions
 from .shared_validators import SharedValidators
 from .database_manager import DatabaseManager
 
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
+
 class MainForm(QMainWindow,DatabaseManager):
     def __init__(self,base_form):
         super().__init__()

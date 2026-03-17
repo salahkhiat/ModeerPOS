@@ -1,6 +1,10 @@
 from .base_form import Form
 from PyQt6.QtCore import pyqtSignal 
 from typing import Dict
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
+
 class RequestedProductForm(Form):
     product_info:pyqtSignal = pyqtSignal(dict)
     def __init__(self,base_form):

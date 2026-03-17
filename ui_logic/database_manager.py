@@ -2,14 +2,13 @@ import sqlite3 as db
 from typing import List, Dict , Any
 import os 
 from contextlib import contextmanager
-import logging
-logging.basicConfig(
-    filename='modeer_logs_file.log',
-    level=logging.DEBUG,
-    format='%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d | %(message)s'
-)
+
 
 from .shared_functions import SharedFunctions
+
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class DatabaseManager(SharedFunctions):
     def get_database_ref(self) -> str:
@@ -32,7 +31,7 @@ class DatabaseManager(SharedFunctions):
         try:
             yield con 
         except db.Error as e:
-            logging.exception(f"Database error:{e}")
+            logger.exception(f"Database error:{e}")
             raise
         finally:
             con.close()
@@ -1380,5 +1379,5 @@ class DatabaseManager(SharedFunctions):
         self.create_default_column("customers", "name")
         self.create_default_column("expenses_categories", "name")
 
-        logging.info("Database tables created successfully.")
+        logger.info("Database tables created successfully.")
     

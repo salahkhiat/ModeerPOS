@@ -1,5 +1,8 @@
 from PyQt6.QtWidgets import QComboBox, QLineEdit
 from .base_form import Form
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class SupplierPaymentForm(Form):
     def __init__(self,base_form):
@@ -7,7 +10,6 @@ class SupplierPaymentForm(Form):
         # set form title
         self.setWindowTitle("إيداع أو دين جديد")
         
-
         #  supplier's field
         suppliers_combo:QComboBox = self.ui.supplier
         self.fetch_then_put("suppliers","name",suppliers_combo)

@@ -1,4 +1,7 @@
 from .base_form import Form
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class AccountForm(Form):
     def __init__(self,base_form, user_item_id: int=None, user_type: str=None):

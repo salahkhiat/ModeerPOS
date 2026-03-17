@@ -20,6 +20,10 @@ from uis.error_msg import Ui_Dialog as ErrorFormUi
 from .confirmation_msg_form import ConfirmationMsgForm
 from uis.confirmation_msg import Ui_Dialog as ConfirmationMsgFormUi
 
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
+
 class EditableItemsForm(Form):
     
     def __init__(self,base_form):

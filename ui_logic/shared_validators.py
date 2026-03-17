@@ -1,20 +1,20 @@
 from PyQt6.QtGui import  QRegularExpressionValidator 
 from PyQt6.QtCore import QRegularExpression 
 from PyQt6.QtWidgets import QLineEdit
-from typing import List
-from rich.console import Console
-console = Console()
-
-
 
 from .database_manager import DatabaseManager
+
+from typing import List
+
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class SharedValidators(DatabaseManager):
     # Set only numbers are accepted  
     def accept_numbers_only(self,field:QLineEdit ) -> None:
-        """
-        Accept only numbers.
-        """
+        """ Accept only numbers."""
+
         regex = QRegularExpression("^\d*$") # Accepts only digits 0-9
         validator = QRegularExpressionValidator(regex)
         field.setValidator(validator)
@@ -35,7 +35,7 @@ class SharedValidators(DatabaseManager):
         field.setEnabled(state)
 
 
-    # Check the minimum and the maximum of an amount. min = 1 DZD , max = 1000000 DZD.
+    # Check the minimum and the maximum of an amount. min = 1 DZD , max = 10000000 DZD.
     def is_price(self, field_name:str):
         field = getattr(self.ui,field_name).text()
         if len(field) > 0:
@@ -43,10 +43,10 @@ class SharedValidators(DatabaseManager):
             if amount == 0 :
                 self.set_err_msg(field_name,"الصفر قيمة مرفوضة")
                 return False 
-            elif amount > 1000000:
-                self.set_err_msg(field_name,"أقصى مبلغ هو : 1000000 دج")
+            elif amount > 10000000:
+                self.set_err_msg(field_name,"أقصى مبلغ هو : 10000000 دج")
                 return False
-            elif amount > 0 and amount < 1000001:
+            elif amount > 0 and amount < 10000001:
                 self.set_err_msg(field_name, "الحقل جاهز")
                 return True 
             
@@ -227,13 +227,13 @@ class SharedValidators(DatabaseManager):
                 msg = "إنتبه! سعر الشراء الآن '0دج'"
                 self.set_err_msg(field_name,msg)
                 return True 
-            # if purchase price is greater than 100.000 DZD.
-            elif field > 100000:
-                msg = "أقصى سعر مسموح به هو 100.000 دج"
+            # if purchase price is greater than 1000.000 DZD.
+            elif field > 1000000:
+                msg = "أقصى سعر مسموح به هو 1000.000 دج"
                 self.set_err_msg(field_name,msg)
                 return False
-            # if purchase price is greater than 0 and less than 100.001 DZD.
-            elif field > 0 and field < 100001:
+            # if purchase price is greater than 0 and less than 1000.001 DZD.
+            elif field > 0 and field < 1000001:
                 msg = "السعر جاهز"
                 self.set_err_msg(field_name,msg)
                 return True
@@ -269,18 +269,18 @@ class SharedValidators(DatabaseManager):
                 msg = " الصفر غير مقبول كسعر بيع"
                 self.set_err_msg(field_name,msg)
                 return False 
-            # if sale price is greater than 500.000 DZD.
-            elif field > 500000:
-                msg = "أقصى سعر مسموح به هو 500.000 دج"
+            # if sale price is greater than 1000.000 DZD.
+            elif field > 1000000:
+                msg = "أقصى سعر مسموح به هو 1000.000 دج"
                 self.set_err_msg(field_name,msg)
                 return False
             # if sale price is greater than 0 and less than 500.001 DZD.
-            elif (field > 0 and field < 500001) and field > p_price:
+            elif (field > 0 and field < 1000001) and field > p_price:
                 msg = "السعر جاهز"
                 self.set_err_msg(field_name,msg)
                 return True
             # if sale price is less than purchase_price
-            elif (field > 0 and field < 500001) and field < p_price:
+            elif (field > 0 and field < 1000001) and field < p_price:
                 msg = "إنتبه:سعر البيع أقل من الشراء"
                 self.set_err_msg(field_name,msg)
                 return True

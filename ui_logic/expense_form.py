@@ -3,6 +3,9 @@ from .base_form import Form
 
 from .expenses_category_form import ExpensesCategoryForm
 from uis.category import Ui_Form as CategoryUi
+import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 
 class ExpenseForm(Form):
     def __init__(self,base_form):

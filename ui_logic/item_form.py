@@ -3,7 +3,10 @@ from .base_form import Form
 from PyQt6.QtCore import pyqtSignal
 from typing import List
 from PyQt6.QtWidgets import QWidget
+
 import logging
+# uses this file's name for easier debugging
+logger = logging.getLogger(__name__)
 class ItemForm(Form):
     item_added = pyqtSignal(dict)
     item_updated = pyqtSignal(bool)
