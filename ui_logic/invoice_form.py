@@ -493,26 +493,6 @@ class InvoiceForm(Form):
                 )
                 invoice_id = self.insert_new_invoice("suppliers", inv_data)
 
-                # Insert a deposit into suppliers_transactions.
-                self.store(
-                    "suppliers_transactions",
-                    [
-                        "supplier_id",
-                        "invoice_id",
-                        "note",
-                        "amount",
-                        "type",
-                        "created"
-                    ],
-                    (
-                        self.user_id,
-                        invoice_id,
-                        f"INV:{invoice_barcode}",
-                        str(invoice_total),
-                        "deposit",
-                        created
-                    )
-                )
                     
             # Sales part - customers.
             elif self.invoice_type == "customers":
