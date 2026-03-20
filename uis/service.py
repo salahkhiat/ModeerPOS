@@ -83,17 +83,15 @@ class Ui_Form(object):
         self.add_category_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.add_category_btn.setStyleSheet("QPushButton:hover{\n"
 "    background-color:#3f5482;\n"
-"    border: 1px solid #3f5482;\n" 
+"    border: 1px solid #3f5482;\n"
 "}")
         self.add_category_btn.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../icons/add.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off) 
+        icon.addPixmap(QtGui.QPixmap("../icons/add.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.add_category_btn.setIcon(icon)
         self.add_category_btn.setIconSize(QtCore.QSize(50, 50))
         self.add_category_btn.setFlat(True)
         self.add_category_btn.setObjectName("add_category_btn")
-
-        
         self.horizontalLayout_4.addWidget(self.add_category_btn)
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.category_err = QtWidgets.QLabel(parent=self.layoutWidget)
@@ -234,6 +232,7 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label_2.setText(_translate("Form", "الزبون :"))
         self.label.setText(_translate("Form", "نوع الخدمة :"))
-        self.note.setPlaceholderText(_translate("Form", "ملحوظة : إسم الجهاز مثلا"))
+        self.note.setPlaceholderText(_translate("Form", "ملحوظة"))
         self.amount.setPlaceholderText(_translate("Form", "السعر"))
         self.deposit.setPlaceholderText(_translate("Form", "الإيداع"))
+        self.save_btn.setShortcut(_translate("Form", "Return"))

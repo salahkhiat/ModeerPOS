@@ -39,7 +39,7 @@ class EditableItemsForm(Form):
         self.item_id: int = None 
         self.update_variable_on_row_select(self.qt_table, "item_id", 0)
         self.ACCOUNT_TYPES = ["suppliers", "customers", "employees"]
-        
+        self.font_size = 16
 
         # is_deleted column exists.
         self.IS_DELETED_COL_ON =[
@@ -88,6 +88,7 @@ class EditableItemsForm(Form):
         self.db_table = db_table
         self.columns = columns
         self.variable = None 
+        self.font_size = font_size
 
         # disable buttons
         self.disable_delete_edit_btns()
@@ -137,7 +138,7 @@ class EditableItemsForm(Form):
 
             for col_id, col_info in enumerate(item):
                     table_item = self.make_item(
-                        col_info, font_size=16, read_only=True
+                        col_info, font_size=self.font_size, read_only=True
                     )
                     self.qt_table.setItem(row, col_id, table_item)
     
@@ -245,6 +246,7 @@ class EditableItemsForm(Form):
 
         if self.db_table == "customers_transactions":
             data = self.get_customers_transactions_list(search_word)
+            
         elif self.db_table == "employees_transactions":
             data = self.get_employees_withdrawals_list(search_word)
         elif self.db_table == "expenses":

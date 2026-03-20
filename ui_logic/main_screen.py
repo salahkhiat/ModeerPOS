@@ -181,14 +181,13 @@ class MainScreen(MainForm):
                 mobiles_db_table_cols, 
                 mobiles_header, 
                 mobiles_header_width, 
-                font_size=13
             )
         )
 
         suppliers_transactions_header = [
             "المورد", "ملاحظة/فتورة", "عملية", "المبلغ", "التاريخ"
         ]
-        suppliers_transactions_header_width = [20, 40, 10, 15, 15]
+        suppliers_transactions_header_width = [15, 35, 12, 18, 20] #[20, 40, 10, 15, 15]
 
         suppliers_transactions_db_table_cols = ["s.name", "st.note", "st.type", "st.amount", "st.created"]
 
@@ -205,14 +204,13 @@ class MainScreen(MainForm):
                 suppliers_transactions_db_table_cols, 
                 suppliers_transactions_header, 
                 suppliers_transactions_header_width, 
-                font_size=13
             )
         )
 
         customers_payments_header = [
             "الزبون", "المصدر", "الوصف", "المبلغ", "التاريخ"
         ]
-        customers_payments_header_width = [15, 15, 40, 15, 15]
+        customers_payments_header_width = [15, 12, 35, 18, 20]
 
         customers_money_columns = [
             "name",
@@ -232,14 +230,13 @@ class MainScreen(MainForm):
                 customers_money_columns, 
                 customers_payments_header, 
                 customers_payments_header_width, 
-                font_size=13
             )
         )
 
         employees_withdrawals_header = [
             "العامل", "ملاحظة", "المبلغ", "التاريخ"
         ]
-        employees_withdrawals_header_width = [30, 40, 15, 15]
+        employees_withdrawals_header_width = [25, 40, 15, 20]
 
         employees_withdrawals_columns = [
             "name",
@@ -256,14 +253,13 @@ class MainScreen(MainForm):
                 employees_withdrawals_columns, 
                 employees_withdrawals_header, 
                 employees_withdrawals_header_width, 
-                font_size=13
             )
         )
 
         expenses_header = [
             "ملاحظة", "الصنف", "المبلغ", "التاريخ"
         ]
-        expenses_header_width = [30, 40, 15, 15]
+        expenses_header_width = [25, 40, 15, 20]
 
         expenses_columns = [
             "note",
@@ -280,14 +276,13 @@ class MainScreen(MainForm):
                 expenses_columns, 
                 expenses_header, 
                 expenses_header_width, 
-                font_size=13
             )
         )
 
         purchases_history_header = [
             "السلعة", "المرجع", "الشراء بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
         ]
-        purchases_history_header_width = [25, 12, 12, 12, 12, 12, 15 ]
+        purchases_history_header_width = [30, 12, 12, 7, 12, 12, 15 ]
 
         purchases_history_columns = [
             "name",
@@ -307,7 +302,6 @@ class MainScreen(MainForm):
                 purchases_history_columns, 
                 purchases_history_header, 
                 purchases_history_header_width, 
-                font_size=13
             )
         )
 
@@ -334,7 +328,6 @@ class MainScreen(MainForm):
                 sales_history_columns, 
                 sales_history_header, 
                 sales_history_header_width, 
-                font_size=13
             )
         )
 
@@ -355,7 +348,6 @@ class MainScreen(MainForm):
                 purchases_invoices_columns, 
                 purchases_invoices_header, 
                 purchases_invoices_header_width, 
-                font_size=13
             )
         )
 
@@ -376,7 +368,6 @@ class MainScreen(MainForm):
                 sales_invoices_columns, 
                 sales_invoices_header, 
                 sales_invoices_header_width, 
-                font_size=13
             )
         )
 
@@ -397,7 +388,6 @@ class MainScreen(MainForm):
                 services_columns, 
                 services_header, 
                 services_header_width, 
-                font_size=13
             )
         )
 
@@ -418,7 +408,6 @@ class MainScreen(MainForm):
                 services_categories_columns, 
                 services_categories_header, 
                 services_categories_header_width, 
-                font_size=13
             )
         )
 
@@ -439,7 +428,6 @@ class MainScreen(MainForm):
                 expenses_categories_columns, 
                 expenses_categories_header, 
                 expenses_categories_header_width, 
-                font_size=13
             )
         )
 

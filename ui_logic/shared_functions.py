@@ -49,16 +49,21 @@ class SharedFunctions:
             hijri_date = self.get_settings().get("hijri_date", False)
 
             now = datetime.now()
+            time_now = now.strftime("%H:%M")
             year, month, day = now.year, now.month, now.day
 
             if hijri_date:
                 hijri = Gregorian(year, month, day).to_hijri()
-                date_str = f"{hijri}"
+                
+                date_str = f"{hijri} {time_now}"
+                # date_str = f"{hijri}"
+
                 logger.debug("Returning Hijri date: %s", date_str)
                 return date_str
             else:
                 gregorian = Gregorian(year, month, day)
-                date_str = f"{gregorian}"
+                date_str = f"{gregorian} {time_now}"
+                # date_str = f"{gregorian}"
                 logger.debug("Returning Gregorian date: %s", date_str)
                 return date_str
 
@@ -243,11 +248,12 @@ class SharedFunctions:
     def remove_rows_counter(self, table: QTableWidget):
         table.verticalHeader().setVisible(False)
 
-    def make_item(self,text, font_size=18, bold=True, color=None, read_only=False ):
+    def make_item(self,text, font_size=18, bold=True, color=None, read_only=False):
         item = QTableWidgetItem(str(text))
         if read_only is True:
             item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEditable)
         item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+
         font = QFont()
         font.setPointSize(font_size)
         font.setBold(bold)

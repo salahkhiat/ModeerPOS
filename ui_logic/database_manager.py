@@ -295,6 +295,7 @@ class DatabaseManager(SharedFunctions):
             >>> obj.get_table_as_list(table,columns)
             ["Muhammed", "Nooh", "Adam" ]
         """
+
         with self.db_connection() as connection: 
             cursor = connection.cursor()
             table_columns = ", ".join(columns)
@@ -335,28 +336,37 @@ class DatabaseManager(SharedFunctions):
             parms: tuple=(),
             union=False
         ) -> List:
-   
+        
         with self.db_connection() as connection: 
             cursor = connection.cursor()
             query = None 
             if table == "customers_transactions":
                 return self.get_customers_transactions_list()
+            
             elif table == "employees_transactions":
                 return self.get_employees_withdrawals_list()
+            
             elif table == "expenses":
                 return self.get_expenses_list()
+            
             elif table == "purchases_history":
                 return self.get_purchases_history_list()
+            
             elif table == "sales_history":
                 return self.get_sales_history_list()
+            
             elif table == "purchases_invoices":
                 return self.get_purchases_invoices_list()
+            
             elif table == "sales_invoices":
                 return self.get_sales_invoices_list()
+            
             elif table == "services":
                 return self.get_services_list()
+            
             elif table == "services_categories":
                 return self.get_services_categories_list()
+            
             elif table == "expenses_categories":
                 return self.get_expenses_categories_list()
             
@@ -374,7 +384,6 @@ class DatabaseManager(SharedFunctions):
                 return cursor.execute(query, parms).fetchall()
 
     def get_customers_transactions_list(self, keyword=None) -> List:
-
         with self.db_connection() as connection: 
             cursor = connection.cursor()
 
@@ -437,9 +446,9 @@ class DatabaseManager(SharedFunctions):
                         c.is_deleted = 0
                         
                 ) AS compined 
-                    WHERE amount > 0 
-                    
-
+                WHERE 
+                    amount > 0 
+               
             """ 
             result = None
             ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "

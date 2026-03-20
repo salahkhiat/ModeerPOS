@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_ChooseItemUi(object):
     def setupUi(self, ChooseItemUi):
         ChooseItemUi.setObjectName("ChooseItemUi")
-        ChooseItemUi.resize(1000, 600)
+        ChooseItemUi.resize(1200, 600)
         ChooseItemUi.setMinimumSize(QtCore.QSize(1000, 600))
-        ChooseItemUi.setMaximumSize(QtCore.QSize(1000, 600))
+        ChooseItemUi.setMaximumSize(QtCore.QSize(1400, 600))
         ChooseItemUi.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
         ChooseItemUi.setStyleSheet("background-color:#033a63;")
         self.gridLayout = QtWidgets.QGridLayout(ChooseItemUi)
