@@ -1,4 +1,4 @@
-Modeer-V1.1 is a simple shop manager.
+Modeer-V1.2 is a simple shop manager.
 
 Folder build (faster startup):
 py -m nuitka main.py --standalone --enable-plugin=pyqt6 --windows-disable-console --windows-icon-from-ico=modeer_logo.ico
