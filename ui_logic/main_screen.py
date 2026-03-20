@@ -189,14 +189,17 @@ class MainScreen(MainForm):
         ]
         suppliers_transactions_header_width = [15, 35, 12, 18, 20] #[20, 40, 10, 15, 15]
 
-        suppliers_transactions_db_table_cols = ["s.name", "st.note", "st.type", "st.amount", "st.created"]
+        suppliers_transactions_db_table_cols = [
+            "name", 
+            "note", 
+            "_type", 
+            "amount",
+            "created"
+        ]
 
         # I mixed between suppliers_transactions and suppliers tables.
         # s means suppliers, st means suppliers_transactions
-        suppliers_transactions_db_table = """
-            suppliers_transactions st
-            JOIN suppliers s ON s.id = st.supplier_id
-         """
+        suppliers_transactions_db_table = "suppliers_transactions"
         self.ui.suppliers_deposits_action.triggered.connect(
             lambda: self.show_tab(
                 "عمليات  الموردين", 
@@ -374,7 +377,7 @@ class MainScreen(MainForm):
         services_header = [
             "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"
         ]
-        services_header_width = [32, 20, 12, 12, 12, 12]
+        services_header_width = [32, 18, 12, 12, 12, 14]
 
         services_columns = [
             "description", "customer", "category", "price", "paid", "created"

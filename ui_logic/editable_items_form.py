@@ -244,6 +244,9 @@ class EditableItemsForm(Form):
         items = None 
         data = None 
 
+        if self.db_table == "suppliers_transactions":
+            data = self.get_suppliers_transactions_list(search_word)
+
         if self.db_table == "customers_transactions":
             data = self.get_customers_transactions_list(search_word)
             

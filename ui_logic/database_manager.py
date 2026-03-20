@@ -302,6 +302,7 @@ class DatabaseManager(SharedFunctions):
             query = f"SELECT {table_columns} FROM {table}"
             data = cursor.execute(query).fetchall()
             new_data = [item[0] for item in data]
+            
             return new_data
     
     def get_table_as_dict(self, table:str, column:str) -> Dict:
@@ -340,7 +341,10 @@ class DatabaseManager(SharedFunctions):
         with self.db_connection() as connection: 
             cursor = connection.cursor()
             query = None 
-            if table == "customers_transactions":
+            if table == "suppliers_transactions":
+                return self.get_suppliers_transactions_list()
+            
+            elif table == "customers_transactions":
                 return self.get_customers_transactions_list()
             
             elif table == "employees_transactions":
@@ -371,8 +375,11 @@ class DatabaseManager(SharedFunctions):
                 return self.get_expenses_categories_list()
             
             else:
+                created = self.current_date()[:10]
+                
                 query = f"SELECT {','.join(columns)} FROM {table}" 
-                    
+
+                ordering = f" WHERE st.created LIKE '{created}%' ORDER BY created DESC; "
                 if  where_clause:
                     query += f" WHERE {where_clause}"
                     
@@ -380,6 +387,8 @@ class DatabaseManager(SharedFunctions):
                         query += f" AND id != 1"
                 if union:
                     query += f" AS combined"
+              
+                
             
                 return cursor.execute(query, parms).fetchall()
 
@@ -449,6 +458,34 @@ class DatabaseManager(SharedFunctions):
                 WHERE 
                     amount > 0 
                
+            """ 
+            result = None
+            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
+            if keyword:
+                query += " AND name LIKE ? " + ordering
+                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
+            else:
+                query += ordering
+                result = cursor.execute(query).fetchall()
+            return result
+        
+    def get_suppliers_transactions_list(self, keyword=None) -> List:
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+
+            created = self.current_date()[:7]
+            query = f"""
+                SELECT 
+                    s.name AS name, 
+                    st.note AS note, 
+                    st.type AS _type,
+                    st.amount AS amount, 
+                    st.created AS created
+                FROM
+                    suppliers_transactions st
+                JOIN 
+                    suppliers s 
+                ON s.id = st.supplier_id
             """ 
             result = None
             ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
@@ -807,7 +844,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -838,7 +875,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -864,7 +901,7 @@ class DatabaseManager(SharedFunctions):
         with self.db_connection() as connection: 
             cursor = connection.cursor()
 
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -886,7 +923,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -907,7 +944,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -932,7 +969,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -957,7 +994,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
 
@@ -978,7 +1015,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
             query = """
@@ -1001,10 +1038,9 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-            created = self.current_date() # 1447-06-01
+            created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
                 created = self.current_date()[:7] # 1447-06
-            
 
             query = """
                 SELECT 
