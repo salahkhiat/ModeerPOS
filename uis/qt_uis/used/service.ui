@@ -259,7 +259,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>18</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -273,7 +273,7 @@
        <set>Qt::AlignCenter</set>
       </property>
       <property name="placeholderText">
-       <string>ملحوظة</string>
+       <string>ملاحظة أو إسم هاتف</string>
       </property>
      </widget>
     </item>

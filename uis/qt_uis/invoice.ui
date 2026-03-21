@@ -20,7 +20,7 @@
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="invoice_head_bar">
        <item>
         <widget class="QComboBox" name="users">
          <property name="minimumSize">
@@ -123,8 +123,36 @@ QPushButton:hover{
            <height>50</height>
           </size>
          </property>
+         <property name="shortcut">
+          <string>Ctrl+A</string>
+         </property>
          <property name="flat">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="add_item_label">
+         <property name="maximumSize">
+          <size>
+           <width>65</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white</string>
+         </property>
+         <property name="text">
+          <string>Ctr+A</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -141,7 +169,7 @@ QPushButton:hover{
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="invoice_total">
        <item>
         <widget class="QLabel" name="label_2">
          <property name="minimumSize">
@@ -194,7 +222,7 @@ border: 1px solid white;</string>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <layout class="QHBoxLayout" name="buttons_bar">
        <item>
         <widget class="QPushButton" name="save_btn">
          <property name="minimumSize">
@@ -234,6 +262,9 @@ QPushButton:hover{
            <width>50</width>
            <height>50</height>
           </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+S</string>
          </property>
          <property name="flat">
           <bool>true</bool>
@@ -280,6 +311,9 @@ QPushButton:hover{
            <height>50</height>
           </size>
          </property>
+         <property name="shortcut">
+          <string>Ctrl+E</string>
+         </property>
          <property name="flat">
           <bool>true</bool>
          </property>
@@ -321,6 +355,9 @@ QPushButton:hover{
            <width>50</width>
            <height>50</height>
           </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+R</string>
          </property>
          <property name="flat">
           <bool>true</bool>
@@ -367,8 +404,91 @@ QPushButton:hover{
            <height>50</height>
           </size>
          </property>
+         <property name="shortcut">
+          <string>Ctrl+C</string>
+         </property>
          <property name="flat">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white</string>
+         </property>
+         <property name="text">
+          <string>Ctr+S</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white</string>
+         </property>
+         <property name="text">
+          <string>Ctr+E</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white</string>
+         </property>
+         <property name="text">
+          <string>Ctr+R</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white</string>
+         </property>
+         <property name="text">
+          <string>Ctr+C</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>

@@ -202,6 +202,7 @@ class DatabaseManager(SharedFunctions):
             keyword: str, 
             target: List[str], 
             hide_deleted=True,
+            hide_0_quantity_item = False
     ) -> List[Dict[str, Any]]:
         """
         Search for rows in a table where a column starts with a given keyword.
@@ -221,7 +222,10 @@ class DatabaseManager(SharedFunctions):
             # Build the SELECT part dynamically from target list
             target_columns = ', '.join(target)
             # Query with parameterized LIKE for prefix search
-            query = f"SELECT {target_columns} FROM {table} WHERE {column} LIKE ? "
+            query = f"SELECT {target_columns} FROM {table} WHERE {column}  LIKE ? "
+            
+            if hide_0_quantity_item is True and table == "products":
+                query += "AND quantity > 0"
 
             if hide_deleted is True:
                 query += f" AND is_deleted = 0"
@@ -237,7 +241,6 @@ class DatabaseManager(SharedFunctions):
             for row in rows:
                 row_dict = dict(zip(target, row))
                 results.append(row_dict)
-
             return results
 
     def is_db_table_empty(self, table: str) -> bool:

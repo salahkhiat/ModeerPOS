@@ -69,7 +69,7 @@ class ChooseItemForm(Form):
     def get_product_info(self, prefix:str, column:str):
         table = "products"
         targets = ["name", "barcode", "sale_price"]
-        products = self.search_by_similar(table,column,prefix,targets)
+        products = self.search_by_similar(table, column, prefix, targets, hide_0_quantity_item=True)
         return products
 
     def add_row(self,columns:list):
