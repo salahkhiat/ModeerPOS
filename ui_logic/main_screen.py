@@ -99,9 +99,10 @@ class MainScreen(MainForm):
         self.create_default_column("customers","name")
         self.create_default_column("services_categories","name")
 
-        # Dealing with requested_products table
-        self.refresh_requested_products_table()
-        self.refresh_out_of_stock_table()
+        # refresh main screentables
+        timer = QTimer(self)
+        timer.timeout.connect(self.refresh_main_screen_tables)
+        timer.start(2500)
 
         # MenuBar
         users_header = ["المرجع", "الإسم", "الهاتف", "الحساب"]
@@ -434,6 +435,9 @@ class MainScreen(MainForm):
             )
         )
 
+    def refresh_main_screen_tables(self):
+        self.refresh_requested_products_table()
+        self.refresh_out_of_stock_table()
     # Welcome screen
     @staticmethod
     def show_welcome_screen(app, base_form_class, image_path="splash_screen.png", duration=3000, width=900, height=500):
@@ -530,7 +534,7 @@ class MainScreen(MainForm):
         items = self.get_table_cols_list(
             "products",
             ["name","barcode","quantity","sale_price"],
-            "quantity<6"
+            "quantity<6 AND is_deleted=0"
         )
 
         table_widget:QTableWidget = self.ui.out_of_stock_soon_table 
@@ -672,6 +676,8 @@ class MainScreen(MainForm):
         if index != -1:
             main_tab_widget.removeTab(index)
             self.remove_tab_index(index)
+        
+        self.refresh_out_of_stock_table()
 
     # set new customer invoice tab
     def customer_invoice_tab(self):
