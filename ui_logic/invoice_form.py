@@ -154,7 +154,7 @@ class InvoiceForm(Form):
 
     def put_users_on_combo(self):
         combo = self.ui.users
-        self.fetch_then_put(self.table,self.column,combo)
+        self.fetch_then_put(self.table, self.column, combo)
 
     def refresh_user_id(self):
             # reverse dict from {1:"Ahmed", 2:"Noor"} to {"Ahmed":1, "Noor":2}
@@ -343,14 +343,6 @@ class InvoiceForm(Form):
 
     def add_item_btn_clicked(self):
         self.ui.add_item_btn.clicked.connect( lambda: self.show_item_form())
-
-    # def make_item(self,text, font_size=18, bold=True):
-    #     item = QTableWidgetItem(text)
-    #     font = QFont()
-    #     font.setPointSize(font_size)
-    #     font.setBold(bold)
-    #     item.setFont(font)
-    #     return item
     
     def add_item_to_table(self, item_data: Dict[Any, Any]):
         table = self.ui.items_table

@@ -281,7 +281,12 @@ class DatabaseManager(SharedFunctions):
         else:
             return False
             
-    def get_table_as_list(self, table:str, columns:List[str] ) -> List:
+    def get_table_as_list(
+            self, 
+            table: str, 
+            columns: List[str],
+            is_deleted=False
+    ) -> List:
         """
         Returning table data as list.
 
@@ -303,6 +308,8 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             table_columns = ", ".join(columns)
             query = f"SELECT {table_columns} FROM {table}"
+            if is_deleted is True:
+                query += " WHERE is_deleted=0"
             data = cursor.execute(query).fetchall()
             new_data = [item[0] for item in data]
             

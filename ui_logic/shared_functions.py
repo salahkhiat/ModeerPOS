@@ -120,7 +120,8 @@ class SharedFunctions:
             >>> obj.fetch_then_put(table,column,combo)
             None
         """
-        items = self.get_table_as_list(table,[column])
+        # is_deleted=True means Get only undeleted users
+        items = self.get_table_as_list(table, [column], is_deleted=True)
         
         # remove "-" from the list to make it appears first in combo
         items = list(items)
