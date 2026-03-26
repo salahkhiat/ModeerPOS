@@ -32,7 +32,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_customer_invoice_btn.sizePolicy().hasHeightForWidth())
         self.new_customer_invoice_btn.setSizePolicy(sizePolicy)
         self.new_customer_invoice_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_customer_invoice_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_customer_invoice_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_customer_invoice_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_customer_invoice_btn.setStatusTip("")
         self.new_customer_invoice_btn.setWhatsThis("")
@@ -45,7 +45,7 @@ class Ui_main_window(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../icons/add_a_sale_invoice.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_customer_invoice_btn.setIcon(icon)
-        self.new_customer_invoice_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_customer_invoice_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_customer_invoice_btn.setFlat(True)
         self.new_customer_invoice_btn.setObjectName("new_customer_invoice_btn")
         self.header_buttons.addWidget(self.new_customer_invoice_btn)
@@ -56,7 +56,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_supplier_invoice_btn.sizePolicy().hasHeightForWidth())
         self.new_supplier_invoice_btn.setSizePolicy(sizePolicy)
         self.new_supplier_invoice_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_supplier_invoice_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_supplier_invoice_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_supplier_invoice_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_supplier_invoice_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -67,7 +67,7 @@ class Ui_main_window(object):
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../icons/new_purchase_invoice.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_supplier_invoice_btn.setIcon(icon1)
-        self.new_supplier_invoice_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_supplier_invoice_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_supplier_invoice_btn.setFlat(True)
         self.new_supplier_invoice_btn.setObjectName("new_supplier_invoice_btn")
         self.header_buttons.addWidget(self.new_supplier_invoice_btn)
@@ -78,7 +78,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_service_btn.sizePolicy().hasHeightForWidth())
         self.new_service_btn.setSizePolicy(sizePolicy)
         self.new_service_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_service_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_service_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_service_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_service_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -89,7 +89,7 @@ class Ui_main_window(object):
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("../icons/new_service.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_service_btn.setIcon(icon2)
-        self.new_service_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_service_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_service_btn.setFlat(True)
         self.new_service_btn.setObjectName("new_service_btn")
         self.header_buttons.addWidget(self.new_service_btn)
@@ -100,7 +100,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_supplier_transaction_btn.sizePolicy().hasHeightForWidth())
         self.new_supplier_transaction_btn.setSizePolicy(sizePolicy)
         self.new_supplier_transaction_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_supplier_transaction_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_supplier_transaction_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_supplier_transaction_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_supplier_transaction_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -111,7 +111,7 @@ class Ui_main_window(object):
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("../icons/new_transcation_cus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_supplier_transaction_btn.setIcon(icon3)
-        self.new_supplier_transaction_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_supplier_transaction_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_supplier_transaction_btn.setFlat(True)
         self.new_supplier_transaction_btn.setObjectName("new_supplier_transaction_btn")
         self.header_buttons.addWidget(self.new_supplier_transaction_btn)
@@ -122,7 +122,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_customer_transaction_btn.sizePolicy().hasHeightForWidth())
         self.new_customer_transaction_btn.setSizePolicy(sizePolicy)
         self.new_customer_transaction_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_customer_transaction_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_customer_transaction_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_customer_transaction_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_customer_transaction_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -133,7 +133,7 @@ class Ui_main_window(object):
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("../icons/new_transaction_sup.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_customer_transaction_btn.setIcon(icon4)
-        self.new_customer_transaction_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_customer_transaction_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_customer_transaction_btn.setFlat(True)
         self.new_customer_transaction_btn.setObjectName("new_customer_transaction_btn")
         self.header_buttons.addWidget(self.new_customer_transaction_btn)
@@ -144,7 +144,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_employee_withdrawal_btn.sizePolicy().hasHeightForWidth())
         self.new_employee_withdrawal_btn.setSizePolicy(sizePolicy)
         self.new_employee_withdrawal_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_employee_withdrawal_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_employee_withdrawal_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_employee_withdrawal_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_employee_withdrawal_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -155,7 +155,7 @@ class Ui_main_window(object):
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap("../icons/new_withdawal.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_employee_withdrawal_btn.setIcon(icon5)
-        self.new_employee_withdrawal_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_employee_withdrawal_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_employee_withdrawal_btn.setFlat(True)
         self.new_employee_withdrawal_btn.setObjectName("new_employee_withdrawal_btn")
         self.header_buttons.addWidget(self.new_employee_withdrawal_btn)
@@ -166,7 +166,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_expense_btn.sizePolicy().hasHeightForWidth())
         self.new_expense_btn.setSizePolicy(sizePolicy)
         self.new_expense_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_expense_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_expense_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_expense_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_expense_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -177,7 +177,7 @@ class Ui_main_window(object):
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap("../icons/new_expense.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_expense_btn.setIcon(icon6)
-        self.new_expense_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_expense_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_expense_btn.setFlat(True)
         self.new_expense_btn.setObjectName("new_expense_btn")
         self.header_buttons.addWidget(self.new_expense_btn)
@@ -188,7 +188,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.buy_mobile_btn.sizePolicy().hasHeightForWidth())
         self.buy_mobile_btn.setSizePolicy(sizePolicy)
         self.buy_mobile_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.buy_mobile_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.buy_mobile_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.buy_mobile_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.buy_mobile_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -199,7 +199,7 @@ class Ui_main_window(object):
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap("../icons/buy_mobile.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.buy_mobile_btn.setIcon(icon7)
-        self.buy_mobile_btn.setIconSize(QtCore.QSize(60, 60))
+        self.buy_mobile_btn.setIconSize(QtCore.QSize(55, 55))
         self.buy_mobile_btn.setFlat(True)
         self.buy_mobile_btn.setObjectName("buy_mobile_btn")
         self.header_buttons.addWidget(self.buy_mobile_btn)
@@ -210,7 +210,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.new_user_btn.sizePolicy().hasHeightForWidth())
         self.new_user_btn.setSizePolicy(sizePolicy)
         self.new_user_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.new_user_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.new_user_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.new_user_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.new_user_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -221,12 +221,13 @@ class Ui_main_window(object):
         icon8 = QtGui.QIcon()
         icon8.addPixmap(QtGui.QPixmap("../icons/new_user.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.new_user_btn.setIcon(icon8)
-        self.new_user_btn.setIconSize(QtCore.QSize(60, 60))
+        self.new_user_btn.setIconSize(QtCore.QSize(55, 55))
         self.new_user_btn.setFlat(True)
         self.new_user_btn.setObjectName("new_user_btn")
         self.header_buttons.addWidget(self.new_user_btn)
         self.requested_products_btn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.requested_products_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.requested_products_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.requested_products_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.requested_products_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -237,7 +238,7 @@ class Ui_main_window(object):
         icon9 = QtGui.QIcon()
         icon9.addPixmap(QtGui.QPixmap("../icons/requested_products.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.requested_products_btn.setIcon(icon9)
-        self.requested_products_btn.setIconSize(QtCore.QSize(60, 60))
+        self.requested_products_btn.setIconSize(QtCore.QSize(55, 55))
         self.requested_products_btn.setFlat(True)
         self.requested_products_btn.setObjectName("requested_products_btn")
         self.header_buttons.addWidget(self.requested_products_btn)
@@ -248,7 +249,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.analysis_btn.sizePolicy().hasHeightForWidth())
         self.analysis_btn.setSizePolicy(sizePolicy)
         self.analysis_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.analysis_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.analysis_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.analysis_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.analysis_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -259,13 +260,13 @@ class Ui_main_window(object):
         icon10 = QtGui.QIcon()
         icon10.addPixmap(QtGui.QPixmap("../icons/analysis.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.analysis_btn.setIcon(icon10)
-        self.analysis_btn.setIconSize(QtCore.QSize(60, 60))
+        self.analysis_btn.setIconSize(QtCore.QSize(55, 55))
         self.analysis_btn.setFlat(True)
         self.analysis_btn.setObjectName("analysis_btn")
         self.header_buttons.addWidget(self.analysis_btn)
         self.set_db_btn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.set_db_btn.setMinimumSize(QtCore.QSize(0, 30))
-        self.set_db_btn.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.set_db_btn.setMaximumSize(QtCore.QSize(16777215, 60))
         self.set_db_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.set_db_btn.setStyleSheet("\n"
 "QPushButton:hover{\n"
@@ -276,7 +277,7 @@ class Ui_main_window(object):
         icon11 = QtGui.QIcon()
         icon11.addPixmap(QtGui.QPixmap("../icons/database.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.set_db_btn.setIcon(icon11)
-        self.set_db_btn.setIconSize(QtCore.QSize(60, 60))
+        self.set_db_btn.setIconSize(QtCore.QSize(55, 55))
         self.set_db_btn.setFlat(True)
         self.set_db_btn.setObjectName("set_db_btn")
         self.header_buttons.addWidget(self.set_db_btn)
