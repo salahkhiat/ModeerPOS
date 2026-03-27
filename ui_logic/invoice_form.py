@@ -16,13 +16,14 @@ from PyQt6.QtWidgets import (
     QMessageBox
 )
 from PyQt6.QtGui import QFont 
-from PyQt6.QtCore import pyqtSignal , QTimer
+from PyQt6.QtCore import pyqtSignal , QTimer, Qt 
 
 from .error_form import ErrorForm
 from uis.error_msg import Ui_Dialog as ErrorFormUi
 
 from typing import Dict , Any 
 import logging
+
 
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -44,9 +45,7 @@ class InvoiceForm(Form):
         self.invoice_type = invoice_type
 
         # set icons
-        self.set_icon("add_item_btn","add.svg")
-        self.set_icon("clear_btn","refresh.svg")
-        self.set_icon("refund_btn","refund.svg")
+        self.set_invoice_icons()
 
         # Invoice table details
         self.table = invoice_type
@@ -59,6 +58,54 @@ class InvoiceForm(Form):
         # Set column count and headers for items_table
         items_table : QTableWidget = self.ui.items_table 
 
+        # qtable initial settings
+        self.qtable_init_settings(items_table)
+        
+        if invoice_type == "suppliers":
+            headers = ["الإسم", "الشراء بـ", "البيع بـ", "الكمية", "المرجع"]
+
+            self.set_invoice_qt_table(items_table, headers)
+
+        elif invoice_type == "customers":
+            headers = ["الإسم", "البيع بـ", "الكمية", "المرجع"] 
+            self.set_invoice_qt_table(items_table, headers)
+           
+        else:
+            logging.error(f"{invoice_type} invoice_type is unknown")
+
+
+        # Set  buttons
+        self.ui.save_btn.setEnabled(False)
+        self.ui.save_btn.setStyleSheet("background-color:grey;border:1px solid grey;")
+        
+        # Connect buttons
+        self.connect_buttons()
+
+        # put users customers/suppliers into a Combo
+        self.put_users_on_combo()
+
+        # Set suppiler_id/customer_id
+        self.supplier_id = None
+        self.refresh_user_id()
+        self.ui.users.activated.connect(self.refresh_user_id)
+        
+        # accept only numbers in amount field.
+        self.accept_numbers_only(self.ui.amount)
+    
+    def connect_buttons(self):
+        self.add_item_btn_clicked()
+        self.save_btn_clicked()
+        self.refund_btn_clicked()
+        self.clear_btn_clicked()
+    
+    def set_invoice_icons(self):
+        self.set_icon("add_item_btn","add.svg")
+        self.set_icon("clear_btn","refresh.svg")
+        self.set_icon("refund_btn","refund.svg")
+    
+    def qtable_init_settings(self, items_table:QTableWidget):
+        """ an invoice QTable initial settings """
+
         # make the selected row blue.
         items_table.setSelectionBehavior(
             self.ui.items_table.SelectionBehavior.SelectRows
@@ -70,12 +117,13 @@ class InvoiceForm(Form):
 
         # remove rows counter
         self.remove_rows_counter(items_table)
-        
-        if invoice_type == "suppliers":
-            items_table.setColumnCount(5)
+    
+    def set_invoice_qt_table(self, items_table:QTableWidget, headers:list[str]):
+            cols = len(headers)
+            items_table.setColumnCount(cols)
 
             # Define headers and font
-            headers = ["الإسم", "الشراء بـ", "البيع بـ", "الكمية", "المرجع"]
+           
             header_font = QFont()
             header_font.setPointSize(16)
             header_font.setBold(True)
@@ -89,69 +137,17 @@ class InvoiceForm(Form):
             # set table header
             header = items_table.horizontalHeader()
             header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
-            for col in range(1, 5):
+            for col in range(1, cols):
                 header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
                 if col != 4:
                     items_table.setColumnWidth(col, 140)
                 else:
                     items_table.setColumnWidth(col, 200)
 
-
-        elif invoice_type == "customers": 
-            items_table.setColumnCount(4)
-
-            # Define headers and font
-            headers = ["الإسم", "البيع بـ", "الكمية", "المرجع"]
-            header_font = QFont()
-            header_font.setPointSize(16)
-            header_font.setBold(True)
-
-            # Set each header item with font
-            for i, title in enumerate(headers):
-                item = QTableWidgetItem(title)
-                item.setFont(header_font)
-                items_table.setHorizontalHeaderItem(i, item)
-
-            # set table header
-            header = self.ui.items_table.horizontalHeader()
-            header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch) 
-            for col in range(1, 4):
-                header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
-                if col != 3:
-                    self.ui.items_table.setColumnWidth(col, 140)
-                else:
-                    self.ui.items_table.setColumnWidth(col, 200)
-        else:
-            logging.error(f"{invoice_type} invoice_type is unknown")
-
-
-        # Set  buttons
-        self.ui.save_btn.setEnabled(False)
-        self.ui.save_btn.setStyleSheet("background-color:grey;border:1px solid grey;")
-        self.clear_btn_clicked()
-
-        # Connect buttons
-        self.add_item_btn_clicked()
-        self.save_btn_clicked()
-        self.refund_btn_clicked()
-
-        # put users customers/suppliers into a Combo
-        self.put_users_on_combo()
-
-        # Set suppiler_id/customer_id
-        self.supplier_id = None
-        self.refresh_user_id()
-        self.ui.users.activated.connect(self.refresh_user_id)
-        
-        # accept only numbers in amount field.
-        self.accept_numbers_only(self.ui.amount)
-
-
     def validating_qt_cell(self, col_index:int):
         self.ui.items_table.setItemDelegateForColumn(col_index, OnlyDigitsInCell())
         self.ui.items_table.itemChanged.connect(self.get_cell_content)
     
-
     def put_users_on_combo(self):
         combo = self.ui.users
         self.fetch_then_put(self.table, self.column, combo)
@@ -225,7 +221,7 @@ class InvoiceForm(Form):
         self.validating_qt_cell(2)
         self.enable_save_btn()
         
-    def show_err_msg(self,msg:str):
+    def show_err_msg(self, msg:str):
         self.play_failure_sound()
         form = ErrorForm(ErrorFormUi)
         form.ui.err_msg.setText(msg.strip())
@@ -256,7 +252,7 @@ class InvoiceForm(Form):
             index 1 is sale_price
             index 2 is quantity
         """
-
+        print( "-Test  TableWidgetItem changed-")
         # quantity field has been editied.
         if cell.column() == 2:
             qt = cell.text().strip() # quantity 

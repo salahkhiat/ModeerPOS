@@ -204,7 +204,7 @@ class SharedFunctions:
             result.append(item.text() if item else "")
         return result
     
-    def add_list_in_qtable(self,table: QTableWidget, data: list):
+    def add_list_in_qtable(self, table: QTableWidget, data: list):
         """
         Adds a list of values as a new row in a QTableWidget.
 
@@ -231,9 +231,9 @@ class SharedFunctions:
             
             if col == name_col_index or col == barcode_col_index:
 
-                table.setItem(current_row, col, self.make_item(value, font_size=16, read_only=True))
+                table.setItem(current_row, col, self.make_item(value, font_size=15, read_only=True))
             else:
-                table.setItem(current_row, col, self.make_item(value, font_size=16))
+                table.setItem(current_row, col, self.make_item(value, font_size=15))
 
         table.blockSignals(False)
 
