@@ -32,9 +32,10 @@ logger = logging.getLogger(__name__)
 class OnlyDigitsInCell(QStyledItemDelegate):
     def createEditor(self, parent, option, index):
         spin = QSpinBox(parent)
-        spin.setMinimum(1)
+        spin.setMinimum(0)
         spin.setMaximum(999999)
         return spin
+    
     
 class InvoiceForm(Form):
     invoice_saved = pyqtSignal(bool)
@@ -52,6 +53,9 @@ class InvoiceForm(Form):
         self.column = "name"
         self.invoice_total = 0 
 
+        # quantity field
+        self.validate_quantity_field()
+
         # default variables 
         self.selected_product_barcode = None 
         
@@ -64,11 +68,11 @@ class InvoiceForm(Form):
         if invoice_type == "suppliers":
             headers = ["الإسم", "الشراء بـ", "البيع بـ", "الكمية", "المرجع"]
 
-            self.set_invoice_qt_table(items_table, headers)
+            self.set_invoice_qtable(items_table, headers)
 
         elif invoice_type == "customers":
             headers = ["الإسم", "البيع بـ", "الكمية", "المرجع"] 
-            self.set_invoice_qt_table(items_table, headers)
+            self.set_invoice_qtable(items_table, headers)
            
         else:
             logging.error(f"{invoice_type} invoice_type is unknown")
@@ -91,6 +95,14 @@ class InvoiceForm(Form):
         
         # accept only numbers in amount field.
         self.accept_numbers_only(self.ui.amount)
+    
+    def validate_quantity_field(self):
+        """ Only digits are allowed in quantity QTableWidgetItem field."""
+
+        if self.invoice_type == "customers":
+            self.validating_qt_cell(2)
+        elif self.invoice_type == "suppliers":
+            self.validating_qt_cell(3)
     
     def connect_buttons(self):
         self.add_item_btn_clicked()
@@ -117,35 +129,42 @@ class InvoiceForm(Form):
 
         # remove rows counter
         self.remove_rows_counter(items_table)
+
+    def set_invoice_qtable(self, items_table:QTableWidget, headers:list[str]):
+        cols = len(headers)
+        items_table.setColumnCount(cols)
+
+        # Define headers and font
+        
+        header_font = QFont()
+        header_font.setPointSize(16)
+        header_font.setBold(True)
+
+        # Set each header item with font
+        for i, title in enumerate(headers):
+            item = QTableWidgetItem(title)
+            item.setFont(header_font)
+            items_table.setHorizontalHeaderItem(i, item)
+            
+        # set table header
+        header = items_table.horizontalHeader()
+        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        for col in range(1, cols):
+            header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
+            if col != 4:
+                items_table.setColumnWidth(col, 140)
+            else:
+                items_table.setColumnWidth(col, 200)
     
-    def set_invoice_qt_table(self, items_table:QTableWidget, headers:list[str]):
-            cols = len(headers)
-            items_table.setColumnCount(cols)
-
-            # Define headers and font
-           
-            header_font = QFont()
-            header_font.setPointSize(16)
-            header_font.setBold(True)
-
-            # Set each header item with font
-            for i, title in enumerate(headers):
-                item = QTableWidgetItem(title)
-                item.setFont(header_font)
-                items_table.setHorizontalHeaderItem(i, item)
-                
-            # set table header
-            header = items_table.horizontalHeader()
-            header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
-            for col in range(1, cols):
-                header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
-                if col != 4:
-                    items_table.setColumnWidth(col, 140)
-                else:
-                    items_table.setColumnWidth(col, 200)
+    def only_digits_allowed_cell(self, col_idx:int):
+        """ Only digits allowed to be wirtten in QTableWidgetItem"""
+        
+        self.digit_delegate = OnlyDigitsInCell()
+        self.ui.items_table.setItemDelegateForColumn(col_idx, self.digit_delegate)
 
     def validating_qt_cell(self, col_index:int):
-        self.ui.items_table.setItemDelegateForColumn(col_index, OnlyDigitsInCell())
+        
+        self.only_digits_allowed_cell(col_index)
         self.ui.items_table.itemChanged.connect(self.get_cell_content)
     
     def put_users_on_combo(self):
@@ -194,8 +213,8 @@ class InvoiceForm(Form):
         form = None 
         if self.table == "suppliers":
             form = ItemForm(ItemUi)
-            form.item_added.connect(self.add_item_to_table)
-            referenses_list = self.q_table_column_as_list(self.ui.items_table,4)
+            form.item_added.connect(self.add_item_to_sup_invoice)
+            referenses_list = self.q_table_column_as_list(self.ui.items_table, 4)
             form.set_table_refs(referenses_list)
 
         elif self.table == "customers":
@@ -203,7 +222,9 @@ class InvoiceForm(Form):
             form.item_barcode_sent.connect(self.add_item_to_cus_invoice)
         form.exec()
 
-    def add_item_to_cus_invoice(self,barcode):
+    def add_item_to_cus_invoice(self, barcode):
+        """ Insert an item to a customer invoice qtable"""
+
         table = "products"
         columns = ("name", "sale_price", "quantity", "barcode")
         keyword = "barcode"
@@ -213,12 +234,11 @@ class InvoiceForm(Form):
         row[2] = 1
         qtable : QTableWidget = self.ui.items_table
         self.add_list_in_qtable(qtable, row)
-
         # Calculate the price 
         sale_price = int(product_info["sale_price"])
         self.invoice_total += sale_price
         self.ui.total.display(self.invoice_total)
-        self.validating_qt_cell(2)
+        # self.validating_qt_cell(1)
         self.enable_save_btn()
         
     def show_err_msg(self, msg:str):
@@ -244,21 +264,62 @@ class InvoiceForm(Form):
             return True 
             
 
-    def get_cell_content(self, cell: QTableWidgetItem):
+    def get_cell_content(self, cell:QTableWidgetItem):
         """
-        Dealing with a quantity, sale_price fields + calculating a customer's invoice total
+        1- Dealing with a quantity, purchase_price and sale_price 
+            in items_table fields (customers, suppliers)
+        2-  calculating an invoice total
+        """
+        
+        if self.invoice_type == "customers":
+            self.customers_quantity_rules(cell)
 
-            cell.column() = 
+        elif self.invoice_type == "suppliers":
+            self.suppliers_quantity_rules(cell)
+
+    def suppliers_quantity_rules(self, cell:QTableWidgetItem):
+        """ 
+            Dealing with quantity field according to suppliers invoice
+                    cell.column() = col indexes
+            index 1 is purchase_price
+            index 3 is quantity
+        """
+        
+        if cell.column() == 1 or cell.column() == 3:
+
+            # quantity field has been editied.
+            if cell.column() == 3:
+                quantity = cell.text().strip()  
+                
+                # if a quantity field is empty.
+                if len(quantity) == 0:
+                    cell.setText("1")
+
+                # if not empty.
+                elif len(quantity) > 0: 
+
+                    # if the quantity is 0
+                    if int(quantity) == 0 : 
+                        cell.setText("1")
+            
+            
+            self.calculates_invoice_total() 
+        
+    def customers_quantity_rules(self, cell:QTableWidgetItem):
+        """ 
+            Dealing with quantity field according to customers invoice.
+                    cell.column() = col indexes
             index 1 is sale_price
             index 2 is quantity
         """
-        print( "-Test  TableWidgetItem changed-")
+
         # quantity field has been editied.
         if cell.column() == 2:
             qt = cell.text().strip() # quantity 
             
             # if a quantity field is empty.
             if len(qt) == 0:
+
                 cell.setText("1")
 
             # if not empty.
@@ -340,11 +401,13 @@ class InvoiceForm(Form):
     def add_item_btn_clicked(self):
         self.ui.add_item_btn.clicked.connect( lambda: self.show_item_form())
     
-    def add_item_to_table(self, item_data: Dict[Any, Any]):
+    def add_item_to_sup_invoice(self, item_data: Dict[Any, Any]):
+        """ Insert an item to a supplier invoice qtable"""
+
         table = self.ui.items_table
         row = table.rowCount()
-        
         table.insertRow(row)
+
         # calculates total
         p_price = item_data["purchase_price"]
         qt = item_data["quantity"]
@@ -354,6 +417,7 @@ class InvoiceForm(Form):
         table.setItem(row, 0, self.make_item(item_data['name'], read_only=True))
         if self.invoice_type == "suppliers":
             table.setItem(row, 1, self.make_item(item_data['purchase_price']))
+
         table.setItem(row, 2, self.make_item(item_data['sale_price']))
         
         table.setItem(row, 3, self.make_item(item_data['quantity']))
