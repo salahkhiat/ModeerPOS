@@ -516,7 +516,7 @@ class InvoiceForm(Form):
         invoice_barcode = None 
         invoice_deposit = "0" if self.ui.amount.text() == "" else self.ui.amount.text()
         created = self.current_date()
-        products_list = self.get_products_list()
+        products_list: dict = self.get_products_list()
 
         # products table in database
         table_name = "products"
@@ -525,120 +525,84 @@ class InvoiceForm(Form):
         # Calculates an invoice total.
         invoice_total = self.calculate_invoice_total()
 
+        # Generate an invoice function
+        def generate_inv(inv_type:str):
+            """ inv_type is suppliers or customers"""
+            ALLOWED_TYPES = ["suppliers", "customers"]
+            if inv_type not in ALLOWED_TYPES:
+                logger.error(f"{inv_type} invoice type is not allowed.")
+                return
+
+            inv_table = "purchase_invoices" if inv_type == "suppliers" else "sale_invoices"
+
+            invoice_barcode = self.generate_unique_barcode(inv_table, "invoice_number")
+
+            # insert an invoice into a database, in purchase_invoices table.
+            inv_data = (self.user_id, invoice_barcode, str(invoice_total), invoice_deposit, created)
+
+            return self.insert_new_invoice(inv_type, inv_data)
+
+        # If invoice_type is Suppliers and user_id is None
+        # insert a product without invoice or purchase_history
+        if self.user_id is None and self.invoice_type == "suppliers":
+            pass 
+        
         # If there are no suppliers yet.
         if self.user_id is None:
             logging.warning("Sorry, You need to add suppliers first.")
             self.show_err_msg("لا يوجد أي مورد مسجل بعد")
         else:
-
-            # Purchases part - suppliers.
-            if self.invoice_type == "suppliers":
-                invoice_barcode = self.generate_unique_barcode("purchase_invoices", "invoice_number")
-
-                # insert an invoice into a database, in purchase_invoices table.
-                inv_data = (
-                    self.user_id, 
-                    invoice_barcode, 
-                    str(invoice_total), 
-                    invoice_deposit,
-                    created
-                )
-                invoice_id = self.insert_new_invoice("suppliers", inv_data)
-
-                    
-            # Sales part - customers.
-            elif self.invoice_type == "customers":
-                
-                invoice_barcode = self.generate_unique_barcode("sale_invoices", "invoice_number")
-
-                invoice_id = self.store(
-                    "sale_invoices",
-                    [
-                        "customer_id",
-                        "invoice_number",
-                        "total",
-                        "deposit",
-                        "created_at"
-                    ],
-                    (
-                        self.user_id,
-                        invoice_barcode,
-                        str(invoice_total),
-                        invoice_deposit,
-                        created
-                    ),
-                    True
-                )
         
-            """ 
-                    if an invoice type is for suppliers
-            """
+        # Generate an invoice part for both customers or suppliers
+            ALLOWED_INVOICE_TYPES = ["suppliers", "customers"]
+            if self.invoice_type in ALLOWED_INVOICE_TYPES:
+                invoice_id = generate_inv(self.invoice_type)
+
+        #    if an invoice type is for suppliers
+        
         if self.invoice_type == "suppliers":
             # looping through products table and save them into database
             for _ , product_info in products_list.items():
                 
-            
                 # unpacking product info
                 name, purchase_price, sale_price, quantity, barcode = product_info.values()
-                data = (
-                    name, 
-                    purchase_price, 
-                    sale_price, 
-                    quantity, 
-                    barcode,
-                    str(invoice_id)
-                )
+                data = (name, purchase_price, sale_price, quantity, barcode, str(invoice_id))
 
-                # p_h means purchases_history
-                p_h_table = "purchases_history"
-                p_h_columns = [
-                    "invoice_id",
-                    "product_id",
-                    "product_name",
-                    "barcode",
-                    "quantity",
-                    "purchase_price",
-                    "sale_price"
-                ]
-                
-                # If a product is already existing in a database.
+                # If a product is already existing in a database in products table.
                 if self.is_in_table("products","barcode",barcode):
 
                     updated_columns = [
-                        "name", 
-                        "purchase_price", 
-                        "sale_price", 
-                        "quantity",
-                        "invoice_id"
+                        "name", "purchase_price", "sale_price", "quantity","invoice_id"
                     ]
                     updated_data = (
-                        name, 
-                        purchase_price, 
-                        sale_price, 
-                        quantity,
-                        str(invoice_id)
+                        name, purchase_price, sale_price, quantity, str(invoice_id)
                     )
 
                     # If product info updated successfully
-                    if self.update_info("products",updated_columns,updated_data,"barcode = ?",(barcode,)):
-                        updated_product_id = self.search_by("products","barcode",barcode,"id")
+                    if self.update_info("products", updated_columns, updated_data, "barcode = ?", (barcode,)):
+                        updated_product_id = self.search_by("products", "barcode", barcode, "id")
 
                         # If a product barcode is not existing in a database.
                         if updated_product_id is None:
-                            logging.error(f"[red]product:{name} with {barcode} barcode is not existing in a database.[/red]")
+                            logging.error(f"product:{name} with {barcode} barcode is not existing in a database")
                             return 
                         else:
                             p_h_data = (
-                                invoice_id,
-                                updated_product_id,
-                                name,
-                                barcode,
-                                quantity,
-                                purchase_price,
-                                sale_price
+                                invoice_id, updated_product_id, name, barcode, quantity, purchase_price, sale_price
                             )
+                            # p_h means purchases_history
+                            p_h_table = "purchases_history"
+                            p_h_columns = [
+                                "invoice_id",
+                                "product_id",
+                                "product_name",
+                                "barcode",
+                                "quantity",
+                                "purchase_price",
+                                "sale_price"
+                            ]
                             # If product info was not inserted into a purchases_history table
-                            if self.store(p_h_table,p_h_columns,p_h_data) is not True:
+                            if self.store(p_h_table, p_h_columns, p_h_data) is not True:
                                 logging.error(f"[red]Product:{name} with {barcode} barcode was not inserted in purchases_table. [/red]")
                                 return
 
@@ -648,22 +612,17 @@ class InvoiceForm(Form):
 
                 # If a product is not existing in a database.
                 else:
-                    product_id = self.store(table_name,columns,data,True)
+                    product_id = self.store(table_name, columns, data, True)
+
                     p_h_data = (
-                        invoice_id,
-                        product_id,
-                        name,
-                        barcode,
-                        quantity,
-                        purchase_price,
-                        sale_price
+                        invoice_id, product_id, name, barcode, quantity, purchase_price, sale_price
                     )
         
                     if product_id is False:
                         logging.error(f"[red]Product:{name} with {barcode} was not inserted into products table.[/red]")
                         return
                     else:
-                        if self.store(p_h_table,p_h_columns,p_h_data) is False:
+                        if self.store(p_h_table, p_h_columns, p_h_data) is False:
                             logging.error(f"[red]Product:{name} with barcode {barcode} was not inserted into purchases_history [/red]")
                             return          
                         
