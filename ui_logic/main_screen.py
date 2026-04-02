@@ -689,14 +689,7 @@ class MainScreen(MainForm):
     # set new supplier invoice tab
     def supplier_invoice_tab(self):
         # Are there suppliers 
-        if self.is_db_table_empty("suppliers") is True:
-            msg = "ليس لديك موردين بعد"
-            self.error_form = ErrorForm(ErrorUi,msg)
-            self.error_form.show()
-            QTimer.singleShot(2500,self.error_form.close)
-            return 
-        else:
-            self.add_invoice_tab(self.opened_suppliers_invoices,"فاتورة المورد","suppliers")
+        self.add_invoice_tab(self.opened_suppliers_invoices,"فاتورة المورد","suppliers")
 
     def show_supplier_invoice_tab(self):
         self.ui.new_supplier_invoice_btn.clicked.connect(self.supplier_invoice_tab)

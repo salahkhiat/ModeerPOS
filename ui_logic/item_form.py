@@ -87,6 +87,7 @@ class ItemForm(Form):
                         # If a reference is in an invoice table widget, if yes, regenerate it then recheck. 
                         if generated_ref in self.table_references_list:
                             continue
+
                         # Else store a generated ref (barcode), Then set it valid
                         else:
                             item_details['ref'] = generated_ref
@@ -110,16 +111,25 @@ class ItemForm(Form):
                     self.is_valid_ref = False
                 else:
                     self.is_valid_ref = True
-                    
+
+            # this condition block is only for saving product information option.   
             else:
                 ref = item_details['ref']
                 # if an invoice table widget is empty.
                 if len(self.table_references_list) == 0:
-
+                    
                     # If the reference(barcode) is not empty.
                     if item_details['ref'].strip() != "":
-                            self.is_valid_ref = True
+                            barcode = item_details['ref'].strip()
 
+                            # If the barcode is already exists in database return False
+                            if self.is_in_table("products", "barcode", barcode) is True:
+                                err_msg = "المرجع مستخدم مسبقا"
+                                self.set_err_msg("ref",err_msg)
+                                self.is_valid_ref = False
+                            else:
+                                self.is_valid_ref = True
+                        
                 # If an invoice table widget is not empty.
                 if len(self.table_references_list) > 0:
 

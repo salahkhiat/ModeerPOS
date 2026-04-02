@@ -77,7 +77,6 @@ class DatabaseForm(Form):
             self.database_path = QStandardPaths.writableLocation(QStandardPaths.StandardLocation.DocumentsLocation)
         self.update_database_path(self.database_path,self.settings_path)
         database_ref = os.path.join(self.database_path, self.database_name)
-        print(f"Database ref: {self.get_database_ref()}")
         self.prepare_database(database_ref)
         self.close()
 

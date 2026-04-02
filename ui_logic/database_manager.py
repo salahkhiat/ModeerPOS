@@ -1429,10 +1429,9 @@ class DatabaseManager(SharedFunctions):
             # Commit changes and close connection
             connection.commit()
        
-        
         # Create a default customer
         self.create_default_column("customers", "name")
         self.create_default_column("expenses_categories", "name")
-
+        
         logger.info("Database tables created successfully.")
     

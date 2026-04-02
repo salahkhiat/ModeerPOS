@@ -13,7 +13,8 @@ from PyQt6.QtWidgets import (
     QStyledItemDelegate, 
     QSpinBox,
     QLineEdit,
-    QMessageBox
+    QMessageBox,
+    QComboBox
 )
 from PyQt6.QtGui import QFont 
 from PyQt6.QtCore import pyqtSignal , QTimer, Qt 
@@ -168,9 +169,11 @@ class InvoiceForm(Form):
         self.ui.items_table.itemChanged.connect(self.get_cell_content)
     
     def put_users_on_combo(self):
-        combo = self.ui.users
+        combo: QComboBox = self.ui.users
+        if self.invoice_type == "suppliers":
+            combo.addItem("-")
         self.fetch_then_put(self.table, self.column, combo)
-
+        
     def refresh_user_id(self):
             # reverse dict from {1:"Ahmed", 2:"Noor"} to {"Ahmed":1, "Noor":2}
         users = self.reverse_dict(self.get_table_as_dict(self.table,self.column))
@@ -532,15 +535,16 @@ class InvoiceForm(Form):
             if inv_type not in ALLOWED_TYPES:
                 logger.error(f"{inv_type} invoice type is not allowed.")
                 return
+            else:
 
-            inv_table = "purchase_invoices" if inv_type == "suppliers" else "sale_invoices"
+                inv_table = "purchase_invoices" if inv_type == "suppliers" else "sale_invoices"
 
-            invoice_barcode = self.generate_unique_barcode(inv_table, "invoice_number")
+                invoice_barcode = self.generate_unique_barcode(inv_table, "invoice_number")
 
-            # insert an invoice into a database, in purchase_invoices table.
-            inv_data = (self.user_id, invoice_barcode, str(invoice_total), invoice_deposit, created)
+                # insert an invoice into a database, in purchase_invoices table.
+                inv_data = (self.user_id, invoice_barcode, str(invoice_total), invoice_deposit, created)
 
-            return self.insert_new_invoice(inv_type, inv_data)
+                return self.insert_new_invoice(inv_type, inv_data)
 
         # If invoice_type is Suppliers and user_id is None
         # insert a product without invoice or purchase_history
@@ -549,19 +553,20 @@ class InvoiceForm(Form):
         
         # If there are no suppliers yet.
         if self.user_id is None:
+            
             logging.warning("Sorry, You need to add suppliers first.")
             self.show_err_msg("لا يوجد أي مورد مسجل بعد")
         else:
         
-        # Generate an invoice part for both customers or suppliers
+        # Generate an invoice part for both customers and suppliers
             ALLOWED_INVOICE_TYPES = ["suppliers", "customers"]
             if self.invoice_type in ALLOWED_INVOICE_TYPES:
                 invoice_id = generate_inv(self.invoice_type)
 
-        #    if an invoice type is for suppliers
-        
+
+        # if an invoice type is for suppliers
+        # looping through products table and save them into database
         if self.invoice_type == "suppliers":
-            # looping through products table and save them into database
             for _ , product_info in products_list.items():
                 
                 # unpacking product info
@@ -569,13 +574,13 @@ class InvoiceForm(Form):
                 data = (name, purchase_price, sale_price, quantity, barcode, str(invoice_id))
 
                 # If a product is already existing in a database in products table.
-                if self.is_in_table("products","barcode",barcode):
+                if self.is_in_table("products", "barcode", barcode):
 
                     updated_columns = [
-                        "name", "purchase_price", "sale_price", "quantity","invoice_id"
+                        "name", "purchase_price", "sale_price", "quantity"
                     ]
                     updated_data = (
-                        name, purchase_price, sale_price, quantity, str(invoice_id)
+                        name, purchase_price, sale_price, quantity
                     )
 
                     # If product info updated successfully
