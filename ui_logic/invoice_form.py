@@ -17,7 +17,7 @@ from PyQt6.QtWidgets import (
     QComboBox
 )
 from PyQt6.QtGui import QFont 
-from PyQt6.QtCore import pyqtSignal , QTimer, Qt 
+from PyQt6.QtCore import pyqtSignal , QTimer
 
 from .error_form import ErrorForm
 from uis.error_msg import Ui_Dialog as ErrorFormUi
@@ -36,7 +36,6 @@ class OnlyDigitsInCell(QStyledItemDelegate):
         spin.setMinimum(0)
         spin.setMaximum(999999)
         return spin
-    
     
 class InvoiceForm(Form):
     invoice_saved = pyqtSignal(bool)
@@ -76,7 +75,7 @@ class InvoiceForm(Form):
             self.set_invoice_qtable(items_table, headers)
            
         else:
-            logging.error(f"{invoice_type} invoice_type is unknown")
+            logger.error(f"{invoice_type} invoice_type is unknown")
 
 
         # Set  buttons
@@ -176,7 +175,7 @@ class InvoiceForm(Form):
         
     def refresh_user_id(self):
             # reverse dict from {1:"Ahmed", 2:"Noor"} to {"Ahmed":1, "Noor":2}
-        users = self.reverse_dict(self.get_table_as_dict(self.table,self.column))
+        users = self.reverse_dict(self.get_table_as_dict(self.table, self.column))
         current_user = self.ui.users.currentText()
             # make the value as key 
         self.user_id = users.get(current_user) 
@@ -186,16 +185,16 @@ class InvoiceForm(Form):
     def dis_en_able_amount_field(self):
         # disable an amount field if the user_id is equal to 1 ("-")
         # enable it if it is not "-" user
-        if self.table == "customers":
-            amount_field :QLineEdit = self.ui.amount
-            if self.user_id == 1:
-                amount_field.setEnabled(False)
-                amount_field.setPlaceholderText(".")
-                amount_field.setStyleSheet("background:grey")
-            else:
-                amount_field.setStyleSheet("background:none")
-                amount_field.setPlaceholderText("الإيداع $")
-                amount_field.setEnabled(True)
+        current_user: QComboBox = self.ui.users.currentText().strip()
+        amount_field :QLineEdit = self.ui.amount
+        if current_user == "-":
+            amount_field.setEnabled(False)
+            amount_field.setPlaceholderText(".")
+            amount_field.setStyleSheet("background:grey")
+        else:
+            amount_field.setStyleSheet("background:none")
+            amount_field.setPlaceholderText("الإيداع $")
+            amount_field.setEnabled(True)
         
     def refresh_invoice(self):
         """ Remove the invoice rows """
@@ -524,13 +523,14 @@ class InvoiceForm(Form):
         # products table in database
         table_name = "products"
         columns = ["name", "purchase_price", "sale_price", "quantity", "barcode", "invoice_id"]
-
+        
         # Calculates an invoice total.
         invoice_total = self.calculate_invoice_total()
-
+        
         # Generate an invoice function
         def generate_inv(inv_type:str):
             """ inv_type is suppliers or customers"""
+
             ALLOWED_TYPES = ["suppliers", "customers"]
             if inv_type not in ALLOWED_TYPES:
                 logger.error(f"{inv_type} invoice type is not allowed.")
@@ -545,59 +545,38 @@ class InvoiceForm(Form):
                 inv_data = (self.user_id, invoice_barcode, str(invoice_total), invoice_deposit, created)
 
                 return self.insert_new_invoice(inv_type, inv_data)
-
-        # If invoice_type is Suppliers and user_id is None
-        # insert a product without invoice or purchase_history
-        if self.user_id is None and self.invoice_type == "suppliers":
-            pass 
-        
-        # If there are no suppliers yet.
-        if self.user_id is None:
             
-            logging.warning("Sorry, You need to add suppliers first.")
-            self.show_err_msg("لا يوجد أي مورد مسجل بعد")
-        else:
-        
-        # Generate an invoice part for both customers and suppliers
-            ALLOWED_INVOICE_TYPES = ["suppliers", "customers"]
-            if self.invoice_type in ALLOWED_INVOICE_TYPES:
-                invoice_id = generate_inv(self.invoice_type)
-
-
         # if an invoice type is for suppliers
         # looping through products table and save them into database
         if self.invoice_type == "suppliers":
+
+            # Generate an invoice if the current user is not '-'
+            current_user: QComboBox = self.ui.users.currentText().strip()
+            if current_user != "-":
+                invoice_id = generate_inv(self.invoice_type)
+
             for _ , product_info in products_list.items():
-                
                 # unpacking product info
+    
                 name, purchase_price, sale_price, quantity, barcode = product_info.values()
+
                 data = (name, purchase_price, sale_price, quantity, barcode, str(invoice_id))
 
-                # If a product is already existing in a database in products table.
-                if self.is_in_table("products", "barcode", barcode):
+                 # Save an item without a supplier or purchase_history
+                
+                if current_user == "-":
+                    
+                    table_name = "products"
+                    table_columns = ["name", "purchase_price", "sale_price", "quantity", "barcode"]
+                    table_data = data[:5] # skip the invoice id
 
-                    updated_columns = [
-                        "name", "purchase_price", "sale_price", "quantity"
-                    ]
-                    updated_data = (
-                        name, purchase_price, sale_price, quantity
-                    )
-
-                    # If product info updated successfully
-                    if self.update_info("products", updated_columns, updated_data, "barcode = ?", (barcode,)):
-                        updated_product_id = self.search_by("products", "barcode", barcode, "id")
-
-                        # If a product barcode is not existing in a database.
-                        if updated_product_id is None:
-                            logging.error(f"product:{name} with {barcode} barcode is not existing in a database")
-                            return 
-                        else:
-                            p_h_data = (
-                                invoice_id, updated_product_id, name, barcode, quantity, purchase_price, sale_price
-                            )
-                            # p_h means purchases_history
-                            p_h_table = "purchases_history"
-                            p_h_columns = [
+                    self.store(table_name, table_columns, table_data) 
+                else:
+                    # Generate an invoice 
+                    # invoice_id = generate_inv(self.invoice_type)
+                    product_id = self.store(table_name, columns, data, True)
+                    p_h_table = "purchases_history"
+                    p_h_columns = [
                                 "invoice_id",
                                 "product_id",
                                 "product_name",
@@ -606,40 +585,23 @@ class InvoiceForm(Form):
                                 "purchase_price",
                                 "sale_price"
                             ]
-                            # If product info was not inserted into a purchases_history table
-                            if self.store(p_h_table, p_h_columns, p_h_data) is not True:
-                                logging.error(f"[red]Product:{name} with {barcode} barcode was not inserted in purchases_table. [/red]")
-                                return
-
-                    else:
-                        logging.error(f"[red]Product:{name} with {barcode} was not updated. [/red]")
-                        return
-
-                # If a product is not existing in a database.
-                else:
-                    product_id = self.store(table_name, columns, data, True)
-
                     p_h_data = (
                         invoice_id, product_id, name, barcode, quantity, purchase_price, sale_price
                     )
-        
-                    if product_id is False:
-                        logging.error(f"[red]Product:{name} with {barcode} was not inserted into products table.[/red]")
-                        return
-                    else:
-                        if self.store(p_h_table, p_h_columns, p_h_data) is False:
-                            logging.error(f"[red]Product:{name} with barcode {barcode} was not inserted into purchases_history [/red]")
-                            return          
-                        
+                    self.store(p_h_table, p_h_columns, p_h_data)
+      
             """ 
                     if an invoice type is for customers
             """
 
         elif self.invoice_type == "customers":
+            # Generate an invoice
+            invoice_id = generate_inv(self.invoice_type)
                                 
             # looping through products table and save them into database
             
             for _ , product_info in products_list.items():
+                
                 
                 
                 # unpacking product info
