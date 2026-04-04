@@ -63,7 +63,7 @@ class Ui_Form(object):
         font.setBold(True)
         self.tel.setFont(font)
         self.tel.setStyleSheet("background-color:white")
-        self.tel.setMaxLength(10)
+        self.tel.setMaxLength(14)
         self.tel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.tel.setObjectName("tel")
         self.verticalLayout.addWidget(self.tel)

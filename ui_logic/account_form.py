@@ -87,6 +87,7 @@ class AccountForm(Form):
             fields = [name, tel]
             self.clear_fields(fields)
             self.close()
+        self.play_success_sound()
               
     def save_btn_clicked(self) -> None:
         self.ui.save_btn.clicked.connect(self.save_account_form)

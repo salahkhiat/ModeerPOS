@@ -101,7 +101,7 @@ class SharedValidators(DatabaseManager):
         """ Returns True if the tel is ready to save, False otherwise. """
 
         table = None
-        if user_id is not None and user_type is not None:
+        if user_id is not None and user_type is not None: 
             table = user_type
 
         else:
@@ -110,11 +110,10 @@ class SharedValidators(DatabaseManager):
             table = account_types[combo_index]
         
         tel = getattr(self.ui, tel_field).text()
-        if  self.is_tel(tel_field) == True and len(tel) == 0:
+
+        if len(tel) == 0:
             return True
-        
-        elif self.is_tel(tel_field) == True and len(tel) == 10:
-            
+        if len(tel) > 0:
             # Edit Mode.
             if user_id is not None:
                 if self.tel_exists(table, tel, user_id):
