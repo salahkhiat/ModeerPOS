@@ -1,6 +1,7 @@
 import sqlite3 as db
 from typing import List, Dict , Any
 import os 
+import shutil
 from contextlib import contextmanager
 
 
@@ -13,7 +14,7 @@ logger = logging.getLogger(__name__)
 class DatabaseManager(SharedFunctions):
     def get_database_ref(self) -> str:
         """
-        Return a full database reference.
+        Return a full database reference. 
         
         :return: A database path.
         :rtype: str
@@ -24,6 +25,46 @@ class DatabaseManager(SharedFunctions):
         """
         settings = self.get_settings()
         return os.path.join(settings["database_path"], settings["database_name"])
+    
+    # Auto backup | database
+    def db_auto_backup(self):
+        """ make a database backup"""
+        working_dir= self.get_settings()["database_path"]
+        database = self.get_database_ref()
+        backup_dir = os.path.join(working_dir, "database_backup")
+
+        current_date = f"{self.current_date()[:10]}.db"
+        backup_file = os.path.join(backup_dir, current_date)
+        
+        # if database it not found, prepare it.
+        if not os.path.isfile(database):
+            logger.debug("preparing database ... ")
+            self.prepare_database()
+        
+        # if a database is already exists.
+        else:
+            # Check if database_backup folder is not found, create it.
+            if not os.path.isdir(backup_dir):
+                os.makedirs(backup_dir, exist_ok=True)
+                logger.debug(f"database_backup directory has created, {backup_dir}")
+
+                # create a first backup
+                if not os.path.isfile(backup_file):
+                    shutil.copy2(database, backup_file)
+                    logger.debug(f" today's backup {backup_file}")
+
+            # database_backup folder is already exists.  
+            else:
+                
+                # if there is no backup yet, do it.
+                if not os.path.isfile(backup_file):
+                    shutil.copy2(database, backup_file)
+                    logger.debug(f" today's backup {backup_file}")
+
+                else:
+                    logger.debug(f" today's backup {backup_file}")
+        
+                
     
     @contextmanager
     def db_connection(self):

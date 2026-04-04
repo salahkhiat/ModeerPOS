@@ -56,6 +56,14 @@ class MainScreen(MainForm):
         
         # preapare Database 
         self.prepare_database()
+
+        # database auto backup
+        self.db_auto_backup()
+        
+        # refresh main screentables
+        db_timer = QTimer(self)
+        db_timer.timeout.connect(self.db_auto_backup)
+        db_timer.start(5000)
         
         # Set main screen title
         self.setWindowTitle("برنامج مدير لإدارة المحلات")

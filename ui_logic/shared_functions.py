@@ -35,6 +35,23 @@ class SharedFunctions:
         logger.debug("Resolved resource path: %s", full_path)
 
         return  full_path
+
+    def is_file_dir_exists(self, name:str, path:str, target_type:str="file"):
+        """Returns True if a file, directory exists, False otherwise."""
+
+        full_path = os.path.join(path, name)
+
+        if target_type == "file":
+            if os.path.isfile(full_path):
+                return True 
+            else:
+                return False
+            
+        elif target_type == "directory":
+            if os.path.isdir(full_path):
+                return True 
+            else:
+                return False
     
     # get settings as dict 
     def get_settings(self) -> dict:
