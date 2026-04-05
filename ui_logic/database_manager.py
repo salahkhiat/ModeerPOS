@@ -32,9 +32,11 @@ class DatabaseManager(SharedFunctions):
         working_dir= self.get_settings()["database_path"]
         database = self.get_database_ref()
         backup_dir = os.path.join(working_dir, "database_backup")
-
+        current_month_backup_dir = os.path.join(backup_dir, f"{self.current_date()[:7]}")
+        
         current_date = f"{self.current_date()[:10]}.db"
-        backup_file = os.path.join(backup_dir, current_date)
+
+        backup_file = os.path.join(current_month_backup_dir, current_date)
         
         # if database it not found, prepare it.
         if not os.path.isfile(database):
@@ -43,28 +45,49 @@ class DatabaseManager(SharedFunctions):
         
         # if a database is already exists.
         else:
-            # Check if database_backup folder is not found, create it.
+            # If database_backup folder is not found, create it.
             if not os.path.isdir(backup_dir):
                 os.makedirs(backup_dir, exist_ok=True)
-                logger.debug(f"database_backup directory has created, {backup_dir}")
+                logger.debug(f"{backup_dir} directory has created.")
 
-                # create a first backup
-                if not os.path.isfile(backup_file):
-                    shutil.copy2(database, backup_file)
-                    logger.debug(f" today's backup {backup_file}")
+                # Create a current month backup directory.
+                os.makedirs(current_month_backup_dir, exist_ok=True)
 
-            # database_backup folder is already exists.  
+                # Make a first backup.
+                shutil.copy2(database, backup_file)
+                logger.debug(f"{backup_file} has created. ")
+
+            # database_backup directory is already exists.  
             else:
                 
-                # if there is no backup yet, do it.
-                if not os.path.isfile(backup_file):
+                # If a current month backup directory is not found.
+                if not os.path.isdir(current_month_backup_dir):
+
+                    # Create it.
+                    os.makedirs(current_month_backup_dir, exist_ok=True)
+
+                    # Make a backup.
                     shutil.copy2(database, backup_file)
-                    logger.debug(f" today's backup {backup_file}")
+                    logger.debug(f"{backup_file} has created.")
 
                 else:
-                    logger.debug(f" today's backup {backup_file}")
-        
-                
+
+                    # if there is no backup yet.
+                    if not os.path.isfile(backup_file):
+
+                        # Do it.
+                        shutil.copy2(database, backup_file)
+                        logger.debug(f"{backup_file} has created.")
+
+                    else:
+                 
+                        # If the database has updated do .
+                        if os.path.getmtime(database) > os.path.getmtime(backup_file):
+                            shutil.copy2(database, backup_file)
+                            logger.debug(f"{backup_file} has updated.")
+                        else:
+                            logger.debug(f"{backup_file} no need to update.")
+
     
     @contextmanager
     def db_connection(self):
