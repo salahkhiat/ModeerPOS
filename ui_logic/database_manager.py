@@ -82,9 +82,11 @@ class DatabaseManager(SharedFunctions):
                     else:
                  
                         # If the database has updated do .
+                        # If last time file was modified do this part.
                         if os.path.getmtime(database) > os.path.getmtime(backup_file):
                             shutil.copy2(database, backup_file)
                             logger.debug(f"{backup_file} has updated.")
+                            
                         else:
                             logger.debug(f"{backup_file} no need to update.")
 
@@ -1390,6 +1392,19 @@ class DatabaseManager(SharedFunctions):
                     amount REAL,
                     created TEXT,
                     FOREIGN KEY (employee_id) REFERENCES employees(id)
+                );
+                """,
+
+                # Pieces transactions
+                """
+                CREATE TABLE IF NOT EXISTS pieces_transactions (
+                    id INTEGER PRIMARY KEY,
+                    supplier_id INTEGER,
+                    piece TEXT,
+                    price REAL,
+                    status TEXT,
+                    created TEXT,
+                    FOREIGN KEY (supplier_id) REFERENCES suppliers(id)
                 );
                 """,
 
