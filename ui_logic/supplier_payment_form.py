@@ -8,10 +8,10 @@ class SupplierPaymentForm(Form):
     def __init__(self,base_form):
         super().__init__(base_form)
         # set form title
-        self.setWindowTitle("إيداع أو دين جديد")
+        self.setWindowTitle("إجراء معاملة مع مورد")
         
         #  supplier's field
-        suppliers_combo:QComboBox = self.ui.supplier
+        suppliers_combo: QComboBox = self.ui.supplier
         self.fetch_then_put("suppliers","name",suppliers_combo)
         current_supplier = suppliers_combo.currentText()
 
@@ -19,10 +19,18 @@ class SupplierPaymentForm(Form):
         suppliers_combo.currentTextChanged.connect(self.set_current_supplier_id)
 
         # transaction type's field
-        current_transaction_type:QComboBox = self.ui.transaction_type
+        current_transaction_type: QComboBox = self.ui.transaction_type
         self.selected_transaction_index = self.ui.transaction_type.currentIndex()
         current_transaction_type.currentIndexChanged.connect(self.set_transaction_index)
-        self.types = {0:"debt",1:"deposit"}
+        self.types = {0:"buy", 1:"debt", 2:"deposit"}
+        
+        # piece's status
+        current_status: QComboBox = self.ui.status
+        self.selected_status_index = current_status.currentIndex()
+        current_status.currentIndexChanged.connect(self.set_status_index)
+        self.status_types = {0:"in_shop", 1:"installed"}
+
+
 
         # an amount field
         self.amount: QLineEdit = self.ui.amount
@@ -36,41 +44,91 @@ class SupplierPaymentForm(Form):
         
     
 
-    def set_current_supplier_id(self,text:str):
+    def set_current_supplier_id(self, text:str):
         """
             setting a selected supplier id
         """
         
-        self.selected_supplier_id = self.get_item_info("suppliers",("id",),"name",text.strip())["id"]
+        self.selected_supplier_id = self.get_item_info("suppliers", ("id",), "name",text.strip())["id"]
     
-    def set_transaction_index(self,index:int):
+    def set_transaction_index(self, index:int):
         self.selected_transaction_index = index
 
+        # check status state
+        self.disable_enable_status(index)
+
+        # set placeholders
+        self.set_placeholders(index)
+
+    def set_status_index(self, index:int):
+        self.selected_status_index = index
+
+    def disable_enable_status(self, index):
+        status: QComboBox = self.ui.status
+        if index != 0:
+            status.setEnabled(False)
+        else:
+            status.setEnabled(True)
+
+    def set_placeholders(self, index):
+        note: QLineEdit = self.ui.note
+        amount: QLineEdit = self.ui.amount
+
+        if index == 0:
+            note.setPlaceholderText("إسم القطعة مثلا : Nappe A12")
+            amount.setPlaceholderText("سعر القطعة مثلا : 850دج")
+        else:
+            note.setPlaceholderText("ملاحظة قصيرة")
+            amount.setPlaceholderText("المبلغ")
+            
+        
     def create_transaction(self):
         valid_amount = self.is_amount("amount")
+        valid_note = self.is_empty("note", True)# empty =  False
+
+        # Invalid empty amount or price
         if not valid_amount:
-            print("invalid amount")
+            logger.debug("invalid amount")
+            return
+        
+        # Invalid empty piece name
+        elif not valid_note and self.selected_transaction_index == 0:
+            logger.debug("invalid piece name")
             return
         else:
+            # amount represents Amount and Piece price
             amount = float(self.ui.amount.text().strip())
-            note = self.ui.note.text().strip()
-            
-            columns = ["supplier_id","note","amount","type","created"]
-            data = (
+
+            # note represents a Short note and Piece name.
+            note = self.ui.note.text().strip() 
+
+            table, columns = None, None
+            data = [ 
                 self.selected_supplier_id,
                 note,
                 amount,
-                self.types[self.selected_transaction_index],
+                self.status_types[self.selected_status_index],
                 self.current_date()
-            )
-            self.store("suppliers_transactions",columns,data)
-            
-            fields = [
-                self.amount,
-                self.note
             ]
 
+            # If a transaction type is buy
+            if self.selected_transaction_index == 0:
+                table = "pieces_transactions"
+                columns = ["supplier_id", "piece", "price", "status", "created"]
+
+            # If a transaction type is Deposit or Debt
+            else:
+                table = "suppliers_transactions"
+                columns = ["supplier_id","note","amount","type","created"]
+                data[3] = self.types[self.selected_transaction_index]
+
+            # save a transaction into a database
+            self.store(table, columns, tuple(data))
+            
+            # Clean fields content
+            fields = [self.amount, self.note]
             self.clear_fields(fields)
+
             self.close()
             self.play_success_sound()
             
