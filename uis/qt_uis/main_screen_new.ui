@@ -1213,6 +1213,7 @@ color:black;
     <addaction name="customers_deposits_action"/>
     <addaction name="employees_withdrawals_action"/>
     <addaction name="expenses_action"/>
+    <addaction name="pieces_transactions_action"/>
    </widget>
    <widget class="QMenu" name="transactions_menu">
     <property name="font">
@@ -1355,6 +1356,11 @@ color:black;
   <action name="expenses_category_action">
    <property name="text">
     <string>المصاريف</string>
+   </property>
+  </action>
+  <action name="pieces_transactions_action">
+   <property name="text">
+    <string>قطع الصيانة</string>
    </property>
   </action>
  </widget>

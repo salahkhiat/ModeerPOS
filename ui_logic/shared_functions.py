@@ -1,8 +1,9 @@
 from PyQt6 import QtGui
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QAbstractTableModel
 from PyQt6.QtWidgets import (
     QComboBox,
     QTableWidget, 
+    QTableView,
     QTableWidgetItem, 
     QAbstractItemView
 )
@@ -13,6 +14,38 @@ from datetime import datetime
 from typing import Dict, Any, List
 import json, os, sys, random, winsound, logging
 logger = logging.getLogger(__name__)
+
+class TableViewModel(QAbstractTableModel):
+    def __init__(self, data, header):
+        super().__init__()
+        self._data = data
+        self._headers = header
+
+    def rowCount(self, parent=None):
+        return len(self._data)
+
+    def columnCount(self, parent=None):
+        return len(self._data[0]) if self._data else 0
+
+    def data(self, index, role):
+        if role == Qt.ItemDataRole.DisplayRole:
+            return str(self._data[index.row()][index.column()])
+        
+        # if index.row() == 1 and index.column() == 2 and role == Qt.ItemDataRole.BackgroundRole:
+        #     return QColor("green")
+        
+        # if  index.column() == 1 and role == Qt.ItemDataRole.FontRole:
+        #     font = QFont()
+        #     font.setBold(True)
+        #     font.setPointSizeF(16)
+        #     return font
+
+    def headerData(self, section, orientation, role):
+        if role == Qt.ItemDataRole.DisplayRole:
+            if orientation == Qt.Orientation.Horizontal:
+                return self._headers[section]
+            else:
+                return section + 1
 
 class SharedFunctions:
     def set_icon(self, btn_name, icon_name):

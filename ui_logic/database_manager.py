@@ -380,6 +380,7 @@ class DatabaseManager(SharedFunctions):
             new_data = [item[0] for item in data]
             
             return new_data
+
     
     def get_table_as_dict(self, table:str, column:str) -> Dict:
         """
@@ -534,6 +535,37 @@ class DatabaseManager(SharedFunctions):
                 WHERE 
                     amount > 0 
                
+            """ 
+            result = None
+            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
+            if keyword:
+                query += " AND name LIKE ? " + ordering
+                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
+            else:
+                query += ordering
+                result = cursor.execute(query).fetchall()
+            return result
+    def get_pieces_transactions_list(self, keyword=None) -> List:
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+
+            created = self.current_date()[:7]
+            query = f"""
+        
+                    SELECT
+                        s.name AS supplier,
+                        p.piece AS name,
+                        p.price AS price,
+                        p.status AS status,
+                        p.created AS created
+                    
+                    FROM 
+                        suppliers s 
+                    JOIN
+                        pieces_transactions p 
+                    ON 
+                        p.supplier_id = s.id 
+              
             """ 
             result = None
             ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "

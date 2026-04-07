@@ -40,10 +40,15 @@ from .error_form import ErrorForm
 from uis.editable_items import Ui_ChooseItemUi as EditableItemsUi
 from .editable_items_form import EditableItemsForm
 
-from PyQt6.QtWidgets import QTableWidget, QHeaderView, QSplashScreen
+from uis.table_view import Ui_ChooseItemUi as PiecesTransactionsUi
+from .pieces_transactions_form import PiecesTransactionsForm
+
+from PyQt6.QtWidgets import QTableWidget, QHeaderView, QSplashScreen, QTableView
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt, QTimer
 from typing import Dict, List
+
+from .shared_functions import TableViewModel
 
 import logging
 # uses this file's name for easier debugging
@@ -443,6 +448,9 @@ class MainScreen(MainForm):
             )
         )
 
+        # show table view tabs
+        self.ui.pieces_transactions_action.triggered.connect(self.show_table_view_tab)
+
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()
         self.refresh_out_of_stock_table()
@@ -497,6 +505,21 @@ class MainScreen(MainForm):
         form.set_db_table_info(
             table, db_table, db_table_columns, font_size=font_size
         )
+        form.exec()
+    
+    # Show Pieces Transactions tab 
+    def show_table_view_tab(self):
+        form = PiecesTransactionsForm(PiecesTransactionsUi)
+        data = self.get_pieces_transactions_list()
+        header = ["المورد", "القطعة", "السعر", "الحالة", "التاريخ"]
+        table: QTableView = form.ui.table
+        
+        self.remove_rows_counter(table)
+        model = TableViewModel(data, header)
+        table.setModel(model)
+        
+
+
         form.exec()
 
 
