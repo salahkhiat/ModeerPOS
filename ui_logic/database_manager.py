@@ -545,7 +545,7 @@ class DatabaseManager(SharedFunctions):
                 query += ordering
                 result = cursor.execute(query).fetchall()
             return result
-    def get_pieces_transactions_list(self, keyword=None) -> List:
+    def get_pieces_transactions_list(self, keyword=None, limit=10, offset=0) -> List:
         with self.db_connection() as connection: 
             cursor = connection.cursor()
 
@@ -553,6 +553,7 @@ class DatabaseManager(SharedFunctions):
             query = f"""
         
                     SELECT
+                        p.id AS id,
                         s.name AS supplier,
                         p.piece AS name,
                         p.price AS price,
@@ -568,13 +569,13 @@ class DatabaseManager(SharedFunctions):
               
             """ 
             result = None
-            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
+            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC LIMIT ? OFFSET ?"
             if keyword:
                 query += " AND name LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
+                result = cursor.execute(query,(f"%{keyword}%", limit, offset)).fetchall()
             else:
                 query += ordering
-                result = cursor.execute(query).fetchall()
+                result = cursor.execute(query, (limit, offset)).fetchall()
             return result
         
     def get_suppliers_transactions_list(self, keyword=None) -> List:

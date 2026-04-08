@@ -356,7 +356,9 @@ class SharedFunctions:
             table.setColumnWidth(i, header_width)
         self.remove_rows_counter(table)
 
-    def make_rows_scrollable(self, table: QTableWidget) -> None:
+    def make_rows_scrollable(self, table) -> None:
+        """ Make QTableWidget or QTableView rows Scrollable. """
+        
         # 1. Make table rows selectable (full row).
         table.setSelectionBehavior(
             QAbstractItemView.SelectionBehavior.SelectRows
