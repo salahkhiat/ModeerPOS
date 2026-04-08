@@ -43,7 +43,13 @@ from .editable_items_form import EditableItemsForm
 from uis.table_view import Ui_ChooseItemUi as PiecesTransactionsUi
 from .pieces_transactions_form import PiecesTransactionsForm
 
-from PyQt6.QtWidgets import QTableWidget, QHeaderView, QSplashScreen, QTableView
+from PyQt6.QtWidgets import (
+    QTableWidget, 
+    QHeaderView, 
+    QSplashScreen, 
+    QTableView, 
+    QAbstractItemView
+)
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt, QTimer
 from typing import Dict, List
@@ -511,15 +517,28 @@ class MainScreen(MainForm):
     def show_table_view_tab(self):
         form = PiecesTransactionsForm(PiecesTransactionsUi)
         data = self.get_pieces_transactions_list()
-        header = ["المورد", "القطعة", "السعر", "الحالة", "التاريخ"]
+        columns_header = ["المورد", "القطعة", "السعر", "الحالة", "التاريخ"]
         table: QTableView = form.ui.table
         
+     
         self.remove_rows_counter(table)
-        model = TableViewModel(data, header)
+        model = TableViewModel(data, columns_header)
         table.setModel(model)
+
+        # Make the content fits the full width
+        header = table.horizontalHeader()
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+
+        # make a row scrollable
+        table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        table.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         
-
-
+        # Get selected row data
+        index = table.currentIndex()
+        row = index.row()
+        print("Selected row:", row)
+        print("Data:", model._data[row])
+       
         form.exec()
 
 

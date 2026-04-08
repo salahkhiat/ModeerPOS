@@ -53,13 +53,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="cursor">
@@ -83,8 +83,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="shortcut">
@@ -96,17 +96,79 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="delete_btn">
+      <widget class="QPushButton" name="next_btn">
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>60</height>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="previous_btn">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="delete_btn">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
         </size>
        </property>
        <property name="cursor">
@@ -130,8 +192,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="flat">
@@ -144,7 +206,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
         </size>
        </property>
        <property name="cursor">
@@ -164,8 +232,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="flat">
@@ -178,7 +246,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
         </size>
        </property>
        <property name="cursor">
@@ -198,8 +272,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="flat">
@@ -212,7 +286,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
         </size>
        </property>
        <property name="cursor">
@@ -232,8 +312,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="flat">
@@ -250,12 +330,12 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
          <bold>true</bold>
         </font>
        </property>

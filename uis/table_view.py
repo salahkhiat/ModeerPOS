@@ -30,8 +30,8 @@ class Ui_ChooseItemUi(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.cancel_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
-        self.cancel_btn.setMinimumSize(QtCore.QSize(0, 60))
-        self.cancel_btn.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.cancel_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.cancel_btn.setMaximumSize(QtCore.QSize(16777215, 30))
         self.cancel_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.cancel_btn.setStyleSheet("QPushButton:hover{\n"
 "    background-color:#3f5482;\n"
@@ -41,13 +41,37 @@ class Ui_ChooseItemUi(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../icons/cancel.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.cancel_btn.setIcon(icon)
-        self.cancel_btn.setIconSize(QtCore.QSize(50, 50))
+        self.cancel_btn.setIconSize(QtCore.QSize(25, 25))
         self.cancel_btn.setFlat(True)
         self.cancel_btn.setObjectName("cancel_btn")
         self.horizontalLayout_2.addWidget(self.cancel_btn)
+        self.next_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
+        self.next_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.next_btn.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.next_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.next_btn.setStyleSheet("QPushButton:hover{\n"
+"    background-color:#3f5482;\n"
+"    border: 1px solid #3f5482;\n"
+"}")
+        self.next_btn.setText("")
+        self.next_btn.setFlat(True)
+        self.next_btn.setObjectName("next_btn")
+        self.horizontalLayout_2.addWidget(self.next_btn)
+        self.previous_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
+        self.previous_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.previous_btn.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.previous_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.previous_btn.setStyleSheet("QPushButton:hover{\n"
+"    background-color:#3f5482;\n"
+"    border: 1px solid #3f5482;\n"
+"}")
+        self.previous_btn.setText("")
+        self.previous_btn.setFlat(True)
+        self.previous_btn.setObjectName("previous_btn")
+        self.horizontalLayout_2.addWidget(self.previous_btn)
         self.delete_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
-        self.delete_btn.setMinimumSize(QtCore.QSize(0, 60))
-        self.delete_btn.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.delete_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.delete_btn.setMaximumSize(QtCore.QSize(16777215, 30))
         self.delete_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.delete_btn.setStyleSheet("QPushButton:hover{\n"
 "    background-color:#3f5482;\n"
@@ -57,43 +81,46 @@ class Ui_ChooseItemUi(object):
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../icons/add_item.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.delete_btn.setIcon(icon1)
-        self.delete_btn.setIconSize(QtCore.QSize(50, 50))
+        self.delete_btn.setIconSize(QtCore.QSize(25, 25))
         self.delete_btn.setFlat(True)
         self.delete_btn.setObjectName("delete_btn")
         self.horizontalLayout_2.addWidget(self.delete_btn)
         self.return_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
-        self.return_btn.setMinimumSize(QtCore.QSize(0, 60))
+        self.return_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.return_btn.setMaximumSize(QtCore.QSize(16777215, 30))
         self.return_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.return_btn.setStyleSheet("QPushButton:hover{\n"
 "    background-color:#3f5482;\n"
 "    border: 1px solid #3f5482;\n"
 "}")
         self.return_btn.setText("")
-        self.return_btn.setIconSize(QtCore.QSize(50, 50))
+        self.return_btn.setIconSize(QtCore.QSize(25, 25))
         self.return_btn.setFlat(True)
         self.return_btn.setObjectName("return_btn")
         self.horizontalLayout_2.addWidget(self.return_btn)
         self.in_shop_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
-        self.in_shop_btn.setMinimumSize(QtCore.QSize(0, 60))
+        self.in_shop_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.in_shop_btn.setMaximumSize(QtCore.QSize(16777215, 30))
         self.in_shop_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.in_shop_btn.setStyleSheet("QPushButton:hover{\n"
 "    background-color:#3f5482;\n"
 "    border: 1px solid #3f5482;\n"
 "}")
         self.in_shop_btn.setText("")
-        self.in_shop_btn.setIconSize(QtCore.QSize(50, 50))
+        self.in_shop_btn.setIconSize(QtCore.QSize(25, 25))
         self.in_shop_btn.setFlat(True)
         self.in_shop_btn.setObjectName("in_shop_btn")
         self.horizontalLayout_2.addWidget(self.in_shop_btn)
         self.install_btn = QtWidgets.QPushButton(parent=ChooseItemUi)
-        self.install_btn.setMinimumSize(QtCore.QSize(0, 60))
+        self.install_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.install_btn.setMaximumSize(QtCore.QSize(16777215, 30))
         self.install_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.install_btn.setStyleSheet("QPushButton:hover{\n"
 "    background-color:#3f5482;\n"
 "    border: 1px solid #3f5482;\n"
 "}")
         self.install_btn.setText("")
-        self.install_btn.setIconSize(QtCore.QSize(50, 50))
+        self.install_btn.setIconSize(QtCore.QSize(25, 25))
         self.install_btn.setFlat(True)
         self.install_btn.setObjectName("install_btn")
         self.horizontalLayout_2.addWidget(self.install_btn)
@@ -101,9 +128,9 @@ class Ui_ChooseItemUi(object):
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.search_box = QtWidgets.QLineEdit(parent=ChooseItemUi)
-        self.search_box.setMinimumSize(QtCore.QSize(0, 60))
+        self.search_box.setMinimumSize(QtCore.QSize(0, 40))
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(14)
         font.setBold(True)
         self.search_box.setFont(font)
         self.search_box.setStyleSheet("background-color:white;")

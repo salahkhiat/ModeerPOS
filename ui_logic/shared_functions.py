@@ -34,11 +34,11 @@ class TableViewModel(QAbstractTableModel):
         # if index.row() == 1 and index.column() == 2 and role == Qt.ItemDataRole.BackgroundRole:
         #     return QColor("green")
         
-        # if  index.column() == 1 and role == Qt.ItemDataRole.FontRole:
-        #     font = QFont()
-        #     font.setBold(True)
-        #     font.setPointSizeF(16)
-        #     return font
+        if role == Qt.ItemDataRole.FontRole:
+            font = QFont()
+            font.setBold(True)
+            font.setPointSizeF(13)
+            return font
 
     def headerData(self, section, orientation, role):
         if role == Qt.ItemDataRole.DisplayRole:
@@ -46,6 +46,13 @@ class TableViewModel(QAbstractTableModel):
                 return self._headers[section]
             else:
                 return section + 1
+            
+        # 🔥 Set header font
+        if role == Qt.ItemDataRole.FontRole:
+            font = QFont()
+            font.setPointSize(14)
+            font.setBold(True)
+            return font
 
 class SharedFunctions:
     def set_icon(self, btn_name, icon_name):

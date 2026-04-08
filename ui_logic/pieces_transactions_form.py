@@ -14,6 +14,8 @@ class PiecesTransactionsForm(Form):
         self.set_icon("in_shop_btn","pending.svg")
         self.set_icon("return_btn","return.svg")
         self.set_icon("delete_btn","delete.svg")
+        self.set_icon("previous_btn","previous.svg")
+        self.set_icon("next_btn","next.svg")
         self.set_icon("cancel_btn","cancel.svg")
         
         
