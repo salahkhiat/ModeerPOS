@@ -70,10 +70,28 @@ class PiecesTransactionsForm(Form):
             self.page -= 1
             self.load_table()
     
-    def set_table_basic_settings(self, table):
-        # Make the content fits the full width
+    def set_table_view_headers(self, table, fixed_cols:dict[int:int], stretch_col:int):
+        """ Set A table view headers, columns fixed and stretch widths"""
+
         header = table.horizontalHeader()
-        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        col_count = table.model().columnCount()
+
+        # Set all to Interactive first
+        for col in fixed_cols.keys():
+            header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
+
+        for col, width in fixed_cols.items():
+            # Custom widths for first col
+            table.setColumnWidth(col, width)
+
+        # Last column stretches
+        header.setSectionResizeMode(stretch_col, QHeaderView.ResizeMode.Stretch)
+
+    def set_table_basic_settings(self, table):
+        # Set table view headers and columns
+        cols_widths = {0:80, 1:150, 3:100, 4:85, 5:180}
+        stretch_col = 2
+        self.set_table_view_headers(table, cols_widths, stretch_col)
 
         # make a row scrollable
         self.remove_rows_counter(table)

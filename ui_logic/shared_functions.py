@@ -106,7 +106,7 @@ class SharedFunctions:
             hijri_date = self.get_settings().get("hijri_date", False)
 
             now = datetime.now()
-            time_now = now.strftime("%H:%M")
+            time_now = now.strftime("%H:%M:%S")
             year, month, day = now.year, now.month, now.day
 
             if hijri_date:
