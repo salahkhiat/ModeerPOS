@@ -581,6 +581,20 @@ class Ui_main_window(object):
 "color:black;\n"
 "}")
         self.categories_menu.setObjectName("categories_menu")
+        self.settings_menu = QtWidgets.QMenu(parent=self.menuBar)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        self.settings_menu.setFont(font)
+        self.settings_menu.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.settings_menu.setStyleSheet("QMenu::item{\n"
+"padding:15px 15px;\n"
+"}\n"
+"QMenu::item:selected{\n"
+"background-color:white;\n"
+"color:black;\n"
+"}")
+        self.settings_menu.setObjectName("settings_menu")
         main_window.setMenuBar(self.menuBar)
         self.suppliers_action = QtGui.QAction(parent=main_window)
         self.suppliers_action.setObjectName("suppliers_action")
@@ -618,6 +632,8 @@ class Ui_main_window(object):
         self.expenses_category_action.setObjectName("expenses_category_action")
         self.pieces_transactions_action = QtGui.QAction(parent=main_window)
         self.pieces_transactions_action.setObjectName("pieces_transactions_action")
+        self.init_amount_action = QtGui.QAction(parent=main_window)
+        self.init_amount_action.setObjectName("init_amount_action")
         self.management_menu.addAction(self.suppliers_action)
         self.management_menu.addAction(self.customers_action)
         self.management_menu.addAction(self.employees_action)
@@ -636,10 +652,12 @@ class Ui_main_window(object):
         self.transactions_menu.addAction(self.services_action)
         self.categories_menu.addAction(self.services_category_action)
         self.categories_menu.addAction(self.expenses_category_action)
+        self.settings_menu.addAction(self.init_amount_action)
         self.menuBar.addAction(self.management_menu.menuAction())
         self.menuBar.addAction(self.payments_menu.menuAction())
         self.menuBar.addAction(self.transactions_menu.menuAction())
         self.menuBar.addAction(self.categories_menu.menuAction())
+        self.menuBar.addAction(self.settings_menu.menuAction())
 
         self.retranslateUi(main_window)
         self.tab_widget.setCurrentIndex(0)
@@ -703,6 +721,7 @@ class Ui_main_window(object):
         self.payments_menu.setTitle(_translate("main_window", "معاملات"))
         self.transactions_menu.setTitle(_translate("main_window", "قائمة"))
         self.categories_menu.setTitle(_translate("main_window", "أقسام"))
+        self.settings_menu.setTitle(_translate("main_window", "الإعدادات"))
         self.suppliers_action.setText(_translate("main_window", "الموردين"))
         self.customers_action.setText(_translate("main_window", "الزبائن"))
         self.employees_action.setText(_translate("main_window", "العمال"))
@@ -721,3 +740,4 @@ class Ui_main_window(object):
         self.services_category_action.setText(_translate("main_window", "الخدمات"))
         self.expenses_category_action.setText(_translate("main_window", "المصاريف"))
         self.pieces_transactions_action.setText(_translate("main_window", "قطع الصيانة"))
+        self.init_amount_action.setText(_translate("main_window", "مبلغ بداية اليوم"))

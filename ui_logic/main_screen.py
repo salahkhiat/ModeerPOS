@@ -40,8 +40,11 @@ from .error_form import ErrorForm
 from uis.editable_items import Ui_ChooseItemUi as EditableItemsUi
 from .editable_items_form import EditableItemsForm
 
-from uis.table_view import Ui_ChooseItemUi as PiecesTransactionsUi
+from uis.pieces_transactions_table import Ui_ChooseItemUi as PiecesTransactionsUi
 from .pieces_transactions_form import PiecesTransactionsForm
+
+from uis.init_amount import Ui_Form as InitAmountUi
+from .init_amount_form import InitAmountForm
 
 from PyQt6.QtWidgets import (
     QTableWidget, 
@@ -454,8 +457,11 @@ class MainScreen(MainForm):
             )
         )
 
-        # show table view tabs
-        self.ui.pieces_transactions_action.triggered.connect(self.show_table_view_tab)
+        # show tables view tabs
+        self.ui.pieces_transactions_action.triggered.connect(self.show_pieces_transactions_tab)
+        self.ui.init_amount_action.triggered.connect(self.show_init_amount_tab)
+
+
 
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()
@@ -514,9 +520,16 @@ class MainScreen(MainForm):
         form.exec()
     
     # Show Pieces Transactions tab 
-    def show_table_view_tab(self):
+    def show_pieces_transactions_tab(self):
         form = PiecesTransactionsForm(PiecesTransactionsUi)
         form.exec()
+
+    # Show Pieces Transactions tab 
+    def show_init_amount_tab(self):
+        form = InitAmountForm(InitAmountUi)
+        form.exec()
+    
+
 
 
     # set database form button 

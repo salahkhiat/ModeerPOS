@@ -545,10 +545,10 @@ class DatabaseManager(SharedFunctions):
                 query += ordering
                 result = cursor.execute(query).fetchall()
             return result
-    def get_pieces_transactions_list(self, keyword=None, limit=10, offset=0) -> List:
+    def get_pieces_transactions_list(self, keyword=None, status=None, limit=10, offset=0) -> List:
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-
+        
             created = self.current_date()[:7]
             query = f"""
         
@@ -568,14 +568,34 @@ class DatabaseManager(SharedFunctions):
                         p.supplier_id = s.id 
               
             """ 
-            result = None
-            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC LIMIT ? OFFSET ?"
+            conditions = []
+            params = []
+
+            # ✅ Always filter by date
+            conditions.append("p.created LIKE ?")
+            params.append(f"{created}%")
+
+            if status:
+                conditions.append("p.status = ?")
+                params.append(status)
+                
+
             if keyword:
-                query += " AND name LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%", limit, offset)).fetchall()
-            else:
-                query += ordering
-                result = cursor.execute(query, (limit, offset)).fetchall()
+                conditions.append("p.piece LIKE ?")
+                params.append(f"%{keyword}%")
+                
+
+            # ✅ Add WHERE only once
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+
+            query += " ORDER BY p.created DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            
+
+            result = cursor.execute(query, params).fetchall()
+            
             return result
         
     def get_suppliers_transactions_list(self, keyword=None) -> List:

@@ -27,6 +27,12 @@ import shutil
 # else:
 #     print("it doesn't")
 
-data = ["noor", "mohammed"]
-data[1] = "Muhammed"
-print(tuple(data))
+# data = ["noor", "mohammed"]
+# data[1] = "Muhammed"
+# print(tuple(data))
+
+conditions = ["status LIKE ?", "keyword LIKE ?"]
+parms = ["in_shop", "nappe de charge"]
+
+query = "WHERE " + " AND ".join(conditions)
+print( query)

@@ -1,5 +1,10 @@
 from .base_form import Form
-from PyQt6.QtWidgets import QTableView, QAbstractItemView, QHeaderView
+from PyQt6.QtWidgets import (
+    QTableView, 
+    QHeaderView, 
+    QMessageBox,
+    QComboBox
+)
 from .shared_functions import TableViewModel
 
 import logging
@@ -10,6 +15,9 @@ class PiecesTransactionsForm(Form):
 
     def __init__(self,base_form):
         super().__init__(base_form)
+
+        self.setWindowTitle("سجل حالة قطع غيار الصيانة")
+
         # set icons
         self.set_icons()
 
@@ -26,34 +34,71 @@ class PiecesTransactionsForm(Form):
 
         # load table 
         self.columns_header = ["المعرف", "المورد", "القطعة", "السعر", "الحالة", "التاريخ"]
+        
         self.load_table()
 
+        # connect buttons
+        self.connect_buttons()
 
-        # # Get selected row data
-        # index = table.currentIndex()
-        # row = index.row()
-        # print("Selected row:", row)
-        # print("Data:", model._data[row])
-
-
+        # status combo
+        status: QComboBox = self.ui.status_type
+        status.currentIndexChanged.connect(self.show_current_combo)
 
 
+    
+    def show_current_combo(self):
+        status: QComboBox = self.ui.status_type
+        status_list = {
+            0: None,
+            1:"in_shop",
+            2:"installed",
+            3:"returned"
+        }
+        selected_status = status_list[status.currentIndex()]
+        print(f"1:{selected_status}")
+        
 
-    def load_table(self):
+        
+        # load the table
+        self.load_table(status_type=selected_status)
+
+
+    def load_table(self, status_type=None, keyword=None):
         table: QTableView = self.ui.table
         
         offset = self.page * self.page_size
         
-        data = self.get_pieces_transactions_list(limit=self.page_size, offset=offset)
-        model = TableViewModel(data, self.columns_header)
+        data = None
+        if status_type is not None :
+            print(f"2:{status_type}")
+            data = self.get_pieces_transactions_list(status=status_type, limit=self.page_size, offset=offset)
+        else:
+            print(f"3:{status_type}")
+            # data = self.get_pieces_transactions_list(limit=self.page_size, offset=offset)
+            data = self.get_pieces_transactions_list(status=status_type, limit=self.page_size, offset=offset)
+            
+        
+        self.model = TableViewModel(data, self.columns_header)
 
-        table.setModel(model)
+        table.setModel(self.model)
 
         self.set_table_basic_settings(table)
 
         # 🔥 update pagination counter
         self.update_pagination_counter()
 
+        self.selected_piece_row = None
+
+        # selected model
+        selection_model = table.selectionModel()
+        selection_model.selectionChanged.connect(self.on_row_selected)  
+    
+    def on_row_selected(self, selected, deselected):
+        indexes = selected.indexes()
+        
+        if indexes:
+            row = indexes[0].row()
+            self.selected_piece_row = self.model._data[row]
 
     def next_page(self):
         self.page += 1
@@ -110,7 +155,63 @@ class PiecesTransactionsForm(Form):
         self.set_icon("previous_btn","previous.svg")
         self.set_icon("next_btn","next.svg")
         self.set_icon("cancel_btn","cancel.svg")
-         
+    
+    def connect_buttons(self):
+        self.install_btn_clicked()
+        self.return_btn_clicked()
+        self.in_shop_btn_clicked()
+        self.delete_btn_clicked()
+    
+    def update_piece_status(self, status:str):
+        table = "pieces_transactions"
+        columns = ["status", "created"]
+        data = (status, self.current_date())
+        id = self.selected_piece_row[0]
+        self.update_info(table, columns, data, "id=?", (id,))
+        self.load_table()
+
+    def set_piece_installed(self):
+        
+        if self.selected_piece_row is not None:
+            self.update_piece_status("installed")
+            QMessageBox.warning(None, "حالة القطعة", "تم تركيب القطعة بنجاح")
+        else:
+            logger.warning("No row selected yet")
+    
+    def install_btn_clicked(self):
+        self.ui.install_btn.clicked.connect(self.set_piece_installed)
+
+    def set_piece_in_shop(self):
+        if self.selected_piece_row is not None:
+            self.update_piece_status("in_shop")
+        else:
+            logger.warning("No row selected yet")
+    
+    def in_shop_btn_clicked(self):
+        self.ui.in_shop_btn.clicked.connect(self.set_piece_in_shop)
+
+    def set_piece_returned(self):
+        if self.selected_piece_row is not None:
+            self.update_piece_status("returned")
+        else:
+            logger.warning("No row selected yet")
+    
+    def return_btn_clicked(self):
+        self.ui.return_btn.clicked.connect(self.set_piece_returned)
+
+    def set_piece_deleted(self):
+        if self.selected_piece_row is not None:
+            id = self.selected_piece_row[0]
+            table = "pieces_transactions"
+            self.delete_item_from_db(table, "id",id)
+            self.load_table()
+        else:
+            logger.warning("No row selected yet")
+        
+    def delete_btn_clicked(self):
+        self.ui.delete_btn.clicked.connect(self.set_piece_deleted)
+
+
 
 
         

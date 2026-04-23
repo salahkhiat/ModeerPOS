@@ -1268,10 +1268,35 @@ color:black;
     <addaction name="services_category_action"/>
     <addaction name="expenses_category_action"/>
    </widget>
+   <widget class="QMenu" name="settings_menu">
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMenu::item{
+padding:15px 15px;
+}
+QMenu::item:selected{
+background-color:white;
+color:black;
+}</string>
+    </property>
+    <property name="title">
+     <string>الإعدادات</string>
+    </property>
+    <addaction name="init_amount_action"/>
+   </widget>
    <addaction name="management_menu"/>
    <addaction name="payments_menu"/>
    <addaction name="transactions_menu"/>
    <addaction name="categories_menu"/>
+   <addaction name="settings_menu"/>
   </widget>
   <action name="suppliers_action">
    <property name="text">
@@ -1361,6 +1386,11 @@ color:black;
   <action name="pieces_transactions_action">
    <property name="text">
     <string>قطع الصيانة</string>
+   </property>
+  </action>
+  <action name="init_amount_action">
+   <property name="text">
+    <string>مبلغ بداية اليوم</string>
    </property>
   </action>
  </widget>
