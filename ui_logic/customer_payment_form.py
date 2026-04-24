@@ -13,7 +13,7 @@ class CustomerPaymentForm(Form):
         # validating an amount
 
         # default settings
-        customers = self.get_table_as_list("customers",["name"])
+        customers = self.get_table_as_list("customers",["name"], True)
         customers.pop(customers.index("-"))
 
         customers_combo:QComboBox = self.ui.customer

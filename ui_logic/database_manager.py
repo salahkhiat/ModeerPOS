@@ -401,6 +401,8 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             
             query = f"SELECT id, {column} FROM {table}"
+        
+
             data = cursor.execute(query).fetchall()
 
             new_data = {item[0]:item[1] for item in data}
