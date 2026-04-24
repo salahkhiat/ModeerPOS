@@ -2,5 +2,5 @@
     "hijri_date": false,
     "database_path": ".",
     "database_name": "shop_data.db",
-    "init_amount": 4000
+    "init_amount": 3000
 }

@@ -31,8 +31,11 @@ import shutil
 # data[1] = "Muhammed"
 # print(tuple(data))
 
-conditions = ["status LIKE ?", "keyword LIKE ?"]
-parms = ["in_shop", "nappe de charge"]
+# conditions = ["status LIKE ?", "keyword LIKE ?"]
+# parms = ["in_shop", "nappe de charge"]
 
-query = "WHERE " + " AND ".join(conditions)
-print( query)
+# query = "WHERE " + " AND ".join(conditions)
+# print( query)
+
+num = 0000
+print(num)

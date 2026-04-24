@@ -84,18 +84,18 @@
         <string notr="true">background-color:white</string>
        </property>
        <property name="maxLength">
-        <number>30</number>
+        <number>5</number>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
        <property name="placeholderText">
-        <string>المبلغ </string>
+        <string>المبلغ $</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="name_err">
+      <widget class="QLabel" name="amount_err">
        <property name="minimumSize">
         <size>
          <width>0</width>
