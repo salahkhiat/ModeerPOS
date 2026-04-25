@@ -816,13 +816,14 @@ class DatabaseManager(SharedFunctions):
                 
             return result
                 
-    def get_services_list(self, keyword=None) -> List:
+    def get_services_list(self, keyword=None, limit=10, offset=0) -> List:
 
         with self.db_connection() as connection: 
             cursor = connection.cursor()
  
             query = f"""
                 SELECT 
+                    ser.id AS service_id,
                     ser.description AS description,
                     cus.name AS customer,
                     cate.name AS category,

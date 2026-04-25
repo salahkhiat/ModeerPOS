@@ -10,9 +10,8 @@ class CustomerPaymentForm(Form):
         # set form title
         self.setWindowTitle("إيداع جديد")
 
-        # validating an amount
-
         # default settings
+        # get only undeleted customers 
         customers = self.get_table_as_list("customers",["name"], True)
         customers.pop(customers.index("-"))
 

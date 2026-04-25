@@ -30,6 +30,9 @@ from .service_form import ServiceForm
 from uis.invoice import Ui_Form as InvoiceUi 
 from .invoice_form import InvoiceForm
 
+from uis.services_table import Ui_ChooseItemUi as ServicesTableUi
+from .services_table_form import ServicesTableForm
+
 # We used 'category' UI for requested products form because it has the same required properties.
 from uis.category import Ui_Form as RequestedProductUi
 from .requested_product_form import RequestedProductForm
@@ -414,6 +417,7 @@ class MainScreen(MainForm):
                 services_columns, 
                 services_header, 
                 services_header_width, 
+                custom_form="services_table"
             )
         )
 
@@ -434,6 +438,7 @@ class MainScreen(MainForm):
                 services_categories_columns, 
                 services_categories_header, 
                 services_categories_header_width, 
+                
             )
         )
 
@@ -501,23 +506,34 @@ class MainScreen(MainForm):
             db_table_columns: List[str], 
             headers: List[str], 
             headers_width: List[int],
-            font_size: int = 16
+            font_size: int = 16,
+            custom_form = None
     ) -> None:
+        form = None 
         
-        form = EditableItemsForm(EditableItemsUi)
-        form.set_window_title(title)
 
-        # Table configuration
-        table: QTableWidget = form.ui.table
+        if custom_form is not None:
+            if custom_form == "services_table":
+                
+                form = ServicesTableForm(ServicesTableUi) 
+                
+                form.exec()
+                
+        else: 
+            form = EditableItemsForm(EditableItemsUi) 
+            form.set_window_title(title)
+            
+            # Table configuration
+            table: QTableWidget = form.ui.table
 
-        QTimer.singleShot(
-            0, 
-            lambda: self.set_table_properties(table, headers, headers_width)
-        )
-        form.set_db_table_info(
-            table, db_table, db_table_columns, font_size=font_size
-        )
-        form.exec()
+            QTimer.singleShot(
+                0, 
+                lambda: self.set_table_properties(table, headers, headers_width)
+            )
+            form.set_db_table_info(
+                table, db_table, db_table_columns, font_size=font_size
+            )
+            form.exec()
     
     # Show Pieces Transactions tab 
     def show_pieces_transactions_tab(self):

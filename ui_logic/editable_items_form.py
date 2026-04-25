@@ -26,11 +26,16 @@ logger = logging.getLogger(__name__)
 
 class EditableItemsForm(Form):
     
-    def __init__(self,base_form):
+    def __init__(self, base_form, custom_form=None):
         super().__init__(base_form)
         # set icons
         self.set_icon("edit_btn","edit.svg")
         self.set_icon("delete_btn","delete.svg")
+
+        if custom_form is not None:
+            if custom_form == "services_table":
+                self.set_icon("add_btn", "add.svg") 
+        
 
         # default settings
         self.qt_table: QTableWidget = self.ui.table 
