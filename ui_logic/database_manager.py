@@ -842,14 +842,21 @@ class DatabaseManager(SharedFunctions):
                 ON 
                     ser.category_id = cate.id 
             """ 
-            result = None
-            ordering = f" ORDER BY ser.created DESC; "
+
+            conditions = []
+            params = []
             if keyword:
-                query += " AND description LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
-            else:
-                query += ordering
-                result = cursor.execute(query).fetchall()
+                conditions.append("cus.name LIKE ?")
+                params.append(f"%{keyword}%")
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY ser.created DESC LIMIT ? OFFSET ?"
+
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
+
                 
             return result
 

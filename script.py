@@ -1,41 +1,48 @@
-import os
-import shutil
+import sqlite3
+import random
+from datetime import datetime, timedelta
 
-# file = "settings.json1"
-# folder = "uis"
+# Connect to your database
+conn = sqlite3.connect("shop_data.db")  # change this
+cursor = conn.cursor()
 
-# # to create a folder
-# os.mkdir("folder_name")
+descriptions = [
+    "Repair service",
+    "Installation",
+    "Maintenance",
+    "Consultation",
+    "Upgrade",
+    "Cleaning service",
+    "Technical support",
+    "Inspection"
+]
 
-# # to create a folder safer
-# os.makedirs("dir_name", exist_ok=True)
+def random_datetime():
+    now = datetime.now()
+    random_days = random.randint(0, 30)
+    random_seconds = random.randint(0, 86400)
+    return (now - timedelta(days=random_days, seconds=random_seconds)).strftime("%Y-%m-%d %H:%M:%S")
 
-# # to copy a file
-# shutil.copy("orginal_file_name.txt", "copy_file_name.txt")
+for _ in range(20):
+    customer_id = random.randint(1, 5)
+    category_id = random.randint(1, 3)
+    description = random.choice(descriptions)
+    
+    default_price = round(random.uniform(50, 500), 2)
+    
+    # paid_price can be <= default_price or equal
+    paid_price = round(random.uniform(0, default_price), 2)
+    
+    created = random_datetime()
 
-# # or better
-# shutil.copy2("source.txt", "dir_name")
+    cursor.execute("""
+        INSERT INTO services 
+        (customer_id, category_id, description, default_price, paid_price, created)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (customer_id, category_id, description, default_price, paid_price, created))
 
+# Commit and close
+conn.commit()
+conn.close()
 
-# if os.path.isdir("uis3"):
-#     print("yes this folder is exists")
-# else:
-#     print("no")
-
-# if os.path.isfile(file):
-#     print("it is exists")
-# else:
-#     print("it doesn't")
-
-# data = ["noor", "mohammed"]
-# data[1] = "Muhammed"
-# print(tuple(data))
-
-# conditions = ["status LIKE ?", "keyword LIKE ?"]
-# parms = ["in_shop", "nappe de charge"]
-
-# query = "WHERE " + " AND ".join(conditions)
-# print( query)
-
-num = 0000
-print(num)
+print("20 random services inserted successfully.")

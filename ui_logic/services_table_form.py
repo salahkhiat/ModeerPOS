@@ -29,11 +29,11 @@ class ServicesTableForm(Form):
         previous_btn.clicked.connect(self.previous_page)
 
         self.page = 0
-        self.page_size = 3 
+        self.page_size = 15
         self.pagination_counter = self.ui.page_number
 
         # load table 
-        self.columns_header = ["المعرف", "الوصف", "الزبون", "الصنف", "السعر", "الإيداع","التاريخ"]
+        self.columns_header = ["المعرف", "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"]
         
         self.load_table()
        
@@ -85,7 +85,13 @@ class ServicesTableForm(Form):
             self.page -= 1
             self.load_table()
     
-    def set_table_view_headers(self, table, fixed_cols:dict[int:int], stretch_col:int):
+    def set_table_view_headers(
+            self, 
+            table, 
+            fixed_cols:dict[int:int], 
+            resize_to_content_col:int, 
+            stretch_col:int
+        ):
         """ Set A table view headers, columns fixed and stretch widths"""
 
         header = table.horizontalHeader()
@@ -98,15 +104,19 @@ class ServicesTableForm(Form):
         for col, width in fixed_cols.items():
             # Custom widths for first col
             table.setColumnWidth(col, width)
+        
+        if resize_to_content_col:
+            header.setSectionResizeMode(resize_to_content_col, QHeaderView.ResizeMode.ResizeToContents)
 
         # Last column stretches
         header.setSectionResizeMode(stretch_col, QHeaderView.ResizeMode.Stretch)
 
     def set_table_basic_settings(self, table):
         # Set table view headers and columns
-        cols_widths = {0:80, 2:100, 3:100, 4:85, 5:85, 6:180 }
+        cols_widths = { 2:140, 3:120, 4:90, 5:90, 6:180 }
         stretch_col = 1
-        self.set_table_view_headers(table, cols_widths, stretch_col)
+        resize_to_content_col = 0
+        self.set_table_view_headers(table, cols_widths, resize_to_content_col, stretch_col)
 
         # make a row scrollable
         self.remove_rows_counter(table)
