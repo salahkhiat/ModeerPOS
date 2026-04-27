@@ -36,17 +36,23 @@ class ServicesTableForm(Form):
         self.columns_header = ["المعرف", "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"]
         
         self.load_table()
+
+        # Search box
+        search_box = self.ui.search_box
+        search_box.textChanged.connect(self.load_table)
+        self.keyword = None 
        
 
-
-
-
     def load_table(self, keyword=None):
+        if keyword:
+            self.keyword = keyword
+
         table: QTableView = self.ui.table
         
         offset = self.page * self.page_size
         
-        data = self.get_services_list(limit=self.page_size, offset=offset)
+        
+        data = self.get_services_list(keyword=keyword, limit=self.page_size, offset=offset)
 
         self.model = TableViewModel(data, self.columns_header)
 
@@ -72,18 +78,18 @@ class ServicesTableForm(Form):
 
     def next_page(self):
         self.page += 1
-        data = self.get_services_list(limit=self.page_size, offset=self.page * self.page_size)
+        data = self.get_services_list(keyword=self.keyword, limit=self.page_size, offset=self.page * self.page_size)
 
         if not data:
             self.page -= 1  # rollback
             return
 
-        self.load_table()
+        self.load_table(keyword=self.keyword)
 
     def previous_page(self):
         if self.page > 0:
             self.page -= 1
-            self.load_table()
+            self.load_table(keyword=self.keyword)
     
     def set_table_view_headers(
             self, 
@@ -135,6 +141,10 @@ class ServicesTableForm(Form):
         self.set_icon("previous_btn","previous.svg")
         self.set_icon("next_btn","next.svg")
         self.set_icon("cancel_btn","cancel.svg")
+    
+    def search_box(self, search_word: str) -> None:
+        search_word = str(search_word).strip()
+        
     
 
 

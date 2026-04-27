@@ -849,6 +849,7 @@ class DatabaseManager(SharedFunctions):
                 conditions.append("cus.name LIKE ?")
                 params.append(f"%{keyword}%")
             
+            
             if conditions:
                 query += " WHERE " + " AND ".join(conditions)
             
