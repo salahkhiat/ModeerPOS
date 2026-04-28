@@ -54,7 +54,7 @@ from PyQt6.QtWidgets import (
     QHeaderView, 
     QSplashScreen, 
     QTableView, 
-    QAbstractItemView
+    QAbstractItemView,
 )
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt, QTimer

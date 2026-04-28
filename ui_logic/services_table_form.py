@@ -7,6 +7,9 @@ from PyQt6.QtWidgets import (
 )
 from .shared_functions import TableViewModel
 
+from uis.confirmation_msg import Ui_Dialog as ConfirmationMsgUi
+from .confirmation_msg_form import ConfirmationMsgForm
+
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -41,11 +44,28 @@ class ServicesTableForm(Form):
         search_box = self.ui.search_box
         search_box.textChanged.connect(self.load_table)
         self.keyword = None 
+
+        # Buttons
+        self.connect_buttons()
+
+    
+    def on_row_selected(self, selected, deselected):
+        indexes = selected.indexes()
+        
+        if indexes:
+            row = indexes[0].row()
+            self.selected_service_row = self.model._data[row]
        
 
     def load_table(self, keyword=None):
+
         if keyword:
-            self.keyword = keyword
+            if len(str(keyword).strip()) > 0:
+                self.keyword = keyword
+            else:
+                self.keyword = None
+                keyword = None
+                
 
         table: QTableView = self.ui.table
         
@@ -63,7 +83,7 @@ class ServicesTableForm(Form):
         # 🔥 update pagination counter
         self.update_pagination_counter()
 
-        self.selected_piece_row = None
+        self.selected_service_row = None
 
         # selected model
         selection_model = table.selectionModel()
@@ -74,7 +94,7 @@ class ServicesTableForm(Form):
         
         if indexes:
             row = indexes[0].row()
-            self.selected_piece_row = self.model._data[row]
+            self.selected_service_row = self.model._data[row]
 
     def next_page(self):
         self.page += 1
@@ -134,17 +154,49 @@ class ServicesTableForm(Form):
         self.pagination_counter.setText(f"{current_page_number}")
 
     def set_icons(self):
-
         self.set_icon("delete_btn","delete.svg")
         self.set_icon("edit_btn","edit.svg")
         self.set_icon("add_btn","add.svg")
         self.set_icon("previous_btn","previous.svg")
         self.set_icon("next_btn","next.svg")
         self.set_icon("cancel_btn","cancel.svg")
+
+    def delete_btn_clicked(self):
+        self.ui.delete_btn.clicked.connect(self.delete_service)
+
+    def delete_service(self):
+        if self.selected_service_row is None:
+            print("no thing to delete yet")
+            title = "تأكيد عمية الحذف"
+            text = "إختر الخدمة التي تريد حذفها"
+            QMessageBox.warning(None, title, text)
+        else:
+            msg = "هل أنت متأكد من عملية الحذف؟"
+            form = ConfirmationMsgForm(ConfirmationMsgUi, msg)
+            form.confirmed.connect(self.confirm_deletion)
+            form.exec()
+
+    def confirm_deletion(self, cmd):
+        if cmd is True:
+            # Get the selected service id.
+            service_id = self.selected_service_row[0]
+            
+            # Delete the selected service.
+            self.delete_item_from_db("services", "id", service_id)
+
+            # Reset the pagination page to 0.
+            self.page = 0 
+
+            # Reload the services table.
+            self.load_table()
+
+
+    def connect_buttons(self):
+        # self.edit_btn_clicked()
+        # self.add_btn_clicked()
+        self.delete_btn_clicked()
     
-    def search_box(self, search_word: str) -> None:
-        search_word = str(search_word).strip()
-        
+
     
 
 
