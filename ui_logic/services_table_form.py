@@ -10,6 +10,9 @@ from .shared_functions import TableViewModel
 from uis.confirmation_msg import Ui_Dialog as ConfirmationMsgUi
 from .confirmation_msg_form import ConfirmationMsgForm
 
+from uis.service import Ui_Form as ServiceUi
+from .service_form import ServiceForm
+
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -155,7 +158,6 @@ class ServicesTableForm(Form):
 
     def set_icons(self):
         self.set_icon("delete_btn","delete.svg")
-        self.set_icon("edit_btn","edit.svg")
         self.set_icon("add_btn","add.svg")
         self.set_icon("previous_btn","previous.svg")
         self.set_icon("next_btn","next.svg")
@@ -163,6 +165,9 @@ class ServicesTableForm(Form):
 
     def delete_btn_clicked(self):
         self.ui.delete_btn.clicked.connect(self.delete_service)
+    
+    def add_btn_clicked(self):
+        self.ui.add_btn.clicked.connect(self.add_service)
 
     def delete_service(self):
         if self.selected_service_row is None:
@@ -175,6 +180,18 @@ class ServicesTableForm(Form):
             form = ConfirmationMsgForm(ConfirmationMsgUi, msg)
             form.confirmed.connect(self.confirm_deletion)
             form.exec()
+        
+    def add_service(self):
+        form = ServiceForm(ServiceUi)
+        form.fetch_then_put("customers","name",form.ui.customer)
+        form.fetch_then_put("services_categories","name",form.ui.category)
+        form.exec()
+        
+        # Reset pagination
+        self.page = 0 
+
+        # Reload table
+        self.load_table()
 
     def confirm_deletion(self, cmd):
         if cmd is True:
@@ -193,7 +210,7 @@ class ServicesTableForm(Form):
 
     def connect_buttons(self):
         # self.edit_btn_clicked()
-        # self.add_btn_clicked()
+        self.add_btn_clicked()
         self.delete_btn_clicked()
     
 

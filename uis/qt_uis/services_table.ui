@@ -154,7 +154,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="edit_btn">
+      <widget class="QPushButton" name="add_btn">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -281,43 +281,6 @@
     <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="add_btn">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton:hover{
-	background-color:#3f5482;
-	border: 1px solid #3f5482;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>38</width>
-           <height>38</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QLineEdit" name="search_box">
          <property name="minimumSize">
