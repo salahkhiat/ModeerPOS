@@ -516,8 +516,8 @@ class MainScreen(MainForm):
             if custom_form == "services_table":
                 
                 form = ServicesTableForm(ServicesTableUi) 
-                
-                form.exec()
+                form.exec() 
+
                 
         else: 
             form = EditableItemsForm(EditableItemsUi) 

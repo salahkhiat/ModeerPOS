@@ -845,10 +845,13 @@ class DatabaseManager(SharedFunctions):
 
             conditions = []
             params = []
+
+      
+
             if keyword:
+                print("database part")
                 conditions.append("cus.name LIKE ?")
                 params.append(f"%{keyword}%")
-            
             
             if conditions:
                 query += " WHERE " + " AND ".join(conditions)

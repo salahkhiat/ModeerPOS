@@ -3,7 +3,6 @@ from PyQt6.QtWidgets import (
     QTableView, 
     QHeaderView, 
     QMessageBox,
-    QComboBox
 )
 from .shared_functions import TableViewModel
 
@@ -40,17 +39,15 @@ class ServicesTableForm(Form):
 
         # load table 
         self.columns_header = ["المعرف", "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"]
-        
+        self.keyword = None 
         self.load_table()
 
         # Search box
         search_box = self.ui.search_box
         search_box.textChanged.connect(self.load_table)
-        self.keyword = None 
 
         # Buttons
         self.connect_buttons()
-
     
     def on_row_selected(self, selected, deselected):
         indexes = selected.indexes()
@@ -61,24 +58,23 @@ class ServicesTableForm(Form):
        
 
     def load_table(self, keyword=None):
+        
+        keyword = str(keyword).strip() if keyword is not None else None
 
-        if keyword:
-            if len(str(keyword).strip()) > 0:
-                self.keyword = keyword
-            else:
-                self.keyword = None
-                keyword = None
+        # 🔥 only reset page if keyword CHANGED
+        if keyword != self.keyword:
+            self.page = 0
+
+        self.keyword = keyword
                 
-
         table: QTableView = self.ui.table
         
         offset = self.page * self.page_size
         
-        
         data = self.get_services_list(keyword=keyword, limit=self.page_size, offset=offset)
-
+        
         self.model = TableViewModel(data, self.columns_header)
-
+        table.setModel(None)
         table.setModel(self.model)
 
         self.set_table_basic_settings(table)
@@ -207,9 +203,7 @@ class ServicesTableForm(Form):
             # Reload the services table.
             self.load_table()
 
-
     def connect_buttons(self):
-        # self.edit_btn_clicked()
         self.add_btn_clicked()
         self.delete_btn_clicked()
     
