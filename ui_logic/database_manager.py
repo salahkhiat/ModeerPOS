@@ -103,7 +103,13 @@ class DatabaseManager(SharedFunctions):
             con.close()
 
     
-    def store(self, table_name:str, columns: list[str], data: tuple, last_row_id:bool=False )-> Any:
+    def store(
+            self, 
+            table_name:str, 
+            columns: list[str],
+            data: tuple, 
+            last_row_id:bool=False 
+    )-> Any:
         """
         Insert data into a database table, return last_row_id if True.
 
@@ -210,6 +216,26 @@ class DatabaseManager(SharedFunctions):
                 return True
             else:
                 return False 
+            
+    def create_customer_type_column(self):
+        """
+        Create a customer_type column if not already exists in customers table.
+        """
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+
+            cursor.execute("PRAGMA table_info(customers)")
+            columns = [col[1] for col in cursor.fetchall()]
+
+            if "user_type" not in columns:
+                    cursor.execute(
+                "ALTER TABLE customers ADD COLUMN user_type TEXT DEFAULT 'normal'"
+            )
+            cursor.execute(
+                "UPDATE customers SET user_type = 'normal' WHERE user_type IS NULL"
+            )
+            connection.commit()
+            
 
     def search_by(self, table: str, column: str, keyword: str, target: str) -> Any:
         """
@@ -1574,9 +1600,10 @@ class DatabaseManager(SharedFunctions):
             # Commit changes and close connection
             connection.commit()
        
-        # Create a default customer
+        # Default settings
         self.create_default_column("customers", "name")
         self.create_default_column("expenses_categories", "name")
+        self.create_customer_type_column()
         
         logger.info("Database tables created successfully.")
     

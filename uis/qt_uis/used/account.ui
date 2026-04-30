@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>520</height>
+    <height>442</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>500</width>
-    <height>520</height>
+    <height>400</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -28,44 +28,40 @@
   <property name="styleSheet">
    <string notr="true">background-color:#033a63;</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="title">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>20</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white</string>
-       </property>
-       <property name="text">
-        <string>حساب جديد</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QLabel" name="title">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white</string>
+     </property>
+     <property name="text">
+      <string>حساب جديد</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </item>
-   <item row="1" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QLineEdit" name="name">
        <property name="minimumSize">
@@ -119,6 +115,10 @@
        </property>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLineEdit" name="tel">
        <property name="minimumSize">
@@ -172,6 +172,16 @@
        </property>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>15</number>
+     </property>
      <item>
       <widget class="QComboBox" name="account_type">
        <property name="minimumSize">
@@ -207,40 +217,50 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="account_type_err">
+      <widget class="QComboBox" name="customer_type">
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>50</height>
+         <height>60</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <pointsize>18</pointsize>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:white</string>
+        <string notr="true">background-color:none</string>
        </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
+       <item>
+        <property name="text">
+         <string>عادي</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>مميز</string>
+        </property>
+       </item>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="save_btn">
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
         </size>
        </property>
        <property name="cursor">
@@ -261,9 +281,12 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>35</width>
+         <height>35</height>
         </size>
+       </property>
+       <property name="shortcut">
+        <string>Return</string>
        </property>
        <property name="flat">
         <bool>true</bool>
@@ -275,7 +298,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
         </size>
        </property>
        <property name="cursor">
@@ -296,9 +325,12 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>50</width>
-         <height>50</height>
+         <width>35</width>
+         <height>35</height>
         </size>
+       </property>
+       <property name="shortcut">
+        <string>Esc</string>
        </property>
        <property name="flat">
         <bool>true</bool>
