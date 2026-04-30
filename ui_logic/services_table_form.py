@@ -80,7 +80,7 @@ class ServicesTableForm(Form):
         self.set_table_basic_settings(table)
 
         # 🔥 update pagination counter
-        self.update_pagination_counter()
+        self.update_pagination_counter() 
 
         self.selected_service_row = None
 

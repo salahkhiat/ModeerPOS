@@ -34,7 +34,7 @@ class PiecesTransactionsForm(Form):
 
         # load table 
         self.columns_header = ["المعرف", "المورد", "القطعة", "السعر", "الحالة", "التاريخ"]
-        
+        self.keyword = None
         self.load_table()
 
         # connect buttons
@@ -43,6 +43,12 @@ class PiecesTransactionsForm(Form):
         # status combo
         status: QComboBox = self.ui.status_type
         status.currentIndexChanged.connect(self.show_current_combo)
+
+        # Search box
+        search_box = self.ui.search_box
+        search_box.textChanged.connect(
+            lambda box_keyword : self.load_table(keyword=box_keyword)
+        )
 
 
     
@@ -55,34 +61,33 @@ class PiecesTransactionsForm(Form):
             3:"returned"
         }
         selected_status = status_list[status.currentIndex()]
-        print(f"1:{selected_status}")
-        
-
         
         # load the table
         self.load_table(status_type=selected_status)
 
 
     def load_table(self, status_type=None, keyword=None):
+
+        keyword = str(keyword).strip() if keyword is not None else None
+
+        # 🔥 only reset page if keyword CHANGED
+        if keyword != self.keyword:
+            self.page = 0
+
+        self.keyword = keyword
+
         table: QTableView = self.ui.table
         
         offset = self.page * self.page_size
         
-        data = None
-        if status_type is not None :
-            print(f"2:{status_type}")
-            data = self.get_pieces_transactions_list(status=status_type, limit=self.page_size, offset=offset)
-        else:
-            print(f"3:{status_type}")
-            # data = self.get_pieces_transactions_list(limit=self.page_size, offset=offset)
-            data = self.get_pieces_transactions_list(status=status_type, limit=self.page_size, offset=offset)
-            
+        data = self.get_pieces_transactions_list(keyword=keyword, status=status_type, limit=self.page_size, offset=offset)
         
         self.model = TableViewModel(data, self.columns_header)
-
+        
+        table.setModel(None)
         table.setModel(self.model)
-
         self.set_table_basic_settings(table)
+        
 
         # 🔥 update pagination counter
         self.update_pagination_counter()
@@ -102,18 +107,18 @@ class PiecesTransactionsForm(Form):
 
     def next_page(self):
         self.page += 1
-        data = self.get_pieces_transactions_list(limit=self.page_size, offset=self.page * self.page_size)
+        data = self.get_pieces_transactions_list(keyword=self.keyword, limit=self.page_size, offset=self.page * self.page_size)
 
         if not data:
             self.page -= 1  # rollback
             return
 
-        self.load_table()
+        self.load_table(keyword=self.keyword)
 
     def previous_page(self):
         if self.page > 0:
             self.page -= 1
-            self.load_table()
+            self.load_table(keyword=self.keyword)
     
     def set_table_view_headers(self, table, fixed_cols:dict[int:int], stretch_col:int):
         """ Set A table view headers, columns fixed and stretch widths"""

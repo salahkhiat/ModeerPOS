@@ -583,7 +583,7 @@ class DatabaseManager(SharedFunctions):
                 
 
             if keyword:
-                conditions.append("p.piece LIKE ?")
+                conditions.append("s.name LIKE ?")
                 params.append(f"%{keyword}%")
                 
 
@@ -849,7 +849,6 @@ class DatabaseManager(SharedFunctions):
       
 
             if keyword:
-                print("database part")
                 conditions.append("cus.name LIKE ?")
                 params.append(f"%{keyword}%")
             
