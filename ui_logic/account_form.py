@@ -70,9 +70,11 @@ class AccountForm(Form):
         customer_type.currentIndexChanged.connect(self.get_customer_type)
 
     def get_customer_type(self, cus_type_index:int):
+        """ Set the customer_type_index whenever customer_type combo changed."""
         self.customer_type_index = cus_type_index
 
     def get_account_type(self, account_type:int):
+        """ Set the account_type_index and disable/enable the customer_type combo"""
         customer_type: QComboBox = self.ui.customer_type 
 
         self.account_type_index = account_type
