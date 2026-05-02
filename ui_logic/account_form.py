@@ -1,5 +1,7 @@
 from .base_form import Form
 import logging
+
+from PyQt6.QtWidgets import QComboBox
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
@@ -14,6 +16,10 @@ class AccountForm(Form):
         self.is_valid_name = False
         self.is_valid_tel = True
         self.editable = False
+        self.customers_type = {
+            0: "normal",
+            1: "vip"
+        }
         
         # Check user account type and user ID.
         if user_item_id and user_type:
@@ -52,7 +58,29 @@ class AccountForm(Form):
 
         # Buttons connection
         self.save_btn_clicked()
+        
+        # Get an account type
+        account_type: QComboBox = self.ui.account_type
+        self.account_type_index = account_type.currentIndex()
+        account_type.currentIndexChanged.connect(self.get_account_type)
+        
+        # Get customer type
+        customer_type: QComboBox = self.ui.customer_type
+        self.customer_type_index = customer_type.currentIndex()
+        customer_type.currentIndexChanged.connect(self.get_customer_type)
 
+    def get_customer_type(self, cus_type_index:int):
+        self.customer_type_index = cus_type_index
+
+    def get_account_type(self, account_type:int):
+        customer_type: QComboBox = self.ui.customer_type 
+
+        self.account_type_index = account_type
+
+        if account_type != 0:
+            customer_type.setDisabled(True)
+        else:
+            customer_type.setDisabled(False)
 
     # save account form inputs
     def save_account_form(self) -> None:
@@ -70,8 +98,15 @@ class AccountForm(Form):
             table = self.user_type
 
         columns = ["name", "tel"]
-        data = (name.text(),tel.text())
+        data = [name.text(),tel.text()]
         
+        # this part only for customers types
+        if table == "customers":
+            cus_type = self.customers_type[self.customer_type_index]
+            columns.append("user_type")
+            data.append(cus_type)
+        # ---
+
         if self.is_valid_name == True and self.is_valid_tel == True:
 
             # create a new user.
