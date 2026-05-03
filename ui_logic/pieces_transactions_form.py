@@ -20,7 +20,7 @@ class PiecesTransactionsForm(Form):
 
         # set icons
         self.set_icons()
-
+       
         # Pagination part
         next_btn = self.ui.next_btn
         previous_btn = self.ui.previous_btn
@@ -31,27 +31,26 @@ class PiecesTransactionsForm(Form):
         self.page = 0
         self.page_size = 3 
         self.pagination_counter = self.ui.pagination_label
-
+        
         # load table 
         self.columns_header = ["المعرف", "المورد", "القطعة", "السعر", "الحالة", "التاريخ"]
         self.keyword = None
+        
         self.load_table()
-
+        
         # connect buttons
         self.connect_buttons()
-
+        
         # status combo
         status: QComboBox = self.ui.status_type
         status.currentIndexChanged.connect(self.show_current_combo)
-
+        
         # Search box
         search_box = self.ui.search_box
         search_box.textChanged.connect(
             lambda box_keyword : self.load_table(keyword=box_keyword)
         )
 
-
-    
     def show_current_combo(self):
         status: QComboBox = self.ui.status_type
         status_list = {
@@ -67,27 +66,34 @@ class PiecesTransactionsForm(Form):
 
 
     def load_table(self, status_type=None, keyword=None):
-
+        
         keyword = str(keyword).strip() if keyword is not None else None
-
+        
         # 🔥 only reset page if keyword CHANGED
         if keyword != self.keyword:
             self.page = 0
 
         self.keyword = keyword
-
+        
         table: QTableView = self.ui.table
         
         offset = self.page * self.page_size
         
-        data = self.get_pieces_transactions_list(keyword=keyword, status=status_type, limit=self.page_size, offset=offset)
+        data = self.get_pieces_transactions_list(
+            keyword=keyword, 
+            status=status_type, 
+            limit=self.page_size, 
+            offset=offset
+        )
         
         self.model = TableViewModel(data, self.columns_header)
         
         table.setModel(None)
-        table.setModel(self.model)
-        self.set_table_basic_settings(table)
         
+        table.setModel(self.model)
+        
+        self.set_table_basic_settings(table)
+        print(7)
 
         # 🔥 update pagination counter
         self.update_pagination_counter()
@@ -122,27 +128,29 @@ class PiecesTransactionsForm(Form):
     
     def set_table_view_headers(self, table, fixed_cols:dict[int:int], stretch_col:int):
         """ Set A table view headers, columns fixed and stretch widths"""
-
+        
         header = table.horizontalHeader()
-        col_count = table.model().columnCount()
-
+        # col_count = table.model().columnCount()
+        print(22)
         # Set all to Interactive first
         for col in fixed_cols.keys():
             header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
-
+        print(33)
         for col, width in fixed_cols.items():
             # Custom widths for first col
             table.setColumnWidth(col, width)
-
+        
         # Last column stretches
         header.setSectionResizeMode(stretch_col, QHeaderView.ResizeMode.Stretch)
 
     def set_table_basic_settings(self, table):
         # Set table view headers and columns
+        
         cols_widths = {0:80, 1:150, 3:100, 4:85, 5:180}
         stretch_col = 2
+      
         self.set_table_view_headers(table, cols_widths, stretch_col)
-
+        print(2)
         # make a row scrollable
         self.remove_rows_counter(table)
         self.make_rows_scrollable(table)
