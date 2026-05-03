@@ -92,22 +92,36 @@ class ServiceForm(Form):
         note = self.ui.note.text()
         amount = 0 if self.ui.amount.text().strip() == "" else float(self.ui.amount.text())
         deposit = 0 if self.ui.deposit.text().strip() == "" else float(self.ui.deposit.text())
+        piece_price = 0 if self.ui.piece_price.text().strip() == "" else float(self.ui.piece_price.text())
         created = self.current_date()
         
-        columns = ["customer_id","category_id","description","default_price","paid_price","created"]
-        data = [cus_id,cat_id,note,amount,deposit,created]
+        columns = [
+            "customer_id",
+            "category_id",
+            "description",
+            "default_price",
+            "piece_price",
+            "paid_price",
+            "created"
+        ]
+        data = [cus_id, cat_id, note, amount, piece_price, deposit, created]
         table = "services"
 
        
-        fields = [self.ui.note,self.ui.amount,self.ui.deposit]
+        fields = [
+            self.ui.note,
+            self.ui.amount,
+            self.ui.piece_price,
+            self.ui.deposit
+        ]
 
         if (self.is_valid_category or self.is_valid_note) and (self.is_valid_amount ):
             if cus_name == '-':
                 if self.store(table,columns,tuple(data)):
                     self.clear_fields(fields)
             else:
-                columns.insert(4,"paid_price")
-                data.insert(4,deposit)
+                columns.insert(4, "paid_price")
+                data.insert(4, deposit)
                 if self.store(table, columns, tuple(data)):
                     self.clear_fields(fields)
             self.close()

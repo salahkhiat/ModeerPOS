@@ -216,25 +216,6 @@ class DatabaseManager(SharedFunctions):
                 return True
             else:
                 return False 
-            
-    def create_customer_type_column(self):
-        """
-        Create a customer_type column if not already exists in customers table.
-        """
-        with self.db_connection() as connection: 
-            cursor = connection.cursor()
-            
-            cursor.execute("PRAGMA table_info(customers)")
-            columns = [col[1] for col in cursor.fetchall()]
-
-            if "user_type" not in columns:
-                    cursor.execute(
-                "ALTER TABLE customers ADD COLUMN user_type TEXT DEFAULT 'normal'"
-            )
-            cursor.execute(
-                "UPDATE customers SET user_type = 'normal' WHERE user_type IS NULL"
-            )
-            connection.commit()
 
     def add_column(self, table, column, default_value):
         """
@@ -1622,9 +1603,9 @@ class DatabaseManager(SharedFunctions):
         # Default settings
         self.create_default_column("customers", "name")
         self.create_default_column("expenses_categories", "name")
-        self.create_customer_type_column()
 
-        # Add a piece_price column to an existing table
+        # Add an X column to an existing table
+        self.add_column("customers", "user_type", "normal")
         self.add_column("services", "piece_price", 0)
         
         logger.info("Database tables created successfully.")
