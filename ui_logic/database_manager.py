@@ -223,7 +223,7 @@ class DatabaseManager(SharedFunctions):
         """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
-
+            
             cursor.execute("PRAGMA table_info(customers)")
             columns = [col[1] for col in cursor.fetchall()]
 
@@ -233,6 +233,25 @@ class DatabaseManager(SharedFunctions):
             )
             cursor.execute(
                 "UPDATE customers SET user_type = 'normal' WHERE user_type IS NULL"
+            )
+            connection.commit()
+
+    def add_column(self, table, column, default_value):
+        """
+        Add a new column with a default value to an existing table.
+        """
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+
+            cursor.execute(f"PRAGMA table_info({table})")
+            columns = [col[1] for col in cursor.fetchall()]
+
+            if column not in columns:
+                    cursor.execute(
+                f"ALTER TABLE {table} ADD COLUMN {column} TEXT DEFAULT '{default_value}'"
+            )
+            cursor.execute(
+                f"UPDATE {table} SET {column} = '{default_value}' WHERE {column} IS NULL"
             )
             connection.commit()
             
@@ -1604,6 +1623,9 @@ class DatabaseManager(SharedFunctions):
         self.create_default_column("customers", "name")
         self.create_default_column("expenses_categories", "name")
         self.create_customer_type_column()
+
+        # Add a piece_price column to an existing table
+        self.add_column("services", "piece_price", 0)
         
         logger.info("Database tables created successfully.")
     
