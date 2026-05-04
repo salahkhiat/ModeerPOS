@@ -577,7 +577,7 @@ class DatabaseManager(SharedFunctions):
         with self.db_connection() as connection: 
             cursor = connection.cursor()
         
-            created = self.current_date()[:7]
+            created = self.current_date()
             query = f"""
         
                     SELECT
@@ -599,15 +599,10 @@ class DatabaseManager(SharedFunctions):
             conditions = []
             params = []
 
-            # ✅ Always filter by date
-            conditions.append("p.created LIKE ?")
-            params.append(f"{created}%")
-
             if status:
                 conditions.append("p.status = ?")
                 params.append(status)
                 
-
             if keyword:
                 conditions.append("s.name LIKE ?")
                 params.append(f"%{keyword}%")

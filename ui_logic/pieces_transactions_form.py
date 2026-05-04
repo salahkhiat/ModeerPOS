@@ -29,7 +29,7 @@ class PiecesTransactionsForm(Form):
         previous_btn.clicked.connect(self.previous_page)
 
         self.page = 0
-        self.page_size = 3 
+        self.page_size = 15
         self.pagination_counter = self.ui.pagination_label
         
         # load table 
@@ -37,6 +37,7 @@ class PiecesTransactionsForm(Form):
         self.keyword = None
         
         self.load_table()
+        
         
         # connect buttons
         self.connect_buttons()
@@ -88,12 +89,10 @@ class PiecesTransactionsForm(Form):
         
         self.model = TableViewModel(data, self.columns_header)
         
-        table.setModel(None)
-        
         table.setModel(self.model)
         
         self.set_table_basic_settings(table)
-        print(7)
+       
 
         # 🔥 update pagination counter
         self.update_pagination_counter()
@@ -126,16 +125,16 @@ class PiecesTransactionsForm(Form):
             self.page -= 1
             self.load_table(keyword=self.keyword)
     
-    def set_table_view_headers(self, table, fixed_cols:dict[int:int], stretch_col:int):
+    def set_table_view_headers(self, table:QTableView, fixed_cols:dict[int:int], stretch_col:int):
         """ Set A table view headers, columns fixed and stretch widths"""
         
-        header = table.horizontalHeader()
-        # col_count = table.model().columnCount()
-        print(22)
+        header:QHeaderView = table.horizontalHeader()
+      
         # Set all to Interactive first
         for col in fixed_cols.keys():
             header.setSectionResizeMode(col, QHeaderView.ResizeMode.Interactive)
-        print(33)
+
+        
         for col, width in fixed_cols.items():
             # Custom widths for first col
             table.setColumnWidth(col, width)
@@ -143,14 +142,14 @@ class PiecesTransactionsForm(Form):
         # Last column stretches
         header.setSectionResizeMode(stretch_col, QHeaderView.ResizeMode.Stretch)
 
-    def set_table_basic_settings(self, table):
+    def set_table_basic_settings(self, table:QTableView):
         # Set table view headers and columns
         
         cols_widths = {0:80, 1:150, 3:100, 4:85, 5:180}
         stretch_col = 2
-      
+        
         self.set_table_view_headers(table, cols_widths, stretch_col)
-        print(2)
+        
         # make a row scrollable
         self.remove_rows_counter(table)
         self.make_rows_scrollable(table)
