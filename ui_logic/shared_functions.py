@@ -25,7 +25,6 @@ class TableViewModel(QAbstractTableModel):
         return len(self._data)
 
     def columnCount(self, parent=None):
-        # return len(self._data[0]) if self._data else 0
         return len(self._headers)
 
     def data(self, index, role):

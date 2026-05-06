@@ -88,12 +88,12 @@ class ServicesTableForm(Form):
         selection_model = table.selectionModel()
         selection_model.selectionChanged.connect(self.on_row_selected)  
     
-    def on_row_selected(self, selected, deselected):
-        indexes = selected.indexes()
+    # def on_row_selected(self, selected, deselected):
+    #     indexes = selected.indexes()
         
-        if indexes:
-            row = indexes[0].row()
-            self.selected_service_row = self.model._data[row]
+    #     if indexes:
+    #         row = indexes[0].row()
+    #         self.selected_service_row = self.model._data[row]
 
     def next_page(self):
         self.page += 1
@@ -167,7 +167,6 @@ class ServicesTableForm(Form):
 
     def delete_service(self):
         if self.selected_service_row is None:
-            print("no thing to delete yet")
             title = "تأكيد عمية الحذف"
             text = "إختر الخدمة التي تريد حذفها"
             QMessageBox.warning(None, title, text)
