@@ -49,6 +49,11 @@ from .pieces_transactions_form import PiecesTransactionsForm
 from uis.init_amount import Ui_Form as InitAmountUi
 from .init_amount_form import InitAmountForm
 
+from uis.show_table import Ui_ShowTableUi as ShowTableUi 
+from .show_table_form import ShowTableForm
+
+from .products_table_form import ProductsTableForm
+
 from PyQt6.QtWidgets import (
     QTableWidget, 
     QHeaderView, 
@@ -466,7 +471,9 @@ class MainScreen(MainForm):
         self.ui.pieces_transactions_action.triggered.connect(self.show_pieces_transactions_tab)
         self.ui.init_amount_action.triggered.connect(self.show_init_amount_tab)
 
-
+        ProductsTableForm(ShowTableUi)
+        
+        
 
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()

@@ -14,31 +14,25 @@ logger = logging.getLogger(__name__)
 
 class ShowTableForm(Form):
     def __init__(
-            self,
-            base_form, 
-            form_title,
-            db_table,
-            fetch_function,
-            # search_column,
-            table_header,
-            header_widths,
-            stretch_col,
-            resize_content_col
-
+        self, 
+        base_form,
+        form_title,
+        db_table,
+        fetch_function,
+        table_header,
+        header_widths,
+        stretch_col,
+        resize_content_col 
     ):
-        
         super().__init__(base_form)
         self.setWindowTitle(form_title)
-
-        # Set default attributes
         self._db_table = db_table
         self._fetch_function = fetch_function
-        # self._search_column = search_column
         self._table_header = table_header
         self._header_widths = header_widths
         self._stretch_col = stretch_col
         self._resize_content_col = resize_content_col
-
+        
         self._table:QTableView = self.ui.table
 
         # set form icons
@@ -62,6 +56,8 @@ class ShowTableForm(Form):
         # Search box
         search_box = self.ui.search_box
         search_box.textChanged.connect(self.load_table)
+    
+
 
     def load_table(self, keyword=None):
         
@@ -83,18 +79,18 @@ class ShowTableForm(Form):
         table.setModel(None)
         table.setModel(self.model)
 
-        self.set_table_basic_settings(table)
-
+        self.set_table_basic_settings()
+        
         #  update pagination counter
         self.update_pagination_counter() 
-
+        
         self.selected_row = None
 
         # selected model
         selection_model = table.selectionModel()
         selection_model.selectionChanged.connect(self.on_row_selected)
     
-    def on_row_selected(self, selected):
+    def on_row_selected(self, selected, deselected):
         indexes = selected.indexes()
         
         if indexes:
@@ -161,7 +157,7 @@ class ShowTableForm(Form):
         self.ui.delete_btn.clicked.connect(self.delete_item)
     
     def delete_item(self):
-        if self.selected_service_row is None:
+        if self.selected_row is None:
             title = "تأكيد عمية الحذف"
             text = "إختر العنصر التي تريد حذفها"
             QMessageBox.warning(None, title, text)
@@ -191,3 +187,7 @@ class ShowTableForm(Form):
         self.set_icon("previous_btn","previous.svg")
         self.set_icon("next_btn","next.svg")
         self.set_icon("cancel_btn","cancel.svg")
+
+    def update_pagination_counter(self):
+        current_page_number = self.page + 1
+        self.pagination_counter.setText(f"{current_page_number}")
