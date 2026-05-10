@@ -883,6 +883,41 @@ class DatabaseManager(SharedFunctions):
 
                 
             return result
+    def get_products_list(self, keyword=None, limit=10, offset=0) -> List:
+
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+ 
+            query = f"""
+                SELECT
+                    barcode,
+                    name,
+                    quantity,
+                    purchase_price,
+                    sale_price,
+                    is_deleted
+                FROM 
+                    products
+
+            """ 
+
+            conditions = []
+            params = []
+            conditions.append("is_deleted = 0")
+
+            if keyword:
+                conditions.append("(name LIKE ? OR barcode LIKE ?)")
+                params.extend([f"%{keyword}%", f"%{keyword}%"])
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY id DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
+
+            return result
 
     def get_services_categories_list(self, keyword=None) -> List:
 

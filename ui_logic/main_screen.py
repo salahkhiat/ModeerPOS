@@ -167,21 +167,7 @@ class MainScreen(MainForm):
             )
         )
 
-        products_header = ["المرجع", "الإسم", "الكمية", "البيع بـ", "الشراء بـ"]
-        products_header_width = [15, 45, 10, 15, 15]
-        products_db_table_cols = [
-            "barcode", "name", "quantity", "sale_price", "purchase_price"
-        ]
-
-        self.ui.products_action.triggered.connect(
-            lambda: self.show_tab(
-                "جدول السلع", 
-                "products", 
-                products_db_table_cols, 
-                products_header, 
-                products_header_width
-            )
-        )
+        self.ui.products_action.triggered.connect(self.show_products_table_tab)
 
         needs_header = ["المعرف","وصف", "تاريخ الطلب"]
         needs_header_width = [15, 55, 30]
@@ -471,9 +457,6 @@ class MainScreen(MainForm):
         self.ui.pieces_transactions_action.triggered.connect(self.show_pieces_transactions_tab)
         self.ui.init_amount_action.triggered.connect(self.show_init_amount_tab)
 
-        ProductsTableForm(ShowTableUi)
-        
-        
 
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()
@@ -506,6 +489,11 @@ class MainScreen(MainForm):
 
         return splash
        
+    # Show tabs 
+    def show_products_table_tab(self):
+        ProductsTableForm(ShowTableUi)
+
+
     # show tab table
     def show_tab(
             self, title: str, 

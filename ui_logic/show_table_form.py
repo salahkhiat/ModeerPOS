@@ -22,7 +22,8 @@ class ShowTableForm(Form):
         table_header,
         header_widths,
         stretch_col,
-        resize_content_col 
+        resize_content_col,
+        delete_column
     ):
         super().__init__(base_form)
         self.setWindowTitle(form_title)
@@ -32,6 +33,8 @@ class ShowTableForm(Form):
         self._header_widths = header_widths
         self._stretch_col = stretch_col
         self._resize_content_col = resize_content_col
+        self._delete_column = delete_column
+        
         
         self._table:QTableView = self.ui.table
 
@@ -89,7 +92,11 @@ class ShowTableForm(Form):
         # selected model
         selection_model = table.selectionModel()
         selection_model.selectionChanged.connect(self.on_row_selected)
-    
+
+        # connect buttons
+        self.connect_buttons()
+
+
     def on_row_selected(self, selected, deselected):
         indexes = selected.indexes()
         
@@ -173,7 +180,7 @@ class ShowTableForm(Form):
             item_id = self.selected_row[0]
             
             # Delete the selected item.
-            self.delete_item_from_db(self._db_table, "id", item_id)
+            self.delete_item_from_db(self._db_table, self._delete_column, item_id)
 
             # Reset the pagination page to 0.
             self.page = 0 
@@ -191,3 +198,6 @@ class ShowTableForm(Form):
     def update_pagination_counter(self):
         current_page_number = self.page + 1
         self.pagination_counter.setText(f"{current_page_number}")
+
+    def connect_buttons(self):
+        self.delete_btn_clicked()

@@ -23,6 +23,7 @@ class Form(QDialog,SharedValidators,DatabaseManager):
         self.ui.setupUi(self)
         # remove title bar
         self.remove_title_bar()
+        
 
         # set the icons of  save and cancel buttons 
         self.set_save_cancel_icons()
