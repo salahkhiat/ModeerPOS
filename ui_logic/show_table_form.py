@@ -75,7 +75,6 @@ class ShowTableForm(Form):
                 
         table = self._table
         
-        
         offset = self.page * self.page_size
         
         data = self._fetch_function(keyword=keyword, limit=self.page_size, offset=offset)

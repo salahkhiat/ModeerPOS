@@ -53,6 +53,7 @@ from uis.show_table import Ui_ShowTableUi as ShowTableUi
 from .show_table_form import ShowTableForm
 
 from .products_table_form import ProductsTableForm
+from .suppliers_transactions_table_form import SuppliersTransactionsTableForm
 
 from PyQt6.QtWidgets import (
     QTableWidget, 
@@ -167,7 +168,7 @@ class MainScreen(MainForm):
             )
         )
 
-        self.ui.products_action.triggered.connect(self.show_products_table_tab)
+
 
         needs_header = ["المعرف","وصف", "تاريخ الطلب"]
         needs_header_width = [15, 55, 30]
@@ -201,31 +202,36 @@ class MainScreen(MainForm):
             )
         )
 
-        suppliers_transactions_header = [
-            "المورد", "ملاحظة/فتورة", "عملية", "المبلغ", "التاريخ"
-        ]
-        suppliers_transactions_header_width = [15, 35, 12, 18, 20] #[20, 40, 10, 15, 15]
+        # suppliers_transactions_header = [
+        #     "المورد", "ملاحظة/فتورة", "عملية", "المبلغ", "التاريخ"
+        # ]
+        # suppliers_transactions_header_width = [15, 35, 12, 18, 20] #[20, 40, 10, 15, 15]
 
-        suppliers_transactions_db_table_cols = [
-            "name", 
-            "note", 
-            "_type", 
-            "amount",
-            "created"
-        ]
+        # suppliers_transactions_db_table_cols = [
+        #     "name", 
+        #     "note", 
+        #     "_type", 
+        #     "amount",
+        #     "created"
+        # ]
 
-        # I mixed between suppliers_transactions and suppliers tables.
-        # s means suppliers, st means suppliers_transactions
-        suppliers_transactions_db_table = "suppliers_transactions"
-        self.ui.suppliers_deposits_action.triggered.connect(
-            lambda: self.show_tab(
-                "عمليات  الموردين", 
-                suppliers_transactions_db_table, 
-                suppliers_transactions_db_table_cols, 
-                suppliers_transactions_header, 
-                suppliers_transactions_header_width, 
-            )
-        )
+        # # I mixed between suppliers_transactions and suppliers tables.
+        # # s means suppliers, st means suppliers_transactions
+        # suppliers_transactions_db_table = "suppliers_transactions"
+        # self.ui.suppliers_deposits_action.triggered.connect(
+        #     lambda: self.show_tab(
+        #         "عمليات  الموردين", 
+        #         suppliers_transactions_db_table, 
+        #         suppliers_transactions_db_table_cols, 
+        #         suppliers_transactions_header, 
+        #         suppliers_transactions_header_width, 
+        #     )
+        # )
+
+
+
+
+
 
         customers_payments_header = [
             "الزبون", "المصدر", "الوصف", "المبلغ", "التاريخ"
@@ -457,6 +463,9 @@ class MainScreen(MainForm):
         self.ui.pieces_transactions_action.triggered.connect(self.show_pieces_transactions_tab)
         self.ui.init_amount_action.triggered.connect(self.show_init_amount_tab)
 
+        self.ui.products_action.triggered.connect(self.show_products_table_tab)
+        self.ui.suppliers_deposits_action.triggered.connect(self.show_suppliers_transactions_table_tab)
+
 
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()
@@ -492,6 +501,9 @@ class MainScreen(MainForm):
     # Show tabs 
     def show_products_table_tab(self):
         ProductsTableForm(ShowTableUi)
+
+    def show_suppliers_transactions_table_tab(self):
+        SuppliersTransactionsTableForm(ShowTableUi)
 
 
     # show tab table

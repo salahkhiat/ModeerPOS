@@ -621,13 +621,13 @@ class DatabaseManager(SharedFunctions):
             
             return result
         
-    def get_suppliers_transactions_list(self, keyword=None) -> List:
+    def get_suppliers_transactions_list(self, keyword=None, limit=10, offset=0) -> List:
         with self.db_connection() as connection: 
             cursor = connection.cursor()
 
-            created = self.current_date()[:7]
             query = f"""
                 SELECT 
+                    st.id AS id,
                     s.name AS name, 
                     st.note AS note, 
                     st.type AS _type,
@@ -639,14 +639,21 @@ class DatabaseManager(SharedFunctions):
                     suppliers s 
                 ON s.id = st.supplier_id
             """ 
-            result = None
-            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
+            conditions = []
+            params = []
+            
+
             if keyword:
-                query += " AND name LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
-            else:
-                query += ordering
-                result = cursor.execute(query).fetchall()
+                conditions.append(" name LIKE ? ")
+                params.append(f"%{keyword}%")
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY id DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
             return result
 
     def get_employees_withdrawals_list(self, keyword=None) -> List:

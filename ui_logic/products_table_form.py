@@ -14,7 +14,7 @@ class ProductsTableForm(Form):
 
         self.form = ShowTableForm(
             base_form,
-            "Products table",
+            "جدول السلع",
             "products",
             self.get_products_list,
             ["الباركود", "الإسم", "الكمية", "الشراء بـ", "البيع بـ"],
