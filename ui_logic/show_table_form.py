@@ -64,6 +64,7 @@ class ShowTableForm(Form):
 
     def load_table(self, keyword=None):
         
+        
         keyword = str(keyword).strip() if keyword is not None else None
 
         # 🔥 only reset page if keyword CHANGED
@@ -73,6 +74,7 @@ class ShowTableForm(Form):
         self.keyword = keyword
                 
         table = self._table
+        
         
         offset = self.page * self.page_size
         

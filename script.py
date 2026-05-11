@@ -1,57 +1,76 @@
 import sqlite3
 import random
-from datetime import datetime, timedelta
 
-DB_NAME = "shop_data.db"
+# Connect to database
+connection = sqlite3.connect("shop_data.db")
+cursor = connection.cursor()
 
-pieces = [
-    "Laptop screen", "Keyboard", "Motherboard", "Battery",
-    "Cooling fan", "RAM module", "SSD drive", "Power supply",
-    "Graphics card", "USB port", "Touchpad", "Speaker",
-    "WiFi card", "Camera module", "Charging port"
+# Random product names
+product_names = [
+    "Laptop",
+    "Keyboard",
+    "Mouse",
+    "Monitor",
+    "Phone",
+    "Tablet",
+    "Speaker",
+    "Camera",
+    "Printer",
+    "Scanner",
+    "Router",
+    "Headphones",
+    "Microphone",
+    "SSD",
+    "Hard Disk",
+    "USB Cable",
+    "Power Bank",
+    "Smart Watch",
+    "TV",
+    "Projector"
 ]
 
-statuses = ["in_shop", "installed", "returned"]
+# Generate 30 random products
+for _ in range(30):
 
-def random_date():
-    start = datetime(2025, 1, 1)
-    end = datetime(2026, 5, 1)
-    delta = end - start
+    barcode = random.randint(1000, 2000)
 
-    random_seconds = random.randint(0, int(delta.total_seconds()))
-    date = start + timedelta(seconds=random_seconds)
+    name = f"{random.choice(product_names)} {random.randint(1, 999)}"
 
-    return date.strftime("%Y-%m-%d %H:%M:%S")
+    purchase_price = round(
+        random.uniform(20000.0, 50000.0), 2
+    )
 
-def generate_rows(n=25):
-    rows = []
-    for _ in range(n):
-        supplier_id = random.choice([1, 2])
-        piece = random.choice(pieces)
-        price = round(random.uniform(10, 500), 2)
-        status = random.choice(statuses)
-        created = random_date()
+    sale_price = round(
+        random.uniform(20000.0, 50000.0), 2
+    )
 
-        rows.append((supplier_id, piece, price, status, created))
-    
-    return rows
+    quantity = random.randint(1, 100)
 
-def insert_data():
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
+    is_deleted = 0
 
-    rows = generate_rows(25)
+    cursor.execute("""
+        INSERT INTO products (
+            barcode,
+            name,
+            purchase_price,
+            sale_price,
+            quantity,
+            is_deleted
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (
+        barcode,
+        name,
+        purchase_price,
+        sale_price,
+        quantity,
+        is_deleted
+    ))
 
-    cursor.executemany("""
-        INSERT INTO pieces_transactions
-        (supplier_id, piece, price, status, created)
-        VALUES (?, ?, ?, ?, ?)
-    """, rows)
+# Save changes
+connection.commit()
 
-    conn.commit()
-    conn.close()
+# Close database
+connection.close()
 
-    print(f"{len(rows)} rows inserted successfully!")
-
-if __name__ == "__main__":
-    insert_data()
+print("30 random products inserted successfully.")

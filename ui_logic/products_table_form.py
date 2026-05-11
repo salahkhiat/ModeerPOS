@@ -59,7 +59,7 @@ class ProductsTableForm(Form):
         form.ui.quantity.setText(str(quantity))
         form.ui.purchase_price.setText(f"{purchase_price:.0f}")
         form.ui.sale_price.setText(f"{sale_price:.0f}")
-        # form.item_updated.connect(self.refresh_table)
+        form.item_updated.connect(lambda _ : self.form.load_table()) 
         form.exec()
 
         
