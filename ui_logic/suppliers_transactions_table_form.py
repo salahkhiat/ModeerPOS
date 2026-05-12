@@ -1,9 +1,10 @@
 from .base_form import Form
 from .show_table_form import ShowTableForm
 
-from .item_form import ItemForm
-from uis.item import Ui_Form as ItemFormUi
+from uis.supplier_payment import Ui_Form as SupplierTransactionUi
+from .supplier_payment_form import SupplierPaymentForm
 
+from PyQt6.QtWidgets import QMessageBox
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -23,13 +24,21 @@ class SuppliersTransactionsTableForm(Form):
             0,
             "id"
         ) 
-        self.form.ui.edit_btn.clicked.connect(self.edit_supplier_info)
+        self.form.ui.edit_btn.clicked.connect(self.edit_transaction)
 
 
         self.form.exec()
     
-    def edit_supplier_info(self):
-        pass
+    def edit_transaction(self):
+
+        transaction_id = self.form.selected_row
+        if transaction_id is None:
+            QMessageBox.warning(None, "تنبيه", "لم تحدد أي معاملة بعد")
+
+        else:
+            form = SupplierPaymentForm(SupplierTransactionUi, transaction_id[0])
+            form.exec()
+        
 
         
 
