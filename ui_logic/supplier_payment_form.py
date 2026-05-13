@@ -7,87 +7,96 @@ logger = logging.getLogger(__name__)
 class SupplierPaymentForm(Form):
     def __init__(self, base_form, transaction_id=None):
         super().__init__(base_form)
-        # this part for updating mode
-        self._transaction_id = transaction_id
 
+        # this part for updating mode
         if transaction_id is not None:
-            self._transaction = self.get_item_info(
-                "suppliers_transactions",
-                ("supplier_id", "note", "amount", "type"),
-                "id",
-                transaction_id
-            )
-            
-            self._supplier_name = self.get_item_info(
-                "suppliers", ("name",), "id", self._transaction['supplier_id']
-            )['name']
-        ####
-            
+            self.edit_mode = True
+            self.load_old_transaction(transaction_id)
+        else:
+            self.edit_mode = False
 
         # set form title
         self.setWindowTitle("إجراء معاملة مع مورد")
         
-        #  supplier's field
+        #  supplier's Combo part ---
         suppliers_combo: QComboBox = self.ui.supplier
         self.fetch_then_put("suppliers", "name", suppliers_combo)
+
         current_supplier = suppliers_combo.currentText()
 
-        # this for updating mode
-        if transaction_id is not None:
+        # edit mode : select the old transaction supplier.
+        if self.edit_mode is True:
             index = suppliers_combo.findText(self._supplier_name)
             suppliers_combo.setCurrentIndex(index)
-        ####
 
-
-        self.selected_supplier_id = self.get_item_info("suppliers",("id",),"name",current_supplier.strip())["id"]
-        suppliers_combo.currentTextChanged.connect(self.set_current_supplier_id)
-
+        # Create mode.
+        else:
+            self.selected_supplier_id = self.get_item_info("suppliers",("id",),"name",current_supplier.strip())["id"]
+            suppliers_combo.currentTextChanged.connect(self.set_current_supplier_id)
+        # ---
 
 
         # transaction type's field
         current_transaction_type: QComboBox = self.ui.transaction_type
         
         self.selected_transaction_index = self.ui.transaction_type.currentIndex()
-        if transaction_id is None:
+        
+        # Edit Mode.
+        if self.edit_mode is True:
+            trans_types = {
+                "debt": 1,
+                "deposit": 2
+            }
+            index = trans_types[self._transaction["type"]] 
+            current_transaction_type.setCurrentIndex(index)
+        # ---
 
-            current_transaction_type.currentIndexChanged.connect(self.set_transaction_index)
+        current_transaction_type.currentIndexChanged.connect(self.set_transaction_index)
         self.types = {0:"buy", 1:"debt", 2:"deposit"}
 
-        # for updating mode
-        if transaction_id is not None:
-            trans_types = {
-                "deposit":"إيداع",
-                "debt":"دين"
-            }
-            current_transaction_type.clear()
-            current_transaction_type.addItems(trans_types.values())
-
-        ###
-        
-        
         # piece's status
         current_status: QComboBox = self.ui.status
-
         self.selected_status_index = current_status.currentIndex()
         current_status.currentIndexChanged.connect(self.set_status_index)
         self.status_types = {0:"in_shop", 1:"installed"}
-        # this part for updating mode
-        if transaction_id is not None:
+
+        # Edit Mode: disable transaction status Combo
+        if self.edit_mode is True:
             current_status.setEnabled(False)
 
-
-
-
-        # an amount field
+        # an amount field 
         self.amount: QLineEdit = self.ui.amount
         self.accept_numbers_only(self.amount)
 
         # a note field
         self.note: QLineEdit = self.ui.note
+
+        # Edit Mode: an amount & note fields.
+        if self.edit_mode is True:
+            self.amount.setText(str(self._transaction["amount"]))
+            self.note.setText(self._transaction["note"])
         
         # save button
-        self.ui.save_btn.clicked.connect(self.create_transaction)
+        if self.edit_mode is True:
+            self.ui.save_btn.clicked.connect(self.update_transaction) 
+        else: 
+            self.ui.save_btn.clicked.connect(self.create_transaction)   
         
+    
+    def load_old_transaction(self, transaction_id):
+        """Editing Mode"""
+        self._transaction_id = transaction_id
+        
+        self._transaction = self.get_item_info(
+            "suppliers_transactions",
+            ("supplier_id", "note", "amount", "type"),
+            "id",
+            transaction_id
+        )
+        
+        self._supplier_name = self.get_item_info(
+            "suppliers", ("name",), "id", self._transaction['supplier_id']
+        )['name']
     
 
     def set_current_supplier_id(self, text:str):
@@ -177,6 +186,9 @@ class SupplierPaymentForm(Form):
 
             self.close()
             self.play_success_sound()
+
+    def update_transaction(self):
+        print("this part has been building")
             
 
             
