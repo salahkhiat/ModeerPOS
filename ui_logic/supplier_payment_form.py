@@ -40,7 +40,7 @@ class SupplierPaymentForm(Form):
         current_transaction_type: QComboBox = self.ui.transaction_type
         
         self.selected_transaction_index = self.ui.transaction_type.currentIndex()
-        
+        current_transaction_type.currentIndexChanged.connect(self.set_transaction_index)
         # Edit Mode.
         if self.edit_mode is True:
             trans_types = {
@@ -49,9 +49,10 @@ class SupplierPaymentForm(Form):
             }
             index = trans_types[self._transaction["type"]] 
             current_transaction_type.setCurrentIndex(index)
+            
         # ---
-
-        current_transaction_type.currentIndexChanged.connect(self.set_transaction_index)
+        
+        # current_transaction_type.currentIndexChanged.connect(self.set_transaction_index)
         self.types = {0:"buy", 1:"debt", 2:"deposit"}
 
         # piece's status
@@ -74,7 +75,7 @@ class SupplierPaymentForm(Form):
         # Edit Mode: an amount & note fields.
         if self.edit_mode is True:
             self.amount.setText(str(self._transaction["amount"]))
-            self.note.setText(self._transaction["note"])
+            self.note.setText(str(self._transaction["note"]))
         
         # save button
         if self.edit_mode is True:
@@ -135,22 +136,29 @@ class SupplierPaymentForm(Form):
         else:
             note.setPlaceholderText("ملاحظة قصيرة")
             amount.setPlaceholderText("المبلغ")
-            
-        
-    def create_transaction(self):
+
+    def validate_fields(self):
+        """Returns True if the fields are valids, False otherwise."""
         valid_amount = self.is_amount("amount")
         valid_note = self.is_empty("note", True)# empty =  False
 
         # Invalid empty amount or price
         if not valid_amount:
             logger.debug("invalid amount")
-            return
+            return False
         
-        # Invalid empty piece name
         elif not valid_note and self.selected_transaction_index == 0:
             logger.debug("invalid piece name")
-            return
+            return False
+        
         else:
+
+            return True
+
+    def create_transaction(self):
+        """ Create Mode: create a new transaction."""
+
+        if self.validate_fields() is not False:
             # amount represents Amount and Piece price
             amount = float(self.ui.amount.text().strip())
 
@@ -188,8 +196,28 @@ class SupplierPaymentForm(Form):
             self.play_success_sound()
 
     def update_transaction(self):
-        print("this part has been building")
+        """Edit Mode: update an exists transaction"""
+        supplier_id = self._transaction['supplier_id']
+        transaction_id = self._transaction_id
+        trans_type_index = self.ui.transaction_type.currentIndex()
+        
+        # 1 is a debt, 2 is a deposit
+        if trans_type_index in (1, 2):
+            if self.validate_fields() is not False:
+                trans_type = self.types[trans_type_index]
+                note: QLineEdit = self.ui.note.text().strip()
+                amount: QLineEdit = self.ui.amount.text().strip()
+                # Start work in this part
+            else:
+                print("xx")
+
+
             
+
+        elif trans_type_index == 0:
+            print("pieces_transactions")
+
+
 
             
             
