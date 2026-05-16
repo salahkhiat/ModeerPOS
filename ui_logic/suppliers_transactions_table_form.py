@@ -37,7 +37,9 @@ class SuppliersTransactionsTableForm(Form):
 
         else:
             form = SupplierPaymentForm(SupplierTransactionUi, transaction_id[0])
+            form.transaction_updated.connect(lambda _ : self.form.load_table())
             form.exec()
+
         
 
         

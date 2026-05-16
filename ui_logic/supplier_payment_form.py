@@ -1,10 +1,12 @@
 from PyQt6.QtWidgets import QComboBox, QLineEdit
+from PyQt6.QtCore import pyqtSignal
 from .base_form import Form
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
 class SupplierPaymentForm(Form):
+    transaction_updated = pyqtSignal(bool)
     def __init__(self, base_form, transaction_id=None):
         super().__init__(base_form)
 
@@ -195,6 +197,14 @@ class SupplierPaymentForm(Form):
             self.close()
             self.play_success_sound()
 
+    def get_selected_sup_id(self) -> int:
+        """Returns the selected supplier id"""
+        combo: QComboBox = self.ui.supplier
+        supplier_name = combo.currentText().strip()
+        supplier_id = self.get_item_info("suppliers", ("id",), "name", supplier_name)['id']
+        return supplier_id
+
+
     def update_transaction(self):
         """Edit Mode: update an exists transaction"""
         supplier_id = self._transaction['supplier_id']
@@ -204,12 +214,33 @@ class SupplierPaymentForm(Form):
         # 1 is a debt, 2 is a deposit
         if trans_type_index in (1, 2):
             if self.validate_fields() is not False:
+                trans_id = self._transaction_id
                 trans_type = self.types[trans_type_index]
+                old_supplier_id = self._transaction["supplier_id"]
+                new_supplier_id = self.get_selected_sup_id()
                 note: QLineEdit = self.ui.note.text().strip()
                 amount: QLineEdit = self.ui.amount.text().strip()
-                # Start work in this part
+
+                data = (new_supplier_id, note, amount, trans_type)
+               
+                cols = ["supplier_id", "note", "amount", "type"]
+                
+                self.update_info(
+                "suppliers_transactions",
+                cols,
+                data,
+                "id=?",
+                (trans_id,)
+                )
+                self.transaction_updated.emit(True)
+                self.close()
+                self.play_success_sound()
+                
+
+                
             else:
-                print("xx")
+                # start working form this point
+                pass
 
 
             
