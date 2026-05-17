@@ -59,11 +59,11 @@ class ShowTableForm(Form):
         # Search box
         search_box = self.ui.search_box
         search_box.textChanged.connect(self.load_table)
+
+        # connect buttons
+        self.connect_buttons()
     
-
-
     def load_table(self, keyword=None):
-        
         
         keyword = str(keyword).strip() if keyword is not None else None
 
@@ -94,8 +94,7 @@ class ShowTableForm(Form):
         selection_model = table.selectionModel()
         selection_model.selectionChanged.connect(self.on_row_selected)
 
-        # connect buttons
-        self.connect_buttons()
+
 
 
     def on_row_selected(self, selected, deselected):
@@ -167,7 +166,7 @@ class ShowTableForm(Form):
     def delete_item(self):
         if self.selected_row is None:
             title = "تأكيد عمية الحذف"
-            text = "إختر العنصر التي تريد حذفها"
+            text = "إختر العنصر الذي تريد حذفه"
             QMessageBox.warning(None, title, text)
         else:
             msg = "هل أنت متأكد من عملية الحذف؟"

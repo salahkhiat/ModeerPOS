@@ -210,43 +210,54 @@ class SupplierPaymentForm(Form):
         supplier_id = self._transaction['supplier_id']
         transaction_id = self._transaction_id
         trans_type_index = self.ui.transaction_type.currentIndex()
+
+        # transaction data
+        trans_id = self._transaction_id
+        trans_type = self.types[trans_type_index]
+        new_supplier_id = self.get_selected_sup_id()
+        note: QLineEdit = self.ui.note.text().strip()
+        amount: QLineEdit = self.ui.amount.text().strip()
+        data = [new_supplier_id, note, amount, trans_type]
+        
+        
+        def edit_confirmed():
+            self.transaction_updated.emit(True)
+            self.close()
+            self.play_success_sound()
         
         # 1 is a debt, 2 is a deposit
+        # this for suppliers_transactions
         if trans_type_index in (1, 2):
             if self.validate_fields() is not False:
-                trans_id = self._transaction_id
-                trans_type = self.types[trans_type_index]
-                old_supplier_id = self._transaction["supplier_id"]
-                new_supplier_id = self.get_selected_sup_id()
-                note: QLineEdit = self.ui.note.text().strip()
-                amount: QLineEdit = self.ui.amount.text().strip()
-
-                data = (new_supplier_id, note, amount, trans_type)
-               
+                
                 cols = ["supplier_id", "note", "amount", "type"]
-                
-                self.update_info(
-                "suppliers_transactions",
-                cols,
-                data,
-                "id=?",
-                (trans_id,)
-                )
-                self.transaction_updated.emit(True)
-                self.close()
-                self.play_success_sound()
-                
-
+            
+                self.update_info("suppliers_transactions", cols, tuple(data), "id=?",(trans_id,))
+                    
+                edit_confirmed()
+                logger.warning(f"supplier's transaction with id {trans_id} was updated successfully")
                 
             else:
-                # start working form this point
-                pass
+                logger.error(f" something went wrong the supplier transaction with id {trans_id} was not updated.")
 
-
-            
-
+        # this for pieces_transactions
         elif trans_type_index == 0:
-            print("pieces_transactions")
+            
+            if self.validate_fields() is not False:
+                selected_index = self.selected_status_index
+                status = self.status_types[selected_index]
+                data[3] = status
+                data.append(self.current_date())
+                cols = ["supplier_id", "piece", "price", "status", "created"]
+
+                piece_trans_id = self.store("pieces_transactions", cols, data, True)
+                logger.warning(f"The piece transaction was inserted with ID {piece_trans_id}")
+
+                self.delete_item_from_db("suppliers_transactions", "id", self._transaction_id)
+                logger.warning(f"The supplier transaction with ID {self._transaction_id} was deleted")
+                edit_confirmed()
+                
+
 
 
 

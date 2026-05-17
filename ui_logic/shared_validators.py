@@ -37,7 +37,6 @@ class SharedValidators(DatabaseManager):
 
     # Check the minimum and the maximum of an amount. min = 1 DZD , max = 10000000 DZD.
     def is_price(self, field_name:str):
-        print("entered ")
         field = getattr(self.ui,field_name).text()
         if len(field) > 0:
             amount = float(field)

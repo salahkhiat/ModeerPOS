@@ -138,6 +138,33 @@ class DatabaseManager(SharedFunctions):
                 return True
             
     def delete_item_from_db(self, table_name, where_clause, where_args):
+        """
+        Delete a row from a database table.
+
+        Args:
+            table_name (str):
+                The table name to delete from.
+
+            where_clause (str):
+                The column name used in the WHERE condition.
+                Example: "id"
+
+            where_args (Any):
+                The value for the WHERE condition.
+                Example: 5
+
+        Returns:
+            bool:
+                True if a row was deleted successfully,
+                otherwise False.
+
+        Example:
+            self.delete_item_from_db(
+                table_name="transactions",
+                where_clause="id",
+                where_args=5
+            )
+        """
         with self.db_connection() as connection: 
             cursor = connection.cursor()
             query = f"DELETE FROM {table_name} WHERE {where_clause} = ?"
