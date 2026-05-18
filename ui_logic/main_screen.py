@@ -466,6 +466,9 @@ class MainScreen(MainForm):
         self.ui.products_action.triggered.connect(self.show_products_table_tab)
         self.ui.suppliers_deposits_action.triggered.connect(self.show_suppliers_transactions_table_tab)
 
+        for trans in self.get_customers_transactions_list():
+            print(trans)
+
 
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()

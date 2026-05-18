@@ -524,15 +524,15 @@ class DatabaseManager(SharedFunctions):
             
                 return cursor.execute(query, parms).fetchall()
 
-    def get_customers_transactions_list(self, keyword=None) -> List:
+    def get_customers_transactions_list(self, keyword=None, limit=15, offset=0) -> List:
         with self.db_connection() as connection: 
             cursor = connection.cursor()
 
-            created = self.current_date()[:7]
             query = f"""
                 SELECT * FROM
                 ( 
                     SELECT
+                        p.id AS id,
                         c.name AS name,
                         'payment' AS process,
                         p.note AS description,
@@ -549,9 +549,11 @@ class DatabaseManager(SharedFunctions):
                     AND 
                         c.is_deleted = 0
                     
+                        
                     UNION ALL 
 
                     SELECT
+                        s.id AS id,
                         c.name AS name,
                         'service' AS process,
                         s.description AS description,
@@ -570,8 +572,9 @@ class DatabaseManager(SharedFunctions):
                     
                     UNION ALL
                     SELECT
+                        si.id AS id,
                         c.name AS name,
-                        'purchase' AS process,
+                        'sale' AS process,
                         si.invoice_number AS description,
                         si.deposit AS amount,
                         si.created_at AS created
@@ -591,15 +594,25 @@ class DatabaseManager(SharedFunctions):
                     amount > 0 
                
             """ 
-            result = None
-            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
+            conditions = []
+            params = []
+
             if keyword:
-                query += " AND name LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
-            else:
-                query += ordering
-                result = cursor.execute(query).fetchall()
+                conditions.append(" name LIKE ? ")
+                params.append(f"%{keyword}%")
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY created DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
+
             return result
+
+
+
     def get_pieces_transactions_list(self, keyword=None, status=None, limit=10, offset=0) -> List:
         with self.db_connection() as connection: 
             cursor = connection.cursor()
