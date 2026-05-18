@@ -9,7 +9,7 @@ import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
-class SuppliersTransactionsTableForm(Form):
+class CustomersPaymentsTableForm(Form):
     def __init__(self ,base_form):
         super().__init__(base_form)
 
@@ -18,13 +18,13 @@ class SuppliersTransactionsTableForm(Form):
             "سجل إيداعات الزبائن ",
             "customers_payments",
             self.get_customers_transactions_list,
-            ["المعرف", "المورد", "الوصف", "العملية", "المبلغ", "التاريخ"],
+            ["المعرف", "الزبون", "الوصف" ,"العملية",  "الإيداع", "التاريخ"],
             {1:100, 3:100, 4:100, 5:180 },
             2,
             0,
             "id"
         ) 
-        self.form.ui.edit_btn.clicked.connect(self.edit_transaction)
+        # self.form.ui.edit_btn.clicked.connect(self.edit_transaction)
 
 
         self.form.exec()

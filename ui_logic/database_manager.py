@@ -534,8 +534,8 @@ class DatabaseManager(SharedFunctions):
                     SELECT
                         p.id AS id,
                         c.name AS name,
-                        'payment' AS process,
                         p.note AS description,
+                        'payment' AS process,
                         p.amount AS amount, 
                         p.created AS created
                     FROM 
@@ -555,8 +555,8 @@ class DatabaseManager(SharedFunctions):
                     SELECT
                         s.id AS id,
                         c.name AS name,
-                        'service' AS process,
                         s.description AS description,
+                        'service' AS process,
                         s.paid_price AS amount,
                         s.created AS created
                     FROM 
@@ -574,8 +574,8 @@ class DatabaseManager(SharedFunctions):
                     SELECT
                         si.id AS id,
                         c.name AS name,
-                        'sale' AS process,
                         si.invoice_number AS description,
+                        'sale' AS process,
                         si.deposit AS amount,
                         si.created_at AS created
                     FROM
@@ -602,7 +602,7 @@ class DatabaseManager(SharedFunctions):
                 params.append(f"%{keyword}%")
             
             if conditions:
-                query += " WHERE " + " AND ".join(conditions)
+                query += " AND " + " AND ".join(conditions)
             
             query += " ORDER BY created DESC LIMIT ? OFFSET ?"
             
