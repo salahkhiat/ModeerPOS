@@ -29,6 +29,16 @@ class CustomersPaymentsTableForm(Form):
 
 
         self.form.exec()
+
+    def change_db_table(self):
+        transaction = self.form.selected_row
+        process = transaction[3]
+        db_tables = {
+            "payment": "customers_payments",
+            "service": "services"
+        }
+        self.form._db_table = db_tables[process]
+        
     
     def edit_transaction(self):
 
