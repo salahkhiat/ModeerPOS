@@ -4,6 +4,7 @@ from .show_table_form import ShowTableForm
 from uis.customer_payment import Ui_Form as CustomersPaymentsUi
 from .customer_payment_form import CustomerPaymentForm
 
+
 from PyQt6.QtWidgets import QMessageBox
 import logging
 # uses this file's name for easier debugging
@@ -24,21 +25,38 @@ class CustomersPaymentsTableForm(Form):
             0,
             "id"
         ) 
-        # self.form.ui.edit_btn.clicked.connect(self.edit_transaction)
+        self.form.ui.edit_btn.clicked.connect(self.edit_transaction)
 
 
         self.form.exec()
     
-    # def edit_transaction(self):
+    def edit_transaction(self):
 
-    #     transaction_id = self.form.selected_row
-    #     if transaction_id is None:
-    #         QMessageBox.warning(None, "تنبيه", "لم تحدد أي معاملة بعد")
+        transaction = self.form.selected_row
+        if transaction is None:
+            QMessageBox.warning(None, "تنبيه", "لم تحدد أي معاملة بعد")
 
-    #     else:
-    #         form = SupplierPaymentForm(SupplierTransactionUi, transaction_id[0])
-    #         form.transaction_updated.connect(lambda _ : self.form.load_table())
-    #         form.exec()
+        else:
+            payment_id = transaction[0]
+            customer_name = transaction[1]
+            description = transaction[2]
+            process = transaction[3]
+            amount = transaction[4]
+            
+            if process == "payment":
+                form = CustomerPaymentForm(CustomersPaymentsUi, payment_id, customer_name)
+                form.ui.amount.setText(str(amount))
+                form.ui.note.setText(str(description))
+                form.payment_updated.connect(lambda _ : self.form.load_table())
+                form.exec()
+
+            elif process == "service":
+                pass 
+            elif process == "sale":
+                pass 
+            else:
+                pass 
+
 
         
 

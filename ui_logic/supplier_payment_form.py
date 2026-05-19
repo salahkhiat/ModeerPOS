@@ -232,7 +232,7 @@ class SupplierPaymentForm(Form):
                 
                 cols = ["supplier_id", "note", "amount", "type"]
             
-                self.update_info("suppliers_transactions", cols, tuple(data), "id=?",(trans_id,))
+                self.update_info("suppliers_transactions", cols, tuple(data), "id=?", (trans_id,))
                     
                 edit_confirmed()
                 logger.warning(f"supplier's transaction with id {trans_id} was updated successfully")

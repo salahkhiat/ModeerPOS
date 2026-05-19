@@ -1,14 +1,23 @@
 from PyQt6.QtWidgets import QComboBox, QLineEdit, QPushButton
+from PyQt6.QtCore import pyqtSignal
 from .base_form import Form
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
 class CustomerPaymentForm(Form):
-    def __init__(self,base_form):
+    payment_updated = pyqtSignal(bool)
+    def __init__(self,base_form, payment_id=None, customer_name=None):
         super().__init__(base_form)
         # set form title
         self.setWindowTitle("إيداع جديد")
+
+        # check form mode
+        if payment_id is not None:
+            self.edit_mode = True
+            self._payment_id = payment_id
+        else:
+            self.edit_mode = False
 
         # default settings
         # get only undeleted customers 
@@ -17,6 +26,11 @@ class CustomerPaymentForm(Form):
 
         customers_combo:QComboBox = self.ui.customer
         customers_combo.addItems(customers)
+
+        # edit mode : select the old transaction customer.
+        if self.edit_mode is True:
+            index = customers_combo.findText(customer_name)
+            customers_combo.setCurrentIndex(index)
 
         current_customer = customers_combo.currentText()
     
@@ -33,17 +47,25 @@ class CustomerPaymentForm(Form):
 
         # connect save button
         save_btn: QPushButton = self.ui.save_btn
-        save_btn.clicked.connect(self.create_transaction)
 
+        if self.edit_mode is True:
+            save_btn.clicked.connect(self.edit_transaction)
+        else:
+            save_btn.clicked.connect(self.create_transaction)
 
     def set_current_customer_id(self,text:str):
         """
             setting a selected customer id
         """
         self.selected_customer_id = self.get_item_info("customers",("id",),"name",str(text))["id"]
-        print(f"the ID of {text.strip()} is {self.selected_customer_id}.")
-
     
+    def close_form(self):
+        fields = [self.amount, self.note]
+
+        self.clear_fields(fields)
+        self.close()
+        self.play_success_sound()
+
     def create_transaction(self):
         valid_amount = self.is_amount("amount")
         if not valid_amount:
@@ -60,16 +82,34 @@ class CustomerPaymentForm(Form):
                 amount,
                 self.current_date()
             )
-            self.store("customers_payments",columns,data)
+            self.store("customers_payments", columns, data)
             
-            fields = [
-                self.amount,
-                self.note
-            ]
+            self.close_form()
+            
 
-            self.clear_fields(fields)
-            self.close()
-            self.play_success_sound()
+    def edit_transaction(self):
+        valid_amount = self.is_amount("amount")
+        if not valid_amount:
+            logger.warning("Invalid amount")
+            return
+        else:
+            amount = float(self.ui.amount.text().strip())
+            note = self.ui.note.text().strip()
+            
+            columns = ["customer_id", "note", "amount", "created"]
+            data = (
+                self.selected_customer_id,
+                note,
+                amount,
+                self.current_date()
+            )
+            self.update_info("customers_payments", columns, data,"id=?", (self._payment_id,))
+            self.payment_updated.emit(True)
+            self.close_form()
+            
+
+
+
 
     
         
