@@ -1,14 +1,42 @@
 from .base_form import Form
 from .category_form import CategoryForm
 from uis.category import Ui_Form as CategoryUi
-
+from PyQt6.QtCore import pyqtSignal
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
 class ServiceForm(Form):
-    def __init__(self,base_form):
+    service_updated = pyqtSignal(bool)
+    def __init__(self, base_form, service_id=None, customer_name=None, category=None):
         super().__init__(base_form)
+
+        # check form mode
+        if service_id is not None:
+            self.edit_mode = True
+            self._service_id = service_id
+            self._customer_name = customer_name
+            self._category = category
+        else:
+            self.edit_mode = False
+
+        #  customer and Category Combo part ---
+        customers_combo = self.ui.customer
+        self.fetch_then_put("customers", "name", customers_combo)
+
+        categories_combo = self.ui.category
+        self.fetch_then_put("services_categories", "name", categories_combo)
+
+
+        # edit mode : select the old transaction customer and category.
+        if self.edit_mode is True:
+            supplier_index = customers_combo.findText(self._customer_name)
+            customers_combo.setCurrentIndex(supplier_index)
+
+            category_index = categories_combo.findText(self._category)
+            categories_combo.setCurrentIndex(category_index)
+
+
         # set form title
         self.setWindowTitle("تسجيل خدمة جديدة")
 
