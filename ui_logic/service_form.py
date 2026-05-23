@@ -20,25 +20,25 @@ class ServiceForm(Form):
         else:
             self.edit_mode = False
 
-        #  customer and Category Combo part ---
-        customers_combo = self.ui.customer
-        self.fetch_then_put("customers", "name", customers_combo)
-
-        categories_combo = self.ui.category
-        self.fetch_then_put("services_categories", "name", categories_combo)
-
-
         # edit mode : select the old transaction customer and category.
         if self.edit_mode is True:
-            supplier_index = customers_combo.findText(self._customer_name)
-            customers_combo.setCurrentIndex(supplier_index)
+            customers_combo = self.ui.customer
+            self.fetch_then_put("customers", "name", customers_combo)
+
+            categories_combo = self.ui.category
+            self.fetch_then_put("services_categories", "name", categories_combo)
+
+            customer_index = customers_combo.findText(self._customer_name)
+            customers_combo.setCurrentIndex(customer_index)
 
             category_index = categories_combo.findText(self._category)
             categories_combo.setCurrentIndex(category_index)
 
-
         # set form title
-        self.setWindowTitle("تسجيل خدمة جديدة")
+        if self.edit_mode is False:
+            self.setWindowTitle("تسجيل خدمة جديدة")
+        else:
+            self.setWindowTitle(f"تعديل الخدمة رقم {self._service_id}")
 
         # set icons 
         self.set_icon("add_category_btn","add.svg")
@@ -49,8 +49,10 @@ class ServiceForm(Form):
         # Filtering inputs.
         amount_field = self.ui.amount
         deposit_field = self.ui.deposit
+        piece_field = self.ui.piece_price
         self.accept_numbers_only(amount_field)
         self.accept_numbers_only(deposit_field)
+        self.accept_numbers_only(piece_field)
         self.enable_field(self.ui.deposit,False)
 
         # Default validation variables.
@@ -62,8 +64,8 @@ class ServiceForm(Form):
         # Validate fields.
         self.initial_validation()
 
-
         # Save Button clicked.
+        
         self.save_btn_clicked()
 
     def initial_validation(self):
@@ -97,6 +99,14 @@ class ServiceForm(Form):
             return True 
         else:
             return False 
+    
+    def get_fields_values(self):
+        note = self.ui.note.text()
+        amount = 0 if self.ui.amount.text().strip() == "" else float(self.ui.amount.text())
+        deposit = 0 if self.ui.deposit.text().strip() == "" else float(self.ui.deposit.text())
+        piece_price = 0 if self.ui.piece_price.text().strip() == "" else float(self.ui.piece_price.text())
+        
+        return (note, amount, deposit, piece_price)
         
 
     def save_service_form(self):
@@ -116,11 +126,8 @@ class ServiceForm(Form):
         for id, name in cat_dic.items():
             if name == cat_name:
                 cat_id = id
-        
-        note = self.ui.note.text()
-        amount = 0 if self.ui.amount.text().strip() == "" else float(self.ui.amount.text())
-        deposit = 0 if self.ui.deposit.text().strip() == "" else float(self.ui.deposit.text())
-        piece_price = 0 if self.ui.piece_price.text().strip() == "" else float(self.ui.piece_price.text())
+
+        note, amount, deposit, piece_price = self.get_fields_values()
         created = self.current_date()
         
         columns = [
@@ -135,7 +142,6 @@ class ServiceForm(Form):
         data = [cus_id, cat_id, note, amount, piece_price, deposit, created]
         table = "services"
 
-       
         fields = [
             self.ui.note,
             self.ui.amount,
@@ -154,6 +160,7 @@ class ServiceForm(Form):
                     self.clear_fields(fields)
             self.close()
             self.play_success_sound()
+
         elif  (not  self.is_valid_category and not self.is_valid_note) or (not self.is_valid_amount):
 
             if not self.is_valid_amount:
@@ -163,8 +170,47 @@ class ServiceForm(Form):
                 
                 self.update_validation_response("note","is_empty")
     
+    def update_service_form(self):
+        # 1- Get the service id
+        service_id = self._service_id
+
+        # 2- Get the selected customer id
+        customer_name: str = self.ui.customer.currentText().strip()
+        customer_id = self.get_item_info("customers", ("id",), "name", customer_name)['id']
+
+        # 3- Get the selected service category id
+        category_name: str = self.ui.category.currentText().strip()
+        category_id = self.get_item_info("services_categories", ("id",), "name", category_name)['id']
+
+        # 4- Get the fields values
+        description, amount, deposit, piece_price = self.get_fields_values()
+
+        # 5- Set the table details 
+        table = "services"
+        cols = [
+            "customer_id", 
+            "category_id", 
+            "description", 
+            "default_price", 
+            "paid_price", 
+            "piece_price",
+        ]
+        data = (customer_id, category_id, description, amount, deposit, piece_price)
+
+        # 6- Apply changes
+        self.update_info(table, cols, data, "id=?", (service_id,))
+
+        # 7- Finish the process
+        self.service_updated.emit(True)
+        self.play_success_sound()
+        self.close()
+
     def save_btn_clicked(self):
-        self.ui.save_btn.clicked.connect(self.save_service_form)
+        
+        if self.edit_mode is True:
+            self.ui.save_btn.clicked.connect(self.update_service_form)
+        else:
+            self.ui.save_btn.clicked.connect(self.save_service_form)
 
 
         

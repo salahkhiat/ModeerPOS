@@ -80,6 +80,8 @@ class CustomersPaymentsTableForm(Form):
                 form.ui.deposit.setText(str(service['paid_price']))
                 form.ui.amount.setText(str(service['default_price']))
                 form.ui.piece_price.setText(str(service['piece_price']))
+                
+                form.service_updated.connect(lambda _ : self.form.load_table())
                 form.exec()
 
             elif process == "sale":
