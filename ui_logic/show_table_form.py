@@ -163,12 +163,33 @@ class ShowTableForm(Form):
     def delete_btn_clicked(self):
         self.ui.delete_btn.clicked.connect(self.delete_item)
     
+    def customer_payments_deletion(self):
+        """Check from the process type before apply deletion"""
+        if self._db_table == "customers_payments":
+            process = self.selected_row[3]
+            if process == "service":
+                self._db_table = "services"
+                return True
+            
+            elif process == "payment":
+                self._db_table = "customers_payments"
+                return True 
+            
+            else:
+                title = "تنبيه"
+                text = "لا يمكنك حذف هذا العنصر"
+                QMessageBox.warning(None, title, text)
+                return False
+        else:
+            return True
+            
     def delete_item(self):
         if self.selected_row is None:
             title = "تأكيد عمية الحذف"
             text = "إختر العنصر الذي تريد حذفه"
             QMessageBox.warning(None, title, text)
         else:
+            
             msg = "هل أنت متأكد من عملية الحذف؟"
             form = ConfirmationMsgForm(ConfirmationMsgUi, msg)
             form.confirmed.connect(self.confirm_deletion)
@@ -178,6 +199,9 @@ class ShowTableForm(Form):
         if cmd is True:
             # Get the selected item id.
             item_id = self.selected_row[0]
+
+            if not self.customer_payments_deletion():
+                return 
             
             # Delete the selected item.
             self.delete_item_from_db(self._db_table, self._delete_column, item_id)
