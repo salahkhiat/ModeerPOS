@@ -1,2 +1,2 @@
-names = ("ss", ) + ["dd",]
-print(names)
+ll = (22, 244, 55)
+print(ll[:2])

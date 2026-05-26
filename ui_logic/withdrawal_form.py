@@ -1,12 +1,22 @@
 from PyQt6.QtWidgets import QComboBox, QLineEdit, QPushButton
+from PyQt6.QtCore import pyqtSignal
 from .base_form import Form
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
 class WithdrawalForm(Form):
-    def __init__(self,base_form):
+    withdrawal_updated = pyqtSignal(bool)
+    def __init__(self, base_form, transaction_id=None, employee_name=None):
         super().__init__(base_form)
+
+        if transaction_id is not None:
+            self.edit_mode = True
+            self._transaction_id = transaction_id
+            self._employee_name = employee_name
+        else:
+            self.edit_mode = False
+
         # set form title
         self.setWindowTitle("سجل سحب الموظف")
 
@@ -15,6 +25,10 @@ class WithdrawalForm(Form):
 
         employees_combo:QComboBox = self.ui.employee
         employees_combo.addItems(employees)
+
+        if self.edit_mode is True:
+            emp_index = employees_combo.findText(self._employee_name)
+            employees_combo.setCurrentIndex(emp_index)
 
         current_employee = employees_combo.currentText()
     
@@ -56,7 +70,14 @@ class WithdrawalForm(Form):
                 amount,
                 self.current_date()
             )
-            self.store("employees_withdrawals",columns,data)
+            if self.edit_mode is True:
+                table = "employees_withdrawals"
+                cols = ["employee_id", "note", "amount"]
+                new_data = data[:3]
+                self.update_info(table, cols, new_data, "id=?", (self._transaction_id,))
+                self.withdrawal_updated.emit(True)
+            else:
+                self.store("employees_withdrawals",columns,data)
             
             fields = [
                 self.amount,

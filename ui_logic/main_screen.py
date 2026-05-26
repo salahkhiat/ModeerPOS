@@ -55,6 +55,7 @@ from .show_table_form import ShowTableForm
 from .products_table_form import ProductsTableForm
 from .suppliers_transactions_table_form import SuppliersTransactionsTableForm
 from .customers_payments_table_form import CustomersPaymentsTableForm
+from .employees_withdrawals_table_form import EmployeesWithdrawalsTableForm
 
 
 from PyQt6.QtWidgets import (
@@ -204,91 +205,6 @@ class MainScreen(MainForm):
             )
         )
 
-        # suppliers_transactions_header = [
-        #     "المورد", "ملاحظة/فتورة", "عملية", "المبلغ", "التاريخ"
-        # ]
-        # suppliers_transactions_header_width = [15, 35, 12, 18, 20] #[20, 40, 10, 15, 15]
-
-        # suppliers_transactions_db_table_cols = [
-        #     "name", 
-        #     "note", 
-        #     "_type", 
-        #     "amount",
-        #     "created"
-        # ]
-
-        # # I mixed between suppliers_transactions and suppliers tables.
-        # # s means suppliers, st means suppliers_transactions
-        # suppliers_transactions_db_table = "suppliers_transactions"
-        # self.ui.suppliers_deposits_action.triggered.connect(
-        #     lambda: self.show_tab(
-        #         "عمليات  الموردين", 
-        #         suppliers_transactions_db_table, 
-        #         suppliers_transactions_db_table_cols, 
-        #         suppliers_transactions_header, 
-        #         suppliers_transactions_header_width, 
-        #     )
-        # )
-
-
-
-
-
-
-        # customers_payments_header = [
-        #     "الزبون", "المصدر", "الوصف", "المبلغ", "التاريخ"
-        # ]
-        # customers_payments_header_width = [15, 12, 35, 18, 20]
-
-        # customers_money_columns = [
-        #     "name",
-        #     "process",
-        #     "description",
-        #     "amount",
-        #     "created"
-        # ]
-        # # customers_transactions is a vertual table name 
-        # # it merged between there tables
-        # # services, customers_payments and sale_invoices
-        # customers_money_db_table = "customers_transactions"
-        # self.ui.customers_deposits_action.triggered.connect(
-        #     lambda: self.show_tab(
-        #         "عمليات  الزبائن", 
-        #         customers_money_db_table, 
-        #         customers_money_columns, 
-        #         customers_payments_header, 
-        #         customers_payments_header_width, 
-        #     )
-        # )
-
-
-
-
-
-
-
-        employees_withdrawals_header = [
-            "العامل", "ملاحظة", "المبلغ", "التاريخ"
-        ]
-        employees_withdrawals_header_width = [25, 40, 15, 20]
-
-        employees_withdrawals_columns = [
-            "name",
-            "note",
-            "amount",
-            "created"
-        ]
-        # employees_tansactions is a vertual table
-        employees_withdrawals_db_table = "employees_transactions"
-        self.ui.employees_withdrawals_action.triggered.connect(
-            lambda: self.show_tab(
-                "سحوبات العمال", 
-                employees_withdrawals_db_table, 
-                employees_withdrawals_columns, 
-                employees_withdrawals_header, 
-                employees_withdrawals_header_width, 
-            )
-        )
 
         expenses_header = [
             "ملاحظة", "الصنف", "المبلغ", "التاريخ"
@@ -475,6 +391,8 @@ class MainScreen(MainForm):
         self.ui.suppliers_deposits_action.triggered.connect(self.show_suppliers_transactions_table_tab)
         self.ui.customers_deposits_action.triggered.connect(self.show_customers_payments_table_tab)
 
+        self.ui.employees_withdrawals_action.triggered.connect(self.show_employees_withdrawals_table_tab)
+
 
     def refresh_main_screen_tables(self):
         self.refresh_requested_products_table()
@@ -516,6 +434,9 @@ class MainScreen(MainForm):
 
     def show_customers_payments_table_tab(self):
         CustomersPaymentsTableForm(ShowTableUi)
+
+    def show_employees_withdrawals_table_tab(self):
+        EmployeesWithdrawalsTableForm(ShowTableUi) 
 
 
     # show tab table
