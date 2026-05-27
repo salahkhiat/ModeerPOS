@@ -51,7 +51,6 @@ from .init_amount_form import InitAmountForm
 
 from uis.show_table import Ui_ShowTableUi as ShowTableUi 
 
-from .show_table_form import ShowTableForm
 from .products_table_form import ProductsTableForm
 from .suppliers_transactions_table_form import SuppliersTransactionsTableForm
 from .customers_payments_table_form import CustomersPaymentsTableForm
@@ -59,6 +58,8 @@ from .employees_withdrawals_table_form import EmployeesWithdrawalsTableForm
 from .expenses_table_form import ExpensesTableForm
 from .purchases_history_table_form import PurchasesHistoryTableForm
 from .purchases_invoices_table_form import PurchasesInvoicesTableForm
+from .sales_history_table_form import SalesHistoryTableForm
+from .sales_invoices_table_form import SalesInvoicesTableForm
 
 
 from PyQt6.QtWidgets import (
@@ -212,49 +213,29 @@ class MainScreen(MainForm):
 
 
 
-        sales_history_header = [
-            "السلعة", "المرجع", "البيع بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
-        ]
-        sales_history_header_width = [25, 12, 12, 12, 12, 12, 15 ]
-
-        sales_history_columns = [
-            "name",
-            "barcode",
-            "price",
-            "quantity",
-            "total",
-            "invoice",
-            "created"
-        ]
-        # sales_history is a real table but we used it as a vertual table
-        sales_history_db_table = "sales_history"
-        self.ui.sales_history_action.triggered.connect(
-            lambda: self.show_tab(
-                "المبيعات", 
-                sales_history_db_table, 
-                sales_history_columns, 
-                sales_history_header, 
-                sales_history_header_width, 
-            )
-        )
-
-        # purchases_invoices_header = [
-        #     "المورد", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
+        # sales_history_header = [
+        #     "السلعة", "المرجع", "البيع بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
         # ]
-        # purchases_invoices_header_width = [35, 20, 15, 15, 15]
+        # sales_history_header_width = [25, 12, 12, 12, 12, 12, 15 ]
 
-        # purchases_invoices_columns = [
-        #     "supplier", "inv_barcode", "total", "deposit", "created"
+        # sales_history_columns = [
+        #     "name",
+        #     "barcode",
+        #     "price",
+        #     "quantity",
+        #     "total",
+        #     "invoice",
+        #     "created"
         # ]
-        # # purchases_invoices is a real table but we used it as a vertual table
-        # purchases_invoices_db_table = "purchases_invoices"
-        # self.ui.purchases_invoices_action.triggered.connect(
+        # # sales_history is a real table but we used it as a vertual table
+        # sales_history_db_table = "sales_history"
+        # self.ui.sales_history_action.triggered.connect(
         #     lambda: self.show_tab(
-        #         "فواتير المشتريات", 
-        #         purchases_invoices_db_table, 
-        #         purchases_invoices_columns, 
-        #         purchases_invoices_header, 
-        #         purchases_invoices_header_width, 
+        #         "المبيعات", 
+        #         sales_history_db_table, 
+        #         sales_history_columns, 
+        #         sales_history_header, 
+        #         sales_history_header_width, 
         #     )
         # )
 
@@ -262,25 +243,27 @@ class MainScreen(MainForm):
 
 
 
-        sales_invoices_header = [
-            "الزبون", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
-        ]
-        sales_invoices_header_width = [35, 20, 15, 15, 15]
 
-        sales_invoices_columns = [
-            "customer", "inv_barcode", "total", "deposit", "created"
-        ]
-        # sales_invoices is a real table but we used it as a vertual table
-        sales_invoices_db_table = "sales_invoices"
-        self.ui.sales_invoices_action.triggered.connect(
-            lambda: self.show_tab(
-                "فواتير البيع", 
-                sales_invoices_db_table, 
-                sales_invoices_columns, 
-                sales_invoices_header, 
-                sales_invoices_header_width, 
-            )
-        )
+
+        # sales_invoices_header = [
+        #     "الزبون", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
+        # ]
+        # sales_invoices_header_width = [35, 20, 15, 15, 15]
+
+        # sales_invoices_columns = [
+        #     "customer", "inv_barcode", "total", "deposit", "created"
+        # ]
+        # # sales_invoices is a real table but we used it as a vertual table
+        # sales_invoices_db_table = "sales_invoices"
+        # self.ui.sales_invoices_action.triggered.connect(
+        #     lambda: self.show_tab(
+        #         "فواتير البيع", 
+        #         sales_invoices_db_table, 
+        #         sales_invoices_columns, 
+        #         sales_invoices_header, 
+        #         sales_invoices_header_width, 
+        #     )
+        # )
 
         services_header = [
             "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"
@@ -356,6 +339,8 @@ class MainScreen(MainForm):
         self.ui.expenses_action.triggered.connect(self.show_expenses_table_tab)
         self.ui.purchases_history_action.triggered.connect(self.show_purchases_history_table_tab)
         self.ui.purchases_invoices_action.triggered.connect(self.show_purchases_invoices_table_tab)
+        self.ui.sales_history_action.triggered.connect(self.show_sales_history_table_tab)
+        self.ui.sales_invoices_action.triggered.connect(self.show_sales_invoices_table_tab)
 
 
     def refresh_main_screen_tables(self):
@@ -410,6 +395,12 @@ class MainScreen(MainForm):
 
     def show_purchases_invoices_table_tab(self):
         PurchasesInvoicesTableForm(ShowTableUi)
+
+    def show_sales_history_table_tab(self):
+        SalesHistoryTableForm(ShowTableUi)
+
+    def show_sales_invoices_table_tab(self):
+        SalesInvoicesTableForm(ShowTableUi)
 
 
     # show tab table
