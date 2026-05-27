@@ -769,12 +769,11 @@ class DatabaseManager(SharedFunctions):
             result = cursor.execute(query, params).fetchall()
             return result
 
-    def get_purchases_history_list(self, keyword=None) -> List:
+    def get_purchases_history_list(self, keyword=None, limit=10, offset=0) -> List:
 
         with self.db_connection() as connection: 
             cursor = connection.cursor()
  
-            created = self.current_date()[:7]
             query = f"""
                 SELECT 
                     p.product_name AS name,
@@ -792,15 +791,20 @@ class DatabaseManager(SharedFunctions):
                 ON 
                     inv.id = p.invoice_id
             """ 
-            result = None
-            ordering = f" ORDER BY inv.created_at DESC; "
+            conditions = []
+            params = []
+
             if keyword:
-                query += " WHERE name LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
-                
-            else:
-                query += ordering
-                result = cursor.execute(query).fetchall() 
+                conditions.append(" name LIKE ? ")
+                params.append(f"%{keyword}%")
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY created DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
             return result
 
     def get_sales_history_list(self, keyword=None) -> List:
@@ -836,7 +840,7 @@ class DatabaseManager(SharedFunctions):
                 
             return result
 
-    def get_purchases_invoices_list(self, keyword=None) -> List:
+    def get_purchases_invoices_list(self, keyword=None, limit=10, offset=0) -> List:
 
         with self.db_connection() as connection: 
             cursor = connection.cursor()
@@ -856,15 +860,20 @@ class DatabaseManager(SharedFunctions):
                 ON 
                     s.id = inv.supplier_id
             """ 
-            result = None
-            ordering = f" ORDER BY inv.created_at DESC; "
+            conditions = []
+            params = []
+
             if keyword:
-                query += " AND name LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
-            else:
-                query += ordering
-                result = cursor.execute(query).fetchall()
-                
+                conditions.append(" name LIKE ? ")
+                params.append(f"%{keyword}%")
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY created_at DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
             return result
 
     def get_sales_invoices_list(self, keyword=None) -> List:

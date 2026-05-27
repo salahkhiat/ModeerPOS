@@ -27,12 +27,9 @@ class ExpensesTableForm(Form):
         
         self.form.ui.edit_btn.clicked.connect(self.edit_transaction)
         
-
-
         self.form.exec()
 
         
-    
     def edit_transaction(self):
 
         transaction = self.form.selected_row

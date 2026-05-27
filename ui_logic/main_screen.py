@@ -57,6 +57,8 @@ from .suppliers_transactions_table_form import SuppliersTransactionsTableForm
 from .customers_payments_table_form import CustomersPaymentsTableForm
 from .employees_withdrawals_table_form import EmployeesWithdrawalsTableForm
 from .expenses_table_form import ExpensesTableForm
+from .purchases_history_table_form import PurchasesHistoryTableForm
+from .purchases_invoices_table_form import PurchasesInvoicesTableForm
 
 
 from PyQt6.QtWidgets import (
@@ -207,58 +209,8 @@ class MainScreen(MainForm):
         )
 
 
-        # expenses_header = [
-        #     "ملاحظة", "الصنف", "المبلغ", "التاريخ"
-        # ]
-        # expenses_header_width = [25, 40, 15, 20]
-
-        # expenses_columns = [
-        #     "note",
-        #     "category",
-        #     "amount",
-        #     "created"
-        # ]
-        # # expenses is a real table but we used it as a vertual table
-        # expenses_db_table = "expenses"
-        # self.ui.expenses_action.triggered.connect(
-        #     lambda: self.show_tab(
-        #         "المصاريف", 
-        #         expenses_db_table, 
-        #         expenses_columns, 
-        #         expenses_header, 
-        #         expenses_header_width, 
-        #     )
-        # )
 
 
-
-
-
-        purchases_history_header = [
-            "السلعة", "المرجع", "الشراء بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
-        ]
-        purchases_history_header_width = [30, 12, 12, 7, 12, 12, 15 ]
-
-        purchases_history_columns = [
-            "name",
-            "barcode",
-            "price",
-            "quantity",
-            "total",
-            "invoice",
-            "created"
-        ]
-        # purchases_history is a real table but we used it as a vertual table
-        purchases_history_db_table = "purchases_history"
-        self.ui.purchases_history_action.triggered.connect(
-            lambda: self.show_tab(
-                "المشتريات", 
-                purchases_history_db_table, 
-                purchases_history_columns, 
-                purchases_history_header, 
-                purchases_history_header_width, 
-            )
-        )
 
         sales_history_header = [
             "السلعة", "المرجع", "البيع بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
@@ -286,25 +238,29 @@ class MainScreen(MainForm):
             )
         )
 
-        purchases_invoices_header = [
-            "المورد", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
-        ]
-        purchases_invoices_header_width = [35, 20, 15, 15, 15]
+        # purchases_invoices_header = [
+        #     "المورد", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
+        # ]
+        # purchases_invoices_header_width = [35, 20, 15, 15, 15]
 
-        purchases_invoices_columns = [
-            "supplier", "inv_barcode", "total", "deposit", "created"
-        ]
-        # purchases_invoices is a real table but we used it as a vertual table
-        purchases_invoices_db_table = "purchases_invoices"
-        self.ui.purchases_invoices_action.triggered.connect(
-            lambda: self.show_tab(
-                "فواتير المشتريات", 
-                purchases_invoices_db_table, 
-                purchases_invoices_columns, 
-                purchases_invoices_header, 
-                purchases_invoices_header_width, 
-            )
-        )
+        # purchases_invoices_columns = [
+        #     "supplier", "inv_barcode", "total", "deposit", "created"
+        # ]
+        # # purchases_invoices is a real table but we used it as a vertual table
+        # purchases_invoices_db_table = "purchases_invoices"
+        # self.ui.purchases_invoices_action.triggered.connect(
+        #     lambda: self.show_tab(
+        #         "فواتير المشتريات", 
+        #         purchases_invoices_db_table, 
+        #         purchases_invoices_columns, 
+        #         purchases_invoices_header, 
+        #         purchases_invoices_header_width, 
+        #     )
+        # )
+
+
+
+
 
         sales_invoices_header = [
             "الزبون", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
@@ -398,6 +354,8 @@ class MainScreen(MainForm):
 
         self.ui.employees_withdrawals_action.triggered.connect(self.show_employees_withdrawals_table_tab)
         self.ui.expenses_action.triggered.connect(self.show_expenses_table_tab)
+        self.ui.purchases_history_action.triggered.connect(self.show_purchases_history_table_tab)
+        self.ui.purchases_invoices_action.triggered.connect(self.show_purchases_invoices_table_tab)
 
 
     def refresh_main_screen_tables(self):
@@ -446,6 +404,12 @@ class MainScreen(MainForm):
 
     def show_expenses_table_tab(self):
         ExpensesTableForm(ShowTableUi)
+
+    def show_purchases_history_table_tab(self):
+        PurchasesHistoryTableForm(ShowTableUi)
+
+    def show_purchases_invoices_table_tab(self):
+        PurchasesInvoicesTableForm(ShowTableUi)
 
 
     # show tab table
