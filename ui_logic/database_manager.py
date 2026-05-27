@@ -731,14 +731,15 @@ class DatabaseManager(SharedFunctions):
             result = cursor.execute(query, params).fetchall()
             return result
 
-    def get_expenses_list(self, keyword=None) -> List:
+    def get_expenses_list(self, keyword=None, limit=10, offset=0) -> List:
 
         with self.db_connection() as connection: 
             cursor = connection.cursor()
  
-            created = self.current_date()[:7]
+         
             query = f"""
                 SELECT 
+                    exp.id AS id,
                     exp.note AS note,
                     c.name AS category,
                     exp.amount AS amount,
@@ -752,14 +753,20 @@ class DatabaseManager(SharedFunctions):
                 ON 
                     c.id = exp.category_id
             """ 
-            result = None
-            ordering = f" AND created LIKE '{created}%' ORDER BY created DESC; "
+            conditions = []
+            params = []
+
             if keyword:
-                query += " AND note LIKE ? " + ordering
-                result = cursor.execute(query,(f"%{keyword}%",)).fetchall()
-            else:
-                query += ordering
-                result = cursor.execute(query).fetchall()
+                conditions.append(" note LIKE ? ")
+                params.append(f"%{keyword}%")
+            
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY id DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
             return result
 
     def get_purchases_history_list(self, keyword=None) -> List:

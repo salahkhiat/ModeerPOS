@@ -56,6 +56,7 @@ from .products_table_form import ProductsTableForm
 from .suppliers_transactions_table_form import SuppliersTransactionsTableForm
 from .customers_payments_table_form import CustomersPaymentsTableForm
 from .employees_withdrawals_table_form import EmployeesWithdrawalsTableForm
+from .expenses_table_form import ExpensesTableForm
 
 
 from PyQt6.QtWidgets import (
@@ -206,28 +207,32 @@ class MainScreen(MainForm):
         )
 
 
-        expenses_header = [
-            "ملاحظة", "الصنف", "المبلغ", "التاريخ"
-        ]
-        expenses_header_width = [25, 40, 15, 20]
+        # expenses_header = [
+        #     "ملاحظة", "الصنف", "المبلغ", "التاريخ"
+        # ]
+        # expenses_header_width = [25, 40, 15, 20]
 
-        expenses_columns = [
-            "note",
-            "category",
-            "amount",
-            "created"
-        ]
-        # expenses is a real table but we used it as a vertual table
-        expenses_db_table = "expenses"
-        self.ui.expenses_action.triggered.connect(
-            lambda: self.show_tab(
-                "المصاريف", 
-                expenses_db_table, 
-                expenses_columns, 
-                expenses_header, 
-                expenses_header_width, 
-            )
-        )
+        # expenses_columns = [
+        #     "note",
+        #     "category",
+        #     "amount",
+        #     "created"
+        # ]
+        # # expenses is a real table but we used it as a vertual table
+        # expenses_db_table = "expenses"
+        # self.ui.expenses_action.triggered.connect(
+        #     lambda: self.show_tab(
+        #         "المصاريف", 
+        #         expenses_db_table, 
+        #         expenses_columns, 
+        #         expenses_header, 
+        #         expenses_header_width, 
+        #     )
+        # )
+
+
+
+
 
         purchases_history_header = [
             "السلعة", "المرجع", "الشراء بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
@@ -392,6 +397,7 @@ class MainScreen(MainForm):
         self.ui.customers_deposits_action.triggered.connect(self.show_customers_payments_table_tab)
 
         self.ui.employees_withdrawals_action.triggered.connect(self.show_employees_withdrawals_table_tab)
+        self.ui.expenses_action.triggered.connect(self.show_expenses_table_tab)
 
 
     def refresh_main_screen_tables(self):
@@ -437,6 +443,9 @@ class MainScreen(MainForm):
 
     def show_employees_withdrawals_table_tab(self):
         EmployeesWithdrawalsTableForm(ShowTableUi) 
+
+    def show_expenses_table_tab(self):
+        ExpensesTableForm(ShowTableUi)
 
 
     # show tab table
