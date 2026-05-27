@@ -417,7 +417,7 @@ QPushButton:hover{
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="buy_mobile_btn">
+         <widget class="QPushButton" name="donation_btn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -823,7 +823,7 @@ QPushButton:hover{
            <string notr="true">color:white</string>
           </property>
           <property name="text">
-           <string>هاتف F8</string>
+           <string>إدعمني F8</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1185,7 +1185,6 @@ color:black;
     <addaction name="employees_action"/>
     <addaction name="products_action"/>
     <addaction name="needs_action"/>
-    <addaction name="mobiles_action"/>
    </widget>
    <widget class="QMenu" name="payments_menu">
     <property name="font">
@@ -1288,9 +1287,10 @@ color:black;
 }</string>
     </property>
     <property name="title">
-     <string>الإعدادات</string>
+     <string>المزيد</string>
     </property>
     <addaction name="init_amount_action"/>
+    <addaction name="support_action"/>
    </widget>
    <addaction name="management_menu"/>
    <addaction name="payments_menu"/>
@@ -1391,6 +1391,11 @@ color:black;
   <action name="init_amount_action">
    <property name="text">
     <string>مبلغ بداية اليوم</string>
+   </property>
+  </action>
+  <action name="support_action">
+   <property name="text">
+    <string>المساعدة</string>
    </property>
   </action>
  </widget>

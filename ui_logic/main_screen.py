@@ -9,8 +9,11 @@ from .account_form import AccountForm
 from uis.analysis_tables import Ui_Form as AnalysisUi
 from .analysis_form import AnalysisForm
 
-from uis.mobile import Ui_Form as MobileUi
-from .mobile_form import MobileForm
+from uis.donation import Ui_Dialog as DonationUi
+from .donation_form import DonationForm
+
+from uis.contact_us import Ui_Dialog as ContactUsUi
+from .contact_us_form import ContactUsForm
 
 from uis.expense import Ui_Form as ExpenseUi 
 from .expense_form import ExpenseForm
@@ -109,7 +112,7 @@ class MainScreen(MainForm):
         self.show_account_form()
         self.show_analysis_form()
         self.show_requested_product_form()
-        self.show_mobile_form()
+        self.show_donation_form()
         self.show_expense_form()
         self.show_withdrawal_form()
         self.show_supplier_payment_form()
@@ -191,79 +194,10 @@ class MainScreen(MainForm):
             )
         )
 
-        mobiles_header = [
-            "ID", "موديل", "الشراء", "IMEI", "البائع", "رقم البائع", "تاريخ"
-        ]
-        mobiles_header_width = [5, 20, 10, 20, 20, 15, 10]
-        mobiles_db_table_cols = [
-            "id", "model", "price", "serial", "seller_name", "seller_tel", "created"
-        ]
-
-        self.ui.mobiles_action.triggered.connect(
-            lambda: self.show_tab(
-                "جدول الهواتف التي تم شرائها", 
-                "mobiles", 
-                mobiles_db_table_cols, 
-                mobiles_header, 
-                mobiles_header_width, 
-            )
-        )
 
 
 
 
-
-        # sales_history_header = [
-        #     "السلعة", "المرجع", "البيع بـ", "الكمية", "المجموع", "الفاتورة", "التاريخ"
-        # ]
-        # sales_history_header_width = [25, 12, 12, 12, 12, 12, 15 ]
-
-        # sales_history_columns = [
-        #     "name",
-        #     "barcode",
-        #     "price",
-        #     "quantity",
-        #     "total",
-        #     "invoice",
-        #     "created"
-        # ]
-        # # sales_history is a real table but we used it as a vertual table
-        # sales_history_db_table = "sales_history"
-        # self.ui.sales_history_action.triggered.connect(
-        #     lambda: self.show_tab(
-        #         "المبيعات", 
-        #         sales_history_db_table, 
-        #         sales_history_columns, 
-        #         sales_history_header, 
-        #         sales_history_header_width, 
-        #     )
-        # )
-
-
-
-
-
-
-
-        # sales_invoices_header = [
-        #     "الزبون", "مرجع الفاتورة", "المجموع", "الإيداع", "التاريخ"
-        # ]
-        # sales_invoices_header_width = [35, 20, 15, 15, 15]
-
-        # sales_invoices_columns = [
-        #     "customer", "inv_barcode", "total", "deposit", "created"
-        # ]
-        # # sales_invoices is a real table but we used it as a vertual table
-        # sales_invoices_db_table = "sales_invoices"
-        # self.ui.sales_invoices_action.triggered.connect(
-        #     lambda: self.show_tab(
-        #         "فواتير البيع", 
-        #         sales_invoices_db_table, 
-        #         sales_invoices_columns, 
-        #         sales_invoices_header, 
-        #         sales_invoices_header_width, 
-        #     )
-        # )
 
         services_header = [
             "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"
@@ -330,6 +264,7 @@ class MainScreen(MainForm):
         # show tables view tabs
         self.ui.pieces_transactions_action.triggered.connect(self.show_pieces_transactions_tab)
         self.ui.init_amount_action.triggered.connect(self.show_init_amount_tab)
+        self.ui.support_action.triggered.connect(self.show_support_tab)
 
         self.ui.products_action.triggered.connect(self.show_products_table_tab)
         self.ui.suppliers_deposits_action.triggered.connect(self.show_suppliers_transactions_table_tab)
@@ -401,6 +336,10 @@ class MainScreen(MainForm):
 
     def show_sales_invoices_table_tab(self):
         SalesInvoicesTableForm(ShowTableUi)
+
+    def show_support_tab(self):
+        form = ContactUsForm(ContactUsUi)
+        form.exec()
 
 
     # show tab table
@@ -538,11 +477,12 @@ class MainScreen(MainForm):
         self.ui.analysis_btn.clicked.connect(self.analysis_form)
 
     # set moblie buy mobile form
-    def mobile_form(self):
-        form = MobileForm(MobileUi)
+    def donation_form(self):
+        form = DonationForm(DonationUi)
         form.exec()
-    def show_mobile_form(self):
-        self.ui.buy_mobile_btn.clicked.connect(self.mobile_form)
+
+    def show_donation_form(self):
+        self.ui.donation_btn.clicked.connect(self.donation_form)
     
     # set expenses form 
     def expense_form(self):
@@ -664,7 +604,7 @@ class MainScreen(MainForm):
             "new_customer_transaction_btn":"new_transaction_cus.svg",
             "new_employee_withdrawal_btn":"new_withdrawal.svg",
             "new_expense_btn":"new_expense.svg",
-            "buy_mobile_btn":"buy_mobile.svg",
+            "donation_btn":"donation.svg",
             "new_user_btn":"new_user.svg",
             "requested_products_btn":"requested_products.svg",
             "analysis_btn":"analysis.svg",

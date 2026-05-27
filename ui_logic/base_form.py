@@ -35,9 +35,9 @@ class Form(QDialog,SharedValidators,DatabaseManager):
     def remove_title_bar(self):
         
         self.setWindowFlags(
-            Qt.WindowType.Window |
-            Qt.WindowType.CustomizeWindowHint |
-            Qt.WindowType.WindowTitleHint
+        Qt.WindowType.Window |
+        Qt.WindowType.CustomizeWindowHint |
+        Qt.WindowType.WindowTitleHint
         )
 
     # set save, cancel icons
