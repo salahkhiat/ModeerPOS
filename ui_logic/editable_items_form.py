@@ -125,6 +125,7 @@ class EditableItemsForm(Form):
             item = list(item)
             if self.db_table == "suppliers":
                 balance = self.get_user_balance("supplier", item[0])
+                
                 item.append(balance)
             
             elif self.db_table == "customers":
@@ -232,13 +233,16 @@ class EditableItemsForm(Form):
 
     def get_user_balance(self, account_type: str, user_id: int) -> float:
         if account_type == "supplier":
-            return self.supplier_balance(user_id)
+            balance = round(self.supplier_balance(user_id), 2)
+            return balance
         
         elif account_type == "customer":
-            return self.customer_balance(user_id)
+            balance = round(self.customer_balance(user_id), 2)
+            return balance
         
         elif account_type == "employee":
-            return self.employee_balance(user_id)
+            balance = round(self.employee_balance(user_id), 2)
+            return balance
 
         raise ValueError(f"Unsupported account type: {account_type}")
     
