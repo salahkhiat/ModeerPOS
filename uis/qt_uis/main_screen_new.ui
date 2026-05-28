@@ -931,11 +931,11 @@ QPushButton:hover{
            </attribute>
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="2" column="0">
-             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <layout class="QVBoxLayout" name="main_tables_part">
               <item>
-               <layout class="QHBoxLayout" name="main_window_tables">
+               <layout class="QHBoxLayout" name="main_tables">
                 <item>
-                 <widget class="QTableWidget" name="out_of_stock_soon_table">
+                 <widget class="QTableView" name="out_of_stock_soon_table">
                   <property name="font">
                    <font>
                     <pointsize>20</pointsize>
@@ -943,73 +943,26 @@ QPushButton:hover{
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QTableWidget{
+                   <string notr="true">QTableView{
 	background-color:white;
 }</string>
                   </property>
-                  <attribute name="horizontalHeaderCascadingSectionResizes">
+                  <attribute name="horizontalHeaderHighlightSections">
                    <bool>false</bool>
                   </attribute>
-                  <attribute name="horizontalHeaderStretchLastSection">
+                  <attribute name="verticalHeaderCascadingSectionResizes">
                    <bool>true</bool>
                   </attribute>
                   <attribute name="verticalHeaderMinimumSectionSize">
-                   <number>24</number>
-                  </attribute>
-                  <attribute name="verticalHeaderDefaultSectionSize">
                    <number>30</number>
                   </attribute>
                   <attribute name="verticalHeaderStretchLastSection">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </attribute>
-                  <column>
-                   <property name="text">
-                    <string>الإسم</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>14</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>المرجع</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>14</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>الكمية</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>14</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>السعر</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>14</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QTableWidget" name="requested_products_table">
+                 <widget class="QTableView" name="requested_products_table">
                   <property name="font">
                    <font>
                     <pointsize>20</pointsize>
@@ -1017,47 +970,22 @@ QPushButton:hover{
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QTableWidget{
+                   <string notr="true">QTableView{
 	background-color:white;
 }</string>
                   </property>
-                  <attribute name="horizontalHeaderCascadingSectionResizes">
+                  <attribute name="horizontalHeaderHighlightSections">
                    <bool>false</bool>
                   </attribute>
-                  <attribute name="horizontalHeaderStretchLastSection">
+                  <attribute name="verticalHeaderCascadingSectionResizes">
                    <bool>true</bool>
                   </attribute>
                   <attribute name="verticalHeaderMinimumSectionSize">
-                   <number>24</number>
-                  </attribute>
-                  <attribute name="verticalHeaderDefaultSectionSize">
                    <number>30</number>
                   </attribute>
                   <attribute name="verticalHeaderStretchLastSection">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </attribute>
-                  <column>
-                   <property name="text">
-                    <string>الوصف</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>14</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>تاريخ الطلب</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>14</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
                  </widget>
                 </item>
                </layout>
@@ -1065,7 +993,7 @@ QPushButton:hover{
              </layout>
             </item>
             <item row="1" column="0">
-             <layout class="QHBoxLayout" name="main_window_tables_titles">
+             <layout class="QHBoxLayout" name="main_tables_titles">
               <item>
                <widget class="QLabel" name="out_of_stock_soon_label">
                 <property name="minimumSize">
@@ -1125,6 +1053,236 @@ QPushButton:hover{
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="0">
+             <layout class="QHBoxLayout" name="tables_buttons_bar">
+              <item>
+               <widget class="QPushButton" name="previous_page_2_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../icons/previous.svg</normaloff>../../icons/previous.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="page_counter_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color:white</string>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="next_page_2_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../icons/next.svg</normaloff>../../icons/next.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="previous_page_1_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../icons/previous.svg</normaloff>../../icons/previous.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="page_counter_1">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color:white</string>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="next_page_1_btn">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../icons/next.svg</normaloff>../../icons/next.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>

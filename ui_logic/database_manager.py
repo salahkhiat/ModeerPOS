@@ -768,6 +768,34 @@ class DatabaseManager(SharedFunctions):
             params.extend([limit, offset])
             result = cursor.execute(query, params).fetchall()
             return result
+        
+
+    def get_requested_products_list(self, limit=10, offset=0) -> List:
+
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+ 
+         
+            query = f"""
+                SELECT 
+                    id,
+                    name
+
+                FROM
+                    requested_products
+
+            """ 
+            conditions = []
+            params = []
+
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY id DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
+            return result
 
     def get_purchases_history_list(self, keyword=None, limit=10, offset=0) -> List:
 

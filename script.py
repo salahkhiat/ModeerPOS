@@ -1,2 +1,3 @@
-ll = (22, 244, 55)
-print(ll[:2])
+a = 1 
+if a:
+    print("x")

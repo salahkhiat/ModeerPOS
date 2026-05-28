@@ -15,6 +15,8 @@ from .donation_form import DonationForm
 from uis.contact_us import Ui_Dialog as ContactUsUi
 from .contact_us_form import ContactUsForm
 
+from .show_main_tables import ShowMainTables
+
 from uis.expense import Ui_Form as ExpenseUi 
 from .expense_form import ExpenseForm
 
@@ -120,6 +122,24 @@ class MainScreen(MainForm):
         self.show_service_form()
         self.add_customer_invoice_tab()
         self.show_supplier_invoice_tab()
+
+        # set main tables
+        requested_products_table = self.ui.requested_products_table
+        req_pro_counter = self.ui.page_counter_1
+        req_pro_next_btn = self.ui.next_page_1_btn
+        req_pro_previous_btn = self.ui.previous_page_1_btn
+        print(self.get_requested_products_list())
+        ShowMainTables(
+            requested_products_table,
+            self.get_requested_products_list,
+            ["المعرف", "الإسم"],
+            None,
+            1,
+            0,
+            req_pro_next_btn,
+            req_pro_previous_btn,
+            req_pro_counter
+        )
 
         # opened customers invoices list
         self.opened_customers_invoices = []
@@ -608,7 +628,11 @@ class MainScreen(MainForm):
             "new_user_btn":"new_user.svg",
             "requested_products_btn":"requested_products.svg",
             "analysis_btn":"analysis.svg",
-            "set_db_btn":"database.svg"
+            "set_db_btn":"database.svg",
+            "next_page_1_btn": "next.svg",
+            "next_page_2_btn": "next.svg",
+            "previous_page_1_btn": "previous.svg",
+            "previous_page_2_btn": "previous.svg"
         }
         
         for btn, icon in btns_icons.items():
