@@ -42,9 +42,6 @@ from .services_table_form import ServicesTableForm
 from uis.category import Ui_Form as RequestedProductUi
 from .requested_product_form import RequestedProductForm
 
-from uis.error_msg import Ui_Dialog as ErrorUi
-from .error_form import ErrorForm
-
 from uis.editable_items import Ui_ChooseItemUi as EditableItemsUi
 from .editable_items_form import EditableItemsForm
 
@@ -123,13 +120,13 @@ class MainScreen(MainForm):
         self.add_customer_invoice_tab()
         self.show_supplier_invoice_tab()
 
-        # set main tables
+        # set main tables with TableView
         requested_products_table = self.ui.requested_products_table
         req_pro_counter = self.ui.page_counter_1
         req_pro_next_btn = self.ui.next_page_1_btn
         req_pro_previous_btn = self.ui.previous_page_1_btn
-        print(self.get_requested_products_list())
-        ShowMainTables(
+
+        self.requested_products_table_manager= ShowMainTables(
             requested_products_table,
             self.get_requested_products_list,
             ["المعرف", "الإسم"],
@@ -140,6 +137,27 @@ class MainScreen(MainForm):
             req_pro_previous_btn,
             req_pro_counter
         )
+        out_of_stock_table = self.ui.out_of_stock_soon_table
+        out_of_stock_counter = self.ui.page_counter_2
+        out_of_stock_next_btn = self.ui.next_page_2_btn
+        out_of_stock_previous_btn = self.ui.previous_page_2_btn
+
+        self.out_of_stock_table_manager= ShowMainTables(
+            out_of_stock_table,
+            self.get_out_of_stock_list,
+            ["الإسم", "الباركود", "الكمية", "البيع بـ"],
+            None,
+            0,
+            1,
+            out_of_stock_next_btn,
+            out_of_stock_previous_btn,
+            out_of_stock_counter
+        )
+        
+        # refresh main screentables
+        timer = QTimer(self)
+        timer.timeout.connect(self.refresh_main_screen_tables)
+        timer.start(2500)
 
         # opened customers invoices list
         self.opened_customers_invoices = []
@@ -160,10 +178,7 @@ class MainScreen(MainForm):
         self.create_default_column("customers","name")
         self.create_default_column("services_categories","name")
 
-        # refresh main screentables
-        timer = QTimer(self)
-        timer.timeout.connect(self.refresh_main_screen_tables)
-        timer.start(2500)
+
 
         # MenuBar
         users_header = ["المرجع", "الإسم", "الهاتف", "الحساب"]
@@ -297,10 +312,10 @@ class MainScreen(MainForm):
         self.ui.sales_history_action.triggered.connect(self.show_sales_history_table_tab)
         self.ui.sales_invoices_action.triggered.connect(self.show_sales_invoices_table_tab)
 
-
     def refresh_main_screen_tables(self):
-        self.refresh_requested_products_table()
-        self.refresh_out_of_stock_table()
+        self.requested_products_table_manager.load_table()
+        self.out_of_stock_table_manager.load_table()
+        
     # Welcome screen
     @staticmethod
     def show_welcome_screen(app, base_form_class, image_path="splash_screen.png", duration=3000, width=900, height=500):
@@ -427,61 +442,6 @@ class MainScreen(MainForm):
     def show_requested_product_form(self):
         self.ui.requested_products_btn.clicked.connect(self.requested_product_form)
     
-    def refresh_requested_products_table(self,data:Dict=None):
-        r_p_table:QTableWidget = self.ui.requested_products_table 
-        r_p_table.setRowCount(0)
-        self.remove_rows_counter(r_p_table)
-        self.make_rows_scrollable(r_p_table)
-        requested_products = None 
-        if data is None:
-            requested_products:Dict = self.get_table_as_dict("requested_products","name")
-        else:
-            requested_products = data
-        header = r_p_table.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
-        header.setSectionResizeMode(1,QHeaderView.ResizeMode.ResizeToContents)
-
-        row = r_p_table.rowCount()
-
-        for product in requested_products.values():
-            r_p_table.insertRow(row)
-            date_label = self.current_date()
-            r_p_table.setItem(row, 0, self.make_item(product, read_only=True))
-            r_p_table.setItem(row, 1, self.make_item(date_label, read_only=True)) 
-
-    def refresh_out_of_stock_table(self):
-        items = self.get_table_cols_list(
-            "products",
-            ["name","barcode","quantity","sale_price"],
-            "quantity<6 AND is_deleted=0"
-        )
-
-        table_widget:QTableWidget = self.ui.out_of_stock_soon_table 
-        table_widget.setRowCount(0)
-
-        header = table_widget.horizontalHeader()
-
-        header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)         
-        header.setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
-        header.setSectionResizeMode(2, QHeaderView.ResizeMode.ResizeToContents)
-        header.setSectionResizeMode(3, QHeaderView.ResizeMode.Stretch)
-
-        self.remove_rows_counter(table_widget)
-        self.make_rows_scrollable(table_widget)
-
-        for item in items:
-            # where the next row should go
-            row = table_widget.rowCount() 
-            
-            # insert new row at the bottom of the table
-            table_widget.insertRow(row) 
-            for col_id, col_info in enumerate(item):
-                    table_item = self.make_item(
-                        col_info, font_size=16, read_only=True
-                    )
-                    table_widget.setItem(row, col_id, table_item)
-
-
     # set new user form button
     def account_form(self):
         form = AccountForm(AccountUi)
@@ -597,7 +557,7 @@ class MainScreen(MainForm):
             main_tab_widget.removeTab(index)
             self.remove_tab_index(index)
         
-        self.refresh_out_of_stock_table()
+        self.out_of_stock_table_manager.load_table()
 
     # set new customer invoice tab
     def customer_invoice_tab(self):

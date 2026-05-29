@@ -1061,7 +1061,7 @@ QPushButton:hover{
             <item row="3" column="0">
              <layout class="QHBoxLayout" name="tables_buttons_bar">
               <item>
-               <widget class="QPushButton" name="previous_page_2_btn">
+               <widget class="QPushButton" name="next_page_2_btn">
                 <property name="minimumSize">
                  <size>
                   <width>30</width>
@@ -1133,7 +1133,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="next_page_2_btn">
+               <widget class="QPushButton" name="previous_page_2_btn">
                 <property name="minimumSize">
                  <size>
                   <width>30</width>
@@ -1174,7 +1174,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="previous_page_1_btn">
+               <widget class="QPushButton" name="next_page_1_btn">
                 <property name="minimumSize">
                  <size>
                   <width>30</width>
@@ -1246,7 +1246,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="next_page_1_btn">
+               <widget class="QPushButton" name="previous_page_1_btn">
                 <property name="minimumSize">
                  <size>
                   <width>30</width>

@@ -303,7 +303,8 @@ class SharedFunctions:
     def calculate_total(self, price:str, quantity:str)-> int:
         return int(price) * int(quantity)
     
-    def remove_rows_counter(self, table: QTableWidget):
+    @staticmethod
+    def remove_rows_counter(table):
         table.verticalHeader().setVisible(False)
 
     def make_item(self,text, font_size=18, bold=True, color=None, read_only=False):
@@ -356,7 +357,8 @@ class SharedFunctions:
             table.setColumnWidth(i, header_width)
         self.remove_rows_counter(table)
 
-    def make_rows_scrollable(self, table) -> None:
+    @staticmethod
+    def make_rows_scrollable(table) -> None:
         """ Make QTableWidget or QTableView rows Scrollable. """
         
         # 1. Make table rows selectable (full row).

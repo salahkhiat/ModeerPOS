@@ -1,12 +1,9 @@
-from .base_form import Form
 from PyQt6.QtWidgets import (
     QTableView,
     QHeaderView,
 )
 
 from .shared_functions import TableViewModel, SharedFunctions
-
-
 
 import logging
 # uses this file's name for easier debugging
@@ -74,9 +71,6 @@ class ShowMainTables():
         selection_model = table.selectionModel()
         selection_model.selectionChanged.connect(self.on_row_selected)
 
-
-
-
     def on_row_selected(self, selected, deselected):
         indexes = selected.indexes()
         
@@ -108,14 +102,10 @@ class ShowMainTables():
             self._resize_content_col, 
             self._stretch_col
         )
-        print("s")
-
-        # # # make a row scrollable
-        # SharedFunctions.remove_rows_counter(self._table)
-        # # print("f")
-        # # SharedFunctions.make_rows_scrollable(self._table)
-        # print('dd')
-
+      
+        SharedFunctions.remove_rows_counter(self._table)
+       
+        SharedFunctions.make_rows_scrollable(self._table)
 
     def set_table_view_headers(
             self, 
@@ -128,7 +118,6 @@ class ShowMainTables():
        
         header = table.horizontalHeader()
         
-
         if fixed_cols is not None:
             # Set all to Interactive first
             for col in fixed_cols.keys():
@@ -147,13 +136,11 @@ class ShowMainTables():
                 resize_to_content_col, 
                 QHeaderView.ResizeMode.ResizeToContents
             )
+        
 
         if stretch_col is not None:
             # Last column stretches
             header.setSectionResizeMode(stretch_col, QHeaderView.ResizeMode.Stretch)
-
-
-
 
     def update_pagination_counter(self):
         current_page_number = self.page + 1

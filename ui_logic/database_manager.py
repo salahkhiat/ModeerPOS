@@ -796,6 +796,34 @@ class DatabaseManager(SharedFunctions):
             params.extend([limit, offset])
             result = cursor.execute(query, params).fetchall()
             return result
+        
+    def get_out_of_stock_list(self, limit=10, offset=0) -> List:
+
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+ 
+            query = f"""
+                SELECT 
+                    name, 
+                    barcode,
+                    quantity,
+                    sale_price
+                FROM
+                    products
+                
+            """ 
+            conditions = []
+            conditions.append(" quantity<6 AND is_deleted=0 ")
+            params = []
+
+            if conditions:
+                query += " WHERE " + " AND ".join(conditions)
+            
+            query += " ORDER BY name DESC LIMIT ? OFFSET ?"
+            
+            params.extend([limit, offset])
+            result = cursor.execute(query, params).fetchall()
+            return result
 
     def get_purchases_history_list(self, keyword=None, limit=10, offset=0) -> List:
 
