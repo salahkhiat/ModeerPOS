@@ -168,17 +168,19 @@ class EditableItemsForm(Form):
         if cmd is False:
             delete_btn.setStyleSheet("border: 1px;background: gray;")
 
-            
-    def supplier_balance(self, supplier_id:int):
-        transactions_deposits = self.get_supplier_transactions_sum("deposit", supplier_id)
+    def supplier_balance(self, supplier_id:int) -> float:
+        deposits_transactions = self.get_supplier_transactions_sum("deposit", supplier_id)
         purchases_deposits = self.get_supplier_purchase_sum("deposit", supplier_id)
-        deposits = transactions_deposits + purchases_deposits
 
-        transactions_debts = self.get_supplier_transactions_sum("debt", supplier_id)
-        purchases_total = self.get_supplier_purchase_sum("total", supplier_id)
-        debts = transactions_debts + purchases_total
+        all_deposits = deposits_transactions + purchases_deposits
         
-        return debts - deposits
+        pure_debts = self.get_supplier_transactions_sum("debt", supplier_id)
+        pieces_debts = self.get_supplier_pieces_sum(supplier_id)
+        purchases_debts = self.get_supplier_purchase_sum("total", supplier_id)
+
+        all_debts = pure_debts + pieces_debts + purchases_debts
+        
+        return all_debts - all_deposits
     
     def customer_balance(self, customer_id:int):
 

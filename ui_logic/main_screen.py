@@ -64,16 +64,10 @@ from .sales_history_table_form import SalesHistoryTableForm
 from .sales_invoices_table_form import SalesInvoicesTableForm
 
 
-from PyQt6.QtWidgets import (
-    QTableWidget, 
-    QHeaderView, 
-    QSplashScreen, 
-    QTableView, 
-    QAbstractItemView,
-)
+from PyQt6.QtWidgets import QTableWidget, QSplashScreen 
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt, QTimer
-from typing import Dict, List
+from typing import List
 
 
 
@@ -98,7 +92,7 @@ class MainScreen(MainForm):
         db_timer.start(5000)
         
         # Set main screen title
-        self.setWindowTitle("برنامج مدير لإدارة المحلات")
+        self.setWindowTitle("مدير : البساطة في إدارة المحلات")
         
         # Set a main screen direction Right to Left
         self.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
@@ -126,7 +120,7 @@ class MainScreen(MainForm):
         req_pro_next_btn = self.ui.next_page_1_btn
         req_pro_previous_btn = self.ui.previous_page_1_btn
 
-        self.requested_products_table_manager= ShowMainTables(
+        self.requested_products_table_manager = ShowMainTables(
             requested_products_table,
             self.get_requested_products_list,
             ["المعرف", "الإسم"],
@@ -142,7 +136,7 @@ class MainScreen(MainForm):
         out_of_stock_next_btn = self.ui.next_page_2_btn
         out_of_stock_previous_btn = self.ui.previous_page_2_btn
 
-        self.out_of_stock_table_manager= ShowMainTables(
+        self.out_of_stock_table_manager = ShowMainTables(
             out_of_stock_table,
             self.get_out_of_stock_list,
             ["الإسم", "الباركود", "الكمية", "البيع بـ"],
@@ -228,10 +222,6 @@ class MainScreen(MainForm):
                 needs_header_width
             )
         )
-
-
-
-
 
 
         services_header = [
@@ -376,7 +366,6 @@ class MainScreen(MainForm):
         form = ContactUsForm(ContactUsUi)
         form.exec()
 
-
     # show tab table
     def show_tab(
             self, title: str, 
@@ -422,9 +411,6 @@ class MainScreen(MainForm):
     def show_init_amount_tab(self):
         form = InitAmountForm(InitAmountUi)
         form.exec()
-    
-
-
 
     # set database form button 
     def database_form(self):

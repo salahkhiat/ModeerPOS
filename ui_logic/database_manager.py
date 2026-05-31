@@ -1388,6 +1388,34 @@ class DatabaseManager(SharedFunctions):
             result = cursor.fetchone()
 
             return result[0] if result and result[0] is not None else 0.0
+
+
+    def get_supplier_pieces_sum(self, supplier_id:int) -> float:
+        """
+        Calculate a supplier pieces transactions total
+
+        """
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+            query = """
+                SELECT 
+                    SUM(price)
+                FROM 
+                    pieces_transactions
+                WHERE 
+                    supplier_id = ? 
+                AND
+                (
+                    status = 'in_shop'
+                OR
+                    status = 'installed'
+                )
+
+            """
+            cursor.execute(query,(supplier_id,))
+            result = cursor.fetchone()
+
+            return result[0] if result and result[0] is not None else 0.0
     
     def get_supplier_transactions_sum(self, tran_type: str, user_id: int) -> float:
         with self.db_connection() as connection: 
@@ -1772,7 +1800,6 @@ class DatabaseManager(SharedFunctions):
 
         # Add an X column to an existing table
         self.add_column("customers", "user_type", "normal")
-        self.add_column("services", "piece_price", 0)
         
         logger.info("Database tables created successfully.")
     

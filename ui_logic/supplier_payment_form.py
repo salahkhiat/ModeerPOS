@@ -10,7 +10,6 @@ class SupplierPaymentForm(Form):
     def __init__(self, base_form, transaction_id=None):
         super().__init__(base_form)
         
-
         # this part for updating mode
         if transaction_id is not None:
             self.edit_mode = True

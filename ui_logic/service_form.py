@@ -49,10 +49,8 @@ class ServiceForm(Form):
         # Filtering inputs.
         amount_field = self.ui.amount
         deposit_field = self.ui.deposit
-        piece_field = self.ui.piece_price
         self.accept_numbers_only(amount_field)
         self.accept_numbers_only(deposit_field)
-        self.accept_numbers_only(piece_field)
         self.enable_field(self.ui.deposit,False)
 
         # Default validation variables.
@@ -104,9 +102,8 @@ class ServiceForm(Form):
         note = self.ui.note.text()
         amount = 0 if self.ui.amount.text().strip() == "" else float(self.ui.amount.text())
         deposit = 0 if self.ui.deposit.text().strip() == "" else float(self.ui.deposit.text())
-        piece_price = 0 if self.ui.piece_price.text().strip() == "" else float(self.ui.piece_price.text())
         
-        return (note, amount, deposit, piece_price)
+        return (note, amount, deposit)
         
 
     def save_service_form(self):
@@ -127,7 +124,7 @@ class ServiceForm(Form):
             if name == cat_name:
                 cat_id = id
 
-        note, amount, deposit, piece_price = self.get_fields_values()
+        note, amount, deposit = self.get_fields_values()
         created = self.current_date()
         
         columns = [
@@ -135,17 +132,15 @@ class ServiceForm(Form):
             "category_id",
             "description",
             "default_price",
-            "piece_price",
             "paid_price",
             "created"
         ]
-        data = [cus_id, cat_id, note, amount, piece_price, deposit, created]
+        data = [cus_id, cat_id, note, amount, deposit, created]
         table = "services"
 
         fields = [
             self.ui.note,
             self.ui.amount,
-            self.ui.piece_price,
             self.ui.deposit
         ]
 
@@ -183,7 +178,7 @@ class ServiceForm(Form):
         category_id = self.get_item_info("services_categories", ("id",), "name", category_name)['id']
 
         # 4- Get the fields values
-        description, amount, deposit, piece_price = self.get_fields_values()
+        description, amount, deposit = self.get_fields_values()
 
         # 5- Set the table details 
         table = "services"
@@ -193,9 +188,8 @@ class ServiceForm(Form):
             "description", 
             "default_price", 
             "paid_price", 
-            "piece_price",
         ]
-        data = (customer_id, category_id, description, amount, deposit, piece_price)
+        data = (customer_id, category_id, description, amount, deposit)
 
         # 6- Apply changes
         self.update_info(table, cols, data, "id=?", (service_id,))
