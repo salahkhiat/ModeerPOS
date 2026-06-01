@@ -11,6 +11,7 @@ class AnalysisForm(Form):
         self.setWindowTitle("إحصائيات المعاملات")
         # set icon
         self.set_icon("switch_analysis_btn","refresh.svg")
+        self.set_icon("search_btn","apply.svg")
         self.analysis_time = "today"
         self.get_analysis()
         switch_btn:QPushButton = self.ui.switch_analysis_btn
