@@ -90,7 +90,6 @@ class MainScreen(MainForm):
         db_timer = QTimer(self)
         db_timer.timeout.connect(self.db_auto_backup)
         db_timer.start(5000)
-        
         # Set main screen title
         self.setWindowTitle("مدير : البساطة في إدارة المحلات")
         

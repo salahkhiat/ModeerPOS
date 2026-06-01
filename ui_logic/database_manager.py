@@ -1226,6 +1226,29 @@ class DatabaseManager(SharedFunctions):
             cursor.execute(query,(f"{created}%",))
             result = cursor.fetchone()
 
+
+    def get_services_profits(self, s_date:str="today",specific_date=None) -> float:
+        """
+        returns services profits depending on s_date
+
+        """
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+            created = self.current_date()[:10] # 1447-06-01
+            if s_date == "month":
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
+
+            query = """
+                SELECT SUM(default_price) - SUM(piece_price) AS profits
+                FROM services
+                WHERE created LIKE ? 
+            """
+            cursor.execute(query,(f"{created}%",))
+            result = cursor.fetchone()
+
             return result[0] if result and result[0] is not None else 0.0
 
     def get_sales_capital(self,s_date:str="today") -> float:
