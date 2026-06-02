@@ -23,9 +23,11 @@ class AnalysisForm(Form):
         incomes_table:QTableWidget = self.ui.incomes_table
         expenses_table.setRowCount(0)
         incomes_table.setRowCount(0)
+
         if self.analysis_time == "today":
             self.analysis_time = "month"
             title_label.setText("إحصائيات الشهر")
+
         elif self.analysis_time == "month":
             self.analysis_time = "today"
             title_label.setText("إحصائيات اليوم")
@@ -55,6 +57,8 @@ class AnalysisForm(Form):
 
         sales_capital = self.get_sales_capital(s_date)
         sales_profit = sales_cash - sales_capital
+
+        
         # profits = sales_profit + services_cash
         self.remove_rows_counter(incomes_table)
         self.make_rows_scrollable(incomes_table)

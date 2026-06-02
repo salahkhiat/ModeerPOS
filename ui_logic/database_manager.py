@@ -1242,7 +1242,7 @@ class DatabaseManager(SharedFunctions):
                     created = self.current_date()[:7] # 1447-06
 
             query = """
-                SELECT SUM(default_price) - SUM(piece_price) AS profits
+                SELECT COALESCE(SUM(default_price), 0) - COALESCE(SUM(piece_price), 0) AS profits
                 FROM services
                 WHERE created LIKE ? 
             """
@@ -1264,6 +1264,29 @@ class DatabaseManager(SharedFunctions):
 
             query = """
                 SELECT SUM(sh.purchase_price * sh.quantity)
+                FROM sales_history sh
+                JOIN sale_invoices si ON si.id = sh.invoice_id
+                WHERE si.created_at LIKE ?
+            """
+            cursor.execute(query, (f"{created}%",))
+            result = cursor.fetchone()
+
+            return result[0] if result and result[0] is not None else 0.0
+        
+
+    def get_sales_pure(self,s_date:str="today") -> float:
+        """
+        Calculate total of sales price only.
+        """
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+
+            created = self.current_date()[:10] # 1447-06-01
+            if s_date == "month":
+                created = self.current_date()[:7] # 1447-06
+
+            query = """
+                SELECT SUM(sh.sale_price * sh.quantity)
                 FROM sales_history sh
                 JOIN sale_invoices si ON si.id = sh.invoice_id
                 WHERE si.created_at LIKE ?
