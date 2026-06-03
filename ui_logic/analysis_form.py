@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QHeaderView, QTableWidget, QPushButton, QLabel, QComboBox
 from .base_form import Form
 import logging
+import json
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 
@@ -19,7 +20,19 @@ class AnalysisForm(Form):
 
         search_btn: QPushButton = self.ui.search_btn
         search_btn.clicked.connect(self.get_selected_date_analysis)
-    
+        
+
+    def get_box_money(self) -> float:
+        """ The box money in the beginning of the day"""
+        settings_path = self.get_settings_json_path()
+
+        # Load the JSON file
+        with open(settings_path, "r") as file:
+            data = json.load(file)
+
+        return float(data["init_amount"])
+        
+
     def get_selected_date(self) -> str:
         year: QComboBox = self.ui.year.currentText()
         months = {
@@ -28,10 +41,11 @@ class AnalysisForm(Form):
         }
         month_index: QComboBox = self.ui.month.currentIndex()
         return f"{year}-{months[month_index]}"
+
     
     def get_selected_date_analysis(self):
         selected_date = self.get_selected_date()
-        
+
         title_label: QLabel = self.ui.analysis_title
         title_label.setText(f"{selected_date}")
 
@@ -79,6 +93,9 @@ class AnalysisForm(Form):
         
         cash = float(sales_cash) + float(services_cash) + float(customers_cash)
 
+        if s_date == "today":
+            cash += self.get_box_money()
+
         services_profits = self.get_services_profits(s_date, specific_date)
 
         sales_capital = self.get_sales_capital(s_date, specific_date)
@@ -87,8 +104,6 @@ class AnalysisForm(Form):
         sales_profits = sales - sales_capital
 
         profits = sales_profits + services_profits
-
-
        
         self.remove_rows_counter(incomes_table)
         
@@ -103,6 +118,8 @@ class AnalysisForm(Form):
 
         incomes_table.insertRow(row)
         cash_label = "الدخل "
+        if s_date == "today":
+            cash_label = "الدخل + مبلغ البداية"
         incomes_table.setItem(row, 0, self.make_item(cash_label, read_only=True))
         incomes_table.setItem(row, 1, self.make_item(f"{cash:.2f}", color="green", read_only=True))
 
