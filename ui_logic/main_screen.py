@@ -62,6 +62,8 @@ from .purchases_history_table_form import PurchasesHistoryTableForm
 from .purchases_invoices_table_form import PurchasesInvoicesTableForm
 from .sales_history_table_form import SalesHistoryTableForm
 from .sales_invoices_table_form import SalesInvoicesTableForm
+from uis.support import Ui_Dialog as SupportUi
+from .support_form import SupportForm
 
 
 from PyQt6.QtWidgets import QTableWidget, QSplashScreen 
@@ -104,7 +106,7 @@ class MainScreen(MainForm):
         self.show_account_form()
         self.show_analysis_form()
         self.show_requested_product_form()
-        self.show_donation_form()
+        self.show_support_form()
         self.show_expense_form()
         self.show_withdrawal_form()
         self.show_supplier_payment_form()
@@ -442,12 +444,12 @@ class MainScreen(MainForm):
         self.ui.analysis_btn.clicked.connect(self.analysis_form)
 
     # set moblie buy mobile form
-    def donation_form(self):
-        form = DonationForm(DonationUi)
+    def support_form(self):
+        form = SupportForm(SupportUi)
         form.exec()
 
-    def show_donation_form(self):
-        self.ui.donation_btn.clicked.connect(self.donation_form)
+    def show_support_form(self):
+        self.ui.support_btn.clicked.connect(self.support_form)
     
     # set expenses form 
     def expense_form(self):
@@ -569,7 +571,7 @@ class MainScreen(MainForm):
             "new_customer_transaction_btn":"new_transaction_cus.svg",
             "new_employee_withdrawal_btn":"new_withdrawal.svg",
             "new_expense_btn":"new_expense.svg",
-            "donation_btn":"donation.svg",
+            "support_btn":"support.svg",
             "new_user_btn":"new_user.svg",
             "requested_products_btn":"requested_products.svg",
             "analysis_btn":"analysis.svg",

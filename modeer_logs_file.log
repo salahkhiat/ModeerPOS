@@ -99043,3 +99043,254 @@ UnboundLocalError: cannot access local variable 'cash' where it is not associate
 2026-06-03 19:14:43,414 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 19:14:43
 2026-06-03 19:14:43,414 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 19:14:43
 2026-06-03 19:14:43,414 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:00,801 | INFO | database_manager.py:1882 | Database tables created successfully.
+2026-06-03 23:30:00,801 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:00
+2026-06-03 23:30:00,801 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:00
+2026-06-03 23:30:00,801 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:00,801 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,801 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/add_a_sale_invoice.svg
+2026-06-03 23:30:00,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_purchase_invoice.svg
+2026-06-03 23:30:00,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_service.svg
+2026-06-03 23:30:00,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_transaction_sup.svg
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_transaction_cus.svg
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_withdrawal.svg
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_expense.svg
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:00,832 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/donation.svg
+2026-06-03 23:30:00,832 | CRITICAL | main.pyw:20 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer-V1\ui_logic\main_screen.py", line 326, in show_main_window
+    window = MainScreen(base_form_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer-V1\ui_logic\main_screen.py", line 102, in __init__
+    self.set_screen_icons()
+  File "E:\Workspace\Modeer-V1\ui_logic\main_screen.py", line 586, in set_screen_icons
+    self.set_icon(btn,icon)
+  File "E:\Workspace\Modeer-V1\ui_logic\shared_functions.py", line 62, in set_icon
+    btn = getattr(self.ui, btn_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Ui_main_window' object has no attribute 'donation_btn'
+2026-06-03 23:30:05,791 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:05
+2026-06-03 23:30:05,791 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:05
+2026-06-03 23:30:05,791 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:10,792 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:10
+2026-06-03 23:30:10,792 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:10
+2026-06-03 23:30:10,792 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:15,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:15
+2026-06-03 23:30:15,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:15
+2026-06-03 23:30:15,808 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:20,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:20
+2026-06-03 23:30:20,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:20
+2026-06-03 23:30:20,808 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:53,816 | INFO | database_manager.py:1882 | Database tables created successfully.
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:53
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:53
+2026-06-03 23:30:53,816 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/add_a_sale_invoice.svg
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_purchase_invoice.svg
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_service.svg
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_transaction_sup.svg
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_transaction_cus.svg
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,816 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_withdrawal.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_expense.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/support.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_user.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/requested_products.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/analysis.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/database.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/next.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/next.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/previous.svg
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:53,831 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/previous.svg
+2026-06-03 23:30:58,829 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:58
+2026-06-03 23:30:58,829 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:30:58
+2026-06-03 23:30:58,829 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/modeer_logo.png
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/whatsapp.svg
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/web.svg
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:30:58,969 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:31:03,828 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:31:03
+2026-06-03 23:31:03,828 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:31:03
+2026-06-03 23:31:03,828 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:31:08,835 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:31:08
+2026-06-03 23:31:08,835 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:31:08
+2026-06-03 23:31:08,835 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:10,178 | INFO | database_manager.py:1882 | Database tables created successfully.
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:10
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:10
+2026-06-03 23:32:10,178 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/add_a_sale_invoice.svg
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_purchase_invoice.svg
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_service.svg
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_transaction_sup.svg
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_transaction_cus.svg
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,178 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_withdrawal.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_expense.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/support.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/new_user.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/requested_products.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/analysis.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/database.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/next.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/next.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/previous.svg
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:10,193 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/previous.svg
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/modeer_logo.png
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/whatsapp.svg
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/web.svg
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:12,233 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:15,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:15
+2026-06-03 23:32:15,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:15
+2026-06-03 23:32:15,178 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:20,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:20
+2026-06-03 23:32:20,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:20
+2026-06-03 23:32:20,178 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/modeer_logo.png
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/whatsapp.svg
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/web.svg
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:20,428 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:25,181 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:25
+2026-06-03 23:32:25,181 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:25
+2026-06-03 23:32:25,181 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/modeer_logo.png
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/whatsapp.svg
+2026-06-03 23:32:26,941 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:26,957 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/youtube.svg
+2026-06-03 23:32:26,957 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:26,957 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:30,181 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:30
+2026-06-03 23:32:30,181 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:30
+2026-06-03 23:32:30,181 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:35,196 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:35
+2026-06-03 23:32:35,196 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:35
+2026-06-03 23:32:35,196 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/edit.svg
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/delete.svg
+2026-06-03 23:32:37,852 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:37
+2026-06-03 23:32:40,210 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:40
+2026-06-03 23:32:40,210 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:40
+2026-06-03 23:32:40,210 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/modeer_logo.png
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/whatsapp.svg
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/youtube.svg
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:32:41,397 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:32:45,204 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:45
+2026-06-03 23:32:45,204 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:45
+2026-06-03 23:32:45,204 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:50,210 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:50
+2026-06-03 23:32:50,210 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:50
+2026-06-03 23:32:50,210 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:32:55,210 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:55
+2026-06-03 23:32:55,210 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:32:55
+2026-06-03 23:32:55,210 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:00,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:00
+2026-06-03 23:33:00,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:00
+2026-06-03 23:33:00,209 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/modeer_logo.png
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/whatsapp.svg
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/web.svg
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:03,991 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:33:05,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:05
+2026-06-03 23:33:05,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:05
+2026-06-03 23:33:05,209 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:10,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:10
+2026-06-03 23:33:10,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:10
+2026-06-03 23:33:10,209 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:15,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:15
+2026-06-03 23:33:15,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:15
+2026-06-03 23:33:15,209 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:20,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:20
+2026-06-03 23:33:20,209 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:20
+2026-06-03 23:33:20,209 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/save.svg
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/cancel.svg
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/add.svg
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/refresh.svg
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer-V1
+2026-06-03 23:33:23,990 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer-V1\./icons/refund.svg
+2026-06-03 23:33:25,207 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:25
+2026-06-03 23:33:25,207 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:25
+2026-06-03 23:33:25,207 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.
+2026-06-03 23:33:30,222 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:30
+2026-06-03 23:33:30,222 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-03 23:33:30
+2026-06-03 23:33:30,222 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-03.db no need to update.

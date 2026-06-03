@@ -101,11 +101,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="youtube_btn">
+  <widget class="QPushButton" name="web_btn">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>280</y>
+     <x>390</x>
+     <y>290</y>
      <width>60</width>
      <height>60</height>
     </rect>
@@ -164,9 +164,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>270</y>
-     <width>261</width>
+     <x>70</x>
+     <y>290</y>
+     <width>311</width>
      <height>51</height>
     </rect>
    </property>
@@ -177,7 +177,7 @@
     </font>
    </property>
    <property name="text">
-    <string>صالح خياط</string>
+    <string>modeer-gsm.com</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

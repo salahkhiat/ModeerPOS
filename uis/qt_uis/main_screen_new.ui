@@ -417,7 +417,7 @@ QPushButton:hover{
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="donation_btn">
+         <widget class="QPushButton" name="support_btn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -823,7 +823,7 @@ QPushButton:hover{
            <string notr="true">color:white</string>
           </property>
           <property name="text">
-           <string>إدعمني F8</string>
+           <string>الدعم F8</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
