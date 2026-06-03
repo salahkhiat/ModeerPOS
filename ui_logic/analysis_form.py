@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QHeaderView, QTableWidget, QPushButton, QLabel
+from PyQt6.QtWidgets import QHeaderView, QTableWidget, QPushButton, QLabel, QComboBox
 from .base_form import Form
 import logging
 # uses this file's name for easier debugging
@@ -17,12 +17,36 @@ class AnalysisForm(Form):
         switch_btn:QPushButton = self.ui.switch_analysis_btn
         switch_btn.clicked.connect(self.switch_analysis_time)
 
-    def switch_analysis_time(self):
+        search_btn: QPushButton = self.ui.search_btn
+        search_btn.clicked.connect(self.get_selected_date_analysis)
+    
+    def get_selected_date(self) -> str:
+        year: QComboBox = self.ui.year.currentText()
+        months = {
+            0: '01', 1:'02', 2:'03', 3:'04', 4:'05', 5:'06', 
+            6:'07', 7:'08', 8:'09', 9:'10', 10:'11', 11:'12'
+        }
+        month_index: QComboBox = self.ui.month.currentIndex()
+        return f"{year}-{months[month_index]}"
+    
+    def get_selected_date_analysis(self):
+        selected_date = self.get_selected_date()
+        
         title_label: QLabel = self.ui.analysis_title
+        title_label.setText(f"{selected_date}")
+
+        self.clean_analysis_table()
+        self.get_analysis("month", selected_date)
+
+    def clean_analysis_table(self):
         expenses_table:QTableWidget = self.ui.expenses_table
         incomes_table:QTableWidget = self.ui.incomes_table
         expenses_table.setRowCount(0)
         incomes_table.setRowCount(0)
+
+    def switch_analysis_time(self):
+        title_label: QLabel = self.ui.analysis_title
+        self.clean_analysis_table()
 
         if self.analysis_time == "today":
             self.analysis_time = "month"
@@ -31,11 +55,11 @@ class AnalysisForm(Form):
         elif self.analysis_time == "month":
             self.analysis_time = "today"
             title_label.setText("إحصائيات اليوم")
-
+        
         self.get_analysis(self.analysis_time)
         
 
-    def get_analysis(self, s_date:str="today"):
+    def get_analysis(self, s_date:str="today", specific_date=None):
         """ Getting analysis depending on search date or s_date 'today' or 'month' """
 
         # incomes
@@ -47,38 +71,62 @@ class AnalysisForm(Form):
         # incomes_table.verticalHeader().setDefaultSectionSize(55)
         incomes_table.verticalHeader().setDefaultSectionSize(45)
         # CASH PART HAS STARTED
-        sales_cash = self.get_sales_cash(s_date)
+        sales_cash = self.get_sales_cash(s_date, specific_date)
+
+        services_cash = self.get_services_cash(s_date, specific_date)
+
+        customers_cash = self.get_customers_cash(s_date, specific_date)
         
-        services_cash = self.get_services_cash(s_date)
-
-        customers_cash = self.get_customers_cash(s_date)
-
         cash = float(sales_cash) + float(services_cash) + float(customers_cash)
 
-        sales_capital = self.get_sales_capital(s_date)
-        sales_profit = sales_cash - sales_capital
+        services_profits = self.get_services_profits(s_date, specific_date)
 
-        
-        # profits = sales_profit + services_cash
+        sales_capital = self.get_sales_capital(s_date, specific_date)
+
+        sales = self.get_sales_pure(s_date, specific_date)
+        sales_profits = sales - sales_capital
+
+        profits = sales_profits + services_profits
+
+
+       
         self.remove_rows_counter(incomes_table)
+        
         self.make_rows_scrollable(incomes_table)
-
+        
         row = incomes_table.rowCount()
+       
+        incomes_table.insertRow(row)
+        profits_label = "الربح "
+        incomes_table.setItem(row, 0, self.make_item(profits_label, read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{profits:.2f}", color="green", read_only=True))
 
         incomes_table.insertRow(row)
-        cash_label = "الدخل الإجمالي"
+        cash_label = "الدخل "
         incomes_table.setItem(row, 0, self.make_item(cash_label, read_only=True))
         incomes_table.setItem(row, 1, self.make_item(f"{cash:.2f}", color="green", read_only=True))
 
-        incomes_table.insertRow(row)
-        customers_cash_label = "إيداعات الزبائن"
-        incomes_table.setItem(row, 0, self.make_item(customers_cash_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{customers_cash:.2f}", read_only=True))
+        # incomes_table.insertRow(row)
+        # customers_cash_label = "إيداعات الزبائن"
+        # incomes_table.setItem(row, 0, self.make_item(customers_cash_label, read_only=True))
+        # incomes_table.setItem(row, 1, self.make_item(f"{customers_cash:.2f}", read_only=True))
+
+        
+        # incomes_table.insertRow(row)
+        # services_profits_label = "أرباح الخدمات"
+        # incomes_table.setItem(row, 0, self.make_item(services_profits_label, read_only=True))
+        # incomes_table.setItem(row, 1, self.make_item(f"{services_profits:.2f}", read_only=True))
         
         incomes_table.insertRow(row)
         services_cash_label = "الخدمات"
         incomes_table.setItem(row, 0, self.make_item(services_cash_label, read_only=True))
         incomes_table.setItem(row, 1, self.make_item(f"{services_cash:.2f}", read_only=True))
+
+
+        # incomes_table.insertRow(row)
+        # sales_profits_label = "أرباح المبيعات"
+        # incomes_table.setItem(row, 0, self.make_item(sales_profits_label, read_only=True))
+        # incomes_table.setItem(row, 1, self.make_item(f"{sales_profits:.2f}", read_only=True))
 
         incomes_table.insertRow(row)
         sales_cash_label = "المبيعات"
@@ -120,16 +168,17 @@ class AnalysisForm(Form):
         self.remove_rows_counter(expenses_table)
         row = expenses_table.rowCount()
 
-        expenses = self.get_expenses(s_date)
-        purchases_deposits = self.get_purchases_deposits(s_date)
+        expenses = self.get_expenses(s_date, specific_date)
 
-        suppliers_deposits = self.get_suppliers_deposits(s_date)
+        purchases_deposits = self.get_purchases_deposits(s_date, specific_date)
 
-        suppliers_debts = self.get_suppliers_debts(s_date)
+        suppliers_deposits = self.get_suppliers_deposits(s_date, specific_date)
 
-        employees_withdrawals = self.get_employees_withdrawals(s_date)
+        suppliers_debts = self.get_suppliers_debts(s_date, specific_date)
 
-        suppliers_new_debts = suppliers_debts - suppliers_deposits
+        employees_withdrawals = self.get_employees_withdrawals(s_date, specific_date)
+
+        # suppliers_new_debts = suppliers_debts - suppliers_deposits
 
         outcome = expenses + suppliers_deposits + employees_withdrawals 
 
@@ -164,16 +213,7 @@ class AnalysisForm(Form):
         # expenses_table.setItem(row, 1, self.make_item(f"{suppliers_new_debts:.2f}"))
 
 
-        # cunclution 
-        net_result = cash - outcome
 
-        incomes_table.insertRow(row)
-        net_result_label = "الصافي"
-        color = "green"
-        if net_result < 0:
-            color = "red"
-        incomes_table.setItem(row, 0, self.make_item(net_result_label, color=color, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{net_result:.2f}", color=color, read_only=True))
 
 
 

@@ -1162,7 +1162,7 @@ class DatabaseManager(SharedFunctions):
             result = cursor.fetchone()
             return result is not None
 
-    def get_sales_cash(self,s_date:str="today") -> float:
+    def get_sales_cash(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate total sales income based on conditional rules.
 
@@ -1180,7 +1180,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(
@@ -1202,7 +1205,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_services_cash(self, s_date:str="today") -> float:
+    def get_services_cash(self, s_date:str="today", specific_date=None) -> float:
         """
         Calculate total services cash based on conditional rules.
 
@@ -1211,7 +1214,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(
@@ -1225,9 +1231,10 @@ class DatabaseManager(SharedFunctions):
             """
             cursor.execute(query,(f"{created}%",))
             result = cursor.fetchone()
+            return result[0] if result and result[0] is not None else 0.0
 
 
-    def get_services_profits(self, s_date:str="today",specific_date=None) -> float:
+    def get_services_profits(self, s_date:str="today", specific_date=None) -> float:
         """
         returns services profits depending on s_date
 
@@ -1251,7 +1258,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_sales_capital(self,s_date:str="today") -> float:
+    def get_sales_capital(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate total sales capital (sum of invoice capitals) for the current month.
         """
@@ -1260,7 +1267,10 @@ class DatabaseManager(SharedFunctions):
 
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(sh.purchase_price * sh.quantity)
@@ -1274,7 +1284,7 @@ class DatabaseManager(SharedFunctions):
             return result[0] if result and result[0] is not None else 0.0
         
 
-    def get_sales_pure(self,s_date:str="today") -> float:
+    def get_sales_pure(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate total of sales price only.
         """
@@ -1283,7 +1293,10 @@ class DatabaseManager(SharedFunctions):
 
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(sh.sale_price * sh.quantity)
@@ -1296,7 +1309,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_expenses(self,s_date:str="today") -> float:
+    def get_expenses(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate total expenses  based on conditional rules.
 
@@ -1305,7 +1318,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(amount)
@@ -1317,7 +1333,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_suppliers_deposits(self,s_date:str="today") -> float:
+    def get_suppliers_deposits(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate deposits to suppliers  based on conditional rules.
 
@@ -1326,7 +1342,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(
@@ -1342,7 +1361,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
                 
-    def get_suppliers_debts(self,s_date:str="today") -> float:
+    def get_suppliers_debts(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate deposits to suppliers  based on conditional rules.
 
@@ -1351,7 +1370,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(
@@ -1367,7 +1389,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_purchases_deposits(self,s_date:str="today") -> float:
+    def get_purchases_deposits(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate deposits to suppliers  based on purchase_invoices and conditional rules.
 
@@ -1376,7 +1398,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT SUM(deposit)
@@ -1388,7 +1413,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_customers_cash(self,s_date:str="today") -> float:
+    def get_customers_cash(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate total customer_payments  based on conditional rules.
 
@@ -1397,7 +1422,11 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
+
             query = """
                 SELECT 
                     SUM(amount)
@@ -1411,7 +1440,7 @@ class DatabaseManager(SharedFunctions):
 
             return result[0] if result and result[0] is not None else 0.0
 
-    def get_employees_withdrawals(self,s_date:str="today") -> float:
+    def get_employees_withdrawals(self,s_date:str="today", specific_date=None) -> float:
         """
         Calculate total employees_withdrawals  based on conditional rules.
 
@@ -1420,7 +1449,10 @@ class DatabaseManager(SharedFunctions):
             cursor = connection.cursor()
             created = self.current_date()[:10] # 1447-06-01
             if s_date == "month":
-                created = self.current_date()[:7] # 1447-06
+                if specific_date is not None:
+                    created = specific_date
+                else:
+                    created = self.current_date()[:7] # 1447-06
 
             query = """
                 SELECT 
