@@ -1,5 +1,4 @@
 from .base_form import MainForm
-
 from uis.database_ui import Ui_Form as DatabaseUi 
 from .database_form import DatabaseForm
 
@@ -9,11 +8,9 @@ from .account_form import AccountForm
 from uis.analysis_tables import Ui_Form as AnalysisUi
 from .analysis_form import AnalysisForm
 
-from uis.donation import Ui_Dialog as DonationUi
-from .donation_form import DonationForm
 
-from uis.contact_us import Ui_Dialog as ContactUsUi
-from .contact_us_form import ContactUsForm
+from uis.activation import Ui_Dialog as ActivationUi
+from .activation_form import ActivationForm
 
 from .show_main_tables import ShowMainTables
 
@@ -81,7 +78,7 @@ class MainScreen(MainForm):
    
     def __init__(self,base_form):
         super().__init__(base_form)
-        
+
         # preapare Database 
         self.prepare_database()
 
@@ -290,7 +287,7 @@ class MainScreen(MainForm):
         # show tables view tabs
         self.ui.pieces_transactions_action.triggered.connect(self.show_pieces_transactions_tab)
         self.ui.init_amount_action.triggered.connect(self.show_init_amount_tab)
-        self.ui.support_action.triggered.connect(self.show_support_tab)
+        self.ui.activation_action.triggered.connect(self.show_activation_tab)
 
         self.ui.products_action.triggered.connect(self.show_products_table_tab)
         self.ui.suppliers_deposits_action.triggered.connect(self.show_suppliers_transactions_table_tab)
@@ -363,8 +360,8 @@ class MainScreen(MainForm):
     def show_sales_invoices_table_tab(self):
         SalesInvoicesTableForm(ShowTableUi)
 
-    def show_support_tab(self):
-        form = ContactUsForm(ContactUsUi)
+    def show_activation_tab(self):
+        form = ActivationForm(ActivationUi)
         form.exec()
 
     # show tab table

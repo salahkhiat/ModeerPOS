@@ -1448,7 +1448,7 @@ color:black;
      <string>المزيد</string>
     </property>
     <addaction name="init_amount_action"/>
-    <addaction name="support_action"/>
+    <addaction name="activation_action"/>
    </widget>
    <addaction name="management_menu"/>
    <addaction name="payments_menu"/>
@@ -1551,9 +1551,9 @@ color:black;
     <string>مبلغ بداية اليوم</string>
    </property>
   </action>
-  <action name="support_action">
+  <action name="activation_action">
    <property name="text">
-    <string>المساعدة</string>
+    <string>تفعيل البرنامج</string>
    </property>
   </action>
  </widget>
