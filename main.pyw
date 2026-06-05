@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QLineEdit
+from PyQt6.QtWidgets import QApplication
 
 from uis.main_screen import Ui_main_window as MainUi
 from ui_logic.main_screen import MainScreen
@@ -11,14 +11,11 @@ import logging
 from datetime import date
 import json 
 from fernet import Fernet
-import hashlib
-import subprocess
 logging.basicConfig(
     filename='modeer_logs_file.log',
     level=logging.DEBUG,
     format='%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d | %(message)s'
 )
-
 
 # APP KEY
 KEY = b"bW8k0iO_bekfUW-e90nuxzKRr5dx6Bn1J0DsXNSKWAo="
@@ -35,29 +32,12 @@ sys.excepthook = excepthook
 # --- 
 
 
-
-
-def get_machine_id() -> str:
-    """ Returns MD5 hashed disk serial """
-    result = subprocess.check_output(
-        "wmic diskdrive get serialnumber",
-        shell=True,
-        text=True
-    )
-    disk_serial = result.split()[1]
-    machine_id = hashlib.md5(
-        disk_serial.encode()
-    ).hexdigest()
-
-    return str(machine_id)
-
 def write_encrypted_data(data):
     """put data as json in an encrypted file"""
     json_text = json.dumps(data)
     encrypted = cipher.encrypt(json_text.encode())
     with open("file_mgr.dat", "wb") as file:
         file.write(encrypted)
-
 
 def create_licence_file():
     """Create licence file with default values"""
@@ -97,9 +77,6 @@ def check_activation() -> bool:
             
                 if days_used > 7:
                     form = ActivationForm(ActivationUi)
-                    machine_id_field: QLineEdit = form.ui.user_id
-                    machine_id_field.setText(f"{get_machine_id()}")
-                    machine_id_field.setReadOnly(True)
                     form.exec()
                     return False
                 else:
@@ -110,9 +87,8 @@ def check_activation() -> bool:
     
 
 def main():
-
-    
     app = QApplication(sys.argv)
+
     activation = check_activation()
     if activation is not True:
         return
