@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'support.ui'
+# Form implementation generated from reading ui file 'contact_us.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -27,7 +27,7 @@ class Ui_Dialog(object):
         self.logo_btn.setFlat(True)
         self.logo_btn.setObjectName("logo_btn")
         self.whatsapp_btn = QtWidgets.QPushButton(parent=Dialog)
-        self.whatsapp_btn.setGeometry(QtCore.QRect(380, 210, 60, 60))
+        self.whatsapp_btn.setGeometry(QtCore.QRect(440, 220, 60, 60))
         self.whatsapp_btn.setMinimumSize(QtCore.QSize(60, 60))
         self.whatsapp_btn.setMaximumSize(QtCore.QSize(60, 60))
         self.whatsapp_btn.setText("")
@@ -38,7 +38,7 @@ class Ui_Dialog(object):
         self.whatsapp_btn.setFlat(True)
         self.whatsapp_btn.setObjectName("whatsapp_btn")
         self.web_btn = QtWidgets.QPushButton(parent=Dialog)
-        self.web_btn.setGeometry(QtCore.QRect(390, 290, 60, 60))
+        self.web_btn.setGeometry(QtCore.QRect(450, 290, 60, 60))
         self.web_btn.setMinimumSize(QtCore.QSize(60, 60))
         self.web_btn.setMaximumSize(QtCore.QSize(60, 60))
         self.web_btn.setText("")
@@ -49,7 +49,7 @@ class Ui_Dialog(object):
         self.web_btn.setFlat(True)
         self.web_btn.setObjectName("web_btn")
         self.label = QtWidgets.QLabel(parent=Dialog)
-        self.label.setGeometry(QtCore.QRect(100, 210, 261, 51))
+        self.label.setGeometry(QtCore.QRect(120, 220, 261, 51))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
@@ -57,7 +57,7 @@ class Ui_Dialog(object):
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(parent=Dialog)
-        self.label_2.setGeometry(QtCore.QRect(70, 290, 311, 51))
+        self.label_2.setGeometry(QtCore.QRect(20, 290, 421, 51))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
@@ -87,5 +87,5 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "+213 793887695"))
-        self.label_2.setText(_translate("Dialog", "modeer-gsm.com"))
+        self.label_2.setText(_translate("Dialog", "modeer-gsm.blogspot.com"))
         self.cancel_btn.setShortcut(_translate("Dialog", "Esc"))

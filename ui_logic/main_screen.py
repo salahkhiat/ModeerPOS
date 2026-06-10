@@ -420,7 +420,6 @@ class MainScreen(MainForm):
     
     def requested_product_form(self):
         form = RequestedProductForm(RequestedProductUi)
-        form.product_info.connect(self.refresh_requested_products_table)
         form.exec()
         
     def show_requested_product_form(self):

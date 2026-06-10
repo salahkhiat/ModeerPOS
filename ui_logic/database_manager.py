@@ -1878,6 +1878,7 @@ class DatabaseManager(SharedFunctions):
 
         # Add an X column to an existing table
         self.add_column("customers", "user_type", "normal")
+        self.add_column("services", "piece_price", 0.0)
         
         logger.info("Database tables created successfully.")
     

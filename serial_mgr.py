@@ -4,7 +4,7 @@ import json
 KEY = b"bW8k0iO_bekfUW-e90nuxzKRr5dx6Bn1J0DsXNSKWAo="
 cipher = Fernet(KEY)
 data = {
-    "first_run": False,
+    "first_run": True,
     "first_run_date": "2026-05-25",
     "activated": False
 }

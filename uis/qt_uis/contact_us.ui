@@ -66,8 +66,8 @@
   <widget class="QPushButton" name="whatsapp_btn">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>210</y>
+     <x>440</x>
+     <y>220</y>
      <width>60</width>
      <height>60</height>
     </rect>
@@ -104,7 +104,7 @@
   <widget class="QPushButton" name="web_btn">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>450</x>
      <y>290</y>
      <width>60</width>
      <height>60</height>
@@ -142,8 +142,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>210</y>
+     <x>120</x>
+     <y>220</y>
      <width>261</width>
      <height>51</height>
     </rect>
@@ -164,9 +164,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>20</x>
      <y>290</y>
-     <width>311</width>
+     <width>421</width>
      <height>51</height>
     </rect>
    </property>
@@ -177,7 +177,7 @@
     </font>
    </property>
    <property name="text">
-    <string>modeer-gsm.com</string>
+    <string>modeer-gsm.blogspot.com</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

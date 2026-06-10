@@ -512,6 +512,9 @@ class InvoiceForm(Form):
                 return barcode
 
     def save_invoice_in_db(self):
+        
+        # disable the save button
+        self.ui.save_btn.setDisabled(True)
 
         # create an invoice
         invoice_id = None
