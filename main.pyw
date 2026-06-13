@@ -56,6 +56,8 @@ def check_activation() -> bool:
     data = json.loads(decrypted.decode())
     activation = data['activated']
     first_run = data['first_run']
+    print(first_run)
+
     
     if activation is not True:
         # 1- if this is the first run at all
@@ -75,7 +77,7 @@ def check_activation() -> bool:
                 
                 days_used = (today - first_run_date).days
             
-                if days_used > 7:
+                if days_used >= 10:
                     form = ActivationForm(ActivationUi)
                     form.exec()
                     return False
