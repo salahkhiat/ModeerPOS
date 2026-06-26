@@ -2,6 +2,7 @@ from .base_form import Form
 from .category_form import CategoryForm
 from uis.category import Ui_Form as CategoryUi
 from PyQt6.QtCore import pyqtSignal
+from PyQt6.QtWidgets import QComboBox
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -19,6 +20,8 @@ class ServiceForm(Form):
             self._category = category
         else:
             self.edit_mode = False
+
+ 
 
         # edit mode : select the old transaction customer and category.
         if self.edit_mode is True:
@@ -45,6 +48,7 @@ class ServiceForm(Form):
 
         # Connect buttons
         self.add_category_clicked()
+
 
         # Filtering inputs.
         amount_field = self.ui.amount

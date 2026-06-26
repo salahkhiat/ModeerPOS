@@ -107647,3 +107647,1158 @@ UnboundLocalError: cannot access local variable 'first_run_date' where it is not
 2026-06-14 00:35:34,346 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-14 00:35:34
 2026-06-14 00:35:34,346 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-14 00:35:34
 2026-06-14 00:35:34,346 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-14.db no need to update.
+2026-06-25 00:30:19,874 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:19,874 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-25 00:30:19,928 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:19,928 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/unactive.svg
+2026-06-25 00:30:19,928 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:19,928 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-25 00:30:19,928 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:19,928 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/apply.svg
+2026-06-25 00:30:39,976 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:39,976 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-25 00:30:39,995 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:39,995 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/unactive.svg
+2026-06-25 00:30:39,996 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:39,996 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-25 00:30:39,997 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:30:39,997 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/apply.svg
+2026-06-25 00:31:06,517 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:06,517 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/activated.svg
+2026-06-25 00:31:12,288 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-25 00:31:12,288 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-25 00:31:12
+2026-06-25 00:31:12,288 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-25 00:31:12
+2026-06-25 00:31:12,288 | DEBUG | database_manager.py:51 | .\database_backup directory has created.
+2026-06-25 00:31:12,303 | DEBUG | database_manager.py:58 | .\database_backup\2026-06\2026-06-25.db has created. 
+2026-06-25 00:31:12,304 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,305 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-25 00:31:12,320 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,320 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-25 00:31:12,335 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,335 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-25 00:31:12,351 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,351 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-25 00:31:12,366 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,366 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-25 00:31:12,382 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,382 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-25 00:31:12,406 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,406 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-25 00:31:12,421 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,421 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-25 00:31:12,428 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,428 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-25 00:31:12,444 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,444 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-25 00:31:12,459 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,459 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-25 00:31:12,475 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,475 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-25 00:31:12,491 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,491 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-25 00:31:12,506 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,506 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-25 00:31:12,506 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,506 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-25 00:31:12,526 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:12,526 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-25 00:31:22,462 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-25 00:31:22,463 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-25 00:31:22
+2026-06-25 00:31:22,463 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-25 00:31:22
+2026-06-25 00:31:22,464 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-25.db no need to update.
+2026-06-25 00:31:22,465 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,465 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-25 00:31:22,467 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,467 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-25 00:31:22,468 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,468 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-25 00:31:22,469 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,469 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-25 00:31:22,470 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,470 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-25 00:31:22,471 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,471 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-25 00:31:22,472 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,472 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-25 00:31:22,473 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,474 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-25 00:31:22,474 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,474 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-25 00:31:22,475 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,475 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-25 00:31:22,476 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,476 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-25 00:31:22,477 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,477 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-25 00:31:22,478 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,478 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-25 00:31:22,478 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,478 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-25 00:31:22,479 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,479 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-25 00:31:22,480 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:22,480 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-25 00:31:29,584 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-25 00:31:29,584 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-25 00:31:29
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-25 00:31:29
+2026-06-25 00:31:29,599 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-25.db no need to update.
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,599 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-25 00:31:29,615 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-25 00:31:29,615 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:48:44,214 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-26 23:48:44,214 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:44
+2026-06-26 23:48:44,214 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:44
+2026-06-26 23:48:44,214 | DEBUG | database_manager.py:80 | .\database_backup\2026-06\2026-06-26.db has created.
+2026-06-26 23:48:44,214 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,214 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-26 23:48:44,245 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,245 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-26 23:48:44,261 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,261 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-26 23:48:44,277 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,277 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-26 23:48:44,308 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,308 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-26 23:48:44,323 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,323 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-26 23:48:44,339 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,339 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-26 23:48:44,370 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,370 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-26 23:48:44,386 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,386 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-26 23:48:44,402 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,402 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-26 23:48:44,433 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,433 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-26 23:48:44,448 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,448 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-26 23:48:44,480 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,480 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-26 23:48:44,495 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,495 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-26 23:48:44,495 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,495 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:48:44,527 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:44,527 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:48:48,391 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:48,391 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-26 23:48:48,406 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:48,406 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:48:48,422 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:48:48,422 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-26 23:48:49,205 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:49
+2026-06-26 23:48:49,205 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:49
+2026-06-26 23:48:49,206 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:48:54,219 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:54
+2026-06-26 23:48:54,219 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:54
+2026-06-26 23:48:54,219 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:48:59,234 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:59
+2026-06-26 23:48:59,234 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:48:59
+2026-06-26 23:48:59,234 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:04,234 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:04
+2026-06-26 23:49:04,234 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:04
+2026-06-26 23:49:04,234 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:09,249 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:09
+2026-06-26 23:49:09,249 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:09
+2026-06-26 23:49:09,249 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:14,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:14
+2026-06-26 23:49:14,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:14
+2026-06-26 23:49:14,265 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:19,280 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:19
+2026-06-26 23:49:19,280 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:19
+2026-06-26 23:49:19,280 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:24,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:24
+2026-06-26 23:49:24,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:24
+2026-06-26 23:49:24,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:29,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:29
+2026-06-26 23:49:29,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:29
+2026-06-26 23:49:29,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:34,295 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:34
+2026-06-26 23:49:34,295 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:34
+2026-06-26 23:49:34,295 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:39,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:39
+2026-06-26 23:49:39,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:39
+2026-06-26 23:49:39,311 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:44,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:44
+2026-06-26 23:49:44,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:44
+2026-06-26 23:49:44,311 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:49,310 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:49
+2026-06-26 23:49:49,310 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:49
+2026-06-26 23:49:49,310 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:54,310 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:54
+2026-06-26 23:49:54,310 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:54
+2026-06-26 23:49:54,310 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:49:59,314 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:59
+2026-06-26 23:49:59,314 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:49:59
+2026-06-26 23:49:59,314 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:04,330 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:04
+2026-06-26 23:50:04,330 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:04
+2026-06-26 23:50:04,330 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:09,346 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:09
+2026-06-26 23:50:09,346 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:09
+2026-06-26 23:50:09,346 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:14,361 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:14
+2026-06-26 23:50:14,361 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:14
+2026-06-26 23:50:14,361 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:19,383 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:19
+2026-06-26 23:50:19,383 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:19
+2026-06-26 23:50:19,383 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:24,403 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:24
+2026-06-26 23:50:24,403 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:24
+2026-06-26 23:50:24,403 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:29,403 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:29
+2026-06-26 23:50:29,403 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:29
+2026-06-26 23:50:29,403 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:34,403 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:34
+2026-06-26 23:50:34,403 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:34
+2026-06-26 23:50:34,403 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:39,418 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:39
+2026-06-26 23:50:39,418 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:39
+2026-06-26 23:50:39,418 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:44,434 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:44
+2026-06-26 23:50:44,434 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:44
+2026-06-26 23:50:44,434 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:49,434 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:49
+2026-06-26 23:50:49,434 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:49
+2026-06-26 23:50:49,434 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:54,449 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:54
+2026-06-26 23:50:54,449 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:54
+2026-06-26 23:50:54,449 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:50:59,449 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:59
+2026-06-26 23:50:59,449 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:50:59
+2026-06-26 23:50:59,449 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:04,464 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:04
+2026-06-26 23:51:04,464 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:04
+2026-06-26 23:51:04,464 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:09,480 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:09
+2026-06-26 23:51:09,480 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:09
+2026-06-26 23:51:09,480 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:14,480 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:14
+2026-06-26 23:51:14,480 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:14
+2026-06-26 23:51:14,480 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:19,479 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:19
+2026-06-26 23:51:19,479 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:19
+2026-06-26 23:51:19,479 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:24,479 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:24
+2026-06-26 23:51:24,479 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:24
+2026-06-26 23:51:24,479 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:29,479 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:29
+2026-06-26 23:51:29,479 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:29
+2026-06-26 23:51:29,479 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:34,495 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:34
+2026-06-26 23:51:34,495 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:34
+2026-06-26 23:51:34,495 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:39,510 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:39
+2026-06-26 23:51:39,510 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:39
+2026-06-26 23:51:39,510 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:44,525 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:44
+2026-06-26 23:51:44,525 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:44
+2026-06-26 23:51:44,525 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:49,541 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:49
+2026-06-26 23:51:49,541 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:49
+2026-06-26 23:51:49,541 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:54,556 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:54
+2026-06-26 23:51:54,556 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:54
+2026-06-26 23:51:54,556 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:51:59,572 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:59
+2026-06-26 23:51:59,572 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:51:59
+2026-06-26 23:51:59,572 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:04,587 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:04
+2026-06-26 23:52:04,587 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:04
+2026-06-26 23:52:04,587 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:09,603 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:09
+2026-06-26 23:52:09,603 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:09
+2026-06-26 23:52:09,603 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:14,603 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:14
+2026-06-26 23:52:14,603 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:14
+2026-06-26 23:52:14,603 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:19,618 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:19
+2026-06-26 23:52:19,618 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:19
+2026-06-26 23:52:19,618 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:24,633 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:24
+2026-06-26 23:52:24,633 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:24
+2026-06-26 23:52:24,633 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:29,649 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:29
+2026-06-26 23:52:29,649 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:29
+2026-06-26 23:52:29,649 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:34,664 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:34
+2026-06-26 23:52:34,664 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:34
+2026-06-26 23:52:34,664 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:39,680 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:39
+2026-06-26 23:52:39,680 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:39
+2026-06-26 23:52:39,680 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:44,680 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:44
+2026-06-26 23:52:44,680 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:44
+2026-06-26 23:52:44,680 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:49,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:49
+2026-06-26 23:52:49,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:49
+2026-06-26 23:52:49,695 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:54,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:54
+2026-06-26 23:52:54,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:54
+2026-06-26 23:52:54,695 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:52:59,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:59
+2026-06-26 23:52:59,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:52:59
+2026-06-26 23:52:59,695 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:04,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:04
+2026-06-26 23:53:04,695 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:04
+2026-06-26 23:53:04,695 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:09,710 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:09
+2026-06-26 23:53:09,710 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:09
+2026-06-26 23:53:09,710 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:14,725 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:14
+2026-06-26 23:53:14,725 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:14
+2026-06-26 23:53:14,725 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:19,725 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:19
+2026-06-26 23:53:19,725 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:19
+2026-06-26 23:53:19,725 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:24,741 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:24
+2026-06-26 23:53:24,741 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:24
+2026-06-26 23:53:24,741 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:29,756 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:29
+2026-06-26 23:53:29,756 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:29
+2026-06-26 23:53:29,756 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:34,772 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:34
+2026-06-26 23:53:34,772 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:34
+2026-06-26 23:53:34,772 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:39,787 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:39
+2026-06-26 23:53:39,787 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:39
+2026-06-26 23:53:39,787 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:44,803 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:44
+2026-06-26 23:53:44,803 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:44
+2026-06-26 23:53:44,803 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:49,802 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:49
+2026-06-26 23:53:49,802 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:49
+2026-06-26 23:53:49,802 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:54,802 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:54
+2026-06-26 23:53:54,802 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:54
+2026-06-26 23:53:54,802 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:53:59,818 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:59
+2026-06-26 23:53:59,818 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:53:59
+2026-06-26 23:53:59,818 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:04,833 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:04
+2026-06-26 23:54:04,833 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:04
+2026-06-26 23:54:04,833 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:09,849 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:09
+2026-06-26 23:54:09,849 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:09
+2026-06-26 23:54:09,849 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:14,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:14
+2026-06-26 23:54:14,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:14
+2026-06-26 23:54:14,848 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:19,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:19
+2026-06-26 23:54:19,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:19
+2026-06-26 23:54:19,848 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:24,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:24
+2026-06-26 23:54:24,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:24
+2026-06-26 23:54:24,848 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:29,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:29
+2026-06-26 23:54:29,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:29
+2026-06-26 23:54:29,848 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:34,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:34
+2026-06-26 23:54:34,848 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:34
+2026-06-26 23:54:34,848 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:39,847 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:39
+2026-06-26 23:54:39,847 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:39
+2026-06-26 23:54:39,847 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:44,863 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:44
+2026-06-26 23:54:44,863 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:44
+2026-06-26 23:54:44,863 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:49,878 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:49
+2026-06-26 23:54:49,878 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:49
+2026-06-26 23:54:49,878 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:54,894 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:54
+2026-06-26 23:54:54,894 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:54
+2026-06-26 23:54:54,894 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:54:59,894 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:59
+2026-06-26 23:54:59,894 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:54:59
+2026-06-26 23:54:59,894 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:04,909 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:04
+2026-06-26 23:55:04,909 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:04
+2026-06-26 23:55:04,909 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:09,925 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:09
+2026-06-26 23:55:09,925 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:09
+2026-06-26 23:55:09,925 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:14,940 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:14
+2026-06-26 23:55:14,940 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:14
+2026-06-26 23:55:14,940 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:19,955 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:19
+2026-06-26 23:55:19,955 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:19
+2026-06-26 23:55:19,955 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:24,971 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:24
+2026-06-26 23:55:24,971 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:24
+2026-06-26 23:55:24,971 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:29,986 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:29
+2026-06-26 23:55:29,986 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:29
+2026-06-26 23:55:29,986 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:35,002 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:35
+2026-06-26 23:55:35,002 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:35
+2026-06-26 23:55:35,002 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:40,017 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:40
+2026-06-26 23:55:40,017 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:40
+2026-06-26 23:55:40,017 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:45,017 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:45
+2026-06-26 23:55:45,017 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:45
+2026-06-26 23:55:45,017 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:50,033 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:50
+2026-06-26 23:55:50,033 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:50
+2026-06-26 23:55:50,033 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:55:55,048 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:55
+2026-06-26 23:55:55,048 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:55:55
+2026-06-26 23:55:55,048 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:00,048 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:00
+2026-06-26 23:56:00,048 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:00
+2026-06-26 23:56:00,048 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:05,048 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:05
+2026-06-26 23:56:05,048 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:05
+2026-06-26 23:56:05,048 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:10,047 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:10
+2026-06-26 23:56:10,047 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:10
+2026-06-26 23:56:10,047 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:15,047 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:15
+2026-06-26 23:56:15,047 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:15
+2026-06-26 23:56:15,047 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:20,047 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:20
+2026-06-26 23:56:20,047 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:20
+2026-06-26 23:56:20,047 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:25,052 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:25
+2026-06-26 23:56:25,053 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:25
+2026-06-26 23:56:25,054 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:30,060 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:30
+2026-06-26 23:56:30,060 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:30
+2026-06-26 23:56:30,060 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:35,060 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:35
+2026-06-26 23:56:35,060 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:35
+2026-06-26 23:56:35,060 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:40,064 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:40
+2026-06-26 23:56:40,065 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:40
+2026-06-26 23:56:40,066 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:45,068 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:45
+2026-06-26 23:56:45,068 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:45
+2026-06-26 23:56:45,068 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:50,073 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:50
+2026-06-26 23:56:50,073 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:50
+2026-06-26 23:56:50,073 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:56:55,087 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:55
+2026-06-26 23:56:55,088 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:56:55
+2026-06-26 23:56:55,089 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:00,098 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:00
+2026-06-26 23:57:00,098 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:00
+2026-06-26 23:57:00,098 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:05,118 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:05
+2026-06-26 23:57:05,118 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:05
+2026-06-26 23:57:05,118 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:10,127 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:10
+2026-06-26 23:57:10,129 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:10
+2026-06-26 23:57:10,129 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:15,149 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:15
+2026-06-26 23:57:15,149 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:15
+2026-06-26 23:57:15,150 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:20,154 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:20
+2026-06-26 23:57:20,154 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:20
+2026-06-26 23:57:20,154 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:25,143 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:25
+2026-06-26 23:57:25,143 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:25
+2026-06-26 23:57:25,143 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:30,150 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:30
+2026-06-26 23:57:30,151 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:30
+2026-06-26 23:57:30,152 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:35,152 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:35
+2026-06-26 23:57:35,152 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:35
+2026-06-26 23:57:35,152 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:40,155 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:40
+2026-06-26 23:57:40,155 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:40
+2026-06-26 23:57:40,155 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:45,160 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:45
+2026-06-26 23:57:45,160 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:45
+2026-06-26 23:57:45,160 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:50,166 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:50
+2026-06-26 23:57:50,166 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:50
+2026-06-26 23:57:50,166 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:57:55,156 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:55
+2026-06-26 23:57:55,156 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:57:55
+2026-06-26 23:57:55,156 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:00,170 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:00
+2026-06-26 23:58:00,170 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:00
+2026-06-26 23:58:00,170 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:05,171 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:05
+2026-06-26 23:58:05,172 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:05
+2026-06-26 23:58:05,174 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:10,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:10
+2026-06-26 23:58:10,178 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:10
+2026-06-26 23:58:10,178 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:15,184 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:15
+2026-06-26 23:58:15,185 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:15
+2026-06-26 23:58:15,187 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:20,188 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:20
+2026-06-26 23:58:20,188 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:20
+2026-06-26 23:58:20,188 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:25,198 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:25
+2026-06-26 23:58:25,198 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:25
+2026-06-26 23:58:25,200 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:30,207 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:30
+2026-06-26 23:58:30,207 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:30
+2026-06-26 23:58:30,207 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:35,221 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:35
+2026-06-26 23:58:35,223 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:35
+2026-06-26 23:58:35,224 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:40,238 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:40
+2026-06-26 23:58:40,238 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:40
+2026-06-26 23:58:40,238 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:45,247 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:45
+2026-06-26 23:58:45,247 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:45
+2026-06-26 23:58:45,247 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:50,253 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:50
+2026-06-26 23:58:50,253 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:50
+2026-06-26 23:58:50,253 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:58:55,257 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:55
+2026-06-26 23:58:55,258 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:58:55
+2026-06-26 23:58:55,258 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:00,264 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:00
+2026-06-26 23:59:00,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:00
+2026-06-26 23:59:00,265 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:05,249 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:05
+2026-06-26 23:59:05,249 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:05
+2026-06-26 23:59:05,249 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:10,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:10
+2026-06-26 23:59:10,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:10
+2026-06-26 23:59:10,265 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:17,222 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:17
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:17
+2026-06-26 23:59:17,222 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,222 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:17,238 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:59:19,519 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:19,519 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-26 23:59:19,519 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:19,519 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:19,519 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:19,519 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-26 23:59:22,245 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:22
+2026-06-26 23:59:22,245 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:22
+2026-06-26 23:59:22,245 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:27,242 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:27
+2026-06-26 23:59:27,242 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:27
+2026-06-26 23:59:27,242 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:32,242 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:32
+2026-06-26 23:59:32,242 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:32
+2026-06-26 23:59:32,242 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:37,236 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:37
+2026-06-26 23:59:37,236 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:37
+2026-06-26 23:59:37,236 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:40,486 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:40
+2026-06-26 23:59:42,235 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:42
+2026-06-26 23:59:42,235 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:42
+2026-06-26 23:59:42,235 | DEBUG | database_manager.py:88 | .\database_backup\2026-06\2026-06-26.db has updated.
+2026-06-26 23:59:43,639 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:43,639 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:43,639 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:43,639 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/delete.svg
+2026-06-26 23:59:43,654 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:43,654 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-26 23:59:43,670 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:43,670 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:59:43,670 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:43,670 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-26 23:59:43,670 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:43,670 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:47,248 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:47
+2026-06-26 23:59:47,248 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:47
+2026-06-26 23:59:47,248 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:52,238 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:52
+2026-06-26 23:59:52,238 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:52
+2026-06-26 23:59:52,238 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/delete.svg
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:52,410 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:55,988 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/refresh.svg
+2026-06-26 23:59:56,003 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:56,003 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/refund.svg
+2026-06-26 23:59:57,237 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:57
+2026-06-26 23:59:57,237 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-26 23:59:57
+2026-06-26 23:59:57,237 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-26.db no need to update.
+2026-06-26 23:59:57,487 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:57,487 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-26 23:59:57,487 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:57,487 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-26 23:59:57,487 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-26 23:59:57,487 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:00:02,240 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:02
+2026-06-27 00:00:02,240 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:02
+2026-06-27 00:00:02,240 | DEBUG | database_manager.py:80 | .\database_backup\2026-06\2026-06-27.db has created.
+2026-06-27 00:00:22,566 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:22
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:22
+2026-06-27 00:00:22,566 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:22,581 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:00:24,499 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:24,499 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-27 00:00:24,499 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:24,499 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-27 00:00:24,515 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:00:24,515 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:00:27,577 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:27
+2026-06-27 00:00:27,577 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:27
+2026-06-27 00:00:27,577 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:32,577 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:32
+2026-06-27 00:00:32,577 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:32
+2026-06-27 00:00:32,577 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:37,593 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:37
+2026-06-27 00:00:37,593 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:37
+2026-06-27 00:00:37,593 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:42,608 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:42
+2026-06-27 00:00:42,608 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:42
+2026-06-27 00:00:42,608 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:47,639 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:47
+2026-06-27 00:00:47,639 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:47
+2026-06-27 00:00:47,639 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:52,655 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:52
+2026-06-27 00:00:52,655 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:52
+2026-06-27 00:00:52,655 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:00:57,670 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:57
+2026-06-27 00:00:57,670 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:00:57
+2026-06-27 00:00:57,670 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:02,685 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:02
+2026-06-27 00:01:02,685 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:02
+2026-06-27 00:01:02,685 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:07,685 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:07
+2026-06-27 00:01:07,685 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:07
+2026-06-27 00:01:07,685 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:12,685 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:12
+2026-06-27 00:01:12,685 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:12
+2026-06-27 00:01:12,685 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:17,701 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:17
+2026-06-27 00:01:17,701 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:17
+2026-06-27 00:01:17,701 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:22,700 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:22
+2026-06-27 00:01:22,700 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:22
+2026-06-27 00:01:22,700 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:27,716 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:27
+2026-06-27 00:01:27,716 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:27
+2026-06-27 00:01:27,716 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:32,731 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:32
+2026-06-27 00:01:32,731 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:32
+2026-06-27 00:01:32,731 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:37,747 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:37
+2026-06-27 00:01:37,747 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:37
+2026-06-27 00:01:37,747 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:42,762 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:42
+2026-06-27 00:01:42,762 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:42
+2026-06-27 00:01:42,762 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:47,778 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:47
+2026-06-27 00:01:47,778 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:47
+2026-06-27 00:01:47,778 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:52,777 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:52
+2026-06-27 00:01:52,777 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:52
+2026-06-27 00:01:52,777 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:01:57,793 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:57
+2026-06-27 00:01:57,793 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:01:57
+2026-06-27 00:01:57,793 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:02,793 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:02
+2026-06-27 00:02:02,793 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:02
+2026-06-27 00:02:02,793 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:07,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:07
+2026-06-27 00:02:07,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:07
+2026-06-27 00:02:07,808 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:12,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:12
+2026-06-27 00:02:12,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:12
+2026-06-27 00:02:12,808 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:17,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:17
+2026-06-27 00:02:17,808 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:17
+2026-06-27 00:02:17,808 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:22,823 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:22
+2026-06-27 00:02:22,823 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:22
+2026-06-27 00:02:22,823 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:27,823 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:27
+2026-06-27 00:02:27,823 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:27
+2026-06-27 00:02:27,823 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:32,839 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:32
+2026-06-27 00:02:32,839 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:32
+2026-06-27 00:02:32,839 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:37,854 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:37
+2026-06-27 00:02:37,854 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:37
+2026-06-27 00:02:37,854 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:42,854 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:42
+2026-06-27 00:02:42,854 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:42
+2026-06-27 00:02:42,854 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:47,854 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:47
+2026-06-27 00:02:47,854 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:47
+2026-06-27 00:02:47,854 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:52,853 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:52
+2026-06-27 00:02:52,853 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:52
+2026-06-27 00:02:52,853 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:02:57,869 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:57
+2026-06-27 00:02:57,869 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:02:57
+2026-06-27 00:02:57,869 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:02,869 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:02
+2026-06-27 00:03:02,869 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:02
+2026-06-27 00:03:02,869 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:07,884 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:07
+2026-06-27 00:03:07,884 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:07
+2026-06-27 00:03:07,884 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:12,900 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:12
+2026-06-27 00:03:12,900 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:12
+2026-06-27 00:03:12,900 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:17,899 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:17
+2026-06-27 00:03:17,899 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:17
+2026-06-27 00:03:17,899 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:22,915 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:22
+2026-06-27 00:03:22,915 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:22
+2026-06-27 00:03:22,915 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:27,930 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:27
+2026-06-27 00:03:27,930 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:27
+2026-06-27 00:03:27,930 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:32,946 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:32
+2026-06-27 00:03:32,946 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:32
+2026-06-27 00:03:32,946 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:37,961 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:37
+2026-06-27 00:03:37,961 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:37
+2026-06-27 00:03:37,961 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:42,961 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:42
+2026-06-27 00:03:42,961 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:42
+2026-06-27 00:03:42,961 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:47,977 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:47
+2026-06-27 00:03:47,977 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:47
+2026-06-27 00:03:47,977 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:52,976 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:52
+2026-06-27 00:03:52,976 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:52
+2026-06-27 00:03:52,976 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:03:57,992 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:57
+2026-06-27 00:03:57,992 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:03:57
+2026-06-27 00:03:57,992 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:04:02,992 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:04:02
+2026-06-27 00:04:02,992 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:04:02
+2026-06-27 00:04:02,992 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:04:08,007 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:04:08
+2026-06-27 00:04:08,007 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:04:08
+2026-06-27 00:04:08,007 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:04:13,023 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:04:13
+2026-06-27 00:04:13,023 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:04:13
+2026-06-27 00:04:13,023 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:29:59,264 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:29:59
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:29:59
+2026-06-27 00:29:59,264 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-27 00:29:59,264 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:29:59,280 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:30:01,466 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:30:01,466 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-27 00:30:01,466 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:30:01,466 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-27 00:30:01,466 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:30:01,466 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:30:04,279 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:04
+2026-06-27 00:30:04,279 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:04
+2026-06-27 00:30:04,279 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:09,278 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:09
+2026-06-27 00:30:09,278 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:09
+2026-06-27 00:30:09,278 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:11,310 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:30:11,310 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-27 00:30:11,310 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:30:11,310 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-27 00:30:11,310 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:30:11,310 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:30:14,269 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:14
+2026-06-27 00:30:14,269 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:14
+2026-06-27 00:30:14,269 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:19,268 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:19
+2026-06-27 00:30:19,269 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:19
+2026-06-27 00:30:19,270 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:24,267 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:24
+2026-06-27 00:30:24,267 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:24
+2026-06-27 00:30:24,267 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:29,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:29
+2026-06-27 00:30:29,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:29
+2026-06-27 00:30:29,266 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:34,276 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:34
+2026-06-27 00:30:34,276 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:34
+2026-06-27 00:30:34,276 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:39,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:39
+2026-06-27 00:30:39,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:39
+2026-06-27 00:30:39,266 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:44,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:44
+2026-06-27 00:30:44,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:44
+2026-06-27 00:30:44,266 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:49,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:49
+2026-06-27 00:30:49,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:49
+2026-06-27 00:30:49,266 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:54,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:54
+2026-06-27 00:30:54,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:54
+2026-06-27 00:30:54,266 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:30:59,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:59
+2026-06-27 00:30:59,266 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:30:59
+2026-06-27 00:30:59,266 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:04,281 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:04
+2026-06-27 00:31:04,281 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:04
+2026-06-27 00:31:04,281 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:09,297 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:09
+2026-06-27 00:31:09,297 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:09
+2026-06-27 00:31:09,297 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:14,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:14
+2026-06-27 00:31:14,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:14
+2026-06-27 00:31:14,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:19,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:19
+2026-06-27 00:31:19,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:19
+2026-06-27 00:31:19,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:24,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:24
+2026-06-27 00:31:24,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:24
+2026-06-27 00:31:24,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:29,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:29
+2026-06-27 00:31:29,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:29
+2026-06-27 00:31:29,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:34,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:34
+2026-06-27 00:31:34,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:34
+2026-06-27 00:31:34,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:39,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:39
+2026-06-27 00:31:39,296 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:39
+2026-06-27 00:31:39,296 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:44,295 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:44
+2026-06-27 00:31:44,295 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:44
+2026-06-27 00:31:44,295 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:49,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:49
+2026-06-27 00:31:49,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:49
+2026-06-27 00:31:49,311 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:54,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:54
+2026-06-27 00:31:54,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:54
+2026-06-27 00:31:54,311 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:31:59,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:59
+2026-06-27 00:31:59,311 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:31:59
+2026-06-27 00:31:59,311 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:04,310 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:04
+2026-06-27 00:32:04,310 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:04
+2026-06-27 00:32:04,310 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:09,326 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:09
+2026-06-27 00:32:09,326 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:09
+2026-06-27 00:32:09,326 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:14,326 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:14
+2026-06-27 00:32:14,326 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:14
+2026-06-27 00:32:14,326 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:19,325 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:19
+2026-06-27 00:32:19,325 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:19
+2026-06-27 00:32:19,325 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:24,325 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:24
+2026-06-27 00:32:24,325 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:24
+2026-06-27 00:32:24,325 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:29,341 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:29
+2026-06-27 00:32:29,341 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:29
+2026-06-27 00:32:29,341 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:34,355 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:34
+2026-06-27 00:32:34,355 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:34
+2026-06-27 00:32:34,355 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:39,354 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:39
+2026-06-27 00:32:39,354 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:39
+2026-06-27 00:32:39,354 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:44,354 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:44
+2026-06-27 00:32:44,354 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:44
+2026-06-27 00:32:44,354 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:49,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:49
+2026-06-27 00:32:49,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:49
+2026-06-27 00:32:49,353 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:54,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:54
+2026-06-27 00:32:54,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:54
+2026-06-27 00:32:54,353 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:32:59,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:59
+2026-06-27 00:32:59,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:32:59
+2026-06-27 00:32:59,353 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:04,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:04
+2026-06-27 00:33:04,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:04
+2026-06-27 00:33:04,353 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:09,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:09
+2026-06-27 00:33:09,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:09
+2026-06-27 00:33:09,353 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:14,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:14
+2026-06-27 00:33:14,353 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:14
+2026-06-27 00:33:14,353 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:19,352 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:19
+2026-06-27 00:33:19,352 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:19
+2026-06-27 00:33:19,352 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:24,352 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:24
+2026-06-27 00:33:24,352 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:24
+2026-06-27 00:33:24,352 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:29,352 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:29
+2026-06-27 00:33:29,352 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:29
+2026-06-27 00:33:29,352 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:34,368 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:34
+2026-06-27 00:33:34,368 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:34
+2026-06-27 00:33:34,368 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:39,383 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:39
+2026-06-27 00:33:39,383 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:39
+2026-06-27 00:33:39,383 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:44,383 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:44
+2026-06-27 00:33:44,383 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:44
+2026-06-27 00:33:44,383 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:49,398 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:49
+2026-06-27 00:33:49,398 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:49
+2026-06-27 00:33:49,398 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:33:54,414 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:54
+2026-06-27 00:33:54,414 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:33:54
+2026-06-27 00:33:54,414 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:03,253 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:03
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:03
+2026-06-27 00:34:03,253 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,253 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:34:03,268 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,268 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:34:03,268 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:03,268 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:34:04,799 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:04,799 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-27 00:34:04,799 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:04,799 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-27 00:34:04,799 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:04,799 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:34:08,252 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:08
+2026-06-27 00:34:08,252 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:08
+2026-06-27 00:34:08,252 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:13,268 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:13
+2026-06-27 00:34:13,268 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:13
+2026-06-27 00:34:13,268 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:18,273 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:18
+2026-06-27 00:34:18,274 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:18
+2026-06-27 00:34:18,275 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:23,277 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:23
+2026-06-27 00:34:23,277 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:23
+2026-06-27 00:34:23,277 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:28,276 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:28
+2026-06-27 00:34:28,276 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:28
+2026-06-27 00:34:28,276 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:34:31,605 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:31,605 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-27 00:34:31,605 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:31,605 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-27 00:34:31,605 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:34:31,605 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:34:33,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:33
+2026-06-27 00:34:33,265 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:34:33
+2026-06-27 00:34:33,265 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:39:44,145 | INFO | database_manager.py:1883 | Database tables created successfully.
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:44
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:44
+2026-06-27 00:39:44,145 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add_a_sale_invoice.svg
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_purchase_invoice.svg
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_service.svg
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,145 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_sup.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_transaction_cus.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_withdrawal.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_expense.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/support.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/new_user.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/requested_products.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/analysis.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/database.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/next.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:44,162 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/previous.svg
+2026-06-27 00:39:49,144 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:49
+2026-06-27 00:39:49,144 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:49
+2026-06-27 00:39:49,144 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:39:49,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:49,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/save.svg
+2026-06-27 00:39:49,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:49,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/cancel.svg
+2026-06-27 00:39:49,566 | DEBUG | shared_functions.py:72 | Running in development mode. Base path: E:\Workspace\Modeer\V1.4
+2026-06-27 00:39:49,566 | DEBUG | shared_functions.py:75 | Resolved resource path: E:\Workspace\Modeer\V1.4\./icons/add.svg
+2026-06-27 00:39:54,153 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:54
+2026-06-27 00:39:54,153 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:54
+2026-06-27 00:39:54,153 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:39:59,147 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:59
+2026-06-27 00:39:59,148 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:39:59
+2026-06-27 00:39:59,149 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:40:04,145 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:04
+2026-06-27 00:40:04,145 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:04
+2026-06-27 00:40:04,145 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:40:09,145 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:09
+2026-06-27 00:40:09,145 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:09
+2026-06-27 00:40:09,145 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:40:14,143 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:14
+2026-06-27 00:40:14,143 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:14
+2026-06-27 00:40:14,143 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:40:19,159 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:19
+2026-06-27 00:40:19,159 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:19
+2026-06-27 00:40:19,159 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
+2026-06-27 00:40:24,174 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:24
+2026-06-27 00:40:24,174 | DEBUG | shared_functions.py:124 | Returning Gregorian date: 2026-06-27 00:40:24
+2026-06-27 00:40:24,174 | DEBUG | database_manager.py:91 | .\database_backup\2026-06\2026-06-27.db no need to update.
