@@ -1802,6 +1802,15 @@ class DatabaseManager(SharedFunctions):
                 );
                 """,
 
+                # Device Brands
+                """
+                CREATE TABLE IF NOT EXISTS device_brands (
+                    id INTEGER PRIMARY KEY,
+                    name TEXT NOT NULL,
+                    is_deleted BOOLEAN DEFAULT 0
+                );
+                """,
+
                 # Services
                 """
                 CREATE TABLE IF NOT EXISTS services (
@@ -1879,6 +1888,8 @@ class DatabaseManager(SharedFunctions):
         # Add an X column to an existing table
         self.add_column("customers", "user_type", "normal")
         self.add_column("services", "piece_price", 0.0)
+        self.add_column("services", "brand_id", 1)
+        
         
         logger.info("Database tables created successfully.")
     

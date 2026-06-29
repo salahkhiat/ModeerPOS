@@ -2,7 +2,7 @@ from .base_form import Form
 from .category_form import CategoryForm
 from uis.category import Ui_Form as CategoryUi
 from PyQt6.QtCore import pyqtSignal
-from PyQt6.QtWidgets import QComboBox
+from PyQt6.QtWidgets import QComboBox, QLineEdit
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -11,7 +11,6 @@ class ServiceForm(Form):
     service_updated = pyqtSignal(bool)
     def __init__(self, base_form, service_id=None, customer_name=None, category=None):
         super().__init__(base_form)
-
         # check form mode
         if service_id is not None:
             self.edit_mode = True
@@ -22,6 +21,12 @@ class ServiceForm(Form):
             self.edit_mode = False
 
  
+        # load brands and suppliers list
+        suppliers_combo = self.ui.supplier
+        self.fetch_then_put("suppliers", "name", suppliers_combo)
+
+        brands_combo: QComboBox = self.ui.brand
+        self.fetch_then_put("device_brands", "name", brands_combo)
 
         # edit mode : select the old transaction customer and category.
         if self.edit_mode is True:
@@ -115,8 +120,30 @@ class ServiceForm(Form):
 
     def save_service_form(self):
         # Fetch Customers and Categories table data {id:name}
+        created = self.current_date()
+
         cus_dict = self.get_table_as_dict("customers","name")
         cat_dic = self.get_table_as_dict("services_categories","name")
+
+        brand_dict = self.get_table_as_dict("device_brands", "name")
+        brand: QComboBox = self.ui.brand
+        selected_brand = brand.currentText()
+        brand_id = self.reverse_dict(brand_dict)[selected_brand]
+
+        supplier_dict = self.get_table_as_dict("suppliers", "name")
+        supplier: QComboBox = self.ui.supplier
+        selected_supplier = supplier.currentText()
+        if selected_supplier != '-':
+            supplier_id = self.reverse_dict(supplier_dict)[selected_supplier]
+        else:
+            supplier_id = None
+
+        category: QComboBox = self.ui.category
+        selected_category = category.currentText()
+
+        description: QLineEdit = self.ui.note
+        piece_description = f"{selected_category} {selected_brand} {description.text()}"
+
         
         # cus_name and cat_name are the activated combo text.
         cus_name = self.ui.customer.currentText() 
@@ -130,10 +157,16 @@ class ServiceForm(Form):
         for id, name in cat_dic.items():
             if name == cat_name:
                 cat_id = id
-
-        note, amount, deposit, piece_price = self.get_fields_values()
-        created = self.current_date()
         
+        note, amount, deposit, piece_price = self.get_fields_values()
+        
+        # Perform this case when you add a piece that belong to some one
+        if piece_price > 0 and supplier_id != None:
+            p_t_columns = ["supplier_id", "piece", "price", "status", "created"]
+            p_t_data = [supplier_id, piece_description, piece_price, "installed", created]
+            self.store("pieces_transactions", p_t_columns, p_t_data)
+        #---
+
         columns = [
             "customer_id",
             "category_id",
@@ -141,9 +174,11 @@ class ServiceForm(Form):
             "default_price",
             "piece_price",
             "paid_price",
+            "brand_id",
             "created"
         ]
-        data = [cus_id, cat_id, note, amount, piece_price, deposit, created]
+
+        data = [cus_id, cat_id, note, amount, piece_price, deposit, brand_id, created]
         table = "services"
 
         fields = [
@@ -173,6 +208,8 @@ class ServiceForm(Form):
             if not  self.is_valid_category and not self.is_valid_note:
                 
                 self.update_validation_response("note","is_empty")
+
+
     
     def update_service_form(self):
         # 1- Get the service id
