@@ -34,6 +34,7 @@ class ChooseItemForm(Form):
         
         # connect buttons
         self.add_btn_clicked()
+        
 
     def show_err_msg(self,msg:str):
         form = ErrorForm(ErrorFormUi)
@@ -72,7 +73,7 @@ class ChooseItemForm(Form):
         products = self.search_by_similar(table, column, prefix, targets, hide_0_quantity_item=True)
         return products
 
-    def add_row(self,columns:list):
+    def add_row(self, columns:list):
         table : QTableWidget = self.ui.items_table
         row_position = table.rowCount()
         table.insertRow(row_position)
@@ -86,6 +87,7 @@ class ChooseItemForm(Form):
         # Create and set items with the font
         for col, value in enumerate([name, barcode, sale_price]):        
             table.setItem(row_position, col, self.make_item(value, font_size=14, read_only=True))
+        print("this")
 
     def put_data_into_table(self, prefix:str, column:str):
         self.ui.items_table.setRowCount(0)

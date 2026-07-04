@@ -14,10 +14,11 @@ from PyQt6.QtWidgets import (
     QSpinBox,
     QLineEdit,
     QMessageBox,
-    QComboBox
+    QComboBox, 
+    QApplication
 )
 from PyQt6.QtGui import QFont 
-from PyQt6.QtCore import pyqtSignal , QTimer
+from PyQt6.QtCore import pyqtSignal , QTimer, Qt, QEvent
 
 from .error_form import ErrorForm
 from uis.error_msg import Ui_Dialog as ErrorFormUi
@@ -42,6 +43,7 @@ class InvoiceForm(Form):
 
     def __init__(self,base_form, invoice_type:str):
         super().__init__(base_form)
+
         # set invoice type
         self.invoice_type = invoice_type
 
@@ -52,6 +54,7 @@ class InvoiceForm(Form):
         self.table = invoice_type
         self.column = "name"
         self.invoice_total = 0 
+        self.rows_list = []
 
         # quantity field
         self.validate_quantity_field()
@@ -95,6 +98,13 @@ class InvoiceForm(Form):
         
         # accept only numbers in amount field.
         self.accept_numbers_only(self.ui.amount)
+
+    # barcode option
+    def add_item_by_barcode(self, barcode):
+        print(barcode)
+        self.add_item_to_cus_invoice(barcode)
+    
+    # end barcode option
     
     def validate_quantity_field(self):
         """ Only digits are allowed in quantity QTableWidgetItem field."""
@@ -224,24 +234,86 @@ class InvoiceForm(Form):
             form.item_barcode_sent.connect(self.add_item_to_cus_invoice)
         form.exec()
 
+    def get_product_info(self, barcode) -> dict:
+        """ Returns a product info as dictionary
+        {name, sale_price, quantity, barcode}
+        """
+        columns = ("name", "sale_price", "quantity", "barcode")
+
+        return self.get_item_info("products", columns, "barcode", barcode)
+  
     def add_item_to_cus_invoice(self, barcode):
         """ Insert an item to a customer invoice qtable"""
+        
+        product_info = self.get_product_info(barcode)
 
-        table = "products"
-        columns = ("name", "sale_price", "quantity", "barcode")
-        keyword = "barcode"
-        target = barcode
-        product_info: dict = self.get_item_info(table, columns, keyword, target)
-        row = [ value for value in product_info.values()]
-        row[2] = 1
-        qtable : QTableWidget = self.ui.items_table
-        self.add_list_in_qtable(qtable, row)
-        # Calculate the price 
-        sale_price = int(product_info["sale_price"])
-        self.invoice_total += sale_price
-        self.ui.total.display(self.invoice_total)
-        # self.validating_qt_cell(1)
-        self.enable_save_btn()
+        # the product with this barcode is exists in database
+        if product_info is not None:
+            qtable : QTableWidget = self.ui.items_table
+            
+            def add_to_invoice():
+                """ Add a row to the items_table """
+                # row = ["product name", "saling price", "quantity", "barcode"]
+                row = [ value for value in product_info.values()]
+                row[2] = 1
+
+                self.add_list_in_qtable(qtable, row)
+            
+            def get_barcode_row():
+                """ Return barcode row """
+                right_row = None 
+                for r_row, (b_code, _) in enumerate(self.rows_list):
+                    if barcode == b_code:
+                        right_row = r_row 
+                return right_row
+            
+            def check_quantity(row_quantity) -> bool:
+                """ Is enough quantity in stock? """
+                if int(product_info["quantity"]) > row_quantity:
+                    return True 
+                else:
+                    return False
+
+
+            # Is the quantity enough in the database?
+            stock_qt = product_info["quantity"]
+            
+            if stock_qt > 0:
+                data = [
+                    product_info["barcode"],
+                    product_info["quantity"]
+                ]
+                # Invoice rows are 0
+                if qtable.rowCount() == 0:
+
+                    self.rows_list.append(data)
+                    add_to_invoice()
+                    
+                # Invoice rows are greater than 0
+                elif qtable.rowCount() > 0:
+                    # This item is already exists.
+                    if self.is_in_table_widget(qtable, barcode, 3) is True:
+                        item_row = get_barcode_row()
+                        item_quantity = int(qtable.item(item_row, 2).text())
+
+                        # Enough quantity in stock
+                        if check_quantity(item_quantity) is True:
+                            item_quantity += 1
+                            qtable.item(get_barcode_row(),2).setText(str(item_quantity))
+                    else:
+                        self.rows_list.append(data)
+                        add_to_invoice()
+                    
+            # Calculation issue ------------------
+                
+            # Calculate the price 
+            sale_price = int(product_info["sale_price"])
+            self.invoice_total += sale_price
+            self.ui.total.display(self.invoice_total)
+            # self.validating_qt_cell(1)
+            self.enable_save_btn()
+        else:
+            return 
         
     def show_err_msg(self, msg:str):
         self.play_failure_sound()

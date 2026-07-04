@@ -67,7 +67,7 @@ from PyQt6.QtWidgets import QTableWidget, QSplashScreen
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt, QTimer
 from typing import List
-
+from .barcode_scanner import BarcodeScanner
 
 
 import logging
@@ -97,6 +97,11 @@ class MainScreen(MainForm):
 
         # Set screen icons
         self.set_screen_icons()
+
+        # Barcode scanner part
+        self.barcode_scanner = BarcodeScanner()
+        self.installEventFilter(self.barcode_scanner)
+        self.barcode_scanner.barcodeScanned.connect(self.on_barcode_scanned)
 
         # connect main screen buttons with their forms
         self.show_database_form()
@@ -494,7 +499,7 @@ class MainScreen(MainForm):
                 
                 if len(index_list) < 3:
                     form = InvoiceForm(InvoiceUi,invoice_type) 
-    
+                    
                     main_tab_widget = self.ui.tab_widget
                     # styling the active tab_bar
                     current_style = main_tab_widget.styleSheet()
@@ -518,6 +523,13 @@ class MainScreen(MainForm):
 
                 else:
                     print(f"You achieved the top, You have created {len(index_list)} Invoices")
+    
+    def on_barcode_scanned(self, barcode):
+
+        widget = self.ui.tab_widget.currentWidget()
+
+        if isinstance(widget, InvoiceForm):
+            widget.add_item_by_barcode(barcode)
 
     # remove an invoice tab index
     def remove_tab_index(self,target):
