@@ -26,6 +26,7 @@ class DatabaseManager(SharedFunctions):
         settings = self.get_settings()
         return os.path.join(settings["database_path"], settings["database_name"])
     
+    
     # Auto backup | database
     def db_auto_backup(self):
         """ make a database backup"""
@@ -101,6 +102,39 @@ class DatabaseManager(SharedFunctions):
             raise
         finally:
             con.close()
+    
+    def generates_device_brands(self):
+        """Add fill device_brands table with default brands"""
+        devices = (
+            '-',
+            'Samsung',
+            'Realme',
+            'Redmi',
+            'Oppo',
+            'Tecno',
+            'Infinix',
+            'Iphone',
+            'Huawei',
+            'Honor',
+            'Itel',
+            'Nokia'
+        )
+        
+        with db.connect(self.get_database_ref()) as con:
+            try:
+                cursor = con.cursor()
+                
+                sql = "SELECT EXISTS( SELECT 1 FROM device_brands)"
+                cursor.execute(sql)
+                count = cursor.fetchone()[0]
+
+                if count == 0:
+                    sql = f"INSERT INTO OR IGNORE INTO device_brands (name) VALUES (?)"
+                    cursor.executemany(sql, ((device, ) for device in devices))
+                  
+            except db.Error as err:
+                logger.error(err)
+            
 
     
     def store(
@@ -1889,6 +1923,8 @@ class DatabaseManager(SharedFunctions):
         self.add_column("customers", "user_type", "normal")
         self.add_column("services", "piece_price", 0.0)
         self.add_column("services", "brand_id", 1)
+
+
         
         
         logger.info("Database tables created successfully.")

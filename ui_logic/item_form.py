@@ -3,9 +3,10 @@ from .base_form import Form
 from PyQt6.QtCore import pyqtSignal
 from typing import List
 from PyQt6.QtWidgets import QWidget
+from .barcode_scanner import BarcodeScanner
 
 import logging
-# uses this file's name for easier debugging
+# uses this file's name for easier debugging 
 logger = logging.getLogger(__name__)
 class ItemForm(Form):
     item_added = pyqtSignal(dict)
@@ -42,11 +43,11 @@ class ItemForm(Form):
         self.ui.quantity.textChanged.connect(lambda: self.update_validation_response("quantity","is_quantity"))
         self.ui.purchase_price.textChanged.connect(lambda:self.update_validation_response("purchase_price","is_purchase_price"))
         self.ui.sale_price.textChanged.connect(lambda:self.update_validation_response("sale_price","is_sale_price"))
-        
+         
     def set_table_refs(self,table_refs:List=None):
 
         self.table_references_list = table_refs
-
+    
     def validating_fields(self):
         
         item_details = {
