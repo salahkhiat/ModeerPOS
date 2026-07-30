@@ -124,13 +124,14 @@ class DatabaseManager(SharedFunctions):
             try:
                 cursor = con.cursor()
                 
-                sql = "SELECT EXISTS( SELECT 1 FROM device_brands)"
+                sql = "SELECT COUNT(*) FROM device_brands"
                 cursor.execute(sql)
                 count = cursor.fetchone()[0]
 
                 if count == 0:
-                    sql = f"INSERT INTO OR IGNORE INTO device_brands (name) VALUES (?)"
+                    sql = f"INSERT OR IGNORE INTO device_brands (name) VALUES (?)"
                     cursor.executemany(sql, ((device, ) for device in devices))
+                    con.commit()
                   
             except db.Error as err:
                 logger.error(err)
@@ -1918,6 +1919,7 @@ class DatabaseManager(SharedFunctions):
         # Default settings
         self.create_default_column("customers", "name")
         self.create_default_column("expenses_categories", "name")
+        self.generates_device_brands()
 
         # Add an X column to an existing table
         self.add_column("customers", "user_type", "normal")
