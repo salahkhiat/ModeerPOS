@@ -23,6 +23,7 @@ class BarcodeScanner(QObject):
 
             else:
                 text = event.text()
+               
 
                 if text:
                     self.buffer += text

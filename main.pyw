@@ -77,7 +77,7 @@ def check_activation() -> bool:
                 
                 days_used = (today - first_run_date).days
             
-                if days_used >= 10:
+                if days_used >= 362:
                     form = ActivationForm(ActivationUi)
                     form.exec()
                     return False
