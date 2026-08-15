@@ -86,6 +86,6 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "+213 793887695"))
-        self.label_2.setText(_translate("Dialog", "modeer-gsm.blogspot.com"))
+        self.label.setText(_translate("Dialog", "+213793887695"))
+        self.label_2.setText(_translate("Dialog", "salahkhiat.com"))
         self.cancel_btn.setShortcut(_translate("Dialog", "Esc"))

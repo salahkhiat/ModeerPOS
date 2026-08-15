@@ -117,7 +117,10 @@ class DatabaseManager(SharedFunctions):
             'Huawei',
             'Honor',
             'Itel',
-            'Nokia'
+            'Nokia',
+            'ACE',
+            'Starlight',
+            'Condor'
         )
         
         with db.connect(self.get_database_ref()) as con:
@@ -131,6 +134,68 @@ class DatabaseManager(SharedFunctions):
                 if count == 0:
                     sql = f"INSERT OR IGNORE INTO device_brands (name) VALUES (?)"
                     cursor.executemany(sql, ((device, ) for device in devices))
+                    con.commit()
+                  
+            except db.Error as err:
+                logger.error(err)
+
+
+    def generates_services_categories(self):
+        """Add fill services_categories table with default category"""
+        categories = (
+            '-',
+            'شاشة',
+            'الشحن',
+            'فلاش',
+            'مطفىء',
+            'صوت',
+            'ميكروفون',
+            'لمس',
+            'شبكة',
+            'IC',
+            'بيع',
+            'غطاء'
+
+        )
+        
+        with db.connect(self.get_database_ref()) as con:
+            try:
+                cursor = con.cursor()
+                
+                sql = "SELECT COUNT(*) FROM services_categories"
+                cursor.execute(sql)
+                count = cursor.fetchone()[0]
+
+                if count == 0:
+                    sql = f"INSERT OR IGNORE INTO services_categories (name) VALUES (?)"
+                    cursor.executemany(sql, ((category, ) for category in categories))
+                    con.commit()
+                  
+            except db.Error as err:
+                logger.error(err)
+
+
+    def generates_expenses_categories(self):
+        """Add fill expenses_categories table with default category"""
+        categories = (
+            '-',
+            'إلتزامات',
+            'طعام',
+            'عتاد',
+            'تطوير'
+        )
+        
+        with db.connect(self.get_database_ref()) as con:
+            try:
+                cursor = con.cursor()
+                
+                sql = "SELECT COUNT(*) FROM expenses_categories"
+                cursor.execute(sql)
+                count = cursor.fetchone()[0]
+
+                if count == 0:
+                    sql = f"INSERT OR IGNORE INTO expenses_categories (name) VALUES (?)"
+                    cursor.executemany(sql, ((category, ) for category in categories))
                     con.commit()
                   
             except db.Error as err:
@@ -1918,16 +1983,15 @@ class DatabaseManager(SharedFunctions):
        
         # Default settings
         self.create_default_column("customers", "name")
-        self.create_default_column("expenses_categories", "name")
         self.generates_device_brands()
+        self.generates_services_categories()
+        self.generates_expenses_categories()
 
         # Add an X column to an existing table
         self.add_column("customers", "user_type", "normal")
         self.add_column("services", "piece_price", 0.0)
         self.add_column("services", "brand_id", 1)
 
-
-        
         
         logger.info("Database tables created successfully.")
     
