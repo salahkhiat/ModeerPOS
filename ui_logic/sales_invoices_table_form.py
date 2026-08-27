@@ -8,13 +8,14 @@ logger = logging.getLogger(__name__)
 class SalesInvoicesTableForm(Form):
     def __init__(self ,base_form):
         super().__init__(base_form)
+        
         try:
             self.form = ShowTableForm(
                 base_form,
                 "سجل فواتير البيع",
                 None,
-                self.get_purchases_invoices_list,
-                ["المورد", "الفاتورة", "المجموع", "الإيداع", "التاريخ"],
+                self.get_sales_invoices_list,
+                ["الزبون", "الفاتورة", "المجموع", "الإيداع", "التاريخ"],
                 {2:120, 3:120, 4:180},
                 0,
                 1,

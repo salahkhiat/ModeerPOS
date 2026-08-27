@@ -1081,6 +1081,7 @@ class DatabaseManager(SharedFunctions):
             query = f"""
                 SELECT 
                     ser.id AS service_id,
+                    brand.name as brand,
                     ser.description AS description,
                     cus.name AS customer,
                     cate.name AS category,
@@ -1094,10 +1095,16 @@ class DatabaseManager(SharedFunctions):
                     services ser
                 ON 
                     cus.id = ser.customer_id
+
                 JOIN
                     services_categories cate
                 ON 
                     ser.category_id = cate.id 
+
+                JOIN
+                    device_brands brand
+                ON
+                    ser.brand_id = brand.id
             """ 
 
             conditions = []
@@ -1119,6 +1126,8 @@ class DatabaseManager(SharedFunctions):
 
                 
             return result
+
+        
     def get_products_list(self, keyword=None, limit=10, offset=0) -> List:
 
         with self.db_connection() as connection: 

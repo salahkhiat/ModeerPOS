@@ -38,7 +38,9 @@ class ServicesTableForm(Form):
         self.pagination_counter = self.ui.page_number
 
         # load table 
-        self.columns_header = ["المعرف", "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"]
+        self.columns_header = [
+            "معرف","جهاز", "موديل", "زبون", "صنف", "سعر", "دفع", "التاريخ"
+        ]
         self.keyword = None 
         self.load_table()
 
@@ -66,12 +68,13 @@ class ServicesTableForm(Form):
             self.page = 0
 
         self.keyword = keyword
-                
+                 
         table: QTableView = self.ui.table
         
         offset = self.page * self.page_size
         
         data = self.get_services_list(keyword=keyword, limit=self.page_size, offset=offset)
+        
         
         self.model = TableViewModel(data, self.columns_header)
         table.setModel(None)
@@ -138,8 +141,8 @@ class ServicesTableForm(Form):
 
     def set_table_basic_settings(self, table):
         # Set table view headers and columns
-        cols_widths = { 2:140, 3:120, 4:90, 5:90, 6:180 }
-        stretch_col = 1
+        cols_widths = { 1:100, 3:140 ,4:120, 5:90, 6:90, 7:180 }
+        stretch_col = 2
         resize_to_content_col = 0
         self.set_table_view_headers(table, cols_widths, resize_to_content_col, stretch_col)
 

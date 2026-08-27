@@ -201,6 +201,7 @@ class MainScreen(MainForm):
             )
         )
         self.ui.employees_action.triggered.connect(
+
             lambda: self.show_tab(
                 "جدول الموظفين",
                 "employees",
@@ -208,8 +209,8 @@ class MainScreen(MainForm):
                 users_header,
                 users_header_width
             )
-        )
 
+        )
 
 
         needs_header = ["المعرف","وصف", "تاريخ الطلب"]
@@ -217,6 +218,7 @@ class MainScreen(MainForm):
         needs_db_table_cols = ["id", "name", "created"]
 
         self.ui.needs_action.triggered.connect(
+
             lambda: self.show_tab(
                 "جدول النقائص", 
                 "requested_products", 
@@ -224,8 +226,8 @@ class MainScreen(MainForm):
                 needs_header, 
                 needs_header_width
             )
-        )
 
+        )
 
         services_header = [
             "الوصف", "الزبون", "الصنف", "السعر", "الإيداع", "التاريخ"
