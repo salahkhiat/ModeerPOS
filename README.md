@@ -1,4 +1,5 @@
-ModeerGSM-V1.5 is a simple shop manager.
+ModeerGSM-V1.6 is a simple shop manager.
+Develped by Salah Khiat
 
 Folder build (faster startup):
 py -m nuitka main.py --standalone --enable-plugin=pyqt6 --windows-disable-console --windows-icon-from-ico=modeer_logo.ico
