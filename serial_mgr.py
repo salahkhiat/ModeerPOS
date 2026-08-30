@@ -6,7 +6,12 @@ cipher = Fernet(KEY)
 data = {
     "first_run": True,
     "first_run_date": "2026-06-04",
-    "activated": False
+    "activated": False,
+    "logged-in": None,
+    "user":{
+        "admin" : "salah123",
+        "seller" : "modeer123"
+    }
 }
 
 json_text = json.dumps(data)
