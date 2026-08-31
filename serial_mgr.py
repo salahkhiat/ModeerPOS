@@ -8,7 +8,7 @@ data = {
     "first_run_date": "2026-06-04",
     "activated": False,
     "logged-in": None,
-    "user":{
+    "users":{
         "admin" : "salah123",
         "seller" : "modeer123"
     }

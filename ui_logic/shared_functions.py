@@ -3,17 +3,27 @@ from PyQt6.QtCore import Qt, QAbstractTableModel
 from PyQt6.QtWidgets import (
     QComboBox,
     QTableWidget, 
-    QTableView,
     QTableWidgetItem, 
-    QAbstractItemView
+    QAbstractItemView 
 )
-
 from PyQt6.QtGui import QFont, QColor
 from hijri_converter import Gregorian
 from datetime import datetime
 from typing import Dict, Any, List
-import json, os, sys, random, winsound, logging
+from fernet import Fernet 
+import json
+import os 
+import sys 
+import random
+import winsound
+import logging
+
 logger = logging.getLogger(__name__)
+
+
+
+
+
 
 class TableViewModel(QAbstractTableModel):
     def __init__(self, data, header):
@@ -55,6 +65,21 @@ class TableViewModel(QAbstractTableModel):
             return font
 
 class SharedFunctions:
+
+    def get_credentials_data(self) -> dict:
+        """ Returns Credentials information, who is logged in and users"""
+        KEY = b"bW8k0iO_bekfUW-e90nuxzKRr5dx6Bn1J0DsXNSKWAo="
+        cipher = Fernet(KEY)
+        with open("file_mgr.dat", "rb") as file:
+            encrypted = file.read()
+        decrypted = cipher.decrypt(encrypted)
+        data = json.loads(decrypted.decode())
+        credentials = {
+            "logged-in": data["logged-in"],
+            "users": data["users"]
+        }
+        return credentials
+    
     def set_icon(self, btn_name, icon_name):
         icon_path = self.resource_path(f"./icons/{icon_name}")
         icon = QtGui.QIcon(icon_path)

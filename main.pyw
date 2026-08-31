@@ -59,7 +59,7 @@ def check_activation() -> bool:
     data = json.loads(decrypted.decode())
     activation = data['activated']
     first_run = data['first_run']
-    print(first_run)
+    
 
     
     if activation is not True:

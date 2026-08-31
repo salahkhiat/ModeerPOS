@@ -18,7 +18,7 @@ class LoginForm(Form):
         # default info
         self.users: dict = {
             0: "seller",
-            1: "admin"
+            1: "admin" 
         }
 
         self.ui.login_btn.clicked.connect(
@@ -34,6 +34,7 @@ class LoginForm(Form):
             "user": self.users[user_idx],
             "password": password
         }
+        
         return logged_in
 
     
