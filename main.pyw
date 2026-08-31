@@ -6,6 +6,9 @@ from ui_logic.main_screen import MainScreen
 from uis.activation import Ui_Dialog as ActivationUi
 from ui_logic.activation_form import ActivationForm
 
+from uis.login import Ui_Dialog as LoginUi
+from ui_logic.login_form import LoginForm
+
 import sys
 import logging
 from datetime import date
@@ -90,6 +93,8 @@ def check_activation() -> bool:
 
 def main():
     app = QApplication(sys.argv)
+    form = LoginForm(LoginUi)
+    form.exec()
 
     activation = check_activation()
     if activation is not True:
