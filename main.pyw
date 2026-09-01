@@ -89,13 +89,23 @@ def check_activation() -> bool:
     else:
         return True
     
+LOGGED_IN = False
+
+def check_credentials(logged_in):
+    """ Valid credentials returns True, otherwise False. """
+    global LOGGED_IN 
+    LOGGED_IN = logged_in
     
 
 def main():
     app = QApplication(sys.argv)
     form = LoginForm(LoginUi)
+    form.logged_in_process.connect(check_credentials)
     form.exec()
-
+   
+    if not LOGGED_IN:
+        return 
+  
     activation = check_activation()
     if activation is not True:
         return

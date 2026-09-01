@@ -137314,3 +137314,1632 @@ AttributeError: 'NoneType' object has no attribute 'text'
 2026-08-31 20:28:02,260 | DEBUG | shared_functions.py:99 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
 2026-08-31 20:28:02,260 | DEBUG | shared_functions.py:96 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
 2026-08-31 20:28:02,260 | DEBUG | shared_functions.py:99 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:42:52,386 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:42:52,388 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:42:52,413 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:42:52,413 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:42:52,597 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:42:52,597 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:42:52,599 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:42:52,599 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:43:19,536 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-01 18:43:19,536 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:43:19
+2026-09-01 18:43:19,536 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:43:19
+2026-09-01 18:43:19,536 | DEBUG | database_manager.py:72 | .\database_backup\2026-09\2026-09-01.db has created.
+2026-09-01 18:43:19,536 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,536 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/add_a_sale_invoice.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_purchase_invoice.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_service.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_sup.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_cus.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_withdrawal.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_expense.svg
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,552 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/support.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_user.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/requested_products.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/analysis.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/database.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:43:19,568 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:49:23,823 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:23,823 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:49:23,855 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:23,855 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:49:23,980 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:23,980 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:49:23,980 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:23,980 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:49:43,190 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:49:43
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:49:43
+2026-09-01 18:49:43,190 | DEBUG | database_manager.py:92 | .\database_backup\2026-09\2026-09-01.db no need to update.
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/add_a_sale_invoice.svg
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_purchase_invoice.svg
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_service.svg
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_sup.svg
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_cus.svg
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_withdrawal.svg
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,190 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_expense.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/support.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_user.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/requested_products.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/analysis.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/database.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:49:43,206 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:55:36,146 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:36,146 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:55:36,200 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:36,201 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:55:36,343 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:36,343 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:55:36,358 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:36,358 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:55:47,779 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-01 18:55:47,779 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:55:47
+2026-09-01 18:55:47,779 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:55:47
+2026-09-01 18:55:47,779 | DEBUG | database_manager.py:92 | .\database_backup\2026-09\2026-09-01.db no need to update.
+2026-09-01 18:55:47,779 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,779 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/add_a_sale_invoice.svg
+2026-09-01 18:55:47,795 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,795 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_purchase_invoice.svg
+2026-09-01 18:55:47,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_service.svg
+2026-09-01 18:55:47,826 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,826 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_sup.svg
+2026-09-01 18:55:47,841 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,841 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_cus.svg
+2026-09-01 18:55:47,857 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,857 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_withdrawal.svg
+2026-09-01 18:55:47,888 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,888 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_expense.svg
+2026-09-01 18:55:47,904 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,904 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/support.svg
+2026-09-01 18:55:47,920 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,920 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_user.svg
+2026-09-01 18:55:47,935 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,935 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/requested_products.svg
+2026-09-01 18:55:47,951 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,951 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/analysis.svg
+2026-09-01 18:55:47,966 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,966 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/database.svg
+2026-09-01 18:55:47,982 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,982 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:55:47,998 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,998 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:55:47,998 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:47,998 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:55:48,013 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:55:48,013 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:56:17,435 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:17,435 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:56:17,435 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:17,435 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:56:17,543 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:17,543 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:56:17,545 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:17,545 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:56:30,809 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:56:30
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:56:30
+2026-09-01 18:56:30,810 | DEBUG | database_manager.py:92 | .\database_backup\2026-09\2026-09-01.db no need to update.
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/add_a_sale_invoice.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_purchase_invoice.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_service.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_sup.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_cus.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_withdrawal.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_expense.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/support.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_user.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/requested_products.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/analysis.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/database.svg
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,810 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:56:30,826 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,826 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:56:30,827 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,827 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:56:30,827 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:56:30,827 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:57:23,800 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:23,800 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:57:23,800 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:23,800 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:57:23,906 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:23,906 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:57:23,906 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:23,906 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:57:28,347 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:57:28
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:57:28
+2026-09-01 18:57:28,347 | DEBUG | database_manager.py:92 | .\database_backup\2026-09\2026-09-01.db no need to update.
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/add_a_sale_invoice.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_purchase_invoice.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_service.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_sup.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_cus.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_withdrawal.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_expense.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/support.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_user.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/requested_products.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/analysis.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/database.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,347 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:57:28,362 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,362 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:57:28,364 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:57:28,364 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:58:01,642 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:01,642 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:58:01,642 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:01,642 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:58:01,737 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:01,737 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:58:01,737 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:01,737 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:58:06,069 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-01 18:58:06,069 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:58:06
+2026-09-01 18:58:06,069 | DEBUG | shared_functions.py:149 | Returning Gregorian date: 2026-09-01 18:58:06
+2026-09-01 18:58:06,069 | DEBUG | database_manager.py:92 | .\database_backup\2026-09\2026-09-01.db no need to update.
+2026-09-01 18:58:06,069 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,069 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/add_a_sale_invoice.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_purchase_invoice.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_service.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_sup.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_transaction_cus.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_withdrawal.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_expense.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/support.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/new_user.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/requested_products.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/analysis.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/database.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/next.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:58:06,084 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-01 18:59:10,663 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:10,663 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:59:10,679 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:10,679 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:59:10,766 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:10,766 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:59:10,766 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:10,766 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:59:12,370 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 126, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 102, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 18:59:15,136 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:15,136 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 18:59:15,136 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:15,136 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 18:59:15,277 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:15,277 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 18:59:15,292 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 18:59:15,292 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 18:59:18,155 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 126, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 102, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:03:38,260 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:03:38,260 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:03:38,291 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:03:38,291 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:03:38,437 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:03:38,437 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:03:38,439 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:03:38,440 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:03:40,140 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 44, in get_login_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:03:40,671 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 44, in get_login_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:03:42,624 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 44, in get_login_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:03:46,437 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 44, in get_login_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:03:49,304 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:04:39,633 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:04:39,633 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:04:39,633 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:04:39,648 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:04:39,961 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:04:39,961 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:04:39,961 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:04:39,961 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:04:41,700 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:04:45,008 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:04:46,132 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:04:48,148 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:04:49,149 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:05:26,983 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:26,983 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:05:27,000 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:27,000 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:05:27,095 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:27,095 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:05:27,095 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:27,095 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:05:28,361 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:05:32,683 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:05:34,989 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_login_info())
+                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginForm' object has no attribute 'get_login_info'
+2026-09-01 19:05:35,587 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:05:51,222 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:51,222 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:05:51,228 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:51,228 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:05:51,306 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:51,306 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:05:51,306 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:05:51,306 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:05:58,283 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:06:25,598 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:06:25,598 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:06:25,598 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:06:25,598 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:06:25,695 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:06:25,695 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:06:25,695 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:06:25,695 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:06:26,949 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_logged_in_info())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 43, in get_logged_in_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:06:29,465 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_logged_in_info())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 43, in get_logged_in_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:06:31,446 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_logged_in_info())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 43, in get_logged_in_info
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:06:32,313 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:07:07,283 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:07,283 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:07:07,299 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:07,299 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:07:07,440 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:07,440 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:07:07,440 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:07,440 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:07:07,453 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 99, in main
+    form = LoginForm(LoginUi)
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 26, in __init__
+    self.ui.login_btn.clicked.connect(
+TypeError: Qt.ConnectionType expected, not 'function'
+2026-09-01 19:07:14,818 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:14,818 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:07:14,818 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:14,818 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:07:14,911 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:14,911 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:07:14,911 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:14,911 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:07:14,911 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 99, in main
+    form = LoginForm(LoginUi)
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 28, in __init__
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:07:23,425 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:23,435 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:07:23,449 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:23,449 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:07:23,632 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:23,632 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:07:23,632 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:23,632 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:07:24,942 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:07:54,891 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:54,892 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:07:54,899 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:54,900 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:07:54,979 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:54,979 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:07:54,979 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:07:54,979 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:07:56,759 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.get_logged_in_info())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 44, in get_logged_in_info
+    sens = self.get_sensitive_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:07:57,960 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:09:35,887 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:09:35,887 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:09:35,896 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:09:35,896 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:09:35,988 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:09:35,988 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:09:35,988 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:09:35,988 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:09:37,404 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.check_logged_in_credentials())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 49, in check_logged_in_credentials
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:09:39,738 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.check_logged_in_credentials())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 49, in check_logged_in_credentials
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:09:42,535 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.check_logged_in_credentials())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 49, in check_logged_in_credentials
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:09:50,046 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:10:02,728 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:10:02,728 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:10:02,748 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:10:02,748 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:10:02,826 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:10:02,826 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:10:02,826 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:10:02,826 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:10:04,746 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.check_logged_in_credentials())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 49, in check_logged_in_credentials
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:10:08,577 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:11:37,104 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:11:37,104 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:11:37,104 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:11:37,104 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:11:37,202 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:11:37,202 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:11:37,202 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:11:37,202 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:11:38,494 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.check_logged_in_credentials())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 49, in check_logged_in_credentials
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:11:39,166 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: print(self.check_logged_in_credentials())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 49, in check_logged_in_credentials
+    print(self.get_sensitive_data())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 78, in get_sensitive_data
+    "logged-in": data["logged-in"],
+                 ~~~~^^^^^^^^^^^^^
+KeyError: 'logged-in'
+2026-09-01 19:11:40,100 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:12:05,158 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:05,158 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:12:05,173 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:05,173 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:12:05,299 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:05,300 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:12:05,301 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:05,301 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:12:18,069 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:12:29,530 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:29,530 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:12:29,530 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:29,530 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:12:29,638 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:29,638 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:12:29,640 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:12:29,640 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:12:39,290 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:13:04,921 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:04,921 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:13:04,921 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:04,921 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:13:05,007 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:05,007 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:13:05,022 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:05,022 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:13:10,198 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:13:21,352 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:21,352 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:13:21,352 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:21,352 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:13:21,460 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:21,460 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:13:21,461 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:13:21,461 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:13:27,291 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:14:10,171 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:10,171 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:14:10,176 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:10,176 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:14:10,258 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:10,258 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:14:10,258 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:10,258 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:14:27,825 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:14:56,521 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:56,521 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:14:56,521 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:56,521 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:14:56,614 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:56,614 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:14:56,614 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:14:56,614 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:15:03,736 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:15:49,677 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:15:49,677 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:15:49,677 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:15:49,677 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:15:49,770 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:15:49,770 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:15:49,780 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:15:49,781 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:16:00,403 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:16:14,065 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:16:14,065 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:16:14,081 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:16:14,081 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:16:14,170 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:16:14,170 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:16:14,170 | DEBUG | shared_functions.py:97 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:16:14,170 | DEBUG | shared_functions.py:100 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:16:24,214 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:17:17,980 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:17:17,980 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:17:17,985 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:17:17,985 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:17:18,071 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:17:18,071 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:17:18,071 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:17:18,071 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:17:24,812 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:18:35,721 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:18:35,721 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:18:35,736 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:18:35,736 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:18:35,861 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:18:35,861 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:18:35,861 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:18:35,861 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:18:48,883 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:24:37,893 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:24:37,893 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:24:37,893 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:24:37,893 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:24:37,987 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:24:37,987 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:24:37,987 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:24:37,987 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:25:02,682 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:25:35,596 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:25:35,596 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:25:35,599 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:25:35,599 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:25:35,689 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:25:35,689 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:25:35,690 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:25:35,690 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:25:47,764 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:26:55,582 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:26:55,583 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:26:55,590 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:26:55,590 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:26:55,699 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:26:55,699 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:26:55,699 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:26:55,699 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:27:10,049 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:27:16,938 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:27:16,938 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:27:16,944 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:27:16,944 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:27:17,019 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:27:17,019 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:27:17,019 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:27:17,019 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:27:23,767 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:28:16,781 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:16,781 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:28:16,788 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:16,788 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:28:16,932 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:16,932 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:28:16,932 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:16,932 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:28:26,751 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 123, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:28:54,039 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:54,039 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:28:54,039 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:54,039 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:28:54,192 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:54,193 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:28:54,194 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:28:54,194 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:29:00,197 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 124, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 103, in main
+    print(check_credentials())
+          ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 19:32:09,889 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:32:09,890 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 19:32:09,895 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:32:09,895 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 19:32:09,984 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:32:09,984 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 19:32:09,984 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 19:32:09,984 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 19:32:17,335 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 125, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:09:16,046 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:16,046 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:09:16,096 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:16,096 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:09:16,212 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:16,212 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:09:16,212 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:16,212 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:09:24,004 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 127, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:09:53,073 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:53,073 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:09:53,073 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:53,073 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:09:53,175 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:53,175 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:09:53,177 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:09:53,177 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:09:59,540 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 127, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:10:08,108 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:10:08,108 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:10:08,108 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:10:08,108 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:10:08,213 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:10:08,213 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:10:08,213 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:10:08,213 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:10:23,746 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 127, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:11:32,259 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:32,259 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:11:32,275 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:32,276 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:11:32,390 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:32,390 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:11:32,390 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:32,390 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:11:38,268 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 126, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:11:49,626 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:49,626 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:11:49,631 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:49,631 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:11:49,714 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:49,714 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:11:49,714 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:11:49,714 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:11:54,165 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 127, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:12:13,299 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:12:13,299 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:12:13,299 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:12:13,315 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:12:13,463 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:12:13,463 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:12:13,464 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:12:13,464 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:12:18,115 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 126, in <module>
+    main()
+  File "E:\Workspace\Modeer\V1.6\main.pyw", line 105, in main
+    if check_credentials() is False:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: check_credentials() missing 1 required positional argument: 'order'
+2026-09-01 20:14:55,269 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:14:55,269 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:14:55,269 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:14:55,269 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:14:55,355 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:14:55,355 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:14:55,370 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:14:55,370 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:15:05,867 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:15:05,867 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:15:05,867 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:15:05,867 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:15:05,961 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:15:05,961 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:15:05,961 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:15:05,961 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:16:11,766 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:16:11,766 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:16:11,766 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:16:11,766 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:16:11,912 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:16:11,912 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:16:11,915 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:16:11,915 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:17:03,300 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:03,300 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:17:03,315 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:03,315 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:17:03,437 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:03,437 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:17:03,437 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:03,437 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:17:30,021 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:30,021 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:17:30,021 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:30,021 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:17:30,109 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:30,109 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:17:30,109 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:30,109 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:17:36,542 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:17:40,045 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:17:48,722 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:17:50,003 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:17:50,175 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:17:52,745 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:52,745 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:17:52,745 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:52,745 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:17:52,857 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:52,857 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:17:52,857 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:17:52,857 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:18:00,366 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:18:04,449 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:04,449 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:18:04,465 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:04,465 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:18:04,543 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:04,543 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:18:04,543 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:04,543 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:18:06,313 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:18:10,382 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:10,382 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:18:10,398 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:10,398 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:18:10,476 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:10,476 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:18:10,476 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:18:10,476 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:19:13,637 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:19:13,637 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:19:13,637 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:19:13,637 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:19:13,731 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:19:13,731 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:19:13,731 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:19:13,731 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:19:20,380 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:25:21,443 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:21,444 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:25:21,507 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:21,507 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:25:21,635 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:21,636 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:25:21,681 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:21,681 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:25:28,163 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:25:55,939 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:55,939 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:25:55,944 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:55,944 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:25:56,038 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:56,038 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:25:56,040 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:25:56,040 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:26:01,475 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 27, in <lambda>
+    lambda: self.check_logged_in_credentials()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:26:40,055 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:26:40,055 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:26:40,061 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:26:40,061 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:26:40,188 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:26:40,188 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:26:40,190 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:26:40,190 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:26:46,362 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:26:48,882 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:26:49,090 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:26:49,282 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:18,370 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:18,370 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:27:18,375 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:18,375 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:27:18,535 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:18,536 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:27:18,538 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:18,539 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:27:19,514 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:20,074 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:20,306 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:25,538 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 51, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:52,246 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:52,247 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:27:52,256 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:52,257 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:27:52,417 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:52,417 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:27:52,419 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:27:52,419 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:27:53,769 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:55,130 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:56,826 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:27:58,275 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:28:23,544 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:23,545 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:28:23,551 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:23,551 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:28:23,674 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:23,674 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:28:23,675 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:23,675 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:28:25,146 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:28:31,154 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:28:58,268 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:58,268 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:28:58,273 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:58,273 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:28:58,368 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:58,369 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:28:58,370 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:28:58,370 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:28:59,593 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:29:13,501 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:13,501 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:29:13,514 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:13,515 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:29:13,633 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:13,633 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:29:13,636 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:13,636 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:29:14,497 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:29:22,706 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:29:48,977 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:48,977 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:29:48,982 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:48,982 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:29:49,072 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:49,073 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:29:49,074 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:29:49,074 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:30:07,214 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:30:07,214 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:30:07,219 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:30:07,219 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:30:07,317 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:30:07,317 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:30:07,318 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:30:07,318 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:30:13,679 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:30:21,416 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 52, in check_logged_in_credentials
+    inner_users = self.get_sensitive_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Workspace\Modeer\V1.6\ui_logic\shared_functions.py", line 77, in get_sensitive_data
+    credentials = data["users"]
+                  ~~~~^^^^^^^^^
+KeyError: 'users'
+2026-09-01 20:31:17,755 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:17,756 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:31:17,768 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:17,768 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:31:17,867 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:17,867 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:31:17,868 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:17,868 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:31:22,508 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 57, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:31:40,356 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:40,357 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:31:40,361 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:40,361 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:31:40,451 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:40,452 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:31:40,453 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:31:40,453 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:31:47,200 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 57, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:31:50,000 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 57, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:31:52,104 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 57, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:32:44,306 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:32:44,307 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:32:44,314 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:32:44,315 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:32:44,450 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:32:44,451 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:32:44,452 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:32:44,453 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:32:45,895 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 58, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:32:54,353 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 58, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:33:19,385 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:19,385 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:33:19,390 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:19,390 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:33:19,606 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:19,606 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:33:19,608 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:19,609 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:33:20,943 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 58, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value
+2026-09-01 20:33:29,969 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:29,970 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:33:29,975 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:29,975 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:33:30,065 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:30,066 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:33:30,067 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:30,067 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:33:36,157 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:36,157 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:33:36,162 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:36,162 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:33:36,256 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:36,256 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:33:36,258 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:36,258 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:33:41,191 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:41,192 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:33:41,198 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:41,198 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:33:41,306 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:41,306 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:33:41,308 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:41,308 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:33:55,587 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:55,587 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel.svg
+2026-09-01 20:33:55,593 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:55,593 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/modeer_logo.png
+2026-09-01 20:33:55,685 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:55,686 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/cancel_2.svg
+2026-09-01 20:33:55,687 | DEBUG | shared_functions.py:94 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
+2026-09-01 20:33:55,687 | DEBUG | shared_functions.py:97 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/login.svg
+2026-09-01 20:33:56,895 | CRITICAL | main.pyw:32 | Uncaught exception
+Traceback (most recent call last):
+  File "E:\Workspace\Modeer\V1.6\ui_logic\login_form.py", line 58, in check_logged_in_credentials
+    if inner_users[user] == password:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inner_users' where it is not associated with a value

@@ -66,18 +66,15 @@ class TableViewModel(QAbstractTableModel):
 
 class SharedFunctions:
 
-    def get_credentials_data(self) -> dict:
-        """ Returns Credentials information, who is logged in and users"""
+    def get_sensitive_data(self) -> dict:
+        """ Returns Sensitive information, and who is logged in and users"""
         KEY = b"bW8k0iO_bekfUW-e90nuxzKRr5dx6Bn1J0DsXNSKWAo="
         cipher = Fernet(KEY)
         with open("file_mgr.dat", "rb") as file:
             encrypted = file.read()
         decrypted = cipher.decrypt(encrypted)
         data = json.loads(decrypted.decode())
-        credentials = {
-            "logged-in": data["logged-in"],
-            "users": data["users"]
-        }
+        credentials = data["users"]
         return credentials
     
     def set_icon(self, btn_name, icon_name):
