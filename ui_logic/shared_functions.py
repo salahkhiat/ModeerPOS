@@ -78,8 +78,18 @@ class SharedFunctions:
         return credentials
 
 
-    
-    
+        """
+        
+        
+        Organizing Activation and Logging system to work togater
+        Reading file_mgr data and modifying it according to system needs.
+        
+                            START FROM HERE .
+        
+        
+        """
+
+
     def set_icon(self, btn_name, icon_name):
         icon_path = self.resource_path(f"./icons/{icon_name}")
         icon = QtGui.QIcon(icon_path)

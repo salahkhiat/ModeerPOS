@@ -60,8 +60,6 @@ def check_activation() -> bool:
     activation = data['activated']
     first_run = data['first_run']
     
-
-    
     if activation is not True:
         # 1- if this is the first run at all
         if first_run is True:
@@ -110,14 +108,11 @@ def main():
    
     if not LOGGED_IN:
         return 
-
-    print("login step")
   
     activation = check_activation()
     if activation is not True:
         return
-    print("activation step")
-
+    
     # Show splash(welcome screen) first; MainScreen will open after duration
     splash = MainScreen.show_welcome_screen(
         app,

@@ -45,18 +45,19 @@ class LoginForm(Form):
         return logged_in 
 
     def check_logged_in_credentials(self):
-        print("j")
+        
         user = self.get_logged_in_info()["user"]
         password = self.get_logged_in_info()["password"]
         
         try:
             inner_users = self.get_sensitive_data() 
-            print(inner_users)
+
+            
         except Exception as e:
             print(e)
         
         if inner_users[user] == password:
-            print("d")
+        
             self.logged_in_process.emit(True)
             
             
