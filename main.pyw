@@ -68,7 +68,12 @@ def check_activation() -> bool:
             new_data = {
                 "first_run": False,
                 "first_run_date": f"{date.today()}",
-                "activated": False
+                "activated": False,
+                "logged-in": None,
+                "users":{
+                    "admin" : "salah123",
+                    "seller" : "modeer123"
+                }
             }
             write_encrypted_data(new_data)
 
@@ -105,10 +110,13 @@ def main():
    
     if not LOGGED_IN:
         return 
+
+    print("login step")
   
     activation = check_activation()
     if activation is not True:
         return
+    print("activation step")
 
     # Show splash(welcome screen) first; MainScreen will open after duration
     splash = MainScreen.show_welcome_screen(
