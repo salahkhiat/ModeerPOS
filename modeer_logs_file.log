@@ -139388,3 +139388,197 @@ UnboundLocalError: cannot access local variable 'inner_users' where it is not as
 2026-09-02 21:53:26,750 | DEBUG | shared_functions.py:98 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
 2026-09-02 21:53:26,750 | DEBUG | shared_functions.py:95 | Running in development mode. Base path: E:\Workspace\Modeer\V1.6
 2026-09-02 21:53:26,750 | DEBUG | shared_functions.py:98 | Resolved resource path: E:\Workspace\Modeer\V1.6\./icons/previous.svg
+2026-09-05 01:25:18,966 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:18,966 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:25:18,983 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:18,983 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/modeer_logo.png
+2026-09-05 01:25:18,995 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:18,995 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel_2.svg
+2026-09-05 01:25:18,996 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:18,996 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/login.svg
+2026-09-05 01:25:35,455 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-05 01:25:35,456 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:35
+2026-09-05 01:25:35,456 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:35
+2026-09-05 01:25:35,457 | DEBUG | database_manager.py:81 | ./database_backup/2026-09/2026-09-05.db has created.
+2026-09-05 01:25:35,458 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,458 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/add_a_sale_invoice.svg
+2026-09-05 01:25:35,459 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,459 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_purchase_invoice.svg
+2026-09-05 01:25:35,459 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,460 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_service.svg
+2026-09-05 01:25:35,460 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,460 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_transaction_sup.svg
+2026-09-05 01:25:35,460 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,460 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_transaction_cus.svg
+2026-09-05 01:25:35,461 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,461 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_withdrawal.svg
+2026-09-05 01:25:35,462 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,462 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_expense.svg
+2026-09-05 01:25:35,462 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,462 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/support.svg
+2026-09-05 01:25:35,463 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,463 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_user.svg
+2026-09-05 01:25:35,463 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,463 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/requested_products.svg
+2026-09-05 01:25:35,463 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,463 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/analysis.svg
+2026-09-05 01:25:35,464 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,464 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/database.svg
+2026-09-05 01:25:35,464 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,464 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/next.svg
+2026-09-05 01:25:35,465 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,465 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/next.svg
+2026-09-05 01:25:35,465 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,465 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/previous.svg
+2026-09-05 01:25:35,465 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:35,465 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/previous.svg
+2026-09-05 01:25:40,714 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:40
+2026-09-05 01:25:40,714 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:40
+2026-09-05 01:25:40,715 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:25:45,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:45
+2026-09-05 01:25:45,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:45
+2026-09-05 01:25:45,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:25:50,890 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:50
+2026-09-05 01:25:50,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:50
+2026-09-05 01:25:50,891 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:25:55,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:55
+2026-09-05 01:25:55,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:25:55
+2026-09-05 01:25:55,893 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:25:59,946 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:59,946 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/save.svg
+2026-09-05 01:25:59,948 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:59,948 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:25:59,949 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:25:59,949 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/browse.svg
+2026-09-05 01:26:00,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:00
+2026-09-05 01:26:00,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:00
+2026-09-05 01:26:00,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:05,757 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:26:05,757 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/save.svg
+2026-09-05 01:26:05,758 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:26:05,758 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:26:05,761 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:26:05,761 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/add.svg
+2026-09-05 01:26:06,114 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:06
+2026-09-05 01:26:06,114 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:06
+2026-09-05 01:26:06,114 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:10,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:10
+2026-09-05 01:26:10,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:10
+2026-09-05 01:26:10,894 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:15,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:15
+2026-09-05 01:26:15,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:15
+2026-09-05 01:26:15,895 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:20,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:20
+2026-09-05 01:26:20,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:20
+2026-09-05 01:26:20,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:25,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:25
+2026-09-05 01:26:25,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:25
+2026-09-05 01:26:25,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:30,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:30
+2026-09-05 01:26:30,893 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:30
+2026-09-05 01:26:30,893 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:35,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:35
+2026-09-05 01:26:35,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:35
+2026-09-05 01:26:35,895 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:40,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:40
+2026-09-05 01:26:40,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:40
+2026-09-05 01:26:40,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:45,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:45
+2026-09-05 01:26:45,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:45
+2026-09-05 01:26:45,895 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:50,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:50
+2026-09-05 01:26:50,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:50
+2026-09-05 01:26:50,895 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:55,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:55
+2026-09-05 01:26:55,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:55
+2026-09-05 01:26:55,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:26:57,201 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:26:57
+2026-09-05 01:27:00,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:00
+2026-09-05 01:27:00,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:00
+2026-09-05 01:27:00,894 | DEBUG | database_manager.py:89 | ./database_backup/2026-09/2026-09-05.db has updated.
+2026-09-05 01:27:01,074 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:01,074 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:27:01,075 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:01,075 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/delete.svg
+2026-09-05 01:27:01,076 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:01,076 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/add.svg
+2026-09-05 01:27:01,077 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:01,077 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/previous.svg
+2026-09-05 01:27:01,078 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:01,078 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/next.svg
+2026-09-05 01:27:01,078 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:01,079 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:27:05,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:05
+2026-09-05 01:27:05,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:05
+2026-09-05 01:27:05,892 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:27:10,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:10
+2026-09-05 01:27:10,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:10
+2026-09-05 01:27:10,894 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:27:16,082 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:16
+2026-09-05 01:27:16,082 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:16
+2026-09-05 01:27:16,083 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:27:20,582 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:20,583 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:27:20,584 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:20,584 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/delete.svg
+2026-09-05 01:27:20,585 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:20,585 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/add.svg
+2026-09-05 01:27:20,585 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:20,586 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/previous.svg
+2026-09-05 01:27:20,586 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:20,586 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/next.svg
+2026-09-05 01:27:20,587 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:27:20,587 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:27:20,947 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:20
+2026-09-05 01:27:20,947 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:20
+2026-09-05 01:27:20,947 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:27:25,891 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:25
+2026-09-05 01:27:25,892 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:27:25
+2026-09-05 01:27:25,895 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:28:07,503 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:07,503 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel.svg
+2026-09-05 01:28:07,505 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:07,505 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/modeer_logo.png
+2026-09-05 01:28:07,507 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:07,507 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/cancel_2.svg
+2026-09-05 01:28:07,507 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:07,507 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/login.svg
+2026-09-05 01:28:17,545 | INFO | database_manager.py:2005 | Database tables created successfully.
+2026-09-05 01:28:17,545 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:28:17
+2026-09-05 01:28:17,546 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:28:17
+2026-09-05 01:28:17,546 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.
+2026-09-05 01:28:17,546 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,546 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/add_a_sale_invoice.svg
+2026-09-05 01:28:17,547 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,547 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_purchase_invoice.svg
+2026-09-05 01:28:17,547 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,547 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_service.svg
+2026-09-05 01:28:17,548 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,548 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_transaction_sup.svg
+2026-09-05 01:28:17,548 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,548 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_transaction_cus.svg
+2026-09-05 01:28:17,548 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,548 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_withdrawal.svg
+2026-09-05 01:28:17,549 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,549 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_expense.svg
+2026-09-05 01:28:17,549 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,550 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/support.svg
+2026-09-05 01:28:17,550 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,550 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/new_user.svg
+2026-09-05 01:28:17,550 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,550 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/requested_products.svg
+2026-09-05 01:28:17,551 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,551 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/analysis.svg
+2026-09-05 01:28:17,551 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,551 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/database.svg
+2026-09-05 01:28:17,551 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,552 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/next.svg
+2026-09-05 01:28:17,552 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,552 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/next.svg
+2026-09-05 01:28:17,552 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,552 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/previous.svg
+2026-09-05 01:28:17,553 | DEBUG | shared_functions.py:109 | Running in development mode. Base path: /home/salah/Documents/V1.6
+2026-09-05 01:28:17,553 | DEBUG | shared_functions.py:112 | Resolved resource path: /home/salah/Documents/V1.6/./icons/previous.svg
+2026-09-05 01:28:22,796 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:28:22
+2026-09-05 01:28:22,797 | DEBUG | shared_functions.py:161 | Returning Gregorian date: 2026-09-05 01:28:22
+2026-09-05 01:28:22,797 | DEBUG | database_manager.py:92 | ./database_backup/2026-09/2026-09-05.db no need to update.

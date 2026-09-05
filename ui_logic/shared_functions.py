@@ -15,7 +15,9 @@ import json
 import os 
 import sys 
 import random
-import winsound
+# import winsound
+from . import winsound
+
 import logging
 
 logger = logging.getLogger(__name__)
