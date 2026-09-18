@@ -11,7 +11,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 class ChooseItemForm(Form):
-    item_barcode_sent = pyqtSignal(int)
+    item_barcode_sent = pyqtSignal(str)
 
     def __init__(self,base_form):
         super().__init__(base_form)
@@ -87,11 +87,10 @@ class ChooseItemForm(Form):
         # Create and set items with the font
         for col, value in enumerate([name, barcode, sale_price]):        
             table.setItem(row_position, col, self.make_item(value, font_size=14, read_only=True))
-        print("this")
+       
 
     def put_data_into_table(self, prefix:str, column:str):
         self.ui.items_table.setRowCount(0)
-
         products = self.get_product_info(prefix,column)
         for product in products :
             info = [product["name"], product["barcode"], product["sale_price"]]
@@ -110,7 +109,7 @@ class ChooseItemForm(Form):
             self.show_err_msg("الكمية نفذت")
             self.play_failure_sound()
         else:
-            self.item_barcode_sent.emit(self.selected_item_barcode)
+            self.item_barcode_sent.emit(str(self.selected_item_barcode))
             self.close()
             self.play_success_sound()
         

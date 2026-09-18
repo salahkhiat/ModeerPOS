@@ -9,8 +9,8 @@ data = {
     "activated": False,
     "logged-in": None,
     "users":{
-        "admin" : "salah123",
-        "seller" : "modeer123"
+        "admin" : "modeer2026",
+        "seller" : ""
     }
 }
 

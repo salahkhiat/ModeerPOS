@@ -79,6 +79,7 @@ class MainScreen(MainForm):
     def __init__(self,base_form):
         super().__init__(base_form)
 
+        
         # preapare Database 
         self.prepare_database()
 
@@ -102,6 +103,31 @@ class MainScreen(MainForm):
         self.barcode_scanner = BarcodeScanner()
         self.installEventFilter(self.barcode_scanner)
         self.barcode_scanner.barcodeScanned.connect(self.on_barcode_scanned)
+
+        # check the logged-in user privileges and set the main screen accordingly
+        logged_in_user = self.get_decrypted_information().get("logged-in", None)
+        if logged_in_user == "seller":
+            btn_background_color = "background-color: gray; border: 1px solid gray;"
+            analysis_btn = self.ui.analysis_btn
+            analysis_btn.setEnabled(False)
+            analysis_btn.setStyleSheet(btn_background_color)
+
+            new_user_btn = self.ui.new_user_btn
+            new_user_btn.setEnabled(False)
+            new_user_btn.setStyleSheet(btn_background_color)
+
+            set_db_btn = self.ui.set_db_btn
+            set_db_btn.setEnabled(False)
+            set_db_btn.setStyleSheet(btn_background_color)
+
+            new_supplier_invoice_btn = self.ui.new_supplier_invoice_btn
+            new_supplier_invoice_btn.setEnabled(False)
+            new_supplier_invoice_btn.setStyleSheet(btn_background_color)
+
+            products_action = self.ui.products_action
+            products_action.setEnabled(False)
+   
+            
 
         # connect main screen buttons with their forms
         self.show_database_form()

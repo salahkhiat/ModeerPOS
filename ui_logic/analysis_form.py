@@ -114,66 +114,66 @@ class AnalysisForm(Form):
         incomes_table.insertRow(row)
         profits_label = "الأرباح"
         incomes_table.setItem(row, 0, self.make_item(profits_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{profits:.2f}", color="green", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{profits:.1f}", color="green", read_only=True))
 
         incomes_table.insertRow(row)
         cash_label = "المدخول "
         if s_date == "today":
             cash_label = "الدخل + مبلغ الصندوق"
         incomes_table.setItem(row, 0, self.make_item(cash_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{cash:.2f}", color="green", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{cash:.1f}", color="green", read_only=True))
 
         # incomes_table.insertRow(row)
         # customers_cash_label = "إيداعات الزبائن"
         # incomes_table.setItem(row, 0, self.make_item(customers_cash_label, read_only=True))
-        # incomes_table.setItem(row, 1, self.make_item(f"{customers_cash:.2f}", read_only=True))
+        # incomes_table.setItem(row, 1, self.make_item(f"{customers_cash:.1f}", read_only=True))
 
         
         incomes_table.insertRow(row)
         services_profits_label = "أرباح الخدمات"
         incomes_table.setItem(row, 0, self.make_item(services_profits_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{services_profits:.2f}", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{services_profits:.1f}", read_only=True))
         
         incomes_table.insertRow(row)
         services_cash_label = "مدخول الخدمات"
         incomes_table.setItem(row, 0, self.make_item(services_cash_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{services_cash:.2f}", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{services_cash:.1f}", read_only=True))
 
 
         incomes_table.insertRow(row)
         sales_profits_label = "أرباح المبيعات"
         incomes_table.setItem(row, 0, self.make_item(sales_profits_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{sales_profits:.2f}", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{sales_profits:.1f}", read_only=True))
 
         incomes_table.insertRow(row)
         sales_cash_label = "مدخول المبيعات"
         incomes_table.setItem(row, 0, self.make_item(sales_cash_label, read_only=True))
-        incomes_table.setItem(row, 1, self.make_item(f"{sales_cash:.2f}", read_only=True))
+        incomes_table.setItem(row, 1, self.make_item(f"{sales_cash:.1f}", read_only=True))
 
         # incomes_table.insertRow(row)
         # profits_label = "الربح الإجمالي "
         # incomes_table.setItem(row, 0, self.make_item(profits_label,color="green"))
-        # incomes_table.setItem(row, 1, self.make_item(f"{profits:.2f}",color="green"))
+        # incomes_table.setItem(row, 1, self.make_item(f"{profits:.1f}",color="green"))
         
         # incomes_table.insertRow(row)
         # cus_pay_label = " إداعات الزبون المميز"
         # incomes_table.setItem(row, 0, self.make_item(cus_pay_label))
-        # incomes_table.setItem(row, 1, self.make_item(f"{customers_cash:.2f}"))
+        # incomes_table.setItem(row, 1, self.make_item(f"{customers_cash:.1f}"))
 
         # incomes_table.insertRow(row)
         # services_label = "أرباح الخدمات "
         # incomes_table.setItem(row, 0, self.make_item(services_label))
-        # incomes_table.setItem(row, 1, self.make_item(f"{services_cash:.2f}"))
+        # incomes_table.setItem(row, 1, self.make_item(f"{services_cash:.1f}"))
 
         # incomes_table.insertRow(row)
         # sales_profit_label = "أرباح السلع"
         # incomes_table.setItem(row, 0, self.make_item(sales_profit_label))
-        # incomes_table.setItem(row, 1, self.make_item(f"{sales_profit:.2f}"))
+        # incomes_table.setItem(row, 1, self.make_item(f"{sales_profit:.1f}"))
 
         # incomes_table.insertRow(row)
         # capital_label = "رأس مال المبيعات"
         # incomes_table.setItem(row, 0, self.make_item(capital_label))
-        # incomes_table.setItem(row, 1, self.make_item(f"{sales_capital:.2f}"))
+        # incomes_table.setItem(row, 1, self.make_item(f"{sales_capital:.1f}"))
 
         # OUTCOME PART HAS STARTED
         expenses_table: QTableWidget = self.ui.expenses_table
@@ -199,35 +199,43 @@ class AnalysisForm(Form):
 
         outcome = expenses + suppliers_deposits + employees_withdrawals 
 
+        products_capital = self.get_products_capital_total()
+        self.ui.products_capital_lcd.setText(f"{products_capital:,.0f} دج")
+
+        products_sale_value = self.get_products_sale_value()
+        self.ui.products_sale_lcd.setText(f"{products_sale_value:,.0f} دج")
+        
+        
+
         expenses_table.insertRow(row)
         total_ex_label = "الخرج الإجمالي"
         expenses_table.setItem(row, 0, self.make_item(total_ex_label, read_only=True))
-        expenses_table.setItem(row, 1, self.make_item(f"{outcome:.2f}", color="red", read_only=True))
+        expenses_table.setItem(row, 1, self.make_item(f"{outcome:.1f}", color="red", read_only=True))
 
         expenses_table.insertRow(row)
         ex_label = " مصاريف عامة"
         expenses_table.setItem(row, 0, self.make_item(ex_label, read_only=True))
-        expenses_table.setItem(row, 1, self.make_item(f"{expenses:.2f}", read_only=True))
+        expenses_table.setItem(row, 1, self.make_item(f"{expenses:.1f}", read_only=True))
 
         expenses_table.insertRow(row)
         purchases_deposits_label = "مشتريات سلع"
         expenses_table.setItem(row, 0, self.make_item(purchases_deposits_label, read_only=True))
-        expenses_table.setItem(row, 1, self.make_item(f"{purchases_deposits:.2f}", read_only=True))
+        expenses_table.setItem(row, 1, self.make_item(f"{purchases_deposits:.1f}", read_only=True))
 
         expenses_table.insertRow(row)
         suppliers_deposits_label = "إيداعاتي للموردين"
         expenses_table.setItem(row, 0, self.make_item(suppliers_deposits_label, read_only=True))
-        expenses_table.setItem(row, 1, self.make_item(f"{suppliers_deposits:.2f}", read_only=True))
+        expenses_table.setItem(row, 1, self.make_item(f"{suppliers_deposits:.1f}", read_only=True))
 
         expenses_table.insertRow(row)
         employees_withdrawals_label = "سحوبات  العمال "
         expenses_table.setItem(row, 0, self.make_item(employees_withdrawals_label, read_only=True))
-        expenses_table.setItem(row, 1, self.make_item(f"{employees_withdrawals:.2f}", read_only=True))
+        expenses_table.setItem(row, 1, self.make_item(f"{employees_withdrawals:.1f}", read_only=True))
 
         # expenses_table.insertRow(row)
         # suppliers_new_debts_label = "دين جديد - الموردين"
         # expenses_table.setItem(row, 0, self.make_item(suppliers_new_debts_label))
-        # expenses_table.setItem(row, 1, self.make_item(f"{suppliers_new_debts:.2f}"))
+        # expenses_table.setItem(row, 1, self.make_item(f"{suppliers_new_debts:.1f}"))
 
 
 

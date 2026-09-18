@@ -5,6 +5,8 @@ import subprocess
 import hashlib
 import json
 from fernet import Fernet
+
+from ui_logic.shared_functions import SharedFunctions as shared_funcs
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
 

@@ -4,6 +4,7 @@ from .show_table_form import ShowTableForm
 from .item_form import ItemForm
 from uis.item import Ui_Form as ItemFormUi
 
+
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -24,9 +25,10 @@ class ProductsTableForm(Form):
             "barcode"
         ) 
         self.form.ui.edit_btn.clicked.connect(self.edit_product)
-
-
+  
         self.form.exec()
+
+
     
     def edit_product(self):
         product_id = self.form.selected_row[0]

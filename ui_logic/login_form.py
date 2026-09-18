@@ -45,21 +45,23 @@ class LoginForm(Form):
         return logged_in 
 
     def check_logged_in_credentials(self):
-        
+
+        # get the username and password from the Login Window.
         user = self.get_logged_in_info()["user"]
         password = self.get_logged_in_info()["password"]
-        
-        try:
-            inner_users = self.get_sensitive_data() 
 
-            
-        except Exception as e:
-            print(e)
+        # Get the secure information from the encrypted file.
+        secure_information = self.get_decrypted_information()
+
+        # Get the inner users dictionary from the secure information file.
+        inner_users = secure_information["users"]
         
         if inner_users[user] == password:
         
             self.logged_in_process.emit(True)
-            
+            # Update the secure information file to include the logged-in user.
+            secure_information["logged-in"]= user
+            self.update_encrypted_information(secure_information)
             
             self.close()
             

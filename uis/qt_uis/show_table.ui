@@ -102,6 +102,7 @@
        <property name="font">
         <font>
          <pointsize>12</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -232,6 +233,40 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="barcode_btn">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover{
+	background-color:#3f5482;
+	border: 1px solid #3f5482;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+P</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="cancel_btn">
        <property name="minimumSize">
         <size>
@@ -292,6 +327,7 @@
          <property name="font">
           <font>
            <pointsize>14</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>

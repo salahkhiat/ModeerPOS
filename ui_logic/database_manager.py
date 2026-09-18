@@ -1037,6 +1037,35 @@ class DatabaseManager(SharedFunctions):
             result = cursor.execute(query, params).fetchall()
             return result
 
+    def get_products_capital_total(self) -> int:
+        """Return the total capital of products in the database."""
+
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+            query = f"""
+                SELECT SUM(purchase_price * quantity) AS total_capital
+                FROM products
+                WHERE is_deleted = 0
+            """
+            result = cursor.execute(query).fetchone()
+
+            return result[0] if result and result[0] is not None else 0
+        
+    def get_products_sale_value(self) -> int:
+        """Return the total sale value of products in the database."""
+
+        with self.db_connection() as connection: 
+            cursor = connection.cursor()
+            query = f"""
+                SELECT SUM(sale_price * quantity) AS total_sale
+                FROM products
+                WHERE is_deleted = 0
+            """
+            result = cursor.execute(query).fetchone()
+
+            return result[0] if result and result[0] is not None else 0
+
+
     def get_sales_invoices_list(self, keyword=None, limit=10, offset=0) -> List:
 
         with self.db_connection() as connection: 

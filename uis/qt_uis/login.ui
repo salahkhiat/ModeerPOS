@@ -100,6 +100,7 @@
    <property name="font">
     <font>
      <pointsize>22</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -140,6 +141,7 @@
    <property name="font">
     <font>
      <pointsize>20</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -193,6 +195,9 @@
      <width>50</width>
      <height>50</height>
     </size>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -251,6 +256,7 @@
    <property name="font">
     <font>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>

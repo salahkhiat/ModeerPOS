@@ -2,5 +2,19 @@
     "hijri_date": false,
     "database_path": ".",
     "database_name": "shop_data.db",
-    "init_amount": 3500
+    "init_amount": 3500,
+    "barcode_printer": "Xprinter XP-233B",
+    "selected_size": "1",
+
+    "label_size": {
+        "1": {
+            "width": 50,
+            "height": 25
+        },
+
+        "2": {
+            "width": 40,
+            "height": 20
+        }
+    }
 }

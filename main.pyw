@@ -9,6 +9,9 @@ from ui_logic.activation_form import ActivationForm
 from uis.login import Ui_Dialog as LoginUi
 from ui_logic.login_form import LoginForm
 
+from ui_logic.shared_functions import SharedFunctions
+
+
 import sys
 import logging
 from datetime import date
@@ -53,27 +56,38 @@ def create_licence_file():
 
 
 def check_activation() -> bool:
-    with open("file_mgr.dat", "rb") as file:
-        encrypted = file.read()
-    decrypted = cipher.decrypt(encrypted)
-    data = json.loads(decrypted.decode())
+    # with open("file_mgr.dat", "rb") as file:
+    #     encrypted = file.read()
+    # decrypted = cipher.decrypt(encrypted)
+    # data = json.loads(decrypted.decode())
+
+    shared_funcs = SharedFunctions()
+    data = shared_funcs.get_decrypted_information()
+
     activation = data['activated']
     first_run = data['first_run']
-    
+
     if activation is not True:
         # 1- if this is the first run at all
         if first_run is True:
+
             new_data = {
                 "first_run": False,
                 "first_run_date": f"{date.today()}",
                 "activated": False,
                 "logged-in": None,
                 "users":{
-                    "admin" : "salah123",
-                    "seller" : "modeer123"
+                    "admin" : "modeer2026",
+                    "seller" : ""
                 }
             }
-            write_encrypted_data(new_data)
+            data["first_run"] = False
+            data["first_run_date"] = f"{date.today()}"
+            data["activated"] = False
+            print(data)
+            shared_funcs.update_encrypted_information(data)
+            
+            # write_encrypted_data(new_data)
 
         # 2- if ran it before
         elif first_run is False:
@@ -105,6 +119,7 @@ def main():
     form = LoginForm(LoginUi)
     form.logged_in_process.connect(check_credentials)
     form.exec()
+   
    
     if not LOGGED_IN:
         return 

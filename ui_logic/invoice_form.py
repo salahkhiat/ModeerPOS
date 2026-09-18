@@ -599,6 +599,7 @@ class InvoiceForm(Form):
         invoice_deposit = "0" if self.ui.amount.text() == "" else self.ui.amount.text()
         created = self.current_date()
         products_list: dict = self.get_products_list()
+        
 
         # products table in database
         table_name = "products"
@@ -669,7 +670,13 @@ class InvoiceForm(Form):
                         invoice_id, product_id, name, barcode, quantity, purchase_price, sale_price
                     )
                     self.store(p_h_table, p_h_columns, p_h_data)
-      
+            print(self.get_products_list())
+            labels = []
+            for _ , product in self.get_products_list().items():
+                labels.append([product[0], product[3], product[2], product[4]])
+
+                
+
             """ 
                     if an invoice type is for customers
             """

@@ -22,11 +22,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
-
-
-
-
 class TableViewModel(QAbstractTableModel):
     def __init__(self, data, header):
         super().__init__()
@@ -43,8 +38,6 @@ class TableViewModel(QAbstractTableModel):
         if role == Qt.ItemDataRole.DisplayRole:
             return str(self._data[index.row()][index.column()])
         
-        # if index.row() == 1 and index.column() == 2 and role == Qt.ItemDataRole.BackgroundRole:
-        #     return QColor("green")
         
         if role == Qt.ItemDataRole.FontRole:
             font = QFont()
@@ -67,30 +60,23 @@ class TableViewModel(QAbstractTableModel):
             return font
 
 class SharedFunctions:
+    KEY = b"bW8k0iO_bekfUW-e90nuxzKRr5dx6Bn1J0DsXNSKWAo="
+    cipher = Fernet(KEY)
 
-    def get_sensitive_data(self) -> dict:
-        """ Returns Sensitive decrypted information """
-        KEY = b"bW8k0iO_bekfUW-e90nuxzKRr5dx6Bn1J0DsXNSKWAo="
-        cipher = Fernet(KEY)
+    def get_decrypted_information(self) -> dict:
+        """ Returns decrypted sensitive information file """
         with open("file_mgr.dat", "rb") as file:
             encrypted = file.read()
-        decrypted = cipher.decrypt(encrypted)
-        data = json.loads(decrypted.decode())
-        credentials = data["users"]
-        return credentials
+        decrypted = self.cipher.decrypt(encrypted)
+        
+        return json.loads(decrypted.decode())
 
-
-        """
-        
-        
-        Organizing Activation and Logging system to work togater
-        Reading file_mgr data and modifying it according to system needs.
-        
-                            START FROM HERE .
-        
-        
-        """
-
+    def update_encrypted_information(self, data: dict) -> None:
+        """Update the encrypted sensitive information file"""
+        json_text = json.dumps(data)
+        encrypted = self.cipher.encrypt(json_text.encode())
+        with open("file_mgr.dat", "wb") as file:
+            file.write(encrypted)
 
     def set_icon(self, btn_name, icon_name):
         icon_path = self.resource_path(f"./icons/{icon_name}")

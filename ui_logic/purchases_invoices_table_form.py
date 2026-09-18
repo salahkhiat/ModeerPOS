@@ -15,7 +15,7 @@ class PurchasesInvoicesTableForm(Form):
                 None,
                 self.get_purchases_invoices_list,
                 ["المورد", "الفاتورة", "المجموع", "الإيداع", "التاريخ"],
-                {2:120, 3:120, 4:180},
+                {2:140, 3:140, 4:180},
                 0,
                 1,
                 None

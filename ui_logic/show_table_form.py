@@ -8,6 +8,9 @@ from uis.confirmation_msg import Ui_Dialog as ConfirmationMsgUi
 from .confirmation_msg_form import ConfirmationMsgForm
 from .shared_functions import TableViewModel
 
+from .prepare_label_form import PrepareLabelForm
+from uis.prepare_label import Ui_widget as PrepareLabelFormUi
+
 import logging
 # uses this file's name for easier debugging
 logger = logging.getLogger(__name__)
@@ -37,6 +40,10 @@ class ShowTableForm(Form):
         
         
         self._table:QTableView = self.ui.table
+
+        # disable barcode button by default
+        self.ui.barcode_btn.setEnabled(False)
+        self.ui.barcode_btn.setStyleSheet("background-color: grey; border:1px solid grey;")
 
         # set form icons
         self.set_icons()
@@ -103,6 +110,28 @@ class ShowTableForm(Form):
         if indexes:
             row = indexes[0].row()
             self.selected_row = self.model._data[row]
+
+        # enable barcode button if the table is products
+        if self._db_table == "products":
+            self.ui.barcode_btn.setEnabled(True)
+            self.ui.barcode_btn.setStyleSheet(
+                "QPushButton {"
+                "background: none;"
+                "}"
+                "QPushButton:hover {"
+                "background-color: #3f5482;"
+                "border: 1px solid #3f5482;"
+                "}"
+            )
+
+    def show_prepare_barcode(self):
+        """ Shows prepare barcode form"""
+        form = PrepareLabelForm(PrepareLabelFormUi, self.selected_row)
+        form.exec()
+
+    def barcode_btn_clicked(self):
+        self.ui.barcode_btn.clicked.connect(self.show_prepare_barcode)
+
 
     def next_page(self):
         self.page += 1
@@ -214,6 +243,7 @@ class ShowTableForm(Form):
 
     def set_icons(self):
         self.set_icon("delete_btn","delete.svg")
+        self.set_icon("barcode_btn","barcode.svg")
         self.set_icon("edit_btn","edit.svg")
         self.set_icon("previous_btn","previous.svg")
         self.set_icon("next_btn","next.svg")
@@ -225,3 +255,5 @@ class ShowTableForm(Form):
 
     def connect_buttons(self):
         self.delete_btn_clicked()
+        self.barcode_btn_clicked()
+        
