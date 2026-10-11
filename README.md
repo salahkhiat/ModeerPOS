@@ -1,7 +1,2 @@
-Modeer-V1 is a simple shop manager.
-
-Folder build (faster startup):
-py -m nuitka main.py --standalone --enable-plugin=pyqt6 --windows-disable-console --windows-icon-from-ico=modeer_logo.ico
-
-Onefile build (single exe):
-py -m nuitka main.py --standalone --onefile --enable-plugin=pyqt6 --windows-disable-console --windows-icon-from-ico=modeer_logo.ico
+ModeerPOS is a shop management app that helps business onwers to manage their sales, purchases, products, debts, deposits and more from one place and easily.
+Written By Salah Khiat
